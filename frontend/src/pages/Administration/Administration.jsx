@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { User, Mail, Phone, MapPin, Calendar, Award, BookOpen, Users, Building, ChevronRight, ExternalLink, GraduationCap, Shield, Heart, Target } from 'lucide-react';
+import '../Administration/Administration.css';
 
 const CollegeAdministrationPage = () => {
-  const [activeTab, setActiveTab] = useState('overview');
+  const [activeTab, setActiveTab] = useState('our-team');
 
   const administrationTeam = [
     {
@@ -66,17 +67,6 @@ const CollegeAdministrationPage = () => {
     { name: "Online Grievance Redressal Portal", head: "Dr. Tech Support" }
   ];
 
-  const departments = [
-    { name: "Computer Science & Engineering", hod: "Dr. Rajesh Kumar" },
-    { name: "Electronics & Communication", hod: "Prof. Priya Sharma" },
-    { name: "Mechanical Engineering", hod: "Dr. Arun Patel" },
-    { name: "Civil Engineering", hod: "Prof. Lakshmi Nair" },
-    { name: "Information Technology", hod: "Dr. Suresh Babu" },
-    { name: "Mathematics", hod: "Prof. Kavitha Menon" },
-    { name: "Physics", hod: "Dr. Deepak Singh" },
-    { name: "Chemistry", hod: "Prof. Anita Joshi" }
-  ];
-
   const objectives = [
     "To provide quality technical education with moral and ethical values",
     "To develop technically competent and socially responsible engineers",
@@ -87,129 +77,75 @@ const CollegeAdministrationPage = () => {
   ];
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#E9F7FF' }}>
+    <div className="admin-page">
       {/* Header */}
-      <header className="shadow-lg" style={{ background: 'linear-gradient(135deg, #1276CC 0%, #49C2F1 100%)' }}>
-        <div className="max-w-7xl mx-auto px-4 py-8">
-          <div className="text-center text-white">
-            <h1 className="text-4xl font-bold mb-2">ADMINISTRATION</h1>
-            <p className="text-xl opacity-90">Excellence in Technical Education</p>
-            <div className="flex justify-center items-center mt-4 space-x-4 text-sm">
-              <span>Home</span>
-              <ChevronRight size={16} />
-              <span style={{ color: '#49C2F1' }}>Our Team</span>
-            </div>
-
-          {/* Right Sidebar Navigation */}
-          <div className="lg:col-span-1">
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden sticky top-4">
-              <div className="p-4" style={{ backgroundColor: '#1276CC' }}>
-                <h3 className="text-white font-bold text-lg">Administration</h3>
-              </div>
-              <nav className="p-2">
-                {[
-                  { id: 'governing-body', label: 'Governing Body', icon: Shield },
-                  { id: 'our-team', label: 'Our Team', icon: Users },
-                  { id: 'directors-message', label: "Director's Message", icon: User },
-                  { id: 'principals-message', label: "Principal's Message", icon: GraduationCap },
-                  { id: 'deans', label: 'Deans', icon: Award },
-                  { id: 'organogram', label: 'Organogram', icon: Building },
-                  { id: 'objectives', label: 'Objectives', icon: Target },
-                  { id: 'vision', label: 'Vision', icon: Heart },
-                  { id: 'functions-benefits', label: 'Functions & Benefits', icon: BookOpen },
-                  { id: 'committees', label: 'Committees & Cell', icon: Users }
-                ].map((item) => {
-                  const IconComponent = item.icon;
-                  return (
-                    <button
-                      key={item.id}
-                      onClick={() => setActiveTab(item.id)}
-                      className={`w-full flex items-center space-x-3 px-3 py-2 text-left text-sm rounded-lg transition-colors ${
-                        activeTab === item.id
-                          ? 'text-white'
-                          : 'text-gray-700 hover:bg-gray-50'
-                      }`}
-                      style={activeTab === item.id ? { backgroundColor: '#49C2F1' } : {}}
-                    >
-                      <IconComponent size={16} />
-                      <span>{item.label}</span>
-                    </button>
-                  );
-                })}
-              </nav>
-            </div>
-          </div>
+      <header className="header">
+        <div className="header-content">
+          <h1>ADMINISTRATION</h1>
+          <p>Excellence in Technical Education</p>
+          <div className="breadcrumb">
+            <span>Home</span>
+            <ChevronRight size={16} />
+      
           </div>
         </div>
       </header>
 
-      <div className="max-w-7xl mx-auto px-4 py-8">
-        <div className="grid lg:grid-cols-4 gap-8">
+      <div className="main-container">
+        <div className="grid-layout">
           {/* Main Content */}
-          <div className="lg:col-span-3">
+          <div>
             {/* Our Team Section */}
             {activeTab === 'our-team' && (
-              <div className="space-y-8">
-                <div className="bg-white rounded-xl shadow-lg p-6">
-                  <div className="p-4 mb-6 rounded-lg" style={{ backgroundColor: '#1276CC' }}>
-                    <h2 className="text-2xl font-bold text-white">Our Team</h2>
-                  </div>
-                  
-                  <div className="grid gap-8">
-                    {administrationTeam.map((member, index) => (
-                      <div key={index} className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
-                        <div className="md:flex">
-                          <div className="md:w-1/4">
-                            <img
-                              src={member.image}
-                              alt={member.name}
-                              className="w-full h-64 md:h-full object-cover"
-                            />
-                          </div>
-                          <div className="md:w-3/4 p-6">
-                            <h3 className="text-xl font-bold mb-1" style={{ color: '#1276CC' }}>
-                              {member.name}
-                            </h3>
-                            <p className="font-medium mb-4 text-sm" style={{ color: '#49C2F1' }}>
-                              {member.position}
-                            </p>
-                            <p className="text-gray-700 text-sm leading-relaxed mb-4">
-                              {member.bio}
-                            </p>
-                            <div className="flex flex-wrap gap-4 text-sm text-gray-600">
-                              <div className="flex items-center space-x-2">
-                                <Mail size={14} />
-                                <span>{member.email}</span>
-                              </div>
-                              <div className="flex items-center space-x-2">
-                                <Phone size={14} />
-                                <span>{member.phone}</span>
-                              </div>
+              <div className="content-section">
+                <div className="section-header">
+                  <h2>Our Team</h2>
+                </div>
+                
+                <div className="team-grid">
+                  {administrationTeam.map((member, index) => (
+                    <div key={index} className="team-member">
+                      <div className="member-layout">
+                        <div className="member-image">
+                          <img src={member.image} alt={member.name} />
+                        </div>
+                        <div className="member-info">
+                          <h3 className="member-name">{member.name}</h3>
+                          <p className="member-position">{member.position}</p>
+                          <p className="member-bio">{member.bio}</p>
+                          <div className="contact-info">
+                            <div className="contact-item">
+                              <Mail size={14} />
+                              <span>{member.email}</span>
+                            </div>
+                            <div className="contact-item">
+                              <Phone size={14} />
+                              <span>{member.phone}</span>
                             </div>
                           </div>
                         </div>
                       </div>
-                    ))}
-                  </div>
+                    </div>
+                  ))}
                 </div>
               </div>
             )}
 
             {/* Governing Body Section */}
             {activeTab === 'governing-body' && (
-              <div className="bg-white rounded-xl shadow-lg p-6">
-                <div className="p-4 mb-6 rounded-lg" style={{ backgroundColor: '#1276CC' }}>
-                  <h2 className="text-2xl font-bold text-white">Governing Body</h2>
+              <div className="content-section">
+                <div className="section-header">
+                  <h2>Governing Body</h2>
                 </div>
-                <div className="grid md:grid-cols-2 gap-4">
+                <div className="governing-grid">
                   {governingBody.map((member, index) => (
-                    <div key={index} className="flex items-center space-x-3 p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
-                      <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ backgroundColor: '#49C2F1' }}>
-                        <User size={20} className="text-white" />
+                    <div key={index} className="governing-member">
+                      <div className="governing-avatar">
+                        <User size={20} />
                       </div>
                       <div>
-                        <h4 className="font-medium" style={{ color: '#1276CC' }}>{member.name}</h4>
-                        <p className="text-sm text-gray-600">{member.position}</p>
+                        <h4 className="governing-name">{member.name}</h4>
+                        <p className="governing-position">{member.position}</p>
                       </div>
                     </div>
                   ))}
@@ -219,15 +155,15 @@ const CollegeAdministrationPage = () => {
 
             {/* Objectives Section */}
             {activeTab === 'objectives' && (
-              <div className="bg-white rounded-xl shadow-lg p-6">
-                <div className="p-4 mb-6 rounded-lg" style={{ backgroundColor: '#1276CC' }}>
-                  <h2 className="text-2xl font-bold text-white">Objectives</h2>
+              <div className="content-section">
+                <div className="section-header">
+                  <h2>Objectives</h2>
                 </div>
-                <div className="space-y-4">
+                <div className="objectives-list">
                   {objectives.map((objective, index) => (
-                    <div key={index} className="flex items-start space-x-3 p-4 border-l-4 border-blue-200 bg-blue-50">
-                      <Target size={20} style={{ color: '#49C2F1' }} className="mt-1 flex-shrink-0" />
-                      <p className="text-gray-700">{objective}</p>
+                    <div key={index} className="objective-item">
+                      <Target size={20} className="objective-icon" />
+                      <p className="objective-text">{objective}</p>
                     </div>
                   ))}
                 </div>
@@ -236,20 +172,20 @@ const CollegeAdministrationPage = () => {
 
             {/* Vision Section */}
             {activeTab === 'vision' && (
-              <div className="bg-white rounded-xl shadow-lg p-6">
-                <div className="p-4 mb-6 rounded-lg" style={{ backgroundColor: '#1276CC' }}>
-                  <h2 className="text-2xl font-bold text-white">Vision & Mission</h2>
+              <div className="content-section">
+                <div className="section-header">
+                  <h2>Vision & Mission</h2>
                 </div>
-                <div className="space-y-6">
-                  <div className="p-6 border border-gray-200 rounded-lg">
-                    <h3 className="text-xl font-bold mb-4" style={{ color: '#1276CC' }}>Vision</h3>
-                    <p className="text-gray-700 leading-relaxed">
+                <div className="vision-mission">
+                  <div className="vision-card">
+                    <h3 className="vision-title">Vision</h3>
+                    <p className="vision-text">
                       To be a center of excellence in technical education, fostering innovation, research, and holistic development of students while upholding moral and ethical values to create globally competent engineers and leaders.
                     </p>
                   </div>
-                  <div className="p-6 border border-gray-200 rounded-lg">
-                    <h3 className="text-xl font-bold mb-4" style={{ color: '#1276CC' }}>Mission</h3>
-                    <p className="text-gray-700 leading-relaxed">
+                  <div className="mission-card">
+                    <h3 className="mission-title">Mission</h3>
+                    <p className="mission-text">
                       Our mission is to provide quality technical education integrated with spiritual and moral values, promote research and innovation, foster industry collaboration, and develop socially responsible engineers who contribute to the betterment of society and nation.
                     </p>
                   </div>
@@ -259,18 +195,18 @@ const CollegeAdministrationPage = () => {
 
             {/* Committees Section */}
             {activeTab === 'committees' && (
-              <div className="bg-white rounded-xl shadow-lg p-6">
-                <div className="p-4 mb-6 rounded-lg" style={{ backgroundColor: '#1276CC' }}>
-                  <h2 className="text-2xl font-bold text-white">Committees & Cells</h2>
+              <div className="content-section">
+                <div className="section-header">
+                  <h2>Committees & Cells</h2>
                 </div>
-                <div className="grid md:grid-cols-2 gap-4">
+                <div className="committees-grid">
                   {committees.map((committee, index) => (
-                    <div key={index} className="p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
-                      <div className="flex items-center space-x-2 mb-2">
-                        <div className="w-2 h-2 rounded-full" style={{ backgroundColor: '#49C2F1' }}></div>
-                        <h4 className="font-medium text-sm" style={{ color: '#1276CC' }}>{committee.name}</h4>
+                    <div key={index} className="committee-item">
+                      <div className="committee-header">
+                        <div className="committee-dot"></div>
+                        <h4 className="committee-name">{committee.name}</h4>
                       </div>
-                      <p className="text-xs text-gray-600">Head: {committee.head}</p>
+                      <p className="committee-head">Head: {committee.head}</p>
                     </div>
                   ))}
                 </div>
@@ -279,31 +215,53 @@ const CollegeAdministrationPage = () => {
 
             {/* Default/Other sections with placeholder content */}
             {!['our-team', 'governing-body', 'objectives', 'vision', 'committees'].includes(activeTab) && (
-              <div className="bg-white rounded-xl shadow-lg p-6">
-                <div className="p-4 mb-6 rounded-lg" style={{ backgroundColor: '#1276CC' }}>
-                  <h2 className="text-2xl font-bold text-white capitalize">{activeTab.replace('-', ' ')}</h2>
+              <div className="content-section">
+                <div className="section-header">
+                  <h2 style={{ textTransform: 'capitalize' }}>{activeTab.replace('-', ' ')}</h2>
                 </div>
-                <div className="p-8 text-center text-gray-500">
-                  <BookOpen size={48} className="mx-auto mb-4" />
+                <div className="placeholder-content">
+                  <BookOpen size={48} className="placeholder-icon" />
                   <p>Content for this section is being updated. Please check back soon.</p>
                 </div>
               </div>
             )}
           </div>
+
+          {/* Right Sidebar Navigation */}
+          <div className="rightmenu">
+            <div className="rightmenu-header">
+              <h3 className="rightmenu-title">Administration</h3>
+            </div>
+            <nav className="rightmenu-nav">
+              {[
+                { id: 'governing-body', label: 'Governing Body', icon: Shield },
+                { id: 'our-team', label: 'Our Team', icon: Users },
+                { id: 'directors-message', label: "Director's Message", icon: User },
+                { id: 'principals-message', label: "Principal's Message", icon: GraduationCap },
+                { id: 'deans', label: 'Deans', icon: Award },
+                { id: 'organogram', label: 'Organogram', icon: Building },
+                { id: 'objectives', label: 'Objectives', icon: Target },
+                { id: 'vision', label: 'Vision', icon: Heart },
+                { id: 'functions-benefits', label: 'Functions & Benefits', icon: BookOpen },
+                { id: 'committees', label: 'Committees & Cell', icon: Users }
+              ].map((item) => {
+                const IconComponent = item.icon;
+                return (
+                  <button
+                    key={item.id}
+                    onClick={() => setActiveTab(item.id)}
+                    className={`nav-button ${activeTab === item.id ? 'active' : 'inactive'}`}
+                  >
+                    <IconComponent size={16} />
+                    <span>{item.label}</span>
+                  </button>
+                );
+              })}
+            </nav>
+          </div>
         </div>
       </div>
 
-      {/* Footer */}
-      <footer className="bg-white shadow-lg mt-12">
-        <div className="max-w-7xl mx-auto px-4 py-8">
-          <div className="text-center">
-            <p className="text-gray-600">
-              © 2025 Tresvance. All rights reserved. | 
-              <span className="ml-2">Excellence in Technical Education with Moral Values</span>
-            </p>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 };
