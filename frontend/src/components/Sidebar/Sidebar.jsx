@@ -26,7 +26,6 @@ const Sidebar = () => {
       id: "home",
       title: "Home",
       icon: Home,
-      submenu: ["Welcome", "News & Updates", "Announcements", "Quick Links"],
     },
     {
       id: "about",
@@ -129,24 +128,11 @@ const Sidebar = () => {
       id: "gallery",
       title: "Gallery",
       icon: Image,
-      submenu: [
-        "Campus Photos",
-        "Event Gallery",
-        "Achievement Gallery",
-        "Virtual Tour",
-      ],
     },
     {
       id: "contact",
       title: "Contact",
       icon: Phone,
-      submenu: [
-        "Address & Location",
-        "Phone Directory",
-        "Email Contacts",
-        "Feedback Form",
-        "Map",
-      ],
     },
   ];
 
@@ -207,17 +193,19 @@ const Sidebar = () => {
                     <IconComponent size={24} className="menu-icon" />
                     <span className="menu-text">{item.title}</span>
                   </div>
-                  <ChevronRight
-                    size={20}
-                    className={`chevron ${isActive ? "chevron-rotated" : ""}`}
-                  />
+                  {item.submenu && (
+                    <ChevronRight
+                      size={20}
+                      className={`chevron ${isActive ? "chevron-rotated" : ""}`}
+                    />
+                  )}
                 </div>
 
                 {/* Separator Line */}
                 <div className="separator-line" />
 
                 {/* Submenu */}
-                {isActive && (
+                {isActive && item.submenu && (
                   <div className="submenu">
                     {item.submenu.map((subItem, subIndex) => (
                       <div
