@@ -166,29 +166,63 @@ export default function CSDepartmentPage() {
             <h2 className="section-header">Faculty & Staff</h2>
             <div className="faculty-grid">
               <div className="faculty-card">
-                <div className="faculty-avatar blue">
-                  <Users className="faculty-avatar-icon blue" />
-                </div>
-                <h3 className="faculty-name">Dr. Dennise Mathew</h3>
-                <p className="faculty-position">Head of Department</p>
-                <p className="faculty-specialization">AI & Machine Learning</p>
-              </div>
-              <div className="faculty-card">
-                <div className="faculty-avatar green">
-                  <Users className="faculty-avatar-icon green" />
-                </div>
-                <h3 className="faculty-name">Prof. Sarah Johnson</h3>
-                <p className="faculty-position">Associate Professor</p>
-                <p className="faculty-specialization">Data Structures & Algorithms</p>
-              </div>
-              <div className="faculty-card">
-                <div className="faculty-avatar purple">
-                  <Users className="faculty-avatar-icon purple" />
-                </div>
-                <h3 className="faculty-name">Dr. Michael Chen</h3>
-                <p className="faculty-position">Assistant Professor</p>
-                <p className="faculty-specialization">Cybersecurity & Networks</p>
-              </div>
+              <img
+                src="https://example.com/path-to-image.jpg"
+                alt="Dr. Dennise Mathew"
+                className="faculty-avatar-img"
+              />
+              <h3 className="faculty-name">Dr. Dennise Mathew</h3>
+              <p className="faculty-position">Head of Department</p>
+            </div>
+            <div className="faculty-card">
+              <img
+                src="https://example.com/path-to-image.jpg"
+                alt="Dr. Dennise Mathew"
+                className="faculty-avatar-img"
+              />
+              <h3 className="faculty-name">Dr. Dennise Mathew</h3>
+              <p className="faculty-position">Head of Department</p>
+            </div>
+                      <div className="faculty-card">
+              <img
+                src="https://example.com/path-to-image.jpg"
+                alt="Dr. Dennise Mathew"
+                className="faculty-avatar-img"
+              />
+              <h3 className="faculty-name">Dr. Dennise Mathew</h3>
+              <p className="faculty-position">Head of Department</p>
+            </div>
+                      <div className="faculty-card">
+              <img
+                src="https://example.com/path-to-image.jpg"
+                alt="Dr. Dennise Mathew"
+                className="faculty-avatar-img"
+              />
+              <h3 className="faculty-name">Dr. Dennise Mathew</h3>
+              <p className="faculty-position">Head of Department</p>
+            </div>
+                      <div className="faculty-card">
+              <img
+                src="https://example.com/path-to-image.jpg"
+                alt="Dr. Dennise Mathew"
+                className="faculty-avatar-img"
+              />
+              <h3 className="faculty-name">Dr. Dennise Mathew</h3>
+              <p className="faculty-position">Head of Department</p>
+            </div>
+                      <div className="faculty-card">
+              <img
+                src="https://example.com/path-to-image.jpg"
+                alt="Dr. Dennise Mathew"
+                className="faculty-avatar-img"
+              />
+              <h3 className="faculty-name">Dr. Dennise Mathew</h3>
+              <p className="faculty-position">Head of Department</p>
+            </div>
+
+
+            
+          
             </div>
           </div>
         );
