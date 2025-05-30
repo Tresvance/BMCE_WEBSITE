@@ -1,9 +1,17 @@
-import React, { useState } from 'react';
+import React, { useEffect,useState } from 'react';
 import { Users, Monitor, TrendingUp, FlaskConical, Calendar, MapPin, Phone, Mail, Quote } from 'lucide-react';
 import './cse.css'; // Import the CSS file
+import axios from 'axios';
+import { useParams } from 'react-router-dom';
+
+
+
+
 
 export default function CSDepartmentPage() {
   const [activeTab, setActiveTab] = useState('Overview');
+  const { departmentName } = useParams();  // captures 'cse', 'me', etc.
+  const [faculty, setFaculty] = useState([]);
 
   const strengths = [
     {
@@ -35,7 +43,24 @@ export default function CSDepartmentPage() {
     "Gallery", "Distinguished Alumni"
   ];
 
+
+useEffect(() => {
+  if (activeTab === "Faculty & Staff") {
+    axios.get("http://localhost:8000/api/staff/cse/") // <-- 'cse' is department name
+      .then(response => {
+        setFaculty(response.data);
+      })
+      .catch(error => {
+        console.error("Error fetching CSE staff:", error);
+      });
+  }
+}, [activeTab]);
+
+
+      
   const renderTabContent = () => {
+ 
+
     switch(activeTab) {
       case 'Overview':
         return (
@@ -149,82 +174,36 @@ export default function CSDepartmentPage() {
               <div className="mission-card">
                 <h3 className="mission-title">Mission</h3>
                 <ul className="mission-list">
-                  <li>• Provide quality education in computer science with emphasis on both theoretical foundations and practical applications</li>
-                  <li>• Foster research and innovation in emerging areas of computer science</li>
-                  <li>• Develop ethical and socially responsible computing professionals</li>
-                  <li>• Establish partnerships with industry and academia for mutual benefit</li>
-                  <li>• Contribute to the advancement of computer science through research and development</li>
+                  <li>Provide quality education in computer science with emphasis on both theoretical foundations and practical applications</li>
+                  <li>Foster research and innovation in emerging areas of computer science</li>
+                  <li>Develop ethical and socially responsible computing professionals</li>
+                  <li>Establish partnerships with industry and academia for mutual benefit</li>
+                  <li>Contribute to the advancement of computer science through research and development</li>
                 </ul>
               </div>
             </div>
           </div>
         );
-
-      case 'Faculty & Staff':
+        case 'Faculty & Staff':
         return (
           <div>
             <h2 className="section-header">Faculty & Staff</h2>
             <div className="faculty-grid">
-              <div className="faculty-card">
-              <img
-                src="/btech/cse/hodcse.jpg"
-                className="faculty-avatar-img"
-              />
-              <h3 className="faculty-name">Dr. Dennise Mathew</h3>
-              <p className="faculty-position">Head of Department</p>
-            </div>
-            <div className="faculty-card">
-              <img
-                src="https://example.com/path-to-image.jpg"
-                alt="Dr. Dennise Mathew"
-                className="faculty-avatar-img"
-              />
-              <h3 className="faculty-name">Dr. Dennise Mathew</h3>
-              <p className="faculty-position">Head of Department</p>
-            </div>
-                      <div className="faculty-card">
-              <img
-                src="https://example.com/path-to-image.jpg"
-                alt="Dr. Dennise Mathew"
-                className="faculty-avatar-img"
-              />
-              <h3 className="faculty-name">Dr. Dennise Mathew</h3>
-              <p className="faculty-position">Head of Department</p>
-            </div>
-                      <div className="faculty-card">
-              <img
-                src="https://example.com/path-to-image.jpg"
-                alt="Dr. Dennise Mathew"
-                className="faculty-avatar-img"
-              />
-              <h3 className="faculty-name">Dr. Dennise Mathew</h3>
-              <p className="faculty-position">Head of Department</p>
-            </div>
-                      <div className="faculty-card">
-              <img
-                src="https://example.com/path-to-image.jpg"
-                alt="Dr. Dennise Mathew"
-                className="faculty-avatar-img"
-              />
-              <h3 className="faculty-name">Dr. Dennise Mathew</h3>
-              <p className="faculty-position">Head of Department</p>
-            </div>
-                      <div className="faculty-card">
-              <img
-                src="https://example.com/path-to-image.jpg"
-                alt="Dr. Dennise Mathew"
-                className="faculty-avatar-img"
-              />
-              <h3 className="faculty-name">Dr. Dennise Mathew</h3>
-              <p className="faculty-position">Head of Department</p>
-            </div>
-
-
-            
-          
+              {faculty.map((staff, index) => (
+                <div className="faculty-card" key={index}>
+                  <img
+                    src={`http://localhost:8000/media/${staff.photo}`}
+                    className="faculty-avatar-img"
+                    alt={staff.name}
+                  />
+                  <h3 className="faculty-name">{staff.name}</h3>
+                  <p className="faculty-position">{staff.designation}</p>
+                </div>
+              ))}
             </div>
           </div>
         );
+
 
       default:
         return (
