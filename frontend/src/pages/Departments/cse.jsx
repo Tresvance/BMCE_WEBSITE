@@ -167,8 +167,7 @@ export default function CSDepartmentPage() {
             <div className="faculty-grid">
               <div className="faculty-card">
               <img
-                src="https://example.com/path-to-image.jpg"
-                alt="Dr. Dennise Mathew"
+                src="/btech/cse/hodcse.jpg"
                 className="faculty-avatar-img"
               />
               <h3 className="faculty-name">Dr. Dennise Mathew</h3>
