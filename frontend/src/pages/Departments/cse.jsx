@@ -252,8 +252,8 @@ export default function CSDepartmentPage() {
         <div className="banner-content">
           <div>
             <h1 className="banner-title">
-              Department of<br />
-              <span className="banner-subtitle">Computer Science</span>
+              Department of Computer Science<br />
+              {/* <span className="banner-subtitle">Computer Science</span> */}
             </h1>
             <p className="banner-description">
               Shaping tomorrow's technology leaders through excellence in education and innovation

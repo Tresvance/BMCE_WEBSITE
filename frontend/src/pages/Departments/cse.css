@@ -14,11 +14,11 @@
   overflow: hidden;
 }
 
-.banner-overlay {
+/* .banner-overlay {
   position: absolute;
   inset: 0;
   background-color: rgba(0, 0, 0, 0.3);
-}
+} */
 
 /* .banner-gradient {
   position: absolute;
