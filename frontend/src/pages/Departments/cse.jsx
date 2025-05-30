@@ -81,7 +81,7 @@ export default function CSDepartmentPage() {
                   <div className="hod-image-container">
                     <div className="hod-image">
                       <img 
-                        src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face" 
+                        src="/btech/cse/hodcse.jpg" 
                         alt="Dr. Dennise Mathew" 
                       />
                     </div>
@@ -240,6 +240,7 @@ export default function CSDepartmentPage() {
     <div className="cs-department-page">
       {/* Banner Section */}
       <div className="banner-section">
+
         <div className="banner-overlay"></div>
         <div className="banner-gradient"></div>
         
@@ -286,8 +287,7 @@ export default function CSDepartmentPage() {
     </div>
   </div>
 
-          {/* Contact Info */}
-
+    
         </div>
       </div>
 
