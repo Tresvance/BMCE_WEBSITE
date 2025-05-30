@@ -103,15 +103,8 @@ export default function CSDepartmentPage() {
                         research. Our focus is on preparing students for the challenges of the rapidly evolving tech industry 
                         while inculcating in them a spirit of lifelong learning.
                       </p>
-                      <p>
-                        We have a strong team of faculty members who are dedicated to providing quality education and 
-                        mentoring students. Our curriculum is designed to provide a solid foundation in computer science 
-                        fundamentals while also exposing students to emerging technologies and trends.
-                      </p>
-                      <p>
-                        I invite you to explore our department and learn more about our programs, faculty, research 
-                        initiatives, and achievements.
-                      </p>
+                    
+                     
                     </blockquote>
                     <div className="hod-contact">
                       <strong>Contact:</strong> dennisemathew@gmail.com | 9451744441
