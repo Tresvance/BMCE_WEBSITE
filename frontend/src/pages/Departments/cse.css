@@ -471,9 +471,10 @@
   font-size: 1.2rem;
   font-weight: 600;
   margin-bottom: 0.3rem;
+
 }
 
 .faculty-position {
   font-size: 1rem;
-  color: #6b7280; /* Gray-600 */
+  color: #000612; /* Gray-600 */
 }
