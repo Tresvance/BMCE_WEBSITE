@@ -8,7 +8,7 @@ import { useParams } from 'react-router-dom';
 
 
 
-export default function CSDepartmentPage() {
+export default function CivilDepartmentPage() {
   const [activeTab, setActiveTab] = useState('Overview');
   const { departmentName } = useParams();  // captures 'cse', 'me', etc.
   const [faculty, setFaculty] = useState([]);
@@ -46,7 +46,7 @@ export default function CSDepartmentPage() {
 
   useEffect(() => {
     if (activeTab === "Faculty & Staff") {
-      axios.get("http://localhost:8000/api/staff/cse/") // <-- 'cse' is department name
+      axios.get("http://localhost:8000/api/staff/civil/") // <-- 'cse' is department name
         .then(response => {
           setFaculty(response.data);
         })
@@ -233,7 +233,7 @@ export default function CSDepartmentPage() {
         <div className="banner-content">
           <div>
             <h1 className="banner-title">
-              Department of Computer Science<br />
+              Department of Civil Engineering<br />
               {/* <span className="banner-subtitle">Computer Science</span> */}
             </h1>
             <p className="banner-description">
