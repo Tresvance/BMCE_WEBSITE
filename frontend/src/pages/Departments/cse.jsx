@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Users, Monitor, TrendingUp, FlaskConical, Calendar, MapPin, Phone, Mail, Quote } from 'lucide-react';
 import './cse.css'; // Import the CSS file
 import axios from 'axios';
-// import { useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 
 
@@ -10,7 +10,7 @@ import axios from 'axios';
 
 export default function CSDepartmentPage() {
   const [activeTab, setActiveTab] = useState('Overview');
-  // const { departmentName } = useParams();  // captures 'cse', 'me', etc.
+  const { departmentName } = useParams();  // captures 'cse', 'me', etc.
   const [faculty, setFaculty] = useState([]);
 
   const strengths = [
