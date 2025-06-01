@@ -1,8 +1,8 @@
-import React, { useEffect,useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Users, Monitor, TrendingUp, FlaskConical, Calendar, MapPin, Phone, Mail, Quote } from 'lucide-react';
 import './cse.css'; // Import the CSS file
 import axios from 'axios';
-import { useParams } from 'react-router-dom';
+// import { useParams } from 'react-router-dom';
 
 
 
@@ -10,7 +10,7 @@ import { useParams } from 'react-router-dom';
 
 export default function CSDepartmentPage() {
   const [activeTab, setActiveTab] = useState('Overview');
-  const { departmentName } = useParams();  // captures 'cse', 'me', etc.
+  // const { departmentName } = useParams();  // captures 'cse', 'me', etc.
   const [faculty, setFaculty] = useState([]);
 
   const strengths = [
@@ -44,24 +44,25 @@ export default function CSDepartmentPage() {
   ];
 
 
-useEffect(() => {
-  if (activeTab === "Faculty & Staff") {
-    axios.get("http://localhost:8000/api/staff/cse/") // <-- 'cse' is department name
-      .then(response => {
-        setFaculty(response.data);
-      })
-      .catch(error => {
-        console.error("Error fetching CSE staff:", error);
-      });
-  }
-}, [activeTab]);
+  useEffect(() => {
+    if (activeTab === "Faculty & Staff") {
+      axios.get("http://localhost:8000/api/staff/cse/") // <-- 'cse' is department name
+        .then(response => {
+          setFaculty(response.data);
+        })
+        .catch(error => {
+          console.error("Error fetching CSE staff:", error);
+        });
+    }
+  }, [activeTab]);
+
+  console.log("faculty", faculty)
 
 
-      
   const renderTabContent = () => {
- 
 
-    switch(activeTab) {
+
+    switch (activeTab) {
       case 'Overview':
         return (
           <div>
@@ -105,9 +106,9 @@ useEffect(() => {
                 <div className="hod-profile-section">
                   <div className="hod-image-container">
                     <div className="hod-image">
-                      <img 
-                        src="/btech/cse/hodcse.jpg" 
-                        alt="Dr. Dennise Mathew" 
+                      <img
+                        src="/btech/cse/hodcse.jpg"
+                        alt="Dr. Dennise Mathew"
                       />
                     </div>
                     <div className="hod-details">
@@ -120,16 +121,16 @@ useEffect(() => {
                     <Quote className="quote-icon" />
                     <blockquote className="hod-message-text">
                       <p className="italic">
-                        "Welcome to the Department of Computer Science. Our department is committed to 
+                        "Welcome to the Department of Computer Science. Our department is committed to
                         providing quality education and fostering innovation in the field of computer science."
                       </p>
                       <p>
-                        The Department of Computer Science has been consistently striving for excellence in education and 
-                        research. Our focus is on preparing students for the challenges of the rapidly evolving tech industry 
+                        The Department of Computer Science has been consistently striving for excellence in education and
+                        research. Our focus is on preparing students for the challenges of the rapidly evolving tech industry
                         while inculcating in them a spirit of lifelong learning.
                       </p>
-                    
-                     
+
+
                     </blockquote>
                     <div className="hod-contact">
                       <strong>Contact:</strong> dennisemathew@gmail.com | 9451744441
@@ -167,7 +168,7 @@ useEffect(() => {
               <div className="vision-card">
                 <h3 className="vision-title">Vision</h3>
                 <p className="about-text">
-                  To be a leading department of computer science that produces innovative, ethical, and globally 
+                  To be a leading department of computer science that produces innovative, ethical, and globally
                   competitive professionals who contribute to technological advancement and societal development.
                 </p>
               </div>
@@ -184,7 +185,7 @@ useEffect(() => {
             </div>
           </div>
         );
-        case 'Faculty & Staff':
+      case 'Faculty & Staff':
         return (
           <div>
             <h2 className="section-header">Faculty & Staff</h2>
@@ -192,7 +193,7 @@ useEffect(() => {
               {faculty.map((staff, index) => (
                 <div className="faculty-card" key={index}>
                   <img
-                    src={`http://localhost:8000/media/${staff.photo}`}
+                    src={staff.photo} // ✅ correct
                     className="faculty-avatar-img"
                     alt={staff.name}
                   />
@@ -200,6 +201,7 @@ useEffect(() => {
                   <p className="faculty-position">{staff.designation}</p>
                 </div>
               ))}
+
             </div>
           </div>
         );
@@ -222,12 +224,12 @@ useEffect(() => {
 
         <div className="banner-overlay"></div>
         <div className="banner-gradient"></div>
-        
+
         {/* Geometric patterns */}
         <div className="banner-pattern-1"></div>
         <div className="banner-pattern-2"></div>
         <div className="banner-pattern-3"></div>
-        
+
         <div className="banner-content">
           <div>
             <h1 className="banner-title">
@@ -249,7 +251,7 @@ useEffect(() => {
 
         {/* Sidebar */}
         <div className="rightbar">
-            <div className="navigation-card">
+          <div className="navigation-card">
             {/* <div className="navigation-header">
               <h3 className="navigation-title">Quick Navigation</h3>
             </div> */}
@@ -263,10 +265,10 @@ useEffect(() => {
                   {item}
                 </button>
               ))}
-    </div>
-  </div>
+            </div>
+          </div>
 
-    
+
         </div>
       </div>
 
