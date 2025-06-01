@@ -5,7 +5,7 @@
   width: 100%;
   box-sizing: border-box;
   transition: all 0.3s ease;
-  position: fixed;
+  position: relative;
   top: 0;
   z-index: 1000;
   border-bottom-left-radius: 30px;
