@@ -76,6 +76,14 @@ npm install
 npm run dev
 
 # Run the  Backend Server
+# Create virtualenviornment
+virtualenv venv
+
+# Activate Environment
+venv\scripts\activate
+
+#Install Dependinces
+pip install -r requirements.txt
 
 # Navigate to the backend directory
 cd backend
