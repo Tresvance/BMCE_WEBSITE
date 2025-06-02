@@ -273,7 +273,7 @@ const HomePage = () => {
         </div>
 
         {/* Events Section */}
-        <div id="content-section" className="content-section">
+        {/*<div id="content-section" className="content-section">
           <div className="container">
             <div className="events-section">
               <h2 className="section-title">Upcoming Events</h2>
@@ -313,7 +313,7 @@ const HomePage = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div>*/}
 
       </div>
     </div>
