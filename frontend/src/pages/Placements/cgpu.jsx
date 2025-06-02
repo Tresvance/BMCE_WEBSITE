@@ -96,22 +96,7 @@ const PlacementPage = () => {
 
 
       {/* Stats Section */}
-      {/* <section className="stats-section">
-        <div className="container">
-          <div className="stats-grid">
-            {stats.map((stat, index) => (
-              <div key={index} className="stat-card">
-                <div className="stat-icon">
-                  {stat.icon}
-                </div>
-                <div className="stat-number">{stat.number}</div>
-                <div className="stat-label">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section> */}
-
+     
       {/* About Section */}
       <section className="about-section">
         <div className="container">
