@@ -1,6 +1,6 @@
 # 🏛️ BMC Website
 
-A modern full-stack web application designed for  (BMC) using React.js for the frontend and Django for the backend.
+A modern full-stack web application designed for (BMC) using React.js for the frontend and Django for the backend.
 
 ---
 
@@ -39,12 +39,13 @@ This project serves as a Website for managing BMC operations efficiently. The sy
 ## 🛠️ Tech Stack
 
 **Frontend:**
+
 - React.js
 - JavaScript (ES6+)
 - Tailwind CSS or Bootstrap
-  
 
 **Backend:**
+
 - Python
 - Django & Django REST Framework
 - SQLite (Development DB)
@@ -89,7 +90,6 @@ pip install -r requirements.txt
 cd backend
 
 # Enter the Django project directory
-cd bmcapi
 
 # Apply database migrations
 python manage.py makemigrations
@@ -99,3 +99,4 @@ python manage.py migrate
 python manage.py runserver
 
 
+```
