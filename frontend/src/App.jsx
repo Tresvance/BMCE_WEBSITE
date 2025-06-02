@@ -4,6 +4,7 @@ import Navbar from "./components/Sidebar/Sidebar";
 import Home from "./pages/Home/Home";
 import Cse from "./pages/Departments/cse.jsx"; 
 import CivilDepartmentPage from "./pages/Departments/civil.jsx";
+import MechDepartmentPage from "./pages/Departments/mech.jsx";
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="department/csedept" element={<Cse />} /> {/* ✅ Route to cse.jsx */}
         <Route path="department/civildept" element={<CivilDepartmentPage />} /> {/* ✅ Route to cse.jsx */}
+        <Route path="department/mechdept" element={<MechDepartmentPage />} /> {/* ✅ Route to cse.jsx */}
 
       </Routes>
     </Router>
