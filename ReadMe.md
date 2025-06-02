@@ -74,10 +74,12 @@ npm install
 
 # Run the development server
 npm run dev
+
+# Run the  Backend Server
+
 # Navigate to the backend directory
 cd backend
 
-# Run the  Backend Server 
 # Enter the Django project directory
 cd bmcapi
 
