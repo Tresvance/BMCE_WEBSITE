@@ -1,7 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Sidebar/Sidebar";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home/Home";
 
 import CollegeAdministrationPage from './pages/Administration/Administration';
@@ -16,12 +15,8 @@ const App = () => {
   return (
     <Router>
 
-      <Navbar/>
-      <Routes>
-
-
-    
-
+     
+  
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -29,7 +24,6 @@ const App = () => {
         <Route path="department/csedept" element={<Cse />} /> {/* ✅ Route to cse.jsx */}
         <Route path="department/civildept" element={<CivilDepartmentPage />} /> {/* ✅ Route to cse.jsx */}
         <Route path="department/mechdept" element={<MechDepartmentPage />} /> {/* ✅ Route to cse.jsx */}
-
         <Route path="administration" element={<CollegeAdministrationPage/>}/>
 
 
