@@ -3,7 +3,7 @@ import { User, Mail, Phone, MapPin, Calendar, Award, BookOpen, Users, Building, 
 import '../Administration/Administration.css';
 
 const CollegeAdministrationPage = () => {
-  const [activeTab, setActiveTab] = useState('our-team');
+  const [activeTab, setActiveTab] = useState('governing-body');
   const [expandedMenus, setExpandedMenus] = useState({
     iqac: false,
     committees: false
