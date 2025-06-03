@@ -16,8 +16,14 @@ const App = () => {
         <Route path="department/csedept" element={<Cse />} /> {/* ✅ Route to cse.jsx */}
         <Route path="department/civildept" element={<CivilDepartmentPage />} /> {/* ✅ Route to cse.jsx */}
         <Route path="administration" element={<CollegeAdministrationPage/>}/>
-        <Route path="gallery" element={<CollegeGallery/>}/>
 
+
+
+
+
+
+
+        <Route path="gallery" element={<CollegeGallery/>}/>
       </Routes>
     </Router>
   );
