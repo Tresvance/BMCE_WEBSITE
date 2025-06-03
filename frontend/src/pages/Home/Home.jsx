@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Users, Award, Calendar, GraduationCap, Clock, MapPin } from 'lucide-react';
 import './Home.css';
-import { Clock, BookOpen, Users, Award, ArrowRight, Star } from 'lucide-react';
+import {  BookOpen, ArrowRight, Star } from 'lucide-react';
 
 // Import images from assets folder
 import image1 from '../../assets/bmce1.jpg';
 import image2 from '../../assets/bmce2.jpg';
+import princi from '../../assets/principal.png'
 
 const HomePage = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -57,7 +58,12 @@ const HomePage = () => {
       location: "Innovation Lab"
     }
   ];
-
+  const navigationItems = [
+    { id: 'accreditation', label: 'Accreditation' },
+    { id: 'gallery', label: 'Gallery' },
+    { id: 'placement', label: 'Placement' },
+    { id: 'academics', label: 'Academics' }
+  ];
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % carouselImages.length);
@@ -303,17 +309,8 @@ const HomePage = () => {
       {/* Academic Programs Cards Section */}
       <div className="academic-programs-wrapper">
   <div className="academic-programs-container">
-    {/* Section Header */}
+    {/* Section Header 
     <div className="programs-header">
-      <div className="header-content">
-        <span className="header-badge">Excellence in Education</span>
-        <h2 className="programs-title">
-          Academic <span className="title-highlight">Programs</span>
-        </h2>
-        <p className="programs-subtitle">
-          Discover world-class education programs designed to shape future leaders
-        </p>
-      </div>
       <div className="header-decoration">
         <div className="floating-elements">
           <div className="float-element element-1"></div>
@@ -321,7 +318,7 @@ const HomePage = () => {
           <div className="float-element element-3"></div>
         </div>
       </div>
-    </div>
+    </div>*/}
 
     {/* Programs Grid */}
     <div className="programs-grid">
@@ -546,7 +543,43 @@ const HomePage = () => {
     </div>
   </div>
 </div>
+    {/*Principal Content*/}
+    <div className="principal-background">
+      <div className="college-welcome-container">
+        <div className="welcome-section">
+          <div className="welcome-content">
+            <h2 className="welcome-title">Welcome from the College Principal</h2>
+            <p className="welcome-text">
+              Welcome to BMCE, where we strive to shape dedicated and inspiring educators. 
+              At BMCE, we focus on academic excellence, character building, and innovative 
+              teaching practices. Our committed faculty and supportive learning environment 
+              help students grow into confident and responsible professionals. We warmly 
+              invite you to be a part of our vibrant academic community.
+            </p>
+          </div>
+          <div className="principal-image">
+            <img 
+              src={princi} 
+              alt="College Principal" 
+              className="principal-photo"
+            />
+          </div>
+        </div>
+      </div>
     </div>
+     {/*navbuttons*/}
+     <div className="principal-buttons">
+      {navigationItems.map((item) => (
+        <button 
+          key={item.id}
+          className="principal-btn"
+          onClick={() => handleNavigation(item.id)}
+        >
+          {item.label}
+        </button>
+      ))}
+    </div>
+  </div>
   );
 };
 
