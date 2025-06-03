@@ -4,7 +4,7 @@ import Navbar from "./components/Sidebar/Sidebar";
 import Home from "./pages/Home/Home";
 import AIDepartmentPage from "./pages/Departments/ai.jsx"
 import EceDepartmentPage from "./pages/Departments/ece.jsx"
-import EeeDepartmentPage from "./pages/Departments/ece.jsx"
+import EeeDepartmentPage from "./pages/Departments/eee.jsx"
 
 
 
