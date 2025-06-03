@@ -2,7 +2,11 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Sidebar/Sidebar";
 import Home from "./pages/Home/Home";
-import Footer from "./components/Footer/Footer";
+import AIDepartmentPage from "./pages/Departments/ai.jsx"
+import EceDepartmentPage from "./pages/Departments/ece.jsx"
+import EeeDepartmentPage from "./pages/Departments/ece.jsx"
+
+
 
 import CollegeAdministrationPage from './pages/Administration/Administration';
 
@@ -26,6 +30,11 @@ const App = () => {
         <Route path="department/civildept" element={<CivilDepartmentPage />} /> {/* ✅ Route to cse.jsx */}
         <Route path="department/mechdept" element={<MechDepartmentPage />} /> {/* ✅ Route to cse.jsx */}
         <Route path="administration" element={<CollegeAdministrationPage/>}/>
+        <Route path="department/aidept" element={<AIDepartmentPage/>}/>
+        <Route path="department/ecedept" element={<EceDepartmentPage/>}/>
+        <Route path="department/eeedept" element={<EceDepartmentPage/>}/>
+        
+
 
 
 
