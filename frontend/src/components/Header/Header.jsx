@@ -55,37 +55,6 @@ export default function Header() {
           { <h1 className={`neon-drawing ${animationStarted ? 'animate' : ''}`}>
             {collegeName}
           </h1> }
-          
-          {/* Particle Swarm Text */}
-          {/* { <h1 className={`particle-text ${animationStarted ? 'animate' : ''}`}>
-            {collegeName}
-          </h1> } */}
-          
-          {/* Matrix Rain Effect */}
-          {/* <h1 className={`matrix-text ${animationStarted ? 'animate' : ''}`}>
-            {collegeName}
-          </h1> */}
-          
-          {/* Hologram Projection */}
-          {/* {<h1 className={`hologram-text ${animationStarted ? 'animate' : ''}`}>
-            {collegeName}
-          </h1>} */}
-          
-          {/* Laser Burn Effect */}
-          {/* {<h1 className={`laser-burn ${animationStarted ? 'animate' : ''}`}>
-            {collegeName}
-          </h1> } */}
-          
-          {/* Digital Glitch Reveal */}
-          {/* { <h1 className={`glitch-text ${animationStarted ? 'animate' : ''}`}>
-            {collegeName}
-          </h1> } */}
-          
-          {/* Water Ripple Effect */}
-          {/*<h1 className={`ripple-text ${animationStarted ? 'animate' : ''}`}>
-            {collegeName}
-          </h1> */}
-
           <p>Approved by AICTE | Affiliated to KTU</p>
         </div>
 

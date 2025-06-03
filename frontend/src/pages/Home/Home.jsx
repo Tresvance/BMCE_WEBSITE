@@ -233,80 +233,72 @@ const HomePage = () => {
       </div>
 
       {/* Welcome Section */}
-      <div className="welcome-section">
-        <div className="welcome-container">
-          <div className="welcome-card">
-            <h1 className="welcome-title">
-              Welcome to <span className="gradient-text">BMCE</span>
-            </h1>
+      <div className="welcome-and-events">
+  {/* Welcome Section */}
+  <div className="welcome-section">
+    <div className="welcome-container">
+      <div className="welcome-card">
+        <h1 className="welcome-title">
+          Welcome to <span className="gradient-text">BMCE</span>
+        </h1>
 
-            <p className="welcome-description">
-              Baselios Mathews II College of Engineering (BMCE) is named after its founder, the late H H Moran Mar Baselios Marthoma Mathews II, the sixth Catholicon of the East and the Malankara Metropolitan of Malankara Orthodox Church. He was also the first Chairman of the institution. This renowned college is managed by Dr. C T Eapen Trust under Malankara Orthodox Syrian Church.
-            </p>
+        <p className="welcome-description">
+          Baselios Mathews II College of Engineering (BMCE) is named after its founder, the late H H Moran Mar Baselios Marthoma Mathews II, the sixth Catholicon of the East and the Malankara Metropolitan of Malankara Orthodox Church. He was also the first Chairman of the institution. This renowned college is managed by Dr. C T Eapen Trust under Malankara Orthodox Syrian Church.
+        </p>
 
-            <p className="welcome-description">
-              The institution started functioning in 2002 with the monumental objective of promoting academic excellence and competence in students, especially in the fast-growing global domain of Engineering and Technology.
-            </p>
+        <p className="welcome-description">
+          The institution started functioning in 2002 with the monumental objective of promoting academic excellence and competence in students, especially in the fast-growing global domain of Engineering and Technology.
+        </p>
 
-            <p className="welcome-description">
-              Located in the picturesquely beautiful Muthupilakadu in Sasthamcotta in the Kollam district of Kerala, the college stands out for its magnificent buildings and ultra-modern infrastructure; a fascinating blend of architectural excellence and functional values.
-            </p>
+        <p className="welcome-description">
+          Located in the picturesquely beautiful Muthupilakadu in Sasthamcotta in the Kollam district of Kerala, the college stands out for its magnificent buildings and ultra-modern infrastructure; a fascinating blend of architectural excellence and functional values.
+        </p>
 
-            <p className="welcome-description">
-              Affiliated to the University of Kerala and later to APJ Abdul Kalam Technological University, this self-financed institute currently provides 6 AICTE-approved UG courses.
-            </p>
-          </div>
-        </div>
+        <p className="welcome-description">
+          Affiliated to the University of Kerala and later to APJ Abdul Kalam Technological University, this self-financed institute currently provides 6 AICTE-approved UG courses.
+        </p>
       </div>
+    </div>
+  </div>
 
-      {/* Events Section */}
-      <div id="content-section" className="events-section">
-        <div className="events-container">
-          <h2 className="section-title">
-            Upcoming Events
-          </h2>
-          <div className="section-underline"></div>
+  {/* Events Section */}
+  <div id="content-section" className="events-section">
+  <div className="events-container">
+    <h2 className="section-title">Upcoming Events</h2>
+    <div className="section-underline"></div>
 
-          <div className="events-grid">
-            {upcomingEvents.map((event, index) => (
-              <div
-                key={index}
-                className={`event-card ${isVisible ? 'fade-in-up' : 'hidden'}`}
-                style={{ 
-                  animationDelay: `${index * 150}ms`
-                }}
-              >
-                <div className="event-content">
-                  <div className="event-date">
-                    <div className="event-date-number">
-                      {event.date}
-                    </div>
-                    <div className="event-date-month">
-                      {event.month}
-                    </div>
-                  </div>
-                  
-                  <div className="event-details">
-                    <h3 className="event-title">
-                      {event.title}
-                    </h3>
-                    <div className="event-info">
-                      <div className="event-info-item">
-                        <Clock className="event-icon" />
-                        <span>{event.time}</span>
-                      </div>
-                      <div className="event-info-item">
-                        <MapPin className="event-icon" />
-                        <span>{event.location}</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+    {/* Scrollable Events List */}
+   {/* Scrollable Events List */}
+<div className="scrolling-events-list">
+  <div className="scrolling-events">
+    {upcomingEvents.map((event, index) => (
+      <div key={index} className="event-card">
+        <div className="event-content">
+          <div className="event-date">
+            <div className="event-date-number">{event.date}</div>
+            <div className="event-date-month">{event.month}</div>
+          </div>
+          <div className="event-details">
+            <h3 className="event-title">{event.title}</h3>
+            <div className="event-info">
+              <div className="event-info-item">
+                <Clock className="event-icon" />
+                <span>{event.time}</span>
               </div>
-            ))}
+              <div className="event-info-item">
+                <MapPin className="event-icon" />
+                <span>{event.location}</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+    ))}
+  </div>
+</div>
+  </div>
+</div>
+</div>
     </div>
   );
 };

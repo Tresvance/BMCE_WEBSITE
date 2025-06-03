@@ -718,6 +718,7 @@
     
     .program-elegant-title {
       font-size: 2rem;
+      flex: 1.5;
     }
     
     .program-elegant-card {
@@ -727,15 +728,22 @@
   /* Welcome Section */
   .welcome-section {
     padding: 3rem 2rem;
-    background: #E9F7FF;
+    /*background: #E9F7FF;*/
   }
-
+  .welcome-and-events {
+    display: flex;
+    gap: 30px;
+    padding: 40px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
   .welcome-container {
-    max-width: 1200px;
-    margin: 0 auto;
+    max-width: 700px;
+    margin: 0;
+    margin-left: 20px;
   }
 
-  .welcome-card {
+  /*.welcome-card {
     background: rgba(255, 255, 255, 0.9);
     border-radius: 20px;
     padding: 3rem;
@@ -743,17 +751,18 @@
     border: 1px solid rgba(255,255,255,0.2);
     position: relative;
     overflow: hidden;
-  }
+  }*/
 
   .welcome-card::before {
     content: '';
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
     right: 0;
     height: 4px;
     background: linear-gradient(90deg, #49c2f1, #1276cc, #7c3aed);
     border-radius: 20px 20px 0 0;
+    max-width: 400px;
   }
 
   .welcome-title {
@@ -762,6 +771,7 @@
     margin-bottom: 1.5rem;
     color: #1f2937;
     line-height: 1.2;
+    text-align: center;
   }
 
   .welcome-description {
@@ -774,7 +784,7 @@
 
   .welcome-description:last-child {
     margin-bottom: 0;
-  }*/
+  }
   
   /* Events Section */
   .events-section {
@@ -783,23 +793,43 @@
   }
 
   .events-container {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  .events-grid {
-    display: grid;
-    gap: 1rem;
-  }
-  
-  .event-card {
-    background: white;
+    flex: 1;
+    overflow: hidden;
+    height: 550px;
+    background: E9F7FF;
     border-radius: 12px;
-    padding: 1.5rem;
-    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
-    border: 1px solid #f3f4f6;
-    transition: all 0.3s ease;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   }
+  /*.event-card {
+    background: #fff;
+    padding: 14px;
+    border-radius: 10px;
+  }*/
+  .events-grid {
+    display: flex;
+    flex-direction: column;
+    animation: scroll-up 15s linear infinite;
+  }
+  @keyframes scroll-up {
+    0% {
+      transform: translateY(0%);
+    }
+    100% {
+      transform: translateY(-100%);
+    }
+  }
+  .event-card {
+    background: #fff;
+    padding: 39px 16px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 62px;
+}
   
   .event-card:hover {
     box-shadow: 0 15px 25px rgba(0,0,0,0.15);
@@ -808,28 +838,24 @@
   
   .event-content {
     display: flex;
-    align-items: flex-start;
-    gap: 1rem;
+    align-items: center;
   }
   
   .event-date {
-    flex-shrink: 0;
-    text-align: center;
-    background: linear-gradient(135deg, #49c2f1, #1276cc);
-    color: white;
-    border-radius: 8px;
-    padding: 0.75rem;
-    min-width: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 15px;
+    color: #0056b3;
   }
   
   .event-date-number {
-    font-size: 1.25rem;
+    font-size: 22px;
     font-weight: bold;
-    display: block;
   }
   
   .event-date-month {
-    font-size: 0.75rem;
+    font-size: 14px;
     text-transform: uppercase;
   }
   
@@ -838,32 +864,64 @@
   }
   
   .event-title {
-    font-size: 1.125rem;
+    font-size: 18px;
+    /*margin: 0 0 8px;*/
     font-weight: 600;
-    color: #374151;
-    margin-bottom: 0.5rem;
+    margin-bottom: 15px;
   }
   
   .event-info {
     display: flex;
     flex-direction: column;
-    gap: 0.25rem;
-    font-size: 0.875rem;
-    color: #6b7280;
+    gap: 6px;
   }
   
   .event-info-item {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    font-size: 14px;
+    gap: 5px;
   }
   
   .event-icon {
-    width: 1rem;
-    height: 1rem;
-    color: #49c2f1;
+    width: 16px;
+    height: 16px;
+    color: #333;
+  }
+  .section-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+    text-align: center;
   }
   
+  .section-underline {
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #49c2f1, #1276cc);
+    margin: 0 auto 20px auto;
+    border-radius: 2px;
+  }
+  .scrolling-events-list {
+    height: 450px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 12px;
+    padding: 12px;
+  }
+  .scrolling-events {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    animation: scrollUp 20s linear infinite;
+  }
+  @keyframes scrollUp {
+    0% {
+      transform: translateY(0%);
+    }
+    100% {
+      transform: translateY(-100%);
+    }
+  }
   /* Fade in animation */
   .fade-in-up {
     animation: fadeInUp 0.6s ease forwards;
