@@ -1,4 +1,4 @@
-/* Gradient Strip */
+/* Gradient Strip 
 .gradient-strip {
   position: fixed;
   top: 0;
@@ -18,15 +18,23 @@
 .hamburger-menu {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
   width: 24px;
-  height: 18px;
+  height: 20px;
+  padding: 12px;
   cursor: pointer;
   transition: all 0.3s ease;
+  background: linear-gradient(180deg, #49c2f1, #1276cc);
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
 .hamburger-menu:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
+  background: linear-gradient(180deg, #5ac8f4, #0d6bb8);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
 .hamburger-line {
@@ -39,7 +47,8 @@
 }
 
 .hamburger-menu:hover .hamburger-line {
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 /* Sidebar */

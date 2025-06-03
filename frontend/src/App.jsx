@@ -6,6 +6,8 @@ import AIDepartmentPage from "./pages/Departments/ai.jsx"
 import EceDepartmentPage from "./pages/Departments/ece.jsx"
 import EeeDepartmentPage from "./pages/Departments/ece.jsx"
 
+
+
 import CollegeAdministrationPage from './pages/Administration/Administration';
 
 import Cse from "./pages/Departments/cse.jsx"; 
