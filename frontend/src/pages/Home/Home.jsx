@@ -7,6 +7,19 @@ import {  BookOpen, ArrowRight, Star } from 'lucide-react';
 import image1 from '../../assets/bmce1.jpg';
 import image2 from '../../assets/bmce2.jpg';
 import princi from '../../assets/principal.png'
+import aarbee from '../../assets/aarbee.png';
+import alliance from '../../assets/alliance.png';
+import armstech from '../../assets/armstech.jpg';
+import esaf from '../../assets/esaf.png';
+import infosys from '../../assets/infosys.png';
+import lulu from '../../assets/lulu.png';
+import pnb from '../../assets/pnb.png';
+import qspiders from '../../assets/qspiders.png';
+import reliance from '../../assets/reliance.png';
+import scheider from '../../assets/scheider.png';
+import sutherland from '../../assets/sutherland.jpg';
+import talrop from '../../assets/talrop.webp';
+import techmagi from '../../assets/techmagi.webp';
 
 const HomePage = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -26,7 +39,6 @@ const HomePage = () => {
     { value: "20+", label: "Yrs of Excellence", icon: Calendar },
     { value: "95+", label: "Experienced Faculty", icon: GraduationCap }
   ];
-
   const programs = [
     {
       title: "MBA",
@@ -39,7 +51,21 @@ const HomePage = () => {
       color: "btech"
     }
   ];
-
+  const companyLogos = [
+    { id: 1, src: aarbee, alt: 'Aarbee', name: 'Aarbee' },
+    { id: 2, src: alliance, alt: 'Alliance', name: 'Alliance' },
+    { id: 3, src: armstech, alt: 'Armstech', name: 'Armstech' },
+    { id: 4, src: esaf, alt: 'ESAF', name: 'ESAF' },
+    { id: 5, src: infosys, alt: 'Infosys', name: 'Infosys' },
+    { id: 6, src: lulu, alt: 'Lulu', name: 'Lulu' },
+    { id: 7, src: pnb, alt: 'PNB', name: 'PNB' },
+    { id: 8, src: qspiders, alt: 'QSpiders', name: 'QSpiders' },
+    { id: 9, src: reliance, alt: 'Reliance', name: 'Reliance' },
+    { id: 10, src: scheider, alt: 'Schneider', name: 'Schneider' },
+    { id: 11, src: sutherland, alt: 'Sutherland', name: 'Sutherland' },
+    { id: 12, src: talrop, alt: 'Talrop', name: 'Talrop' },
+    { id: 13, src: techmagi, alt: 'Techmagi', name: 'Techmagi' },
+  ];
   const upcomingEvents = [
     {
       date: "15",
@@ -579,6 +605,40 @@ const HomePage = () => {
         </button>
       ))}
     </div>
+    {/*Placement section*/}
+    <section className="placement-section">
+      <div className="container">
+        <h2 className="placement-title">Our Placement Partners</h2>
+        <p className="placement-subtitle">
+          Leading companies trust our graduates for their excellence and innovation
+        </p>
+        
+        <div className="pcarousel-container">
+          <div className="carousel-track">
+            {/* First set of logos */}
+            {companyLogos.map((company) => (
+              <div key={`first-${company.id}`} className="company-card">
+                <img 
+                  src={company.src} 
+                  alt={company.alt}
+                  className="company-logo"
+                />
+              </div>
+            ))}
+            {/* Duplicate set for seamless loop */}
+            {companyLogos.map((company) => (
+              <div key={`second-${company.id}`} className="company-card">
+                <img 
+                  src={company.src} 
+                  alt={company.alt}
+                  className="company-logo"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
   );
 };

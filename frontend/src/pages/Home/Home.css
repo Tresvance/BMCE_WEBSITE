@@ -1567,3 +1567,187 @@
       font-size: 1em;
     }
   }
+  /*placement section*/
+ /* Placement Section Styles */
+.placement-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    overflow: hidden;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  /* Title with gradient */
+  .placement-title {
+    font-size: 3rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 16px;
+    background: linear-gradient(45deg, #49c2f1, #1276cc);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+  
+  .placement-subtitle {
+    font-size: 1.2rem;
+    text-align: center;
+    color: #64748b;
+    margin-bottom: 60px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* Carousel Container */
+  .pcarousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 8%,
+      black 92%,
+      transparent 100%
+    );
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 8%,
+      black 92%,
+      transparent 100%
+    );
+  }
+  
+  /* Alternative fade effect using pseudo-elements */
+  .pcarousel-container::before,
+  .pcarousel-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100px;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+  }
+  
+  .pcarousel-container::before {
+    left: 0;
+    background: linear-gradient(to right, rgba(248, 250, 252, 1), rgba(248, 250, 252, 0));
+  }
+  
+  .pcarousel-container::after {
+    right: 0;
+    background: linear-gradient(to left, rgba(248, 250, 252, 1), rgba(248, 250, 252, 0));
+  }
+  
+  /* Carousel Track */
+  .carousel-track {
+    display: flex;
+    width: fit-content;
+    animation: scroll 30s linear infinite;
+    gap: 40px;
+  }
+  
+  /* Scroll Animation */
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  
+  /* Company Card */
+  .company-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 180px;
+    height: 120px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    padding: 20px;
+    flex-shrink: 0;
+    border: 1px solid #e2e8f0;
+  }
+  
+  .company-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Company Logo */
+  .company-logo {
+    width: 100px;
+    height: 80px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+  }
+  
+  .company-card:hover .company-logo {
+    transform: scale(1.1);
+  }
+  
+  /* Placement Stats - Removed */
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .placement-section {
+      padding: 60px 0;
+    }
+    
+    .placement-title {
+      font-size: 2.5rem;
+    }
+    
+    .placement-subtitle {
+      font-size: 1rem;
+      margin-bottom: 40px;
+    }
+    
+    .company-card {
+      min-width: 140px;
+      height: 100px;
+      padding: 16px;
+    }
+    
+    .company-logo {
+      width: 80px;
+      height: 60px;
+    }
+    
+    .carousel-track {
+      gap: 20px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .placement-title {
+      font-size: 2rem;
+    }
+    
+    .company-card {
+      min-width: 120px;
+      height: 80px;
+    }
+    
+    .company-logo {
+      width: 60px;
+      height: 50px;
+    }
+  }
+  
+  /* Pause animation on hover */
+  .carousel-container:hover .carousel-track {
+    animation-play-state: paused;
+  }
