@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Users, Award, Calendar, GraduationCap, Clock, MapPin } from 'lucide-react';
 import './Home.css';
+import { Clock, BookOpen, Users, Award, ArrowRight, Star } from 'lucide-react';
 
 // Import images from assets folder
 import image1 from '../../assets/bmce1.jpg';
@@ -234,73 +235,319 @@ const HomePage = () => {
 
       {/* Welcome Section */}
       <div className="welcome-and-events">
-  {/* Welcome Section */}
-  <div className="welcome-section">
-    <div className="welcome-container">
-      <div className="welcome-card">
-        <h1 className="welcome-title">
-          Welcome to <span className="gradient-text">BMCE</span>
-        </h1>
+        {/* Welcome Section */}
+        <div className="welcome-section">
+          <div className="welcome-container">
+            <div className="welcome-card">
+              <h1 className="welcome-title">
+                Welcome to <span className="gradient-text">BMCE</span>
+              </h1>
 
-        <p className="welcome-description">
-          Baselios Mathews II College of Engineering (BMCE) is named after its founder, the late H H Moran Mar Baselios Marthoma Mathews II, the sixth Catholicon of the East and the Malankara Metropolitan of Malankara Orthodox Church. He was also the first Chairman of the institution. This renowned college is managed by Dr. C T Eapen Trust under Malankara Orthodox Syrian Church.
-        </p>
+              <p className="welcome-description">
+                Baselios Mathews II College of Engineering (BMCE) is named after its founder, the late H H Moran Mar Baselios Marthoma Mathews II, the sixth Catholicon of the East and the Malankara Metropolitan of Malankara Orthodox Church. He was also the first Chairman of the institution. This renowned college is managed by Dr. C T Eapen Trust under Malankara Orthodox Syrian Church.
+              </p>
 
-        <p className="welcome-description">
-          The institution started functioning in 2002 with the monumental objective of promoting academic excellence and competence in students, especially in the fast-growing global domain of Engineering and Technology.
-        </p>
+              <p className="welcome-description">
+                The institution started functioning in 2002 with the monumental objective of promoting academic excellence and competence in students, especially in the fast-growing global domain of Engineering and Technology.
+              </p>
 
-        <p className="welcome-description">
-          Located in the picturesquely beautiful Muthupilakadu in Sasthamcotta in the Kollam district of Kerala, the college stands out for its magnificent buildings and ultra-modern infrastructure; a fascinating blend of architectural excellence and functional values.
-        </p>
+              <p className="welcome-description">
+                Located in the picturesquely beautiful Muthupilakadu in Sasthamcotta in the Kollam district of Kerala, the college stands out for its magnificent buildings and ultra-modern infrastructure; a fascinating blend of architectural excellence and functional values.
+              </p>
 
-        <p className="welcome-description">
-          Affiliated to the University of Kerala and later to APJ Abdul Kalam Technological University, this self-financed institute currently provides 6 AICTE-approved UG courses.
-        </p>
-      </div>
-    </div>
-  </div>
-
-  {/* Events Section */}
-  <div id="content-section" className="events-section">
-  <div className="events-container">
-    <h2 className="section-title">Upcoming Events</h2>
-    <div className="section-underline"></div>
-
-    {/* Scrollable Events List */}
-   {/* Scrollable Events List */}
-<div className="scrolling-events-list">
-  <div className="scrolling-events">
-    {upcomingEvents.map((event, index) => (
-      <div key={index} className="event-card">
-        <div className="event-content">
-          <div className="event-date">
-            <div className="event-date-number">{event.date}</div>
-            <div className="event-date-month">{event.month}</div>
+              <p className="welcome-description">
+                Affiliated to the University of Kerala and later to APJ Abdul Kalam Technological University, this self-financed institute currently provides 6 AICTE-approved UG courses.
+              </p>
+            </div>
           </div>
-          <div className="event-details">
-            <h3 className="event-title">{event.title}</h3>
-            <div className="event-info">
-              <div className="event-info-item">
-                <Clock className="event-icon" />
-                <span>{event.time}</span>
-              </div>
-              <div className="event-info-item">
-                <MapPin className="event-icon" />
-                <span>{event.location}</span>
+        </div>
+
+        {/* Events Section */}
+        <div id="content-section" className="events-section">
+          <div className="events-container">
+            <h2 className="section-title">Upcoming Events</h2>
+            <div className="section-underline"></div>
+
+            {/* Scrollable Events List */}
+            <div className="scrolling-events-list">
+              <div className="scrolling-events">
+                {upcomingEvents.map((event, index) => (
+                  <div key={index} className="event-card">
+                    <div className="event-content">
+                      <div className="event-date">
+                        <div className="event-date-number">{event.date}</div>
+                        <div className="event-date-month">{event.month}</div>
+                      </div>
+                      <div className="event-details">
+                        <h3 className="event-title">{event.title}</h3>
+                        <div className="event-info">
+                          <div className="event-info-item">
+                            <Clock className="event-icon" />
+                            <span>{event.time}</span>
+                          </div>
+                          <div className="event-info-item">
+                            <MapPin className="event-icon" />
+                            <span>{event.location}</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
         </div>
       </div>
-    ))}
+
+      {/* Academic Programs Cards Section */}
+      <div className="academic-programs-wrapper">
+  <div className="academic-programs-container">
+    {/* Section Header */}
+    <div className="programs-header">
+      <div className="header-content">
+        <span className="header-badge">Excellence in Education</span>
+        <h2 className="programs-title">
+          Academic <span className="title-highlight">Programs</span>
+        </h2>
+        <p className="programs-subtitle">
+          Discover world-class education programs designed to shape future leaders
+        </p>
+      </div>
+      <div className="header-decoration">
+        <div className="floating-elements">
+          <div className="float-element element-1"></div>
+          <div className="float-element element-2"></div>
+          <div className="float-element element-3"></div>
+        </div>
+      </div>
+    </div>
+
+    {/* Programs Grid */}
+    <div className="programs-grid">
+      {/* B.Tech Program - Left Aligned */}
+      <div className="program-row row-left">
+        <div className="program-card btech-program">
+          <div className="card-glow"></div>
+          <div className="card-header">
+            <div className="program-icon">
+              <BookOpen size={24} />
+            </div>
+            <div className="program-meta">
+              <h3 className="program-title">Bachelor of Technology</h3>
+              <div className="program-badge approved-badge">
+                <Star size={14} />
+                AICTE Approved
+              </div>
+            </div>
+          </div>
+
+          <div className="specializations-container">
+            <div className="specializations-grid">
+              <span className="spec-chip">Computer Science</span>
+              <span className="spec-chip">Civil Engineering</span>
+              <span className="spec-chip">Electronics</span>
+              <span className="spec-chip">Mechanical</span>
+            </div>
+          </div>
+
+          <div className="program-details">
+            <div className="detail-item">
+              <Clock size={16} />
+              <span>4 Years Duration</span>
+            </div>
+            <div className="detail-item">
+              <Users size={16} />
+              <span>120 Seats Available</span>
+            </div>
+          </div>
+
+          <div className="program-features">
+            <div className="feature-list">
+              <div className="feature-item">
+                <div className="feature-marker"></div>
+                Industry-Ready Curriculum
+              </div>
+              <div className="feature-item">
+                <div className="feature-marker"></div>
+                State-of-Art Laboratories
+              </div>
+              <div className="feature-item">
+                <div className="feature-marker"></div>
+                100% Placement Assistance
+              </div>
+            </div>
+          </div>
+
+          <div className="card-footer">
+            <button className="enroll-button">
+              <span>Explore Program</span>
+              <ArrowRight size={16} />
+            </button>
+          </div>
+        </div>
+
+        <div className="program-visual">
+          <div className="visual-content">
+            <div className="stats-card">
+              <div className="stat-item">
+                <div className="stat-number">500+</div>
+                <div className="stat-label">Graduates</div>
+              </div>
+              <div className="stat-item">
+                <div className="stat-number">95%</div>
+                <div className="stat-label">Placement Rate</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* MBA Program - Right Aligned */}
+      <div className="program-row row-right">
+        <div className="program-visual">
+          <div className="visual-content mba-visual">
+            <div className="achievement-badge">
+              <Award size={20} />
+              <span>Top Ranked</span>
+            </div>
+            <div className="floating-icons">
+              <div className="icon-float icon-1"></div>
+              <div className="icon-float icon-2"></div>
+              <div className="icon-float icon-3"></div>
+            </div>
+          </div>
+        </div>
+
+        <div className="program-card mba-program">
+          <div className="card-glow"></div>
+          <div className="card-header">
+            <div className="program-icon">
+              <Users size={24} />
+            </div>
+            <div className="program-meta">
+              <h3 className="program-title">Master of Business Administration</h3>
+              <div className="program-badge limited-badge">
+                <Star size={14} />
+                Limited Intake
+              </div>
+            </div>
+          </div>
+
+          <div className="program-details">
+            <div className="detail-item">
+              <Clock size={16} />
+              <span>2 Years Duration</span>
+            </div>
+            <div className="detail-item">
+              <Users size={16} />
+              <span>60 Seats Only</span>
+            </div>
+          </div>
+
+          <div className="program-features">
+            <div className="feature-list">
+              <div className="feature-item">
+                <div className="feature-marker"></div>
+                International Faculty
+              </div>
+              <div className="feature-item">
+                <div className="feature-marker"></div>
+                Industry Partnerships
+              </div>
+              <div className="feature-item">
+                <div className="feature-marker"></div>
+                Global Exposure Programs
+              </div>
+            </div>
+          </div>
+
+          <div className="card-footer">
+            <button className="enroll-button">
+              <span>Explore Program</span>
+              <ArrowRight size={16} />
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Polytechnic Program - Left Aligned */}
+      <div className="program-row row-left">
+        <div className="program-card polytechnic-program">
+          <div className="card-glow"></div>
+          <div className="card-header">
+            <div className="program-icon">
+              <Award size={24} />
+            </div>
+            <div className="program-meta">
+              <h3 className="program-title">Polytechnic Diploma</h3>
+              <div className="program-badge success-badge">
+                <Star size={14} />
+                100% Placement
+              </div>
+            </div>
+          </div>
+
+          <div className="specializations-container">
+            <div className="specializations-grid">
+              <span className="spec-chip">Mechanical</span>
+              <span className="spec-chip">Electrical</span>
+              <span className="spec-chip">Civil</span>
+            </div>
+          </div>
+
+          <div className="program-details">
+            <div className="detail-item">
+              <Clock size={16} />
+              <span>3 Years Duration</span>
+            </div>
+            <div className="detail-item">
+              <Users size={16} />
+              <span>180 Seats Available</span>
+            </div>
+          </div>
+
+          <div className="program-features">
+            <div className="feature-list">
+              <div className="feature-item">
+                <div className="feature-marker"></div>
+                Hands-on Training
+              </div>
+              <div className="feature-item">
+                <div className="feature-marker"></div>
+                Industry Workshops
+              </div>
+              <div className="feature-item">
+                <div className="feature-marker"></div>
+                Skill Development Focus
+              </div>
+            </div>
+          </div>
+
+          <div className="card-footer">
+            <button className="enroll-button">
+              <span>Explore Program</span>
+              <ArrowRight size={16} />
+            </button>
+          </div>
+        </div>
+
+        <div className="program-visual">
+          <div className="visual-content polytechnic-visual">
+            <div className="skill-indicators">
+              <div className="skill-ring">
+                <div className="skill-progress" style={{'--progress': '90%'}}></div>
+                <span className="skill-text">Practical Skills</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
-  </div>
-</div>
 </div>
     </div>
   );
 };
 
-export default HomePage
+export default HomePage;
