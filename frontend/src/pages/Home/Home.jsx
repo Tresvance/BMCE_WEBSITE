@@ -20,19 +20,46 @@ import scheider from '../../assets/scheider.png';
 import sutherland from '../../assets/sutherland.jpg';
 import talrop from '../../assets/talrop.webp';
 import techmagi from '../../assets/techmagi.webp';
+import industrialParkImg from '../../assets/n-1.jpg';
+import conferenceImg from '../../assets/ns-1.jpg';
+import industrialVisitImg from '../../assets/ns-2.jpg';
+import cseImage from '../../assets/cse.jpg';
+import aiImage from '../../assets/ai.jpg';
+import mechImage from '../../assets/mechanical.jpg';
+import eeImage from '../../assets/electrical.jpg';
+import civilImage from '../../assets/civil.jpg';
+import brainBulbImage from '../../assets/entrepreneurialhum.png';
+import teamMeetingImage from '../../assets/entrepreneurialbulb.png';
 
 const HomePage = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
   const [statsVisible, setStatsVisible] = useState(false);
   const [currentProgram, setCurrentProgram] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   // Images imported from assets folder
   const carouselImages = [
     { src: image1, alt: 'College Campus View 1' },
     { src: image2, alt: 'College Campus View 2' }
   ];
-
+  const cards = [
+    {
+      id: 1,
+      title: 'Industrial Park',
+      image: industrialParkImg
+    },
+    {
+      id: 2,
+      title: 'International Conference',
+      image: conferenceImg
+    },
+    {
+      id: 3,
+      title: 'Industrial Visit',
+      image: industrialVisitImg
+    }
+  ];
   const stats = [
     { value: "95+", label: "Placement Rate", icon: Award },
     { value: "50+", label: "Industry Partners", icon: Users },
@@ -49,6 +76,20 @@ const HomePage = () => {
       title: "B.Tech",
       duration: "4 Year Program",
       color: "btech"
+    }
+  ];
+  const testimonials = [
+    {
+      id: 1,
+      quote: "Staying on campus has truly enriched my college experience—it gave me the confidence to grow independently while staying connected to a supportive and inspiring community.",
+      name: "Anand Raj",
+      title: "Graphic Designer"
+    },
+    {
+      id: 2,
+      quote: "Staying on campus has truly enriched my college experience—it gave me the confidence to grow independently while staying connected to a supportive and inspiring community.",
+      name: "Samuel T. G",
+      title: "Business Man"
     }
   ];
   const companyLogos = [
@@ -89,6 +130,43 @@ const HomePage = () => {
     { id: 'gallery', label: 'Gallery' },
     { id: 'placement', label: 'Placement' },
     { id: 'academics', label: 'Academics' }
+  ];
+  const courses = [
+    {
+      id: 1,
+      title: "Computer Science & Engineering",
+      image: cseImage,
+      hodName: "Dennis Mathew",
+      hodTitle: "Head Of Department"
+    },
+    {
+      id: 2,
+      title: "Artificial Intelligence",
+      image: aiImage, 
+      hodName: "Dennis Mathew",
+      hodTitle: "Head Of Department"
+    },
+    {
+      id: 3,
+      title: "Mechanical Engineering",
+      image: mechImage,
+      hodName: "Dennis Mathew", 
+      hodTitle: "Head Of Department"
+    },
+    {
+      id: 4,
+      title: "Electrical Engineering",
+      image: eeImage,
+      hodName: "Sarah Johnson",
+      hodTitle: "Head Of Department"
+    },
+    {
+      id: 5,
+      title: "Civil Engineering",
+      image: civilImage,
+      hodName: "Michael Chen",
+      hodTitle: "Head Of Department"
+    }
   ];
   useEffect(() => {
     const timer = setInterval(() => {
@@ -144,7 +222,17 @@ const HomePage = () => {
   const prevProgram = () => {
     setCurrentProgram((prev) => (prev - 1 + programs.length) % programs.length);
   };
+  const dNextSlide = () => {
+    setCurrentIndex((prevIndex) => 
+      prevIndex === courses.length - 3 ? 0 : prevIndex + 1
+    );
+  };
 
+  const dPrevSlide = () => {
+    setCurrentIndex((prevIndex) => 
+      prevIndex === 0 ? courses.length - 3 : prevIndex - 1
+    );
+  };
   return (
     <div className="homepage">
       
@@ -636,6 +724,178 @@ const HomePage = () => {
               </div>
             ))}
           </div>
+        </div>
+      </div>
+    </section>
+    {/*Happenings*/}
+    <div className="happenings-container">
+      <h2 className="happenings-title">Happenings at BMCE</h2>
+      <div className="cards-container">
+        {cards.map((card) => (
+          <div key={card.id} className="card">
+            <div className="card-image">
+              <img src={card.image} alt={card.title} />
+            </div>
+            <div className="card-overlay">
+              <h3 className="card-title">{card.title}</h3>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+    {/*Our Courses*/}
+    <div className="dcarousel-container">
+      <div className="dheader-section">
+        <h1 className="dmain-title">Our Courses</h1>
+        <h2 className="dsub-heading">Access Our Learning Resources Next</h2>
+      </div>
+      
+      <div className="dcarousel-wrapper">
+        <button className="dcarousel-btn dprev-btn" onClick={dPrevSlide}>
+          <ChevronLeft size={24} />
+        </button>
+        
+        <div className="dcarousel-track">
+          <div 
+            className="dcarousel-content"
+            style={{ transform: `translateX(-${currentIndex * 33.333}%)` }}
+          >
+            {courses.map((course) => (
+              <div key={course.id} className="dcourse-card">
+                <div className="dcard-image">
+                  <img src={course.image} alt={course.title} />
+                </div>
+                <div className="dcard-content">
+                  <h3 className="dcourse-title">{course.title}</h3>
+                  <div className="dhod-info">
+                    <div className="dhod-avatar"></div>
+                    <div className="dhod-details">
+                      <p className="dhod-name">{course.hodName}</p>
+                      <p className="dhod-title">{course.hodTitle}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+        
+        <button className="dcarousel-btn dnext-btn" onClick={dNextSlide}>
+          <ChevronRight size={24} />
+        </button>
+      </div>
+      
+      <div className="dcarousel-indicators">
+        {Array.from({ length: Math.max(1, courses.length - 2) }).map((_, index) => (
+          <button
+            key={index}
+            className={`dindicator ${index === currentIndex ? 'dactive' : ''}`}
+            onClick={() => setCurrentIndex(index)}
+          />
+        ))}
+      </div>
+    </div>
+    {/*Entrepreneurialship Cell */}
+    <section className="eentrepreneurial-cell">
+      <div className="econtainer">
+        <h2 className="esection-title">Entrepreneurial Cell</h2>
+        
+        <div className="econtent-wrapper">
+          <div className="eleft-image">
+            <img src={brainBulbImage} alt="Brain with lightbulb representing innovation" />
+          </div>
+          
+          <div className="econtent">
+            <p>
+              The Innovation and Entrepreneurship Development Cell (IEDC) is 
+              dedicated to fostering creativity and entrepreneurial thinking among 
+              students. It provides a supportive ecosystem where innovative ideas 
+              can be transformed into viable products or startups. Through 
+              workshops, mentorship programs, and industry collaborations, IEDC 
+              equips aspiring entrepreneurs with the skills and guidance they need. 
+              The cell plays a crucial role in building a culture of innovation within 
+              the academic community.
+            </p>
+          </div>
+          
+          <div className="eright-image">
+            <img src={teamMeetingImage} alt="Team meeting with lightbulb concept" />
+          </div>
+        </div>
+      </div>
+    </section>
+    {/*Campus Life */}
+    <div className="cf-campus-facilities">
+      {/* Hero Section */}
+      <div className="cf-hero-section">
+        <div className="cf-hero-overlay">
+          <div className="cf-hero-content">
+            <h2 className="cf-hero-subtitle">Infrastructure</h2>
+            <h1 className="cf-hero-title">Campus Facilities</h1>
+            <p className="cf-hero-description">
+              Living on campus also fosters a strong sense of community, allowing students to collaborate, 
+              share ideas, and build lifelong friendships in a vibrant academic environment.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Facilities Grid Section */}
+      <div className="cf-facilities-section">
+        <div className="cf-facilities-overlay">
+          <div className="cf-facilities-content">
+            <div className="cf-facilities-grid">
+              <div className="cf-facility-card cf-campus-facilities-card">
+                <h3>Campus Facilities</h3>
+                <ul>
+                  <li>Student Societies & Club Infrastructure</li>
+                  <li>Auditorium / Seminar Hall</li>
+                </ul>
+              </div>
+              
+              <div className="cf-facility-card cf-academic-facilities-card">
+                <h3>Academic Facilities</h3>
+                <ul>
+                  <li>Classrooms</li>
+                  <li>Laboratories</li>
+                  <li>Library</li>
+                </ul>
+              </div>
+              
+              <div className="cf-facility-card cf-sports-health-card">
+                <h3>Sports & Health Facilities</h3>
+                <ul>
+                  <li>Sports</li>
+                  <li>Counseling</li>
+                  <li>Medical Room</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {/*What people say */}
+    <section className="testimonials-section">
+      <div className="testimonials-container">
+        <h2 className="testimonials-heading">WHAT PEOPLE SAY</h2>
+        
+        <div className="testimonials-grid">
+          {testimonials.map((testimonial) => (
+            <div key={testimonial.id} className="testimonial-card">
+              <div className="quote-icon">"</div>
+              <p className="testimonial-text">{testimonial.quote}</p>
+              <div className="closing-quote">"</div>
+              
+              <div className="testimonial-author">
+                <div className="author-avatar"></div>
+                <div className="author-info">
+                  <h4 className="author-name">{testimonial.name}</h4>
+                  <p className="author-title">{testimonial.title}</p>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
