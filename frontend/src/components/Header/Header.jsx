@@ -4,6 +4,7 @@ import collegeLogo from '../../assets/BMCElogo.png';
 import bmcAccredation1 from '../../assets/bnaaclogo.png';
 import bmcAccredation2 from '../../assets/nbalogo.png';
 import bmcAccredation3 from '../../assets/stqc_logo.png';
+import applyImage from '../../assets/founder.png'; // Add your image import here
 import { useEffect, useState } from 'react';
 
 export default function Header() {
@@ -49,12 +50,10 @@ export default function Header() {
         </div>
 
         <div className="title-section">
-          {/* Choose one of these amazing animations */}
-          
           {/* Neon Light Drawing */}
-          { <h1 className={`neon-drawing ${animationStarted ? 'animate' : ''}`}>
+          <h1 className={`neon-drawing ${animationStarted ? 'animate' : ''}`}>
             {collegeName}
-          </h1> }
+          </h1>
           <p>Approved by AICTE | Affiliated to KTU</p>
         </div>
 
@@ -64,7 +63,10 @@ export default function Header() {
             <img src={bmcAccredation2} alt="accredation2" />
             <img src={bmcAccredation3} alt="accredation3" />
           </div>
-          <button className="apply-btn">Apply Now</button>
+          <div className="apply-section">
+            <img src={applyImage} alt="Apply Image" className="apply-image" />
+            <button className="apply-btn">Apply Now</button>
+          </div>
         </div>
       </div>
     </header>

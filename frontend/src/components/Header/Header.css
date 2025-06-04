@@ -23,7 +23,7 @@
 .top-bar {
   padding: 6px 20px;
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start; /* Changed from flex-end to flex-start */
   font-size: 13px;
 }
 
@@ -44,12 +44,13 @@
   justify-content: space-between;
   padding: 20px 30px;
   flex-wrap: wrap;
+  margin-right: 70px;
 }
 
 .logo-section {
-  flex: 1;
   display: flex;
   justify-content: flex-start;
+  align-items: center;
 }
 
 .college-logo {
@@ -62,24 +63,23 @@
 }
 
 .title-section {
-  flex: 2;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   text-align: left;
   transition: all 0.3s ease;
-  padding-left: 0px;
+  padding-left: 20px;
   margin-left: 0px;
 }
 
 /* NEON LIGHT DRAWING EFFECT */
 .neon-drawing {
   font-family: 'Merriweather', serif;
-  font-size: 40px;
+  font-size: 32px; /* Reduced from 40px to 32px */
   font-weight: 400;
   text-align: left;
   margin: -4px;
-  margin-left: -140px;
+  margin-left: 0px; /* Changed from -140px to 0px */
   letter-spacing: 0.5px;
   white-space: nowrap;
   position: relative;
@@ -184,17 +184,18 @@
 }
 
 .right-section {
-  flex: 1.5;
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 14px;
+  gap: 40px; /* Increased gap for better spacing */
   flex-wrap: wrap;
+  margin-left: auto; /* Push to the right */
 }
 
 .accreditations {
   display: flex;
   gap: 20px;
+  align-items: center;
 }
 
 .accreditations img {
@@ -204,6 +205,27 @@
 
 .accreditations img:hover {
   transform: scale(1.45);
+}
+
+/* Apply section container */
+.apply-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+/* New apply image styles */
+.apply-image {
+  height: 40px;
+  width: auto;
+  transition: transform 0.3s ease;
+  position: relative;
+  top: -54px; /* move image upwards */
+}
+
+.apply-image:hover {
+  transform: scale(1.1);
 }
 
 .apply-btn {
@@ -217,6 +239,8 @@
   cursor: pointer;
   transition: all 0.35s ease;
   box-shadow: 0 4px 12px rgba(255, 165, 0, 0.4);
+  margin-top: -48px;
+  margin-left: 50px;
 }
 
 .apply-btn:hover {
