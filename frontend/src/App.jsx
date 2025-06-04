@@ -7,6 +7,13 @@ const App = () => {
   return (
     <>
       <Header />
+
+
+
+
+
+
+
       <Home />
     </>
   );
