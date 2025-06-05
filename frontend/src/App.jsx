@@ -5,7 +5,8 @@ import Home from "./pages/Home/Home";
 import CollegeAdministrationPage from './pages/Administration/Administration';
 import Cse from "./pages/Departments/cse.jsx"; 
 import CivilDepartmentPage from "./pages/Departments/civil.jsx";
-import CollegeGallery from "./pages/Gallery/gallery.jsx"
+import CollegeGallery from "./pages/Gallery/gallery.jsx";
+import ContactPage from "./pages/Contact/contact.jsx";
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
         <Route path="department/civildept" element={<CivilDepartmentPage />} /> {/* ✅ Route to cse.jsx */}
         <Route path="administration" element={<CollegeAdministrationPage/>}/>
         <Route path="gallery" element={<CollegeGallery/>}/>
+        <Route path="contact" element={<ContactPage/>}/>
 
       </Routes>
     </Router>
