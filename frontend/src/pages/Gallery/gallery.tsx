@@ -10,6 +10,10 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import './Gallery.css';
 
+
+
+
+
 const galleryData = [
   {
     id: 'foundation-2014',
