@@ -185,6 +185,114 @@ export default function CSDepartmentPage() {
             </div>
           </div>
         );
+        
+      case 'PEO PSO':
+        return (
+          <div>
+            <h2 className="section-header">PEO PSO</h2>
+            <div className="vision-mission-container">
+              <div className="vision-card">
+                <h3 className="vision-title">PROGRAM OUTCOMES</h3>
+                <p className="about-text">
+                  <li>PO1. Engineering knowledge: Apply the knowledge of mathematics, science, engineering fundamentals, and an engineering specialization to the solution of complex engineering problems.</li>
+                  <li>PO2. Problem analysis: Identify, formulate, review research literature, and analyze complex engineering problems reaching substantiated conclusions using first principles of mathematics, natural sciences, and engineering sciences.</li>
+                  <li>PO3: Design/development of solutions : Design solutions for complex engineering problems and design system components or processes that meet the specified needs with appropriate consideration for the public health and safety, and the cultural, societal, and environmental considerations.</li>
+                  <li>PO4. Conduct investigations of complex problems: Use research-based knowledge and research methods including design of experiments, analysis and interpretation of data, and synthesis of the information to provide valid conclusions.</li>
+                  <li>PO5. Modern tool usage: Create, select, and apply appropriate techniques, resources, and modern engineering and IT tools including prediction and modeling to complex engineering activities with an understanding of the limitations.</li>
+                  <li>PO6. The engineer and society: Apply reasoning informed by the contextual knowledge to assess societal, health, safety, legal and cultural issues and the consequent responsibilities relevant to the professional engineering practice.</li>
+                  <li>PO7. Environment and sustainability Understand the impact of the professional engineering solutions in societal and environmental contexts, and demonstrate the knowledge of, and need for sustainable development.</li>
+                  <li>PO8. Ethics: Apply ethical principles and commit to professional ethics and responsibilities and norms of the engineering practice.</li>
+                  <li>PO9. Individual and team work: Function effectively as an individual, and as a member or leader in diverse teams, and in multidisciplinary settings.</li>
+                  <li>PO10. Communication: Communicate effectively on complex engineering activities with the engineering community and with society at large, such as, being able to comprehend and write effective reports and design documentation, make effective presentations, and give and receive clear instructions.</li>
+                  <li>PO11. Project management and finance: Demonstrate knowledge and understanding of the engineering and management principles and apply these to one's own work, as a member and leader in a team, to manage projects and in multidisciplinary environments.</li>
+                  <li>PO12. Life-long learning: Recognize the need for, and have the preparation and ability to engage in independent and life-long learning in the broadest context of technological change.</li>
+               </p>
+              </div>
+              <div className="mission-card">
+                <h3 className="mission-title">PROGRAM EDUCATIONAL OBJECTIVES</h3>
+                <ul className="mission-list">
+                  <p className="about-text">
+                  <li>PO1. Engineering knowledge: Apply the knowledge of mathematics, science, engineering fundamentals, and an engineering specialization to the solution of complex engineering problems.</li>
+                  <li>PO2. Problem analysis: Identify, formulate, review research literature, and analyze complex engineering problems reaching substantiated conclusions using first principles of mathematics, natural sciences, and engineering sciences.</li>
+                  <li>PO3: Design/development of solutions : Design solutions for complex engineering problems and design system components or processes that meet the specified needs with appropriate consideration for the public health and safety, and the cultural, societal, and environmental considerations.</li>
+                  <li>PO4. Conduct investigations of complex problems: Use research-based knowledge and research methods including design of experiments, analysis and interpretation of data, and synthesis of the information to provide valid conclusions.</li>
+                   </p>
+                </ul>
+              </div>
+              <div className="mission-card">
+                <h3 className="mission-title">PROGRAM SPECIFIC OUTCOMES (PSOS)</h3>
+                <ul className="mission-list">
+                  <p className="about-text">
+                  <li>PSO 1: The ability to understand, analyze and develop computer programs in the areas related to algorithms, system software, multimedia, web design, big data analytics, and networking for efficient design of computer-based systems of varying complexity.</li>
+                  <li>PSO 2: Develop their skills to solve problems in the broad area of programming concepts and appraise environmental and social issues with ethics and manage different projects </li>
+                  </p>
+                </ul>
+              </div>
+            </div>
+          </div>
+        );
+        case 'Infrastructure':
+        return (
+          
+          <div>
+            <h2 className="section-header">Infrastructure</h2>
+            <div className="vision-mission-container">
+              
+              <div className="about-text-container">
+                <p className="about-text">
+                  Through this quality education the graduates acquire with the ability to visualize, collect information, analyze, solving complex problems, and making decisions. Training the students with technical skills and advanced technology that makes them more employable. Laboratories are well-equipped with advanced and excellent facilities. Systems are provided for students in the ratio of 1:1. The department is equipped with 8 laboratories, each has desktops, printers and switches.
+
+                </p>
+               
+              </div>
+              </div>
+              <div className="vision-card">
+                <h3 className="vision-title">System software and java programming lab</h3>
+                <p className="about-text">
+                  The ultimate aim of this lab is to prepare students in familiarize with the Standard Java technologies of J2SE and helps to excel in Object Oriented programming and to succeed as a Java Developer through global rigorous education. This lab instills students with a solid foundation in Object Oriented programming fundamentals, to solve programming problems and also to learn Advanced Java topics like J2ME, J2EE, JSP, and JavaScript.
+
+<h5>Faculty in Charge: Prof. KAVITHA V K </h5>               </p>
+              </div>
+             <div className="vision-card">
+                <h3 className="vision-title">Programming and Database lab</h3>
+                <p className="about-text">
+                   Programming and database lab
+This lab is specially followed by Students who are interested in understanding Structured Query Language and programming concepts in the Computer science and engineering field and wants to gain enhance knowledge about power of SQL Language in Relational Database Management System Development. The manual covers practical point of view in all aspects of Database and SQL including DDL, DML, and DCL sublanguages.
+
+<h5>Faculty in Charge: Prof. DEEPA RAJAN S  </h5>           </p>
+              </div>
+            <div className="vision-card">
+                <h3 className="vision-title">Project lab</h3>
+                <p className="about-text">
+                 Students are creating and implementing their own ideas to explore their technical knowledge. 
+<h5>Faculty in Charge: Prof. STEPHIE SARA PHILIPOSE  </h5>           </p>
+              </div>
+              <div className="vision-card">
+                <h3 className="vision-title">Microprocessor lab</h3>
+                <p className="about-text">
+                To apply the concepts in the design of microprocessor/microcontroller based systems in existent. The student will learn the internal organization of popular 8086/8051, hardware and software interaction and integration microprocessors/microcontrollers.
+                <h5>Faculty in Charge: Prof. MANOLEKSHMI I </h5>           </p>
+              </div>
+              <div className="vision-card">
+                <h3 className="vision-title">Free and open source software lab</h3>
+                <p className="about-text">
+                To expose students to FOSS environment and introduce them to use open source packages in open source platform.
+                 <h5>Faculty in Charge: Prof. JUBY MARY ABRAHAM</h5>           </p>
+              </div>
+               <div className="vision-card">
+                <h3 className="vision-title">Algorithm, Network and Operating Systems Lab</h3>
+                <p className="about-text">
+               To understand the functionalities of various layers of OSI model, difference between hardware, software, operating systems, programs and files. Students can understand the purpose of different software applications.
+                  <h5>Faculty in Charge: Prof. Jayakrishnan R</h5>           </p>
+              </div>
+               
+              
+
+          </div>
+        );
+
+        
+       
       case 'Faculty & Staff':
         return (
           <div>
