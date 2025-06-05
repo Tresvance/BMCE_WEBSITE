@@ -20,9 +20,6 @@ import About from "./pages/Home/About/about.jsx"
 const App = () => {
   return (
     <Router>
-
-     
-  
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
