@@ -12,7 +12,7 @@ import CivilDepartmentPage from "./pages/Departments/civil.jsx";
 import MechDepartmentPage from "./pages/Departments/mech.jsx";
 import PlacementPage from "./pages/Placements/cgpu.jsx";
 import CollegeGallery from "./pages/Gallery/gallery.jsx"
-import About from "./pages/Home/About/about.jsx"
+import About from "./pages/About/about.jsx"
 
 
 const App = () => {

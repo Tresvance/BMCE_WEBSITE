@@ -1,13 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./About.css";
 import { Target, Eye, Users, GraduationCap, UserCheck, ThumbsUp } from 'lucide-react';
-import bmceAboutBg from "../../../assets/img_about/bmceaboutbg.jpg";
-import IMG_3623 from "../../../assets/img_about/IMG_3623.JPG";
-import IMC1 from "../../../assets/img_about/IMC1.jpg";
-import founter from "../../../assets/img_about/founter.jpg";
-import management1 from "../../../assets/img_about/management1.png";
-import management2 from "../../../assets/img_about/management2.png";
-import management3 from "../../../assets/img_about/management3.png";
+import bmceAboutBg from "../../assets/img_about/bmceaboutbg.jpg";
+import IMG_3623 from "../../assets/img_about/IMG_3623.JPG";
+import IMC1 from "../../assets/img_about/IMC1.jpg";
+import founter from "../../assets/img_about/founter.jpg";
+import management1 from "../../assets/img_about/management1.png";
+import management2 from "../..//assets/img_about/management2.png";
+import management3 from "../../assets/img_about/management3.png";
 
 import { FaQuestionCircle, FaCertificate, FaChalkboardTeacher } from "react-icons/fa";
 import { GiGraduateCap } from "react-icons/gi";
@@ -17,7 +17,7 @@ function CountUpNumber({ number, duration = 2000, start = false }) {
   const [count, setCount] = useState(0);
   const [shaking, setShaking] = useState(false);
 
- 
+
   function parseNumber(str) {
     let n = str.replace(/,/g, "").toUpperCase();
     let multiplier = 1;
