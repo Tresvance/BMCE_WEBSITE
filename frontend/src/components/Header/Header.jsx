@@ -51,16 +51,19 @@ export default function Header() {
           </div>
         </div>
         
-        <div className="logo-section">
-          <img src={collegeLogo} alt="College Logo" className="college-logo" />
-        </div>
-        
-        <div className="title-section">
-          <h1 className={`neon-drawing ${animationStarted ? 'animate' : ''}`}>
-            {collegeName}
-          </h1>
-          <p>Approved by AICTE | Affiliated to KTU</p>
-        </div>
+        <div className="logo-title-wrapper">
+  <div className="logo-section">
+    <img src={collegeLogo} alt="College Logo" className="college-logo" />
+  </div>
+
+  <div className="title-section">
+    <h1 className={`neon-drawing ${animationStarted ? 'animate' : ''}`}>
+      {collegeName}
+    </h1>
+    <p>Approved by AICTE | Affiliated to KTU</p>
+  </div>
+</div>
+
         
         <div className="accreditations">
           <img src={bmcAccredation1} alt="accredation1" />
