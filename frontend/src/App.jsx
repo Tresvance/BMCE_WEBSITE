@@ -12,6 +12,7 @@ import CivilDepartmentPage from "./pages/Departments/civil.jsx";
 import MechDepartmentPage from "./pages/Departments/mech.jsx";
 import PlacementPage from "./pages/Placements/cgpu.jsx";
 import CollegeGallery from "./pages/Gallery/gallery.jsx"
+import About from "./pages/Home/About/about.jsx"
 
 
 const App = () => {
@@ -33,6 +34,8 @@ const App = () => {
         <Route path="department/eeedept" element={<EeeDepartmentPage />} />
 
         <Route path="gallery" element={<CollegeGallery/>}/>
+        
+         <Route path="about" element={<About/>}/>
 
       </Routes>
     </Router>
