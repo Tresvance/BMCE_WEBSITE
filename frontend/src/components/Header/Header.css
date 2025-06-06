@@ -45,7 +45,7 @@
   padding: 30px 30px 40px 30px; /* Increased bottom padding */
   flex-wrap: wrap;
   margin-right: 70px;
-  min-height: 100px; /* Increased minimum height */
+  min-height: 60px; /* Increased minimum height */
   position: relative; /* Added for absolute positioning */
 }
 
@@ -379,37 +379,80 @@
     margin-top: 10px;
   }
 }
-
+.logo-title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 @media (max-width: 600px) {
-  .main-header {
-    border-radius: 0;
+  .top-bar {
+    font-size: 7px;
+    margin-left: -15px;
   }
-
-  .college-logo {
+  .header-content {
     height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
   }
-
   .title-section h1 {
-    font-size: 22px;
+    font-size: 9.5px;
+  }
+  .title-section {
     text-align: center;
+    gap: 5px;
+    margin-left: 0;
+  }
+  .main-header {
+    border-radius: 5px;
+  }
+  .logo-title-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    position: absolute;
+    left: 50%;
+    top: 5px;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    margin-left: -5px;
+  }
+  .college-logo {
+    height: 30px;
+    margin-left: 0;
+    flex-shrink: 0;
   }
 
   .title-section p {
-    font-size: 14px;
+    font-size: 9px;
   }
 
   .apply-btn {
-    width: 100%;
-    max-width: 200px;
-    font-size: 13px;
+    width: 70%;
+    max-width: 150px;
+    font-size: 10px;
     padding: 8px 12px;
+    text-align: center;
+    height: 20px;
   }
-
+  .apply-section {
+    margin-right: -40px;
+    margin-top: 40px;
+  }
   .accreditations img {
-    height: 42px;
+    height: 20px;
   }
-
+  .accreditations {
+    margin-left: 5px;
+    margin-top: 30px;
+  }
   .apply-image {
-    height: 60px;
+    height: 25px;
+  }
+  .apply-card {
+    margin-left: -140px;
+    margin-bottom: 60px;
   }
 }
