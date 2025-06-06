@@ -307,12 +307,15 @@
 
 @media (max-width: 1024px) {
   .header-content {
-    flex-wrap: wrap;
-    padding: 20px;
+    flex-wrap: nowrap;
+    padding: 10px;
     gap: 20px;
     justify-content: center;
+    height: 10px;
   }
-
+  .top-bar {
+    font-size: 12px;
+  }
   .logo-section {
     justify-content: center;
     width: 100%;
@@ -327,8 +330,15 @@
 
   .title-section p {
     text-align: center;
+    font-size: 11px;
   }
-
+  .neon-drawing {
+    font-size: 14.5px;
+  }
+  .college-logo {
+    height: 70px;
+    margin-left: 20px;
+  }
   .right-section {
     justify-content: center;
     width: 100%;
@@ -339,16 +349,33 @@
     position: static;
     transform: none;
     justify-content: center;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     gap: 10px;
     margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 30px;
   }
-
-  .apply-image-container {
-    position: static;
-    margin: 0;
+  .accreditations img {
+    height: 20px;
+  }
+  .apply-btn {
+    height: 30px;
+    margin-left: 25px;
     display: flex;
     justify-content: center;
+    align-items: center;
+    margin-top: -20px;
+  }
+  .apply-image { 
+    height: 50px; 
+  }
+  .apply-card {
+    margin-top: -40px;
+    margin-right: -120px;
+  }
+  .apply-image-container {
+    position: absolute;
+    margin: 0;
     margin-top: 10px;
   }
 }
