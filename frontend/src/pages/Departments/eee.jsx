@@ -70,16 +70,9 @@ export default function EeeDepartmentPage() {
             <div className="about-section">
               <h2 className="section-header">ABOUT OUR DEPARTMENT</h2>
               <div className="about-text-container">
-                <p className="about-text">
-                  The Department of Computer Science was established in the year 2000 with a vision to become a center of
-                  excellence in Computer Science education and research. Over the years, the department has grown significantly
-                  and has been consistently ranked among the top Computer Science departments in the region.
-                </p>
-                <p className="about-text">
-                  Our department offers undergraduate, postgraduate, and doctoral programs in Computer Science and related
-                  fields. The curriculum is designed to provide students with a strong foundation in core computer science concepts,
-                  along with exposure to emerging technologies and research areas.
-                </p>
+                <p className="about-text">The Department of Electrical and Electronics Engineering was established in the year 2006 with the under graduate program to fulfill the aspiration of common people to make their wards professionally qualified Electrical and Electronics Engineers. The Department has always exerted the best of its effort to meet the objectives of achieving technical excellence in the areas of Electrical and Electronics Engineering such as Electrical Machines and Drives ,Instrumentation and Automation and Power systems supported by a high ended software training to take up Electrical Engineering System Design
+               </p>
+             
               </div>
             </div>
 
@@ -168,18 +161,44 @@ export default function EeeDepartmentPage() {
               <div className="vision-card">
                 <h3 className="vision-title">Vision</h3>
                 <p className="about-text">
-                  To be a leading department of computer science that produces innovative, ethical, and globally
-                  competitive professionals who contribute to technological advancement and societal development.
-                </p>
+                  To mould globally proficient, dynamic Electrical engineers and successful entrepreneurs contributing to nation's economic growth. </p>
               </div>
               <div className="mission-card">
                 <h3 className="mission-title">Mission</h3>
                 <ul className="mission-list">
-                  <li>Provide quality education in computer science with emphasis on both theoretical foundations and practical applications</li>
-                  <li>Foster research and innovation in emerging areas of computer science</li>
-                  <li>Develop ethical and socially responsible computing professionals</li>
-                  <li>Establish partnerships with industry and academia for mutual benefit</li>
-                  <li>Contribute to the advancement of computer science through research and development</li>
+                  <li>To Provide comprehensive training in the field of Electrical Engineering and there by bridging the gap between industry and academia.</li>
+                  <li>To Equip Students as socially committed citizens and resourceful professionals.</li>
+                  </ul>
+              </div>
+            </div>
+          </div>
+        );
+        case 'PEO PSO':
+        return (
+          <div>
+            <h2 className="section-header">PEO PSO</h2>
+            <div className="vision-mission-container">
+              
+              <div className="mission-card">
+                <h3 className="mission-title">PROGRAM EDUCATIONAL OBJECTIVES</h3>
+                <ul className="mission-list">
+                  <p className="about-text">
+                  <li>PEO: Graduate of the program will specify, design, and develop solutions to meet the requirements of the industry.</li>
+                  <li>PEO2: Graduates can able to develop analytical and research mind by adapting innovative ideas in the ever-growing technology through lifelong learning.</li>
+                  <li>PEO3: Graduates can demonstrate communication skill, leadership qualities and professional competence for developing start-up's.</li>
+                  <li>PEO4: Graduates can acquire technical skills with ethical attitude to develop sustainable solution for global and social needs.</li>
+                   </p>
+                </ul>
+              </div>
+              <div className="mission-card">
+                <h3 className="mission-title">PROGRAM SPECIFIC OUTCOMES (PSOS)</h3>
+                <ul className="mission-list">
+                  <p className="about-text">
+                  <li>PSO 1: Analyze, design and solve problems in the field of Electrical and Electronics Engineering by applying knowledge acquired from Power Systems, Electrical Machines, Control Systems and Solid State Devices.</li>
+                  <li>PSO 2: Apply modern software tools for design, simulation and analysis of Electrical Systems to engage in lifelong learning.</li>
+                  <li>PSO 3: Solve ethically and professionally various Electrical Engineering problems in societal and environmental context and communicate efficiently.</li>
+                  <li>PSO 4: Ability to implement electrical system design skills for planning, estimating and designing.</li>
+                  </p>
                 </ul>
               </div>
             </div>

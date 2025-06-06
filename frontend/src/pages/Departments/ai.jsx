@@ -71,15 +71,10 @@ export default function AIDepartmentPage() {
               <h2 className="section-header">ABOUT OUR DEPARTMENT</h2>
               <div className="about-text-container">
                 <p className="about-text">
-                  The Department of Computer Science was established in the year 2000 with a vision to become a center of
-                  excellence in Computer Science education and research. Over the years, the department has grown significantly
-                  and has been consistently ranked among the top Computer Science departments in the region.
-                </p>
-                <p className="about-text">
-                  Our department offers undergraduate, postgraduate, and doctoral programs in Computer Science and related
-                  fields. The curriculum is designed to provide students with a strong foundation in core computer science concepts,
-                  along with exposure to emerging technologies and research areas.
-                </p>
+                 The Artificial Intelligence (AI) Department at Baselios Mathews II College of Engineering, Sasthamcotta, established in 2023, is at the forefront of education and research in AI and its applications. With a curriculum designed to meet industry demands, the department offers programs that delve into key areas such as machine learning, deep learning, natural language processing, computer vision and robotics. Students benefit from hands-on learning through projects, internships, and state-of-the-art facilities equipped with advanced computing resources and AI tools. Emphasizing an interdisciplinary approach, the department integrates AI with diverse domains, including healthcare, finance, agriculture and environmental sustainability.
+                 
+                  </p>
+               
               </div>
             </div>
 

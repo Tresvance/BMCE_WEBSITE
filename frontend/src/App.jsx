@@ -21,6 +21,8 @@ const App = () => {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
+
+
         <Route path="placements/cgpu" element={<PlacementPage />} />
         <Route path="department/csedept" element={<Cse />} />
         <Route path="department/civildept" element={<CivilDepartmentPage />} />
@@ -29,7 +31,9 @@ const App = () => {
         <Route path="department/aidept" element={<AIDepartmentPage />} />
         <Route path="department/ecedept" element={<EceDepartmentPage />} />
         <Route path="department/eeedept" element={<EeeDepartmentPage />} />
+
         <Route path="gallery" element={<CollegeGallery/>}/>
+
       </Routes>
     </Router>
   );

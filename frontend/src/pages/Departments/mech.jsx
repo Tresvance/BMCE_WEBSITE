@@ -71,15 +71,13 @@ export default function MechDepartmentPage() {
               <h2 className="section-header">ABOUT OUR DEPARTMENT</h2>
               <div className="about-text-container">
                 <p className="about-text">
-                  The Department of Computer Science was established in the year 2000 with a vision to become a center of
-                  excellence in Computer Science education and research. Over the years, the department has grown significantly
-                  and has been consistently ranked among the top Computer Science departments in the region.
-                </p>
-                <p className="about-text">
-                  Our department offers undergraduate, postgraduate, and doctoral programs in Computer Science and related
-                  fields. The curriculum is designed to provide students with a strong foundation in core computer science concepts,
-                  along with exposure to emerging technologies and research areas.
-                </p>
+                 Since its inception in 2010, the Department of Mechanical Engineering of BMCE is one of the top rated among other engineering colleges affiliated to Kerala university. Department was started with a sanctioned intake of 60 students with 15 teaching faculties and mentorship of Dr F.V Albin. Later in 2015, department is re-affiliated to the APJ Abdul Kalam Technological University (KTU) and continues its successful journey in moulding talented mechanical engineers.
+
+The Department has well equipped laboratories with new high end machines, sophisticated equipment and qualified personnel. The department has 9 laboratories with provisions for research activities. The department is well equipped with computational facilities and is having a computer integrated manufacturing lab.
+
+Mechanical engineering association of the department ‘MEQNZO’ initiates co-curricular and extra-curricular activities for overall development of students. Numerous initiatives have already been carried out towards the employability of students. The department has signed MoU with CAD Centre Kollam and Kerala Electrical & Allied Engg. Co.Ltd., which provide an exposure to industry environment. 
+                  </p>
+                
               </div>
             </div>
 
@@ -168,23 +166,67 @@ export default function MechDepartmentPage() {
               <div className="vision-card">
                 <h3 className="vision-title">Vision</h3>
                 <p className="about-text">
-                  To be a leading department of computer science that produces innovative, ethical, and globally
-                  competitive professionals who contribute to technological advancement and societal development.
-                </p>
+                 To nurture students and equip them with fundamental and innovative concepts in Mechanical Engineering, thereby making them passionate for technical research, career and social development. </p>
               </div>
               <div className="mission-card">
                 <h3 className="mission-title">Mission</h3>
                 <ul className="mission-list">
-                  <li>Provide quality education in computer science with emphasis on both theoretical foundations and practical applications</li>
-                  <li>Foster research and innovation in emerging areas of computer science</li>
-                  <li>Develop ethical and socially responsible computing professionals</li>
-                  <li>Establish partnerships with industry and academia for mutual benefit</li>
-                  <li>Contribute to the advancement of computer science through research and development</li>
-                </ul>
+                  <li>To provide a challenging atmosphere to impart creativity and innovation, thereby moulding students to focus on latest advancements in mechanical engineering.</li>
+                  <li>Smarten up students to become self sustained professionals to explore all opportunities for holistic development upholding moral and ethical values.</li>
+                  </ul>
               </div>
             </div>
           </div>
         );
+         case 'PEO PSO':
+        return (
+          <div>
+            <h2 className="section-header">PEO PSO</h2>
+            <div className="vision-mission-container">
+
+              <div className="mission-card">
+                <h3 className="mission-title">PROGRAM EDUCATIONAL OBJECTIVES</h3>
+                <ul className="mission-list">
+                  <p className="about-text">
+                  <li>PO1. Graduates of the program with solid foundation in core and allied areas of mechanical Engineering to become a competent professional.</li>
+                  <li>PO2. Graduates will recognize the need for innovations and entrepreneurship to attain sustainable technical development in the industry and society.</li>
+                  <li>PO3: Graduates will efficiently develop multidisciplinary products by adopting analytical, numerical and experimental techniques along with strict professional ethics and leadership skills.</li>
+                  <li>PO4. Graduates inculcate an urge for higher studies, research and other career developmental activities.</li>
+                   </p>
+                </ul>
+              </div>
+              <div className="mission-card">
+                <h3 className="mission-title">PROGRAM OBJECTIVE (PO)</h3>
+                <ul className="mission-list">
+                  <p className="about-text">
+                  <li>PO 1: Engineering Knowledge</li>
+                  <li>PO 2: Problem Analysis</li>
+                  <li>PO 3: Design/development of solutions</li>
+                  <li>PO 4: Conduct investigations of complex Problems</li>
+                  <li>PO 5: Modern tool usage</li>
+                  <li>PO 6: The engineer and society</li>
+                  <li>PO 7: Environment and sustainability</li>
+                  <li>PO 8: Ethics</li>
+                  <li>PO 9: Individual and team work</li>
+                  <li>PO 10: Communication</li>
+                  <li>PO 11: Project management and finance</li>
+                  <li>PO 12: Life-long learning</li>
+                  </p>
+                </ul>
+              </div>
+              <div className="mission-card">
+                <h3 className="mission-title">PROGRAMME SPECIFIC OUTCOMES (PSOS)</h3>
+                <ul className="mission-list">
+                  <p className="about-text">
+                  <li>PSO 1: Apply their knowledge in the domain of engineering mechanics, thermal and fluid sciences to solve engineering problems utilizing advanced technology.</li>
+                  <li>PSO 2: Successfully apply the principles of design, analysis and implementation of mechanical systems/processes which have been learned as a part of the curriculum.</li>
+                  <li>PSO 3: Develop and implement new ideas on product design and development in the field of mechanical engineering with the help of modern CAD/CAM tools, while ensuring best manufacturing practices.</li>
+                  </p>
+                </ul>
+              </div>
+            </div>
+          </div>);
+
       case 'Faculty & Staff':
         return (
           <div>
