@@ -23,7 +23,7 @@
 .top-bar {
   padding: 6px 20px;
   display: flex;
-  justify-content: flex-start; /* Changed from flex-end to flex-start */
+  justify-content: flex-start;
   font-size: 13px;
 }
 
@@ -42,9 +42,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 30px;
+  padding: 30px 30px 40px 30px; /* Increased bottom padding */
   flex-wrap: wrap;
   margin-right: 70px;
+  min-height: 100px; /* Increased minimum height */
+  position: relative; /* Added for absolute positioning */
 }
 
 .logo-section {
@@ -75,11 +77,11 @@
 /* NEON LIGHT DRAWING EFFECT */
 .neon-drawing {
   font-family: 'Merriweather', serif;
-  font-size: 32px; /* Reduced from 40px to 32px */
+  font-size: 32px;
   font-weight: 400;
   text-align: left;
   margin: -4px;
-  margin-left: 0px; /* Changed from -140px to 0px */
+  margin-left: 0px;
   letter-spacing: 0.5px;
   white-space: nowrap;
   position: relative;
@@ -187,19 +189,22 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 40px; /* Increased gap for better spacing */
+  gap: 30px;
   flex-wrap: wrap;
-  margin-left: auto; /* Push to the right */
+  margin-left: auto;
 }
 
 .accreditations {
   display: flex;
   gap: 20px;
   align-items: center;
+  position: absolute;
+  left: 75%;
+  transform: translateX(-50%);
 }
 
 .accreditations img {
-  height: 50px;
+  height: 56px;
   transition: transform 0.3s ease;
 }
 
@@ -207,44 +212,177 @@
   transform: scale(1.45);
 }
 
-/* Apply section container */
+/* Apply section - now only contains the button */
 .apply-section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
+  position: relative;
+  margin-top: 8px;
+  margin-right: 10px;
 }
 
-/* New apply image styles */
-.apply-image {
-  height: 40px;
-  width: auto;
-  transition: transform 0.3s ease;
+/* New absolute positioned image container in top-right corner */
+.apply-image-container {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 10;
+  margin-top: -30px;
+  margin-right: -70px;
+}
+
+/* Card container for image - elegant and standard design */
+.apply-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  box-shadow: 
+    0 1px 3px rgba(0, 0, 0, 0.1),
+    0 1px 2px rgba(0, 0, 0, 0.06);
+  transition: all 0.2s ease;
   position: relative;
-  top: -54px; /* move image upwards */
+  overflow: hidden;
+  display: inline-block;
+  padding: 0;
+}
+
+/* Updated apply image styles - smaller to fit inline layout */
+.apply-image {
+  height: 76px;
+  width: auto;
+  transition: all 0.2s ease;
+  border-radius: 7px;
+  display: block;
+  margin: 0;
+  position: relative;
 }
 
 .apply-image:hover {
-  transform: scale(1.1);
+  transform: scale(1.02);
 }
 
 .apply-btn {
   background: linear-gradient(45deg, #ffe259, #ffa751, #ff6a88);
   color: white;
   border: none;
-  padding: 12px 24px;
-  border-radius: 12px;
-  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.35s ease;
-  box-shadow: 0 4px 12px rgba(255, 165, 0, 0.4);
-  margin-top: -48px;
-  margin-left: 50px;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(255, 165, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  height: 42px;
+}
+
+.apply-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(255, 255, 255, 0.2), 
+    transparent);
+  transition: left 0.3s ease;
 }
 
 .apply-btn:hover {
-  transform: scale(1.1);
+  transform: translateY(-1px);
   background: linear-gradient(45deg, #ff6a88, #ffa751, #ffe259);
-  box-shadow: 0 6px 20px rgba(255, 165, 0, 0.5);
+  box-shadow: 0 4px 8px rgba(255, 165, 0, 0.4);
+}
+
+.apply-btn:hover::before {
+  left: 100%;
+}
+/* Responsive adjustments for Header */
+
+@media (max-width: 1024px) {
+  .header-content {
+    flex-wrap: wrap;
+    padding: 20px;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .logo-section {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .title-section {
+    align-items: center;
+    text-align: center;
+    padding-left: 0;
+    margin-left: 0;
+  }
+
+  .title-section p {
+    text-align: center;
+  }
+
+  .right-section {
+    justify-content: center;
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .accreditations {
+    position: static;
+    transform: none;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .apply-image-container {
+    position: static;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .main-header {
+    border-radius: 0;
+  }
+
+  .college-logo {
+    height: 60px;
+  }
+
+  .title-section h1 {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  .title-section p {
+    font-size: 14px;
+  }
+
+  .apply-btn {
+    width: 100%;
+    max-width: 200px;
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+
+  .accreditations img {
+    height: 42px;
+  }
+
+  .apply-image {
+    height: 60px;
+  }
 }

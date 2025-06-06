@@ -235,13 +235,8 @@ const HomePage = () => {
   };
   return (
     <div className="homepage">
-      
-      {/* Header Section with Stats and Carousel */}
       <div className="header-grid">
-        
-        {/* Left Side - Stats and Programs */}
         <div className="left-section">
-          {/* Stats Section */}
           <div className="stats-section">
             <div className="stats-grid">
               {stats.map((stat, index) => {
@@ -324,7 +319,6 @@ const HomePage = () => {
               <div className="carousel-overlay"></div>
             </div>
           ))}
-
           {/* Carousel Controls */}
           <button 
             onClick={prevSlide} 
@@ -332,14 +326,12 @@ const HomePage = () => {
           >
             <ChevronLeft />
           </button>
-          
           <button 
             onClick={nextSlide}
             className="carousel-control next"
           >
             <ChevronRight />
           </button>
-
           {/* Carousel Indicators */}
           <div className="carousel-indicators">
             {carouselImages.map((_, index) => (
@@ -355,26 +347,21 @@ const HomePage = () => {
 
       {/* Welcome Section */}
       <div className="welcome-and-events">
-        {/* Welcome Section */}
         <div className="welcome-section">
           <div className="welcome-container">
             <div className="welcome-card">
               <h1 className="welcome-title">
                 Welcome to <span className="gradient-text">BMCE</span>
               </h1>
-
               <p className="welcome-description">
                 Baselios Mathews II College of Engineering (BMCE) is named after its founder, the late H H Moran Mar Baselios Marthoma Mathews II, the sixth Catholicon of the East and the Malankara Metropolitan of Malankara Orthodox Church. He was also the first Chairman of the institution. This renowned college is managed by Dr. C T Eapen Trust under Malankara Orthodox Syrian Church.
               </p>
-
               <p className="welcome-description">
                 The institution started functioning in 2002 with the monumental objective of promoting academic excellence and competence in students, especially in the fast-growing global domain of Engineering and Technology.
               </p>
-
               <p className="welcome-description">
                 Located in the picturesquely beautiful Muthupilakadu in Sasthamcotta in the Kollam district of Kerala, the college stands out for its magnificent buildings and ultra-modern infrastructure; a fascinating blend of architectural excellence and functional values.
               </p>
-
               <p className="welcome-description">
                 Affiliated to the University of Kerala and later to APJ Abdul Kalam Technological University, this self-financed institute currently provides 6 AICTE-approved UG courses.
               </p>
