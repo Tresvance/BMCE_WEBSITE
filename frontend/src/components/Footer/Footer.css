@@ -1,0 +1,264 @@
+.footer-container {
+  background: linear-gradient(135deg, #49c2f1 0%, #1276cc 100%);
+  color: white;
+  padding: 0;
+  margin-top: auto;
+  position: relative;
+  overflow: hidden;
+  max-height: 400px;
+}
+
+.footer-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(73, 194, 241, 0.9) 0%,
+    rgba(18, 118, 204, 0.9) 100%
+  );
+  z-index: 1;
+}
+
+.footer-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 60px 20px 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 40px;
+}
+
+.footer-section {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Left Section - Logo and Address */
+.logo-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.college-logo {
+  width: 400px;
+  height: 80px;
+  border-radius: 12px;
+  /* object-fit: cover; */
+  margin-bottom: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.college-name {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.college-address {
+  line-height: 1.6;
+}
+
+.college-address p {
+  margin: 0 0 5px 0;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.contact-info {
+  margin-top: 15px !important;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.contact-info span {
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+/* Middle Section - Navigation */
+.section-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 25px;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.nav-links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.nav-column {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-link {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  padding: 5px 0;
+  border-bottom: 1px solid transparent;
+}
+
+.footer-link:hover {
+  color: white;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  transform: translateX(5px);
+}
+
+/* Right Section - Social Media and Quote */
+.social-media {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.social-link:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.college-quote {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 12px;
+  border-left: 4px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+}
+
+.college-quote p {
+  font-style: italic;
+  line-height: 1.6;
+  margin: 0;
+  font-size: 14px;
+  opacity: 0.95;
+}
+
+/* Footer Bottom - Copyright */
+.footer-bottom {
+  position: relative;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.2);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 20px 0;
+}
+
+.copyright-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.copyright-content p {
+  margin: 0;
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+.tresvance-link {
+  color: #ffd700;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.tresvance-link:hover {
+  color: #fff;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 40px 20px 30px;
+  }
+
+  .logo-section {
+    align-items: center;
+    text-align: center;
+  }
+
+  .nav-links {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .social-media {
+    justify-content: center;
+  }
+
+  .copyright-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+
+  .college-name {
+    font-size: 20px;
+  }
+
+  .section-title {
+    font-size: 18px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-content {
+    padding: 30px 15px 20px;
+  }
+
+  .college-logo {
+    width: 330px;
+    height: 70px;
+  }
+
+  .college-name {
+    font-size: 18px;
+  }
+
+  .social-link {
+    width: 40px;
+    height: 40px;
+  }
+}

@@ -1,6 +1,6 @@
+
 import React, { useState } from 'react';
 import { User, Mail, Phone, MapPin, Calendar, Award, BookOpen, Users, Building, ChevronRight, ExternalLink, GraduationCap, Shield, Heart, Target, ChevronUp, ChevronDown } from 'lucide-react';
-import '../Administration/Administration.css';
 
 const CollegeAdministrationPage = () => {
   const [activeTab, setActiveTab] = useState('governing-body');
@@ -71,22 +71,6 @@ const CollegeAdministrationPage = () => {
     "To maintain high standards of academic excellence and integrity"
   ];
 
-  const committees = [
-    { name: "Anti-ragging Committee", head: "Dr. Sarah Wilson" },
-    { name: "Women Cell", head: "Prof. Mary Thomas" },
-    { name: "SC/ST Committee", head: "Dr. Michael Johnson" },
-    { name: "Grievance Redressal Committee", head: "Dr. James Rodriguez" },
-    { name: "Anti-sexual Harassment Committee", head: "Prof. Lisa Anderson" },
-    { name: "Exam Cell", head: "Dr. Robert Chen" },
-    { name: "Discipline Committee", head: "Rev. Fr. Thomas Varghese" },
-    { name: "Career Guidance and Placement Unit", head: "Dr. Emily Davis" },
-    { name: "Student Welfare Committee", head: "Prof. David Martinez" },
-    { name: "Library Council", head: "Dr. Rachel Green" },
-    { name: "Counselling Cell", head: "Dr. Alex Kumar" },
-    { name: "Alumni Association", head: "Prof. Maria Santos" },
-    { name: "Online Grievance Redressal Portal", head: "Dr. Tech Support" }
-  ];
-
   const rightmenuItems = [
     { id: 'governing-body', label: 'Governing Body', icon: Shield },
     { id: 'our-team', label: 'Our Team', icon: Users },
@@ -136,30 +120,45 @@ const CollegeAdministrationPage = () => {
     switch (activeTab) {
       case 'our-team':
         return (
-          <div className="content-section">
+          <div className="content-section animate-fade-in">
             <div className="section-header">
-              <h2>Our Team</h2>
-              <p>Meet our dedicated leadership team committed to excellence in education</p>
+              <div className="header-badge">
+                <Users size={20} />
+                <span>Leadership Team</span>
+              </div>
+              <h2>Our Distinguished Team</h2>
+              <p>Meet our dedicated leadership team committed to excellence in education and holistic development of students</p>
             </div>
             
             <div className="team-grid">
               {administrationTeam.map((member, index) => (
-                <div key={index} className="team-member">
-                  <div className="member-image">
-                    <img src={member.image} alt={member.name} />
-                  </div>
-                  <div className="member-info">
-                    <h3 className="member-name">{member.name}</h3>
-                    <p className="member-position">{member.position}</p>
-                    <p className="member-bio">{member.bio}</p>
-                    <div className="contact-info">
-                      <div className="contact-item">
-                        <Mail size={16} />
-                        <span>{member.email}</span>
+                <div key={index} className="team-member" style={{ animationDelay: `${index * 100}ms` }}>
+                  <div className="member-card">
+                    <div className="member-image-container">
+                      <div className="member-image">
+                        <img src={member.image} alt={member.name} />
                       </div>
-                      <div className="contact-item">
-                        <Phone size={16} />
-                        <span>{member.phone}</span>
+                      <div className="member-status"></div>
+                    </div>
+                    <div className="member-content">
+                      <div className="member-header">
+                        <h3 className="member-name">{member.name}</h3>
+                        <span className="member-position">{member.position}</span>
+                      </div>
+                      <p className="member-bio">{member.bio}</p>
+                      <div className="member-contact">
+                        <div className="contact-item">
+                          <div className="contact-icon">
+                            <Mail size={16} />
+                          </div>
+                          <span>{member.email}</span>
+                        </div>
+                        <div className="contact-item">
+                          <div className="contact-icon">
+                            <Phone size={16} />
+                          </div>
+                          <span>{member.phone}</span>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -171,20 +170,27 @@ const CollegeAdministrationPage = () => {
 
       case 'governing-body':
         return (
-          <div className="content-section">
+          <div className="content-section animate-fade-in">
             <div className="section-header">
+              <div className="header-badge">
+                <Shield size={20} />
+                <span>Governance</span>
+              </div>
               <h2>Governing Body</h2>
-              <p>The distinguished members who guide our institution</p>
+              <p>The distinguished members who provide strategic guidance and oversight to our institution</p>
             </div>
-            <div className="governing-grid">
+            <div className="governing-body-container">
               {governingBody.map((member, index) => (
-                <div key={index} className="governing-member">
+                <div key={index} className="governing-member" style={{ animationDelay: `${index * 50}ms` }}>
                   <div className="governing-avatar">
                     <User size={24} />
                   </div>
-                  <div className="governing-info">
+                  <div className="governing-details">
                     <h4 className="governing-name">{member.name}</h4>
                     <p className="governing-position">{member.position}</p>
+                  </div>
+                  <div className="governing-badge">
+                    <Shield size={16} />
                   </div>
                 </div>
               ))}
@@ -194,16 +200,25 @@ const CollegeAdministrationPage = () => {
 
       case 'iqac-objectives':
         return (
-          <div className="content-section">
+          <div className="content-section animate-fade-in">
             <div className="section-header">
+              <div className="header-badge">
+                <Target size={20} />
+                <span>Quality Assurance</span>
+              </div>
               <h2>IQAC Objectives</h2>
-              <p>Our commitment to quality and continuous improvement</p>
+              <p>Our comprehensive framework for maintaining and enhancing educational quality standards</p>
             </div>
-            <div className="objectives-list">
+            <div className="objectives-container">
               {objectives.map((objective, index) => (
-                <div key={index} className="objective-item">
-                  <Target size={20} className="objective-icon" />
-                  <p className="objective-text">{objective}</p>
+                <div key={index} className="objective-card" style={{ animationDelay: `${index * 100}ms` }}>
+                  <div className="objective-number">{String(index + 1).padStart(2, '0')}</div>
+                  <div className="objective-content">
+                    <div className="objective-icon">
+                      <Target size={24} />
+                    </div>
+                    <p className="objective-text">{objective}</p>
+                  </div>
                 </div>
               ))}
             </div>
@@ -212,28 +227,41 @@ const CollegeAdministrationPage = () => {
 
       case 'iqac-vision':
         return (
-          <div className="content-section">
+          <div className="content-section animate-fade-in">
             <div className="section-header">
-              <h2>IQAC Vision & Mission</h2>
+              <div className="header-badge">
+                <Heart size={20} />
+                <span>Our Direction</span>
+              </div>
+              <h2>Vision & Mission</h2>
+              <p>Guiding principles that shape our commitment to educational excellence</p>
             </div>
-            <div className="vision-mission">
+            <div className="vision-mission-container">
               <div className="vision-card">
-                <div className="card-icon">
-                  <Heart size={32} />
+                <div className="card-header">
+                  <div className="card-icon vision-icon">
+                    <Heart size={32} />
+                  </div>
+                  <h3>Our Vision</h3>
                 </div>
-                <h3 className="vision-title">Vision</h3>
-                <p className="vision-text">
-                  To be a center of excellence in technical education, fostering innovation, research, and holistic development of students while upholding moral and ethical values to create globally competent engineers and leaders.
-                </p>
+                <div className="card-content">
+                  <p>
+                    To be a center of excellence in technical education, fostering innovation, research, and holistic development of students while upholding moral and ethical values to create globally competent engineers and leaders.
+                  </p>
+                </div>
               </div>
               <div className="mission-card">
-                <div className="card-icon">
-                  <Target size={32} />
+                <div className="card-header">
+                  <div className="card-icon mission-icon">
+                    <Target size={32} />
+                  </div>
+                  <h3>Our Mission</h3>
                 </div>
-                <h3 className="mission-title">Mission</h3>
-                <p className="mission-text">
-                  Our mission is to provide quality technical education integrated with spiritual and moral values, promote research and innovation, foster industry collaboration, and develop socially responsible engineers who contribute to the betterment of society and nation.
-                </p>
+                <div className="card-content">
+                  <p>
+                    Our mission is to provide quality technical education integrated with spiritual and moral values, promote research and innovation, foster industry collaboration, and develop socially responsible engineers who contribute to the betterment of society and nation.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -241,14 +269,27 @@ const CollegeAdministrationPage = () => {
 
       default:
         return (
-          <div className="content-section">
+          <div className="content-section animate-fade-in">
             <div className="section-header">
+              <div className="header-badge">
+                <BookOpen size={20} />
+                <span>Information</span>
+              </div>
               <h2 style={{ textTransform: 'capitalize' }}>{activeTab.replace('-', ' ')}</h2>
+              <p>Detailed information about this section</p>
             </div>
             <div className="placeholder-content">
-              <BookOpen size={64} className="placeholder-icon" />
-              <h3>Content Coming Soon</h3>
-              <p>This section is currently being developed. Please check back soon for updates.</p>
+              <div className="placeholder-icon">
+                <BookOpen size={64} />
+              </div>
+              <h3>Content Under Development</h3>
+              <p>This section is currently being developed with comprehensive information. Please check back soon for detailed updates and resources.</p>
+              <div className="placeholder-actions">
+                <button className="btn-secondary">
+                  <Mail size={16} />
+                  Contact for Info
+                </button>
+              </div>
             </div>
           </div>
         );
@@ -256,102 +297,145 @@ const CollegeAdministrationPage = () => {
   };
 
   return (
-    <div className="admin-page">
-      {/* Hero Banner */}
-      <div className="hero-banner">
-        <div className="hero-overlay"></div>
-        <div className="hero-content">
-          <h1 className="hero-title">ADMINISTRATION</h1>
-          <p className="hero-subtitle">Excellence in Technical Education & Leadership</p>
-          <div className="breadcrumb">
-            <span>Home</span>
-            <ChevronRight size={16} />
-            <span>Administration</span>
-          </div>
-        </div>
-      </div>
-
-      <div className="main-container">
-        <div className="content-wrapper">
-          {/* Main Content */}
-          <div className="main-content">
-            {renderContent()}
-          </div>
-
-          {/* Right Sidebar */}
-          <div className="rightmenu">
-            <div className="rightmenu-header">
-              <h3>Administration</h3>
-            </div>
-            <nav className="rightmenu-nav">
-              {rightmenuItems.map((item) => {
-                const IconComponent = item.icon;
-                return (
-                  <div key={item.id} className="nav-item">
-                    {item.hasDropdown ? (
-                      <>
-                        <button
-                          onClick={() => toggleMenu(item.id)}
-                          className={`nav-button dropdown-toggle ${expandedMenus[item.id] ? 'expanded' : ''}`}
-                        >
-                          <div className="nav-button-content">
-                            <IconComponent size={18} />
-                            <span>{item.label}</span>
-                          </div>
-                          {expandedMenus[item.id] ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
-                        </button>
-                        {expandedMenus[item.id] && (
-                          <div className="dropdown-menu">
-                            {item.subItems.map((subItem) => (
-                              <button
-                                key={subItem.id}
-                                onClick={() => setActiveTab(subItem.id)}
-                                className={`nav-button sub-item ${activeTab === subItem.id ? 'active' : ''}`}
-                              >
-                                <span>{subItem.label}</span>
-                              </button>
-                            ))}
-                          </div>
-                        )}
-                      </>
-                    ) : (
-                      <button
-                        onClick={() => setActiveTab(item.id)}
-                        className={`nav-button ${activeTab === item.id ? 'active' : ''}`}
-                      >
-                        <div className="nav-button-content">
-                          <IconComponent size={18} />
-                          <span>{item.label}</span>
-                        </div>
-                      </button>
-                    )}
-                  </div>
-                );
-              })}
-            </nav>
-          </div>
-        </div>
-      </div>
-
+    <div className="administration-page">
       <style jsx>{`
-        .admin-page {
-          font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-          min-height: 100vh;
-          background: #f8fafc;
+        /* Professional College Administration Styles */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;600;700&display=swap');
+
+        /* CSS Variables for consistent theming */
+        :root {
+          --primary-color: #1543C1FF;
+          --primary-light: #3b82f6;
+          --primary-dark: #1e40af;
+          --secondary-color: #7c3aed;
+          --accent-color: #f59e0b;
+          --success-color: #10b981;
+          --error-color: #ef4444;
+          --warning-color: #f59e0b;
+          
+          --text-primary: #1f2937;
+          --text-secondary: #6b7280;
+          --text-light: #9ca3af;
+          
+          --bg-primary: #ffffff;
+          --bg-secondary: #f9fafb;
+          --bg-tertiary: #f3f4f6;
+          --bg-overlay: rgba(0, 0, 0, 0.5);
+          
+          --border-color: #e5e7eb;
+          --border-light: #f3f4f6;
+          
+          --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+          --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+          --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+          --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+          
+          --radius-sm: 0.375rem;
+          --radius-md: 0.5rem;
+          --radius-lg: 0.75rem;
+          --radius-xl: 1rem;
+          
+          --transition-fast: 0.15s ease-in-out;
+          --transition-normal: 0.25s ease-in-out;
+          --transition-slow: 0.35s ease-in-out;
         }
 
-        .hero-banner {
+        /* Animation Keyframes */
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        @keyframes slideInRight {
+          from {
+            opacity: 0;
+            transform: translateX(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+
+        @keyframes scaleIn {
+          from {
+            opacity: 0;
+            transform: scale(0.95);
+          }
+          to {
+            opacity: 1;
+            transform: scale(1);
+          }
+        }
+
+        @keyframes pulse {
+          0%, 100% {
+            opacity: 1;
+          }
+          50% {
+            opacity: 0.8;
+          }
+        }
+
+        @keyframes float {
+          0%, 100% {
+            transform: translateY(0px);
+          }
+          50% {
+            transform: translateY(-10px);
+          }
+        }
+
+        /* Base Styles */
+        .administration-page {
+          font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+          background: var(--bg-secondary);
+          min-height: 100vh;
+          color: var(--text-primary);
+          line-height: 1.6;
+        }
+
+        /* Utility Classes */
+        .animate-fade-in {
+          animation: fadeIn 0.6s ease-out;
+        }
+
+        .animate-slide-in {
+          animation: slideInRight 0.5s ease-out;
+        }
+
+        .animate-scale-in {
+          animation: scaleIn 0.4s ease-out;
+        }
+
+        /* Hero Section */
+        .hero-section {
           position: relative;
-          height: 400px;
-          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-          background-image: url('https://images.unsplash.com/photo-1562774053-701939374585?w=1200&h=400&fit=crop&crop=top');
-          background-size: cover;
-          background-position: center;
+          height: 30vh;
+          min-height: 400px;
           display: flex;
           align-items: center;
           justify-content: center;
-          color: white;
           overflow: hidden;
+          background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+        }
+
+        .hero-background {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-image: url('https://images.unsplash.com/photo-1562774053-701939374585?w=1920&h=1080&fit=crop&crop=center');
+          background-size: cover;
+          background-position: center;
+          background-attachment: fixed;
         }
 
         .hero-overlay {
@@ -360,31 +444,86 @@ const CollegeAdministrationPage = () => {
           left: 0;
           right: 0;
           bottom: 0;
-          background: linear-gradient(135deg, rgba(102, 126, 234, 0.8) 0%, rgba(118, 75, 162, 0.8) 100%);
+          background: linear-gradient(
+            135deg,
+            rgba(30, 58, 138, 0.85) 0%,
+            rgba(124, 58, 237, 0.85) 100%
+          );
         }
 
         .hero-content {
           position: relative;
-          z-index: 2;
+          z-index: 10;
           text-align: center;
+          color: white;
           max-width: 800px;
-          padding: 0 20px;
+          padding: 0 2rem;
+          animation: fadeIn 1s ease-out;
+        }
+
+        .hero-badge {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.5rem;
+          background: rgba(255, 255, 255, 0.2);
+          backdrop-filter: blur(10px);
+          border: 1px solid rgba(255, 255, 255, 0.3);
+          padding: 0.75rem 1.5rem;
+          border-radius: 50px;
+          font-size: 0.9rem;
+          font-weight: 500;
+          margin-bottom: 2rem;
+          animation: slideInRight 0.8s ease-out 0.2s both;
         }
 
         .hero-title {
-          font-size: 4rem;
-          font-weight: 800;
-          margin: 0 0 1rem 0;
-          text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
-          letter-spacing: 2px;
+          font-family: 'Playfair Display', serif;
+          font-size: clamp(3rem, 8vw, 5rem);
+          font-weight: 700;
+          margin: 0 0 1.5rem 0;
+          letter-spacing: -0.02em;
+          text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+          animation: fadeIn 1s ease-out 0.4s both;
         }
 
         .hero-subtitle {
-          font-size: 1.5rem;
-          font-weight: 300;
-          margin: 0 0 2rem 0;
+          font-size: clamp(1.125rem, 3vw, 1.5rem);
+          font-weight: 400;
+          margin: 0 0 3rem 0;
           opacity: 0.95;
-          text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
+          animation: fadeIn 1s ease-out 0.6s both;
+        }
+
+        .hero-stats {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 2rem;
+          margin-bottom: 3rem;
+          animation: fadeIn 1s ease-out 0.8s both;
+        }
+
+        .stat-item {
+          text-align: center;
+        }
+
+        .stat-number {
+          font-size: 2rem;
+          font-weight: 700;
+          font-family: 'Playfair Display', serif;
+          margin-bottom: 0.25rem;
+        }
+
+        .stat-label {
+          font-size: 0.875rem;
+          opacity: 0.9;
+          font-weight: 500;
+        }
+
+        .stat-divider {
+          width: 1px;
+          height: 40px;
+          background: rgba(255, 255, 255, 0.3);
         }
 
         .breadcrumb {
@@ -392,141 +531,258 @@ const CollegeAdministrationPage = () => {
           align-items: center;
           justify-content: center;
           gap: 0.5rem;
-          font-size: 1rem;
+          font-size: 0.95rem;
           opacity: 0.9;
+          animation: fadeIn 1s ease-out 1s both;
         }
 
         .breadcrumb span:last-child {
           font-weight: 600;
         }
 
+        .hero-decoration {
+          position: absolute;
+          top: 20%;
+          right: 10%;
+          z-index: 5;
+        }
+
+        .decoration-circle {
+          width: 200px;
+          height: 200px;
+          border: 2px solid rgba(255, 255, 255, 0.1);
+          border-radius: 50%;
+          position: absolute;
+          animation: float 6s ease-in-out infinite;
+        }
+
+        .decoration-circle:nth-child(2) {
+          width: 150px;
+          height: 150px;
+          top: 50px;
+          left: 30px;
+          animation-delay: -2s;
+        }
+
+        .decoration-circle:nth-child(3) {
+          width: 100px;
+          height: 100px;
+          top: 100px;
+          left: 60px;
+          animation-delay: -4s;
+        }
+
+        /* Main Container */
         .main-container {
           max-width: 1400px;
           margin: 0 auto;
-          padding: 2rem;
+          padding: 4rem 2rem 2rem;
         }
 
-        .content-wrapper {
+        .content-layout {
           display: grid;
-          grid-template-columns: 1fr 320px;
+          grid-template-columns: 1fr 350px;
           gap: 3rem;
           align-items: start;
         }
 
+        /* Main Content */
         .main-content {
-          background: white;
-          border-radius: 16px;
-          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+          background: var(--bg-primary);
+          border-radius: var(--radius-xl);
+          box-shadow: var(--shadow-lg);
           overflow: hidden;
+          animation: fadeIn 0.8s ease-out;
         }
 
         .content-section {
-          padding: 2.5rem;
+          padding: 3rem;
         }
 
         .section-header {
-          margin-bottom: 2.5rem;
-          border-bottom: 2px solid #e2e8f0;
-          padding-bottom: 1.5rem;
+          margin-bottom: 3rem;
+          text-align: center;
+        }
+
+        .header-badge {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.5rem;
+          background: linear-gradient(135deg, var(--primary-light), var(--secondary-color));
+          color: white;
+          padding: 0.75rem 1.5rem;
+          border-radius: 50px;
+          font-size: 0.875rem;
+          font-weight: 600;
+          margin-bottom: 1.5rem;
+          box-shadow: var(--shadow-md);
         }
 
         .section-header h2 {
-          font-size: 2.5rem;
+          font-family: 'Playfair Display', serif;
+          font-size: clamp(2rem, 5vw, 3rem);
           font-weight: 700;
-          color: #1a202c;
-          margin: 0 0 0.5rem 0;
-          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          margin: 0 0 1rem 0;
+          background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;
         }
 
         .section-header p {
-          font-size: 1.1rem;
-          color: #718096;
-          margin: 0;
+          font-size: 1.125rem;
+          color: var(--text-secondary);
+          max-width: 600px;
+          margin: 0 auto;
         }
 
+        /* Team Grid */
         .team-grid {
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+          grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
           gap: 2rem;
         }
 
         .team-member {
-          background: #f8fafc;
-          border-radius: 16px;
-          padding: 2rem;
-          transition: all 0.3s ease;
-          border: 1px solid #e2e8f0;
+          animation: fadeIn 0.6s ease-out both;
         }
 
-        .team-member:hover {
-          transform: translateY(-4px);
-          box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        .member-card {
+          background: var(--bg-primary);
+          border-radius: var(--radius-xl);
+          padding: 2rem;
+          box-shadow: var(--shadow-md);
+          border: 1px solid var(--border-light);
+          transition: all var(--transition-normal);
+          position: relative;
+          overflow: hidden;
+        }
+
+        .member-card::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          height: 4px;
+          background: linear-gradient(135deg, var(--primary-light), var(--secondary-color));
+          transform: scaleX(0);
+          transform-origin: left;
+          transition: transform var(--transition-normal);
+        }
+
+        .member-card:hover {
+          transform: translateY(-8px);
+          box-shadow: var(--shadow-xl);
+        }
+
+        .member-card:hover::before {
+          transform: scaleX(1);
+        }
+
+        .member-image-container {
+          position: relative;
+          margin-bottom: 1.5rem;
+          text-align: center;
         }
 
         .member-image {
           width: 120px;
           height: 120px;
-          margin: 0 auto 1.5rem auto;
           border-radius: 50%;
           overflow: hidden;
-          border: 4px solid #667eea;
-          box-shadow: 0 8px 16px rgba(102, 126, 234, 0.2);
+          margin: 0 auto;
+          position: relative;
+          border: 4px solid var(--border-light);
+          transition: all var(--transition-normal);
         }
 
         .member-image img {
           width: 100%;
           height: 100%;
           object-fit: cover;
+          transition: transform var(--transition-normal);
         }
 
-        .member-info {
+        .member-card:hover .member-image img {
+          transform: scale(1.1);
+        }
+
+        .member-status {
+          position: absolute;
+          bottom: 8px;
+          right: 8px;
+          width: 20px;
+          height: 20px;
+          background: var(--success-color);
+          border: 3px solid var(--bg-primary);
+          border-radius: 50%;
+        }
+
+        .member-content {
           text-align: center;
         }
 
+        .member-header {
+          margin-bottom: 1rem;
+        }
+
         .member-name {
-          font-size: 1.4rem;
+          font-size: 1.25rem;
           font-weight: 700;
-          color: #1a202c;
+          color: var(--text-primary);
           margin: 0 0 0.5rem 0;
         }
 
         .member-position {
-          font-size: 1rem;
+          display: inline-block;
+          background: linear-gradient(135deg, var(--primary-light), var(--secondary-color));
+          color: white;
+          padding: 0.5rem 1rem;
+          border-radius: 50px;
+          font-size: 0.75rem;
           font-weight: 600;
-          color: #667eea;
-          margin: 0 0 1rem 0;
+          letter-spacing: 0.5px;
           text-transform: uppercase;
-          letter-spacing: 1px;
         }
 
         .member-bio {
-          font-size: 1rem;
-          color: #4a5568;
+          font-size: 0.95rem;
+          color: var(--text-secondary);
           line-height: 1.6;
-          margin: 0 0 1.5rem 0;
+          margin: 1.5rem 0;
         }
 
-        .contact-info {
+        .member-contact {
           display: flex;
           flex-direction: column;
-          gap: 0.5rem;
+          gap: 0.75rem;
         }
 
         .contact-item {
           display: flex;
           align-items: center;
           justify-content: center;
-          gap: 0.5rem;
+          gap: 0.75rem;
           font-size: 0.9rem;
-          color: #718096;
+          color: var(--text-secondary);
         }
 
-        .governing-grid {
+        .contact-icon {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 32px;
+          height: 32px;
+          background: var(--bg-tertiary);
+          border-radius: 50%;
+          color: var(--primary-light);
+        }
+
+        /* Governing Body */
+        .governing-body-container {
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+          grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
           gap: 1.5rem;
         }
 
@@ -534,185 +790,332 @@ const CollegeAdministrationPage = () => {
           display: flex;
           align-items: center;
           gap: 1rem;
-          background: white;
+          background: var(--bg-primary);
           padding: 1.5rem;
-          border-radius: 12px;
-          border: 1px solid #e2e8f0;
-          transition: all 0.3s ease;
+          border-radius: var(--radius-lg);
+          border: 1px solid var(--border-light);
+          transition: all var(--transition-normal);
+          animation: fadeIn 0.5s ease-out both;
+          position: relative;
+          overflow: hidden;
+        }
+
+        .governing-member::before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 0;
+          bottom: 0;
+          width: 4px;
+          background: linear-gradient(135deg, var(--primary-light), var(--secondary-color));
+          transform: scaleY(0);
+          transform-origin: bottom;
+          transition: transform var(--transition-normal);
         }
 
         .governing-member:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-          border-color: #667eea;
+          transform: translateX(8px);
+          box-shadow: var(--shadow-lg);
+        }
+
+        .governing-member:hover::before {
+          transform: scaleY(1);
         }
 
         .governing-avatar {
           width: 60px;
           height: 60px;
           border-radius: 50%;
-          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          background: linear-gradient(135deg, var(--primary-light), var(--secondary-color));
           display: flex;
           align-items: center;
           justify-content: center;
           color: white;
+          flex-shrink: 0;
         }
 
-        .governing-info {
+        .governing-details {
           flex: 1;
         }
 
         .governing-name {
-          font-size: 1.2rem;
+          font-size: 1.125rem;
           font-weight: 600;
-          color: #1a202c;
+          color: var(--text-primary);
           margin: 0 0 0.25rem 0;
         }
 
         .governing-position {
-          font-size: 1rem;
-          color: #718096;
+          font-size: 0.95rem;
+          color: var(--text-secondary);
           margin: 0;
         }
 
-        .objectives-list {
-          display: flex;
-          flex-direction: column;
+        .governing-badge {
+          color: var(--primary-light);
+          opacity: 0.7;
+        }
+
+        /* Objectives */
+        .objectives-container {
+          display: grid;
           gap: 1.5rem;
         }
 
-        .objective-item {
+        .objective-card {
           display: flex;
-          align-items: flex-start;
-          gap: 1rem;
-          padding: 1.5rem;
-          background: #f8fafc;
-          border-radius: 12px;
-          border-left: 4px solid #667eea;
+          gap: 1.5rem;
+          background: var(--bg-primary);
+          padding: 2rem;
+          border-radius: var(--radius-lg);
+          border: 1px solid var(--border-light);
+          transition: all var(--transition-normal);
+          animation: fadeIn 0.6s ease-out both;
+          position: relative;
+          overflow: hidden;
+        }
+
+        .objective-card::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          width: 4px;
+          background: linear-gradient(135deg, var(--primary-light), var(--secondary-color));
+          opacity: 0;
+          transition: opacity var(--transition-normal);
+        }
+
+        .objective-card:hover {
+          transform: translateY(-4px);
+          box-shadow: var(--shadow-lg);
+        }
+
+        .objective-card:hover::before {
+          opacity: 1;
+        }
+
+        .objective-number {
+          font-family: 'Playfair Display', serif;
+          font-size: 2rem;
+          font-weight: 700;
+          color: var(--primary-light);
+          min-width: 60px;
+          text-align: center;
+          align-self: flex-start;
+        }
+
+        .objective-content {
+          flex: 1;
         }
 
         .objective-icon {
-          color: #667eea;
-          margin-top: 0.25rem;
-          flex-shrink: 0;
+          color: var(--secondary-color);
+          margin-bottom: 1rem;
         }
 
         .objective-text {
           font-size: 1.1rem;
-          color: #4a5568;
+          color: var(--text-secondary);
+          line-height: 1.7;
           margin: 0;
-          line-height: 1.6;
         }
 
-        .vision-mission {
+        /* Vision & Mission */
+        .vision-mission-container {
           display: grid;
           grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
           gap: 2rem;
         }
 
-        .vision-card, .mission-card {
-          background: white;
-          border-radius: 16px;
-          padding: 2.5rem;
-          text-align: center;
-          border: 1px solid #e2e8f0;
-          transition: all 0.3s ease;
-        }
-
-        .vision-card:hover, .mission-card:hover {
-          transform: translateY(-4px);
-          box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
-        }
-
-        .vision-card {
-          border-top: 4px solid #667eea;
-        }
-
+        .vision-card,
         .mission-card {
-          border-top: 4px solid #764ba2;
+          background: var(--bg-primary);
+          border-radius: var(--radius-xl);
+          padding: 2.5rem;
+          border: 1px solid var(--border-light);
+          transition: all var(--transition-normal);
+          position: relative;
+          overflow: hidden;
+        }
+
+        .vision-card::before,
+        .mission-card::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          height: 4px;
+          transition: transform var(--transition-normal);
+          transform: scaleX(0);
+          transform-origin: left;
+        }
+
+        .vision-card::before {
+          background: linear-gradient(135deg, var(--primary-light), var(--accent-color));
+        }
+
+        .mission-card::before {
+          background: linear-gradient(135deg, var(--secondary-color), var(--primary-light));
+        }
+
+        .vision-card:hover,
+        .mission-card:hover {
+          transform: translateY(-8px);
+          box-shadow: var(--shadow-xl);
+        }
+
+        .vision-card:hover::before,
+        .mission-card:hover::before {
+          transform: scaleX(1);
+        }
+
+        .card-header {
+          text-align: center;
+          margin-bottom: 2rem;
         }
 
         .card-icon {
-          margin: 0 auto 1.5rem auto;
           width: 80px;
           height: 80px;
           border-radius: 50%;
           display: flex;
           align-items: center;
           justify-content: center;
-          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          margin: 0 auto 1.5rem;
           color: white;
         }
 
-        .vision-title, .mission-title {
-          font-size: 1.8rem;
+        .vision-icon {
+          background: linear-gradient(135deg, var(--primary-light), var(--accent-color));
+        }
+
+        .mission-icon {
+          background: linear-gradient(135deg, var(--secondary-color), var(--primary-light));
+        }
+
+        .card-header h3 {
+          font-family: 'Playfair Display', serif;
+          font-size: 1.75rem;
           font-weight: 700;
-          margin: 0 0 1rem 0;
-          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          margin: 0;
+          background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;
         }
 
-        .vision-text, .mission-text {
+        .card-content p {
           font-size: 1.1rem;
-          color: #4a5568;
+          color: var(--text-secondary);
           line-height: 1.7;
           margin: 0;
         }
 
+        /* Placeholder Content */
         .placeholder-content {
           text-align: center;
           padding: 4rem 2rem;
-          color: #718096;
+          color: var(--text-secondary);
         }
 
         .placeholder-icon {
-          margin: 0 auto 1.5rem auto;
-          color: #cbd5e0;
+          margin-bottom: 2rem;
+          color: var(--text-light);
         }
 
         .placeholder-content h3 {
           font-size: 1.5rem;
           font-weight: 600;
           margin: 0 0 1rem 0;
-          color: #4a5568;
+          color: var(--text-primary);
         }
 
-        .rightmenu {
-          background: white;
-          border-radius: 16px;
-          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-          overflow: hidden;
-          position: sticky;
-          top: 2rem;
-          max-height: calc(100vh - 4rem);
-          overflow-y: auto;
+        .placeholder-content p {
+          font-size: 1.1rem;
+          max-width: 500px;
+          margin: 0 auto 2rem;
         }
 
-        .rightmenu-header {
-          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        .placeholder-actions {
+          display: flex;
+          justify-content: center;
+          gap: 1rem;
+        }
+
+        .btn-secondary {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          background: var(--bg-tertiary);
+          color: var(--text-primary);
+          border: 1px solid var(--border-color);
+          padding: 0.75rem 1.5rem;
+          border-radius: var(--radius-md);
+          font-weight: 500;
+          transition: all var(--transition-normal);
+          cursor: pointer;
+        }
+
+        .btn-secondary:hover {
+          background: var(--primary-light);
           color: white;
-          padding: 1.5rem;
-          text-align: center;
+          border-color: var(--primary-light);
+          transform: translateY(-2px);
+          box-shadow: var(--shadow-md);
         }
 
-        .rightmenu-header h3 {
-          font-size: 1.3rem;
-          font-weight: 700;
-          margin: 0;
-          letter-spacing: 1px;
-        }
+       /* Rightbar */
+.rightmenu {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  position: sticky;
+  top: 3rem;
+  border: 1px solid #e2e8f0;
+}
+ 
 
-        .rightmenu-nav {
-          padding: 1rem 0;
-        }
 
-        .nav-item {
+.rightbar-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  backdrop-filter: blur(10px);
+}
+
+.rightbar-header h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+}
+
+.rightbar-header p {
+  font-size: 0.95rem;
+  opacity: 0.9;
+  margin: 0;
+}
+
+.rightbar-nav {
+  padding: 1rem 0;
+}
+
+
+
+
+        .nav-group {
           margin-bottom: 0.25rem;
         }
 
-        .nav-button {
+        .nav-link {
           width: 100%;
           display: flex;
           align-items: center;
@@ -722,130 +1125,253 @@ const CollegeAdministrationPage = () => {
           border: none;
           text-align: left;
           cursor: pointer;
-          transition: all 0.3s ease;
-          font-size: 1rem;
-          color: #4a5568;
+          transition: all var(--transition-normal);
+          font-size: 0.95rem;
+          color: var(--text-secondary);
           border-left: 3px solid transparent;
+          position: relative;
         }
 
-        .nav-button-content {
+        .nav-link-content {
           display: flex;
           align-items: center;
           gap: 0.75rem;
         }
 
-        .nav-button:hover {
-          background: #f7fafc;
-          color: #667eea;
-          border-left-color: #e2e8f0;
+        .nav-icon {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 36px;
+          height: 36px;
+          border-radius: var(--radius-md);
+          background: var(--bg-tertiary);
+          color: var(--text-secondary);
+          transition: all var(--transition-normal);
         }
 
-        .nav-button.active {
-          background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
-          color: #667eea;
-          border-left-color: #667eea;
+        .nav-text {
+          font-weight: 500;
+        }
+
+        .nav-link:hover {
+          background: var(--bg-tertiary);
+          color: var(--primary-light);
+          border-left-color: var(--primary-light);
+        }
+
+        .nav-link:hover .nav-icon {
+          background: var(--primary-light);
+          color: white;
+          transform: scale(1.05);
+        }
+
+        .nav-link.active {
+          background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(124, 58, 237, 0.1));
+          color: var(--primary-light);
+          border-left-color: var(--primary-light);
           font-weight: 600;
         }
 
-        .nav-button.dropdown-toggle.expanded {
-          background: #f7fafc;
-          color: #667eea;
+        .nav-link.active .nav-icon {
+          background: var(--primary-light);
+          color: white;
         }
 
-        .dropdown-menu {
-          background: #f8fafc;
-          border-top: 1px solid #e2e8f0;
+        .active-indicator {
+          position: absolute;
+          right: 1rem;
+          width: 8px;
+          height: 8px;
+          background: var(--primary-light);
+          border-radius: 50%;
+          animation: pulse 2s infinite;
         }
 
-        .nav-button.sub-item {
-          padding: 0.75rem 1.5rem 0.75rem 3rem;
-          font-size: 0.9rem;
-          color: #718096;
+        .dropdown-toggle.expanded {
+          background: var(--bg-tertiary);
+          color: var(--primary-light);
+        }
+
+        .dropdown-indicator {
+          transition: transform var(--transition-normal);
+        }
+
+        .dropdown-toggle.expanded .dropdown-indicator {
+          transform: rotate(180deg);
+        }
+
+        .dropdown-content {
+          background: var(--bg-tertiary);
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height var(--transition-normal);
+        }
+
+        .dropdown-content.expanded {
+          max-height: 500px;
+        }
+
+        .sub-link {
+          padding: 0.75rem 1.5rem 0.75rem 3.5rem;
+          font-size: 0.875rem;
           border-left: 3px solid transparent;
         }
 
-        .nav-button.sub-item:hover {
-          background: #edf2f7;
-          color: #667eea;
-          border-left-color: #cbd5e0;
+        .sub-link:hover {
+          background: var(--bg-secondary);
+          color: var(--primary-light);
+          border-left-color: var(--primary-light);
         }
 
-        .nav-button.sub-item.active {
-          background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
-          color: #667eea;
-          border-left-color: #667eea;
+        .sub-link.active {
+          background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(124, 58, 237, 0.1));
+          color: var(--primary-light);
+          border-left-color: var(--primary-light);
           font-weight: 600;
         }
 
+      
+
+        .contact-card {
+          background: var(--bg-tertiary);
+          padding: 1.5rem;
+          border-radius: var(--radius-lg);
+          text-align: center;
+        }
+
+        .contact-card h4 {
+          font-size: 1.125rem;
+          font-weight: 600;
+          margin: 0 0 0.5rem 0;
+          color: var(--text-primary);
+        }
+
+        .contact-card p {
+          font-size: 0.875rem;
+          color: var(--text-secondary);
+          margin: 0 0 1rem 0;
+        }
+
+        .contact-button {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 0.5rem;
+          width: 100%;
+          background: var(--primary-light);
+          color: white;
+          border: none;
+          padding: 0.75rem 1rem;
+          border-radius: var(--radius-md);
+          font-weight: 500;
+          cursor: pointer;
+          transition: all var(--transition-normal);
+        }
+
+        .contact-button:hover {
+          background: var(--primary-dark);
+          transform: translateY(-2px);
+          box-shadow: var(--shadow-md);
+        }
+
+        /* Responsive Design */
         @media (max-width: 1024px) {
-          .content-wrapper {
+          .content-layout {
             grid-template-columns: 1fr;
             gap: 2rem;
           }
           
-          .rightmenu {
+          .sidebar {
             position: static;
             max-height: none;
+            order: -1;
           }
 
-          .hero-title {
-            font-size: 3rem;
+          .hero-stats {
+            gap: 1rem;
           }
 
-          .hero-subtitle {
-            font-size: 1.25rem;
+          .stat-number {
+            font-size: 1.5rem;
+          }
+
+          .main-container {
+            margin-right: 300px; /* Adjust to match sidebar width */
+
+            padding: 2rem 1rem;
           }
         }
 
         @media (max-width: 768px) {
-          .main-container {
-            padding: 1rem;
+          .hero-section {
+            height: 80vh;
+            min-height: 500px;
+          }
+
+          .hero-content {
+            padding: 0 1rem;
+          }
+
+          .hero-stats {
+            flex-direction: column;
+            gap: 1rem;
+          }
+
+          .stat-divider {
+            width: 40px;
+            height: 1px;
           }
 
           .content-section {
-            padding: 1.5rem;
+            padding: 2rem 1.5rem;
           }
 
           .team-grid {
             grid-template-columns: 1fr;
           }
 
-          .governing-grid {
+          .governing-body-container {
             grid-template-columns: 1fr;
           }
 
-          .vision-mission {
+          .vision-mission-container {
             grid-template-columns: 1fr;
           }
 
-          .hero-title {
-            font-size: 2.5rem;
+          .objective-card {
+            flex-direction: column;
+            text-align: center;
+            gap: 1rem;
           }
 
-          .hero-subtitle {
-            font-size: 1.125rem;
+          .objective-number {
+            align-self: center;
           }
 
-          .hero-banner {
-            height: 300px;
+          .nav-link {
+            padding: 0.875rem 1rem;
+            font-size: 0.9rem;
           }
 
-          .section-header h2 {
-            font-size: 2rem;
+          .sub-link {
+            padding: 0.75rem 1rem 0.75rem 2.5rem;
+            font-size: 0.825rem;
           }
         }
 
         @media (max-width: 480px) {
-          .hero-title {
-            font-size: 2rem;
+          .hero-section {
+            height: 70vh;
+            min-height: 400px;
           }
 
-          .hero-subtitle {
-            font-size: 1rem;
+          .content-section {
+            padding: 1.5rem 1rem;
           }
 
-          .hero-banner {
-            height: 250px;
+          .member-card {
+            padding: 1.5rem;
           }
 
           .member-image {
@@ -853,21 +1379,117 @@ const CollegeAdministrationPage = () => {
             height: 100px;
           }
 
-          .section-header h2 {
-            font-size: 1.75rem;
+          .sidebar-header {
+            padding: 1.5rem;
           }
 
-          .nav-button {
-            padding: 0.875rem 1rem;
-            font-size: 0.9rem;
+          .sidebar-icon {
+            width: 50px;
+            height: 50px;
           }
 
-          .nav-button.sub-item {
-            padding: 0.75rem 1rem 0.75rem 2.5rem;
-            font-size: 0.85rem;
+          .sidebar-header h3 {
+            font-size: 1.25rem;
+          }
+
+          .hero-decoration {
+            display: none;
           }
         }
       `}</style>
+
+      {/* Enhanced Hero Section */}
+      <div className="hero-section">
+        <div className="hero-background"></div>
+        <div className="hero-overlay"></div>
+        <div className="hero-content">
+        
+          <h1 className="hero-title">ADMINISTRATION</h1>
+          <p className="hero-subtitle">Excellence in Technical Education & Leadership</p>
+          
+          <div className="breadcrumb">
+            <span>Home</span>
+            <ChevronRight size={16} />
+            <span>Administration</span>
+          </div>
+        </div>
+        <div className="hero-decoration">
+          <div className="decoration-circle"></div>
+          <div className="decoration-circle"></div>
+          <div className="decoration-circle"></div>
+        </div>
+      </div>
+
+      {/* Main Content Area */}
+      <div className="main-container">
+        <div className="content-layout">
+          {/* Primary Content */}
+          <main className="main-content">
+            {renderContent()}
+          </main>
+
+          {/* Enhanced Sidebar */}
+         <aside className="rightbar">
+
+
+  <nav className="rightbar-nav">
+    {rightmenuItems.map((item) => {
+      const IconComponent = item.icon;
+      return (
+        <div key={item.id} className="nav-group">
+          {item.hasDropdown ? (
+            <>
+              <button
+                onClick={() => toggleMenu(item.id)}
+                className={`nav-link dropdown-toggle ${expandedMenus[item.id] ? 'expanded' : ''}`}
+              >
+                <div className="nav-link-content">
+                  <div className="nav-icon">
+                    <IconComponent size={18} />
+                  </div>
+                  <span className="nav-text">{item.label}</span>
+                </div>
+                <div className="dropdown-indicator">
+                  {expandedMenus[item.id] ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+                </div>
+              </button>
+              <div className={`dropdown-content ${expandedMenus[item.id] ? 'expanded' : ''}`}>
+                {item.subItems.map((subItem) => (
+                  <button
+                    key={subItem.id}
+                    onClick={() => setActiveTab(subItem.id)}
+                    className={`nav-link sub-link ${activeTab === subItem.id ? 'active' : ''}`}
+                  >
+                    <span className="nav-text">{subItem.label}</span>
+                    {activeTab === subItem.id && <div className="active-indicator"></div>}
+                  </button>
+                ))}
+              </div>
+            </>
+          ) : (
+            <button
+              onClick={() => setActiveTab(item.id)}
+              className={`nav-link ${activeTab === item.id ? 'active' : ''}`}
+            >
+              <div className="nav-link-content">
+                <div className="nav-icon">
+                  <IconComponent size={18} />
+                </div>
+                <span className="nav-text">{item.label}</span>
+              </div>
+              {activeTab === item.id && <div className="active-indicator"></div>}
+            </button>
+          )}
+        </div>
+      );
+    })}
+  </nav>
+
+
+</aside>
+
+        </div>
+      </div>
     </div>
   );
 };

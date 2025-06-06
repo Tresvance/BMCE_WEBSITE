@@ -31,85 +31,43 @@ const Sidebar = () => {
       id: "about",
       title: "About Us",
       icon: Users,
-      submenu: [
-        "Our History",
-        "Vision & Mission",
-        "Leadership Team",
-        "Accreditation",
-        "Awards",
-      ],
+      submenu: ["ABOUT BMCE", "OUR CAMPUS", "Accreditation"],
     },
     {
       id: "administration",
       title: "Administration",
       icon: Shield,
-      submenu: [
-        "Principal",
-        "Vice Principal",
-        "Administrative Staff",
-        "Board of Governors",
-      ],
+      submenu: ["Principal", "Director's Message", "Our Team"],
     },
     {
       id: "academics",
       title: "Academics",
       icon: BookOpen,
-      submenu: [
-        "Academic Calendar",
-        "Curriculum",
-        "Examination",
-        "Results",
-        "Academic Policies",
-      ],
+      submenu: ["Student Assesment", "Faculty Assesment"],
     },
     {
       id: "courses",
       title: "Courses & Departments",
       icon: Layers,
-      submenu: [
-        "Engineering",
-        "Science",
-        "Arts",
-        "Commerce",
-        "Management",
-        "Computer Science",
-      ],
+      submenu: ["Btech(4 Year)", "Diploma(3 Year)", "MBA (2 Year)"],
     },
     {
       id: "activities",
       title: "Activities",
       icon: Activity,
-      submenu: [
-        "Sports",
-        "Cultural Events",
-        "Clubs & Societies",
-        "Student Council",
-        "Competitions",
-      ],
+      submenu: ["Sports", "IEDC", "IEEE", "Student Council", "NSS"],
     },
     {
       id: "placement",
       title: "Placement",
       icon: Briefcase,
-      submenu: [
-        "Placement Cell",
-        "Career Guidance",
-        "Industry Partners",
-        "Alumni Network",
-        "Job Portal",
-      ],
+      submenu: ["Placement Cell", "CGPU", "Placement Details"],
     },
     {
       id: "research",
       title: "Research",
       icon: Search,
-      submenu: [
-        "Research Centers",
-        "Publications",
-        "Projects",
-        "Conferences",
-        "Innovation Hub",
-      ],
+      submenu: ["Research at a Glance", "Publications"],
     },
     {
       id: "facilities",
@@ -147,8 +105,7 @@ const Sidebar = () => {
 
   return (
     <>
-      {/* Gradient Strip - only show when sidebar is closed */}
-      {!isOpen && (
+      {
         <div className="gradient-strip">
           <div
             className="hamburger-menu"
@@ -160,7 +117,7 @@ const Sidebar = () => {
             <span className="hamburger-line"></span>
           </div>
         </div>
-      )}
+      }
 
       {/* Sidebar */}
       <div className={`sidebar ${isOpen ? "sidebar-open" : ""}`}>
