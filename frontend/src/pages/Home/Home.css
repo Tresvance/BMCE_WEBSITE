@@ -1900,12 +1900,12 @@
     .program-card {
       width: 100%;
       max-width: 350px;
-      min-height: 500px;
+
     }
     
     /* Ensure polytechnic card has same size */
     .program-card.polytechnic-program {
-      max-width: 300px;
+      max-width: 350px;
     }
     
     /* Reset MBA program margin for tablet */
@@ -1964,18 +1964,28 @@
     }
     
     .programs-grid {
-      grid-template-columns: 1fr;
+      display: flex;
+      flex-direction: column;
       gap: 1.5rem;
-      justify-items: center;
+      align-items: center;
     }
-    .polytechnic-program {
-        margin-right: 27px;
-    }
+    
+    /* All cards have same size in mobile */
     .program-card {
       width: 100%;
-      max-width: 257px;
+      max-width: 230px;
       min-height: 420px;
       padding: 1.5rem;
+      margin: 0; /* Remove any margins */
+    }
+    
+    /* Ensure polytechnic card has exact same styling */
+    .program-card.polytechnic-program {
+      width: 100%;
+      max-width: 280px;
+      min-height: 420px;
+      padding: 1.5rem;
+      margin: 0; /* Remove the margin-right that was causing issues */
     }
     
     .programs-title {
@@ -2026,11 +2036,22 @@
       padding: 2rem 0.8rem;
     }
     
+    /* All cards have same size in extra small mobile */
     .program-card {
-      max-width: 258px;
+      max-width: 260px;
       padding: 1.2rem;
       min-height: 400px;
+      margin: 0;
     }
+    
+    /* Ensure polytechnic card has exact same styling */
+    .program-card.polytechnic-program {
+      max-width: 260px;
+      padding: 1.2rem;
+      min-height: 400px;
+      margin: 0;
+    }
+    
     .programs-title {
       font-size: 1.8rem;
     }
@@ -2048,7 +2069,6 @@
       font-size: 0.85rem;
     }
   }
-/* Principal Content */
 /* Principal Content */
 .principal-background {
     background-image: url('/bmce1.jpg');
