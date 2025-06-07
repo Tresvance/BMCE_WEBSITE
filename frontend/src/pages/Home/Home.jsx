@@ -649,7 +649,7 @@ const HomePage = () => {
       <div className="college-welcome-container">
         <div className="welcome-section">
           <div className="welcome-content">
-            <h2 className="welcome-title">Welcome from the College Principal</h2>
+            <h2 className="pwelcome-title">Welcome from the College Principal</h2>
             <p className="welcome-text">
               Welcome to BMCE, where we strive to shape dedicated and inspiring educators. 
               At BMCE, we focus on academic excellence, character building, and innovative 
