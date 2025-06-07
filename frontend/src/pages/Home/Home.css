@@ -2625,7 +2625,7 @@
   .cf-hero-subtitle {
     font-size: 3.2rem;
     font-weight: 300;
-    margin: 0 0 10px 0;
+    margin: 20px 0 -50px 180px;
     letter-spacing: 1px;
     transform: translateX(-180px) translateY(-85px);
   }
@@ -2654,9 +2654,6 @@
     margin-top: 0;
   }
   
-  .cf-facilities-overlay {
-    /* Remove overlay styling since we're not using background image overlay */
-  }
   
   .cf-facilities-content {
     width: 100%;
@@ -2765,7 +2762,9 @@
     
     .cf-hero-subtitle {
       font-size: 2.2rem;
-      transform: translateX(-60px) translateY(-40px);
+      transform: translateX(-10px) translateY(-50px);
+      margin-bottom: -5px;
+      margin-left: 20px;
     }
     
     .cf-hero-title {
