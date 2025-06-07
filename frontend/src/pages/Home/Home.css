@@ -2088,15 +2088,16 @@
     animation-play-state: paused;
   }
   /*Happendings*/
-  .card {
+ /*Happenings*/
+.card {
     position: relative;
     width: 305px;
     height: 480px;
     border-radius: 0;
     overflow: hidden;
     transition: 
-    transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-    border-radius 0.4s ease;
+     transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+     border-radius 0.4s ease;
     cursor: pointer;
     transform: translateY(0);
   }
@@ -2104,11 +2105,11 @@
   .cards-container {
     display: flex;
     gap: 30px;
-    justify-content: flex-start; 
+    justify-content: center; /* Changed from flex-start to center */
     align-items: center;
     flex-wrap: nowrap;
     max-width: 1200px;
-    margin-left: 125px; 
+    margin: 0 auto; /* Changed from margin-left: 125px to center the container */
   }
   
   .card:hover {
@@ -2186,12 +2187,12 @@
     .cards-container {
       gap: 25px;
     }
-  
+    
     .card {
       width: 280px;
       height: 350px;
     }
-    
+      
     .card-title {
       bottom: 50px; /* Adjust for smaller card height */
     }
@@ -2202,17 +2203,17 @@
       font-size: 2.5rem;
       margin-bottom: 40px;
     }
-  
+    
     .cards-container {
       flex-direction: column;
       gap: 30px;
     }
-  
+    
     .card {
       width: 300px;
       height: 380px;
     }
-    
+      
     .card-title {
       bottom: 55px;
     }
@@ -2222,17 +2223,17 @@
     .happenings-container {
       padding: 40px 15px;
     }
-  
+    
     .happenings-title {
       font-size: 2rem;
       margin-bottom: 30px;
     }
-  
+    
     .card {
       width: 280px;
       height: 350px;
     }
-  
+    
     .card-title {
       font-size: 1.3rem;
       bottom: 50px;
