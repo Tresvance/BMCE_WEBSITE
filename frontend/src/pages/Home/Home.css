@@ -3024,18 +3024,19 @@
     }
   }
  /*Entrepreneurial Cell*/
+/*Entrepreneurial Cell*/
 .eentrepreneurial-cell {
     padding: 80px 0;
     background: linear-gradient(135deg, #f8fbff 0%, #e9f7ff 100%);
-  }
-  
-  .econtainer {
+}
+
+.econtainer {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
-  }
-  
-  .esection-title {
+}
+
+.esection-title {
     font-size: 3rem;
     font-weight: 700;
     text-align: center;
@@ -3045,178 +3046,177 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
     color: transparent;
-  }
-  
-  .econtent-wrapper {
+}
+
+.econtent-wrapper {
     display: flex;
     align-items: center;
-    gap: 40px;
     justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
   }
-  
+
   .eleft-image,
   .eright-image {
     flex: 0 0 auto;
-    max-width: 300px;
+    max-width: 250px;
   }
-  
+
   .eleft-image img,
   .eright-image img {
     width: 100%;
     height: auto;
-    max-width: 250px;
     object-fit: contain;
   }
-  
   .econtent {
     flex: 1;
+    text-align: center;
     padding: 0 20px;
   }
-  
-  .econtent p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: #333;
-    text-align: justify;
-    margin: 0;
-    font-weight: 400;
-  }
-  
-  /* Tablet Responsive Design */
-  @media (max-width: 1024px) and (min-width: 769px) {
+
+.econtent p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #333;
+  text-align: justify;
+  margin: 0;
+  font-weight: 400;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Tablet Responsive Design */
+@media (max-width: 1024px) and (min-width: 769px) {
     .eentrepreneurial-cell {
-      padding: 70px 0;
+        padding: 70px 0;
     }
-    
+
     .esection-title {
-      font-size: 2.8rem;
-      margin-bottom: 50px;
+        font-size: 2.8rem;
+        margin-bottom: 50px;
     }
-    
+
     .econtent-wrapper {
-      flex-direction: column;
-      gap: 40px;
-      align-items: center;
+        flex-direction: column;
+        gap: 40px;
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
     }
-    
     .econtent {
-      order: 1;
-      padding: 0;
-      width: 100%;
-      text-align: center;
+        order: 1;
+        padding: 0;
+        width: 100%;
+        text-align: center;
     }
-    
+
     .econtent p {
-      font-size: 1.05rem;
-      line-height: 1.7;
-      text-align: justify;
-      max-width: 800px;
-      margin: 0 auto;
+        font-size: 1.05rem;
+        line-height: 1.7;
+        text-align: justify;
+        max-width: 800px;
+        margin: 0 auto;
     }
-    
+
     .eleft-image,
     .eright-image {
-      order: 2;
-      max-width: 200px;
-      flex: 0 0 auto;
-      display: inline-block;
-      vertical-align: top;
+        order: 2;
+        max-width: 200px;
+        flex: 0 0 auto;
+        display: flex;
+        flex-wrap: nowrap;
+
     }
-    
+
     .eleft-image img,
     .eright-image img {
-      max-width: 180px;
+        max-width: 180px;
     }
-    
+
     .eleft-image {
-      margin-right: 60px;
+        margin-right: 60px;
     }
-  }
-  
-  /* Mobile Responsive Design */
-  @media (max-width: 768px) {
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
     .eentrepreneurial-cell {
-      padding: 60px 0;
+        padding: 60px 0;
     }
-    
+
     .esection-title {
-      font-size: 2.5rem;
-      margin-bottom: 40px;
+        font-size: 2.5rem;
+        margin-bottom: 40px;
     }
-    
+
     .econtent-wrapper {
-      flex-direction: column;
-      gap: 30px;
-      align-items: center;
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
     }
-    
+
     .econtent {
-      order: 1;
-      padding: 0;
-      width: 100%;
+        order: 1;
+        padding: 0;
+        width: 100%;
     }
-    
+
     .econtent p {
-      font-size: 1rem;
-      text-align: left;
+        font-size: 1rem;
+        text-align: left;
     }
-    
+
     .eleft-image,
     .eright-image {
-      order: 2;
-      max-width: 150px;
-      display: inline-block;
-      vertical-align: top;
+        order: 2;
+        max-width: 150px;
+        display: flex;
+        flex-wrap: nowrap;
     }
-    
+
     .eleft-image img,
     .eright-image img {
-      max-width: 150px;
+        max-width: 150px;
     }
-    
+
     .eleft-image {
-      margin-right: 30px;
+        margin-right: 30px;
     }
-  }
-  
-  /* Small Mobile Responsive Design */
-  @media (max-width: 480px) {
+}
+
+/* Small Mobile Responsive Design */
+@media (max-width: 480px) {
     .eentrepreneurial-cell {
-      padding: 50px 0;
+        padding: 50px 0;
     }
-    
+
     .econtainer {
-      padding: 0 15px;
+        padding: 0 15px;
     }
-    
+
     .esection-title {
-      font-size: 2rem;
-      margin-bottom: 30px;
+        font-size: 2rem;
+        margin-bottom: 30px;
     }
-    
+
     .econtent-wrapper {
-      gap: 25px;
+        gap: 25px;
     }
-    
+
     .eleft-image,
     .eright-image {
-      max-width: 120px;
+        max-width: 120px;
     }
-    
-    .eleft-image img,
-    .eright-image img {
-      max-width: 120px;
-    }
-    
+
     .eleft-image {
-      margin-right: 20px;
+        margin-right: 20px;
     }
-    
+
     .econtent p {
-      font-size: 0.95rem;
-      line-height: 1.6;
+        font-size: 0.95rem;
+        line-height: 1.6;
     }
-  }
+}
   /*Campus Life*/
   .cf-campus-facilities {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;

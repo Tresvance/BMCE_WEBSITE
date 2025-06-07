@@ -783,11 +783,15 @@ const HomePage = () => {
       </div>
     </div>
     {/*Entrepreneurialship Cell */}
-<section className="eentrepreneurial-cell">
+    <section className="eentrepreneurial-cell">
   <div className="econtainer">
     <h2 className="esection-title">Entrepreneurial Cell</h2>
     
     <div className="econtent-wrapper">
+      <div className="eleft-image">
+        <img src={brainBulbImage} alt="Brain with lightbulb representing innovation" />
+      </div>
+
       <div className="econtent">
         <p>
           The Innovation and Entrepreneurship Development Cell (IEDC) is
@@ -800,15 +804,9 @@ const HomePage = () => {
           the academic community.
         </p>
       </div>
-      
-      <div className="eimages-container">
-        <div className="eleft-image">
-          <img src={brainBulbImage} alt="Brain with lightbulb representing innovation" />
-        </div>
-        
-        <div className="eright-image">
-          <img src={teamMeetingImage} alt="Team meeting with lightbulb concept" />
-        </div>
+
+      <div className="eright-image">
+        <img src={teamMeetingImage} alt="Team meeting with lightbulb concept" />
       </div>
     </div>
   </div>
