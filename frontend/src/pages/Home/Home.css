@@ -1651,25 +1651,29 @@
     }
   }
 /* Principal Content */
+/* Principal Content */
 .principal-background {
     background-image: url('/bmce1.jpg');
     background-size: cover;
-    background-position: center;
+    background-position: center center;
     background-attachment: fixed;
-    width: 100vw;
-    height: 500px;
+    width: 100%;
+    min-height: 500px;
+    height: auto;
     position: relative;
     z-index: 1;
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
+    padding: 40px 20px;
   }
   
   .college-welcome-container {
     background-color: rgba(255, 255, 255, 0.6);
     position: relative;
     z-index: 10;
-    width: 90%;
+    width: 100%;
     max-width: 1300px;
     height: auto;
     backdrop-filter: blur(6px);
@@ -1679,38 +1683,7 @@
     justify-content: center;
     padding: 30px;
     border-radius: 16px;
-  }
-  
-  /* Flex container for content and image */
-  .principal-background {
-    background-image: url('/bmce1.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    width: 100vw;
-    height: 500px;
-    position: relative;
-    z-index: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-  }
-  
-  .college-welcome-container {
-    background-color: rgba(255, 255, 255, 0.6);
-    position: relative;
-    z-index: 10;
-    width: 100vw; /* Full viewport width */
-    height: 500px;
-    backdrop-filter: blur(6px);
-    box-sizing: border-box;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0; /* or any desired inner padding */
-    margin: 0; /* remove auto-centering */
-    border-radius: 0;
+    margin: 0 auto;
   }
   
   /* Flex container for content and image */
@@ -1720,8 +1693,6 @@
     justify-content: center;
     gap: 50px;
     width: 100%;
-    max-width: 1300px; /* keep your content max width */
-    margin: 0 auto;
     flex-wrap: wrap;
   }
   
@@ -1732,10 +1703,12 @@
     justify-content: center;
     align-items: center;
     width: 420px;
+    max-width: 100%;
   }
   
   .principal-photo {
-    width: 380px;
+    width: 100%;
+    max-width: 380px;
     height: 300px;
     object-fit: cover;
     border-radius: 16px;
@@ -1750,8 +1723,10 @@
   
   /* Content Styling */
   .welcome-content {
+    flex: 1;
     max-width: 600px;
     text-align: center;
+    min-width: 280px;
   }
   
   .pwelcome-title {
@@ -1762,6 +1737,7 @@
     background: linear-gradient(45deg, #000000, #b87333);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
   
   .welcome-text {
@@ -1773,9 +1749,8 @@
     font-family: 'Georgia', serif;
   }
   
-/* Principal Buttons - Enhanced Design */
-/* Principal Buttons - Horizontal Layout with Oval Shape */
-.principal-buttons {
+  /* Principal Buttons */
+  .principal-buttons {
     margin-top: 50px;
     display: flex;
     justify-content: center;
@@ -1795,17 +1770,17 @@
     cursor: pointer;
     color: #fff;
     background: linear-gradient(135deg, 
-    #6ba3d6 0%, 
-    #4a8bc2 25%,
-    #3d7ab8 50%,
-    #2f69a3 75%,
-    #1f5582 100%);
+      #6ba3d6 0%, 
+      #4a8bc2 25%,
+      #3d7ab8 50%,
+      #2f69a3 75%,
+      #1f5582 100%);
     box-shadow: 0 8px 20px rgba(18, 118, 204, 0.3);
     transition: all 0.4s ease;
     letter-spacing: 0.05em;
     user-select: none;
     box-sizing: border-box;
-    min-width: 300px;
+    min-width: 200px;
     text-align: center;
     overflow: hidden;
     white-space: nowrap;
@@ -1847,8 +1822,86 @@
     box-shadow: 0 6px 15px rgba(18, 118, 204, 0.4);
   }
   
-  /* Responsive Design */
+  /* Tablet Responsive Design */
+  @media (max-width: 1024px) {
+    .principal-background {
+      background-attachment: fixed;
+      background-position: center top;
+      min-height: 450px;
+      padding: 30px 15px;
+    }
+    
+    .college-welcome-container {
+      padding: 25px;
+    }
+    
+    .welcome-section {
+      gap: 30px;
+    }
+    
+    .pwelcome-title {
+      font-size: 2rem;
+    }
+    
+    .welcome-text {
+      font-size: 1.1rem;
+    }
+    
+    .principal-image {
+      width: 350px;
+    }
+    
+    .principal-photo {
+      max-width: 320px;
+      height: 260px;
+    }
+  }
+  
+  /* Mobile Landscape and Small Tablet */
   @media (max-width: 768px) {
+    .principal-background {
+      background-attachment: fixed;
+      background-position: center top;
+      min-height: auto;
+      padding: 20px 10px;
+    }
+    
+    .college-welcome-container {
+      padding: 20px;
+      border-radius: 12px;
+    }
+    
+    .welcome-section {
+      flex-direction: column-reverse;
+      gap: 25px;
+      text-align: center;
+    }
+    
+    .welcome-content {
+      text-align: center;
+    }
+    
+    .welcome-text {
+      text-align: center;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+    
+    .pwelcome-title {
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+    }
+    
+    .principal-image {
+      width: 100%;
+      max-width: 300px;
+    }
+    
+    .principal-photo {
+      max-width: 280px;
+      height: 220px;
+    }
+    
     .principal-buttons {
       flex-direction: column;
       gap: 25px;
@@ -1858,52 +1911,83 @@
     
     .principal-btn {
       width: 100%;
-      min-width: unset;
       max-width: 280px;
+      min-width: unset;
     }
   }
   
+  /* Mobile Portrait */
   @media (max-width: 480px) {
-    .principal-btn {
-      padding: 14px 30px;
-      font-size: 1rem;
-      min-width: 130px;
+    .principal-background {
+      padding: 15px 5px;
+      min-height: auto;
+    }
+    
+    .college-welcome-container {
+      padding: 15px;
+      border-radius: 8px;
+    }
+    
+    .welcome-section {
+      gap: 20px;
+    }
+    
+    .pwelcome-title {
+      font-size: 1.5rem;
+      line-height: 1.3;
+      margin-bottom: 12px;
+    }
+    
+    .welcome-text {
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+    
+    .principal-image {
+      max-width: 250px;
+    }
+    
+    .principal-photo {
+      max-width: 220px;
+      height: 180px;
+      border: 3px solid #fff;
     }
     
     .principal-buttons {
       gap: 20px;
-    }
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .principal-buttons {
-      flex-direction: column;
-      gap: 30px;
-      margin-top: 40px;
-      align-items: center;
+      margin-top: 30px;
+      padding: 0 10px;
     }
     
     .principal-btn {
-      width: 100%;
-      min-width: unset;
-      max-width: 300px;
+      padding: 14px 25px;
+      font-size: 1rem;
+      max-width: 250px;
+      min-width: 180px;
     }
   }
   
-  @media (max-width: 480px) {
-    .principal-btn {
-      padding: 16px 32px;
-      font-size: 1.1rem;
-      min-width: 140px;
-      gap: 6px;
+  /* Extra Small Mobile */
+  @media (max-width: 360px) {
+    .pwelcome-title {
+      font-size: 1.3rem;
     }
     
-    .btn-icon {
-      font-size: 1em;
+    .welcome-text {
+      font-size: 0.85rem;
+    }
+    
+    .principal-photo {
+      max-width: 200px;
+      height: 160px;
+    }
+    
+    .principal-btn {
+      padding: 12px 20px;
+      font-size: 0.9rem;
+      min-width: 160px;
     }
   }
-  /*placement section*/
  /* Placement Section Styles */
 .placement-section {
     padding: 80px 0;
