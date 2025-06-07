@@ -2571,28 +2571,25 @@
       margin: 0 auto;
     }
     
-    /* Container for both images */
-    .eimages-container {
-      order: 2;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 100%;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-    
     .eleft-image,
     .eright-image {
+      order: 2;
       max-width: 200px;
       flex: 0 0 auto;
+      display: inline-block;
+      vertical-align: top;
     }
     
     .eleft-image img,
     .eright-image img {
       max-width: 180px;
     }
+    
+    .eleft-image {
+      margin-right: 60px;
+    }
   }
+  
   /* Mobile Responsive Design */
   @media (max-width: 768px) {
     .eentrepreneurial-cell {
@@ -2621,28 +2618,21 @@
       text-align: left;
     }
     
-    /* Images container for horizontal alignment */
     .eleft-image,
     .eright-image {
       order: 2;
-      max-width: 180px;
+      max-width: 150px;
+      display: inline-block;
+      vertical-align: top;
     }
     
-    /* Create horizontal layout for images in mobile */
-    .econtent-wrapper::after {
-      content: '';
-      order: 3;
-      width: 100%;
-      display: flex;
+    .eleft-image img,
+    .eright-image img {
+      max-width: 150px;
     }
     
     .eleft-image {
-      display: inline-block;
-      margin-right: 20px;
-    }
-    
-    .eright-image {
-      display: inline-block;
+      margin-right: 30px;
     }
   }
   
@@ -2667,55 +2657,21 @@
     
     .eleft-image,
     .eright-image {
-      max-width: 140px;
+      max-width: 120px;
     }
     
     .eleft-image img,
     .eright-image img {
-      max-width: 140px;
+      max-width: 120px;
     }
     
     .eleft-image {
-      margin-right: 15px;
+      margin-right: 20px;
     }
     
     .econtent p {
       font-size: 0.95rem;
       line-height: 1.6;
-    }
-  }
-  
-  /* Alternative approach for better horizontal image alignment in mobile */
-  @media (max-width: 768px) {
-    .econtent-wrapper {
-      display: grid;
-      grid-template-columns: 1fr;
-      grid-template-areas: 
-        "content"
-        "images";
-      gap: 30px;
-      justify-items: center;
-    }
-    
-    .econtent {
-      grid-area: content;
-      order: unset;
-      width: 100%;
-    }
-    
-    .eleft-image,
-    .eright-image {
-      grid-area: images;
-      order: unset;
-      display: inline-block;
-      vertical-align: top;
-    }
-    
-    .eleft-image {
-      margin-right: 200px;
-    }
-    .eright-image {
-        margin-left: 200px;
     }
   }
   /*Campus Life*/
