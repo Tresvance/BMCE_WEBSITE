@@ -2480,8 +2480,8 @@
       height: 35px;
     }
   }
-  /*Entrepreneurial Cell*/
-  .eentrepreneurial-cell {
+ /*Entrepreneurial Cell*/
+.eentrepreneurial-cell {
     padding: 80px 0;
     background: linear-gradient(135deg, #f8fbff 0%, #e9f7ff 100%);
   }
@@ -2539,7 +2539,61 @@
     font-weight: 400;
   }
   
-  /* Responsive Design */
+  /* Tablet Responsive Design */
+  @media (max-width: 1024px) and (min-width: 769px) {
+    .eentrepreneurial-cell {
+      padding: 70px 0;
+    }
+    
+    .esection-title {
+      font-size: 2.8rem;
+      margin-bottom: 50px;
+    }
+    
+    .econtent-wrapper {
+      flex-direction: column;
+      gap: 40px;
+      align-items: center;
+    }
+    
+    .econtent {
+      order: 1;
+      padding: 0;
+      width: 100%;
+      text-align: center;
+    }
+    
+    .econtent p {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      text-align: justify;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    /* Container for both images */
+    .eimages-container {
+      order: 2;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .eleft-image,
+    .eright-image {
+      max-width: 200px;
+      flex: 0 0 auto;
+    }
+    
+    .eleft-image img,
+    .eright-image img {
+      max-width: 180px;
+    }
+  }
+  /* Mobile Responsive Design */
   @media (max-width: 768px) {
     .eentrepreneurial-cell {
       padding: 60px 0;
@@ -2553,38 +2607,115 @@
     .econtent-wrapper {
       flex-direction: column;
       gap: 30px;
-    }
-    
-    .eleft-image,
-    .eright-image {
-      max-width: 200px;
-      order: 2;
+      align-items: center;
     }
     
     .econtent {
       order: 1;
       padding: 0;
+      width: 100%;
     }
     
     .econtent p {
       font-size: 1rem;
       text-align: left;
     }
+    
+    /* Images container for horizontal alignment */
+    .eleft-image,
+    .eright-image {
+      order: 2;
+      max-width: 180px;
+    }
+    
+    /* Create horizontal layout for images in mobile */
+    .econtent-wrapper::after {
+      content: '';
+      order: 3;
+      width: 100%;
+      display: flex;
+    }
+    
+    .eleft-image {
+      display: inline-block;
+      margin-right: 20px;
+    }
+    
+    .eright-image {
+      display: inline-block;
+    }
   }
   
+  /* Small Mobile Responsive Design */
   @media (max-width: 480px) {
+    .eentrepreneurial-cell {
+      padding: 50px 0;
+    }
+    
+    .econtainer {
+      padding: 0 15px;
+    }
+    
     .esection-title {
       font-size: 2rem;
+      margin-bottom: 30px;
+    }
+    
+    .econtent-wrapper {
+      gap: 25px;
+    }
+    
+    .eleft-image,
+    .eright-image {
+      max-width: 140px;
     }
     
     .eleft-image img,
     .eright-image img {
-      max-width: 180px;
+      max-width: 140px;
+    }
+    
+    .eleft-image {
+      margin-right: 15px;
     }
     
     .econtent p {
       font-size: 0.95rem;
       line-height: 1.6;
+    }
+  }
+  
+  /* Alternative approach for better horizontal image alignment in mobile */
+  @media (max-width: 768px) {
+    .econtent-wrapper {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-areas: 
+        "content"
+        "images";
+      gap: 30px;
+      justify-items: center;
+    }
+    
+    .econtent {
+      grid-area: content;
+      order: unset;
+      width: 100%;
+    }
+    
+    .eleft-image,
+    .eright-image {
+      grid-area: images;
+      order: unset;
+      display: inline-block;
+      vertical-align: top;
+    }
+    
+    .eleft-image {
+      margin-right: 200px;
+    }
+    .eright-image {
+        margin-left: 200px;
     }
   }
   /*Campus Life*/

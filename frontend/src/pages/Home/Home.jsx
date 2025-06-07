@@ -783,34 +783,36 @@ const HomePage = () => {
       </div>
     </div>
     {/*Entrepreneurialship Cell */}
-    <section className="eentrepreneurial-cell">
-      <div className="econtainer">
-        <h2 className="esection-title">Entrepreneurial Cell</h2>
+<section className="eentrepreneurial-cell">
+  <div className="econtainer">
+    <h2 className="esection-title">Entrepreneurial Cell</h2>
+    
+    <div className="econtent-wrapper">
+      <div className="econtent">
+        <p>
+          The Innovation and Entrepreneurship Development Cell (IEDC) is
+          dedicated to fostering creativity and entrepreneurial thinking among
+          students. It provides a supportive ecosystem where innovative ideas
+          can be transformed into viable products or startups. Through
+          workshops, mentorship programs, and industry collaborations, IEDC
+          equips aspiring entrepreneurs with the skills and guidance they need.
+          The cell plays a crucial role in building a culture of innovation within
+          the academic community.
+        </p>
+      </div>
+      
+      <div className="eimages-container">
+        <div className="eleft-image">
+          <img src={brainBulbImage} alt="Brain with lightbulb representing innovation" />
+        </div>
         
-        <div className="econtent-wrapper">
-          <div className="eleft-image">
-            <img src={brainBulbImage} alt="Brain with lightbulb representing innovation" />
-          </div>
-          
-          <div className="econtent">
-            <p>
-              The Innovation and Entrepreneurship Development Cell (IEDC) is 
-              dedicated to fostering creativity and entrepreneurial thinking among 
-              students. It provides a supportive ecosystem where innovative ideas 
-              can be transformed into viable products or startups. Through 
-              workshops, mentorship programs, and industry collaborations, IEDC 
-              equips aspiring entrepreneurs with the skills and guidance they need. 
-              The cell plays a crucial role in building a culture of innovation within 
-              the academic community.
-            </p>
-          </div>
-          
-          <div className="eright-image">
-            <img src={teamMeetingImage} alt="Team meeting with lightbulb concept" />
-          </div>
+        <div className="eright-image">
+          <img src={teamMeetingImage} alt="Team meeting with lightbulb concept" />
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
     {/*Campus Life */}
     <div className="cf-campus-facilities">
       {/* Hero Section */}
