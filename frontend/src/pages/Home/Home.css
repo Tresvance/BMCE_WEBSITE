@@ -1360,8 +1360,8 @@
       box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
     }
   }
-  /* Academic Programs Cards Section */
-  .academic-programs-wrapper {
+/* Academic Programs Cards Section */
+.academic-programs-wrapper {
     padding: 4rem 2rem;
     background: #E9F7FF;
     position: relative;
@@ -1405,22 +1405,22 @@
   .programs-grid {
     display: flex;
     justify-content: space-between;
-    /*align-items: center;*/
     gap: 2rem;
     flex-wrap: nowrap;
-    background-color: E9F7FF;
+    background-color: #E9F7FF;
   }
   
   .program-row {
     display: contents;
   }
-  .mba-program{
+  
+  .mba-program {
     margin-top: -50px;
     margin-bottom: 50px;
   }
+  
   .program-card {
     width: 350px;
-    /*background: linear-gradient(135deg, #3b82f6, #1d4ed8);*/
     background: linear-gradient(to right, #49c2f1, #1276cc);
     border-radius: 15px;
     padding: 2rem;
@@ -1430,19 +1430,23 @@
     box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
     color: white;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 500px;
   }
   
   .program-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 20px 40px rgba(59, 130, 246, 0.4);
   }
+  
   /* Card Header */
   .card-header {
     margin-bottom: 1.5rem;
   }
   
   .program-icon {
-    display: none; /* Hide as not shown in reference */
+    display: none;
   }
   
   .program-meta {
@@ -1503,12 +1507,13 @@
   }
   
   .detail-item svg {
-    display: none; /* Hide icons as not shown in reference */
+    display: none;
   }
   
   /* Program Features */
   .program-features {
     margin-bottom: 2rem;
+    flex-grow: 1;
   }
   
   .feature-list {
@@ -1583,6 +1588,19 @@
   }
   
   /* Responsive Design */
+  
+  /* Large Desktop */
+  @media (min-width: 1201px) {
+    .programs-grid {
+      gap: 2.5rem;
+    }
+    
+    .program-card {
+      width: 360px;
+    }
+  }
+  
+  /* Desktop */
   @media (max-width: 1200px) {
     .programs-grid {
       gap: 1.5rem;
@@ -1593,61 +1611,441 @@
     }
   }
   
-  @media (max-width: 968px) {
+  /* Tablet View */
+  /* Academic Programs Cards Section */
+.academic-programs-wrapper {
+    padding: 4rem 2rem;
+    background: #E9F7FF;
+    position: relative;
+  }
+  
+  .academic-programs-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+  }
+  
+  /* Header Styles */
+  .programs-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+  .programs-title {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #1f2937;
+    margin-bottom: 1rem;
+    letter-spacing: -1px;
+  }
+  
+  .title-highlight {
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .programs-subtitle {
+    font-size: 1.2rem;
+    color: #6b7280;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+  
+  /* Programs Grid - Horizontal Layout */
+  .programs-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: nowrap;
+    background-color: #E9F7FF;
+  }
+  
+  .program-row {
+    display: contents;
+  }
+  
+  .mba-program {
+    margin-top: -50px;
+    margin-bottom: 50px;
+  }
+  
+  .program-card {
+    width: 350px;
+    background: linear-gradient(to right, #49c2f1, #1276cc);
+    border-radius: 15px;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 500px;
+  }
+  
+  .program-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(59, 130, 246, 0.4);
+  }
+  
+  /* Card Header */
+  .card-header {
+    margin-bottom: 1.5rem;
+  }
+  
+  .program-icon {
+    display: none;
+  }
+  
+  .program-meta {
+    width: 100%;
+  }
+  
+  .program-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+  }
+  
+  .program-badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.9);
+    color: #1f2937;
+    padding: 0.5rem 1.2rem;
+    border-radius: 25px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  
+  /* Specializations */
+  .specializations-container {
+    margin-bottom: 1.5rem;
+  }
+  
+  .specializations-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+  }
+  
+  .spec-chip {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  
+  /* Program Details */
+  .program-details {
+    margin-bottom: 1.5rem;
+  }
+  
+  .detail-item {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  
+  .detail-item svg {
+    display: none;
+  }
+  
+  /* Program Features */
+  .program-features {
+    margin-bottom: 2rem;
+    flex-grow: 1;
+  }
+  
+  .feature-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .feature-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.8rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.95rem;
+    font-weight: 500;
+  }
+  
+  .feature-marker {
+    width: 8px;
+    height: 8px;
+    background: white;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  
+  /* Card Footer */
+  .card-footer {
+    margin-top: auto;
+  }
+  
+  .enroll-button {
+    width: 100%;
+    background: rgba(31, 41, 55, 0.9);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 15px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  
+  .enroll-button:hover {
+    background: rgba(31, 41, 55, 1);
+    transform: translateY(-2px);
+  }
+  
+  .enroll-button span {
+    flex: 1;
+  }
+  
+  .enroll-button svg {
+    width: 16px;
+    height: 16px;
+  }
+  
+  /* Hide visual components not in reference */
+  .program-visual {
+    display: none;
+  }
+  
+  .header-decoration,
+  .floating-elements,
+  .card-glow {
+    display: none;
+  }
+  
+  /* Responsive Design */
+  
+  /* Large Desktop */
+  @media (min-width: 1201px) {
     .programs-grid {
-      flex-direction: column;
-      align-items: center;
+      gap: 2.5rem;
+    }
+    
+    .program-card {
+      width: 360px;
+    }
+  }
+  
+  /* Desktop */
+  @media (max-width: 1200px) {
+    .programs-grid {
+      gap: 1.5rem;
+    }
+    
+    .program-card {
+      width: 320px;
+    }
+  }
+  
+  /* Tablet View */
+  @media (max-width: 968px) {
+    .academic-programs-wrapper {
+      padding: 3rem 1.5rem;
+    }
+    
+    .programs-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      align-items: flex-start;
+    }
+    
+    .program-row {
+      display: flex;
+      justify-content: center;
+    }
+    
+    /* First two cards in a row */
+    .program-row:nth-child(1),
+    .program-row:nth-child(2) {
+      flex: 0 0 calc(50% - 1rem);
+      max-width: 350px;
+    }
+    
+    /* Third card (polytechnic) - full width and centered */
+    .program-row:nth-child(3) {
+      flex: 0 0 100%;
+      display: flex;
+      justify-content: center;
+      margin-top: 1rem;
     }
     
     .program-card {
       width: 100%;
-      max-width: 400px;
+      max-width: 350px;
+      min-height: 500px;
+    }
+    
+    /* Ensure polytechnic card has same size */
+    .program-card.polytechnic-program {
+      max-width: 300px;
+    }
+    
+    /* Reset MBA program margin for tablet */
+    .mba-program {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    
+    .programs-title {
+      font-size: 2.8rem;
     }
   }
   
+  /* Small Tablet */
   @media (max-width: 768px) {
     .academic-programs-wrapper {
       padding: 3rem 1rem;
     }
     
+    .programs-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      justify-items: center;
+    }
+    
+    .program-card {
+      width: 100%;
+      max-width: 400px;
+      min-height: 450px;
+      padding: 1.8rem;
+    }
+    .polytechnic-program {
+        width: 397px;
+    }
     .programs-title {
       font-size: 2.5rem;
     }
     
-    .program-card {
-      padding: 1.5rem;
-      width: 100%;
+    .program-title {
+      font-size: 1.4rem;
     }
     
-    .program-title {
-      font-size: 1.3rem;
+    .programs-subtitle {
+      font-size: 1.1rem;
     }
   }
   
+  /* Mobile View */
   @media (max-width: 480px) {
     .academic-programs-wrapper {
-      padding: 2rem 1rem;
+      padding: 2.5rem 1rem;
+    }
+    
+    .programs-header {
+      margin-bottom: 3rem;
+    }
+    
+    .programs-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      justify-items: center;
+    }
+    .polytechnic-program {
+        margin-right: 27px;
+    }
+    .program-card {
+      width: 100%;
+      max-width: 257px;
+      min-height: 420px;
+      padding: 1.5rem;
     }
     
     .programs-title {
       font-size: 2rem;
+      margin-bottom: 0.8rem;
+    }
+    
+    .programs-subtitle {
+      font-size: 1rem;
+    }
+    
+    .program-title {
+      font-size: 1.3rem;
+      margin-bottom: 0.8rem;
+    }
+    
+    .program-badge {
+      font-size: 0.8rem;
+      padding: 0.4rem 1rem;
+    }
+    
+    .specializations-grid {
+      gap: 0.4rem;
+    }
+    
+    .spec-chip {
+      font-size: 0.75rem;
+      padding: 0.3rem 0.7rem;
+    }
+    
+    .detail-item {
+      font-size: 1rem;
+    }
+    
+    .feature-item {
+      font-size: 0.9rem;
+    }
+    
+    .enroll-button {
+      padding: 0.9rem 1.5rem;
+      font-size: 0.95rem;
+    }
+  }
+  
+  /* Extra Small Mobile */
+  @media (max-width: 360px) {
+    .academic-programs-wrapper {
+      padding: 2rem 0.8rem;
     }
     
     .program-card {
+      max-width: 258px;
       padding: 1.2rem;
+      min-height: 400px;
+    }
+    .programs-title {
+      font-size: 1.8rem;
     }
     
     .program-title {
       font-size: 1.2rem;
     }
     
-    .specializations-grid {
-      gap: 0.3rem;
-    }
-    
     .spec-chip {
       font-size: 0.7rem;
-      padding: 0.3rem 0.6rem;
+      padding: 0.25rem 0.6rem;
+    }
+    
+    .feature-item {
+      font-size: 0.85rem;
     }
   }
 /* Principal Content */
@@ -3318,88 +3716,4 @@
         height: 55px;
     }
  }
-  /* Additional Responsive Adjustments */
-
-/* Tablets and below */
-@media (max-width: 1024px) {
-    /*.header-grid {
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
-    }
-  
-    .carousel-container {
-      height: 450px;
-    }*/
-  
-    .welcome-and-events {
-      flex-direction: column;
-      padding: 20px;
-    }
-  
-    .events-section {
-      margin-left: 0;
-      padding: 1.5rem;
-    }
-  
-    .stats-grid {
-      grid-template-columns: 1fr 1fr;
-    }
-  
-    .programs-grid {
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-  
-    .program-card {
-      width: 90%;
-      max-width: 350px;
-    }
-  
-    .academic-programs-wrapper {
-      padding: 2rem 1rem;
-    }
-  }
-  
-  /* Mobiles and below */
-  @media (max-width: 768px) {
-    /*.carousel-container {
-      height: 280px;
-    }
-  
-    .stats-grid {
-      grid-template-columns: 1fr;
-    }
-  
-    .programs-elegant-title {
-      font-size: 1.6rem;
-    }
-  
-    .program-elegant-card {
-      padding: 1rem;
-    }
-  
-    .program-elegant-title {
-      font-size: 2rem;
-    }
-  
-    .event-card {
-      padding: 20px 12px;
-      margin-bottom: 30px;
-    }*/
-  
-
-  
-    .testimonials-grid {
-      grid-template-columns: 1fr;
-    }
-  
-    .programs-grid {
-      flex-wrap: wrap;
-    }
-  
-    .program-card {
-      width: 100%;
-      margin-bottom: 20px;
-    }
-  }
-  
+ 
