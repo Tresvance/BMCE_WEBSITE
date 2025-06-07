@@ -2619,56 +2619,49 @@
   .cf-hero-content {
     max-width: 600px;
     color: white;
+    position: relative;
   }
   
   .cf-hero-subtitle {
     font-size: 3.2rem;
     font-weight: 300;
-    margin: -85px 0 10px -180px;
+    margin: 0 0 10px 0;
     letter-spacing: 1px;
+    transform: translateX(-180px) translateY(-85px);
   }
   
   .cf-hero-title {
     font-size: 3.5rem;
     font-weight: 700;
-    margin: -1px 0 20px -25px;
+    margin: 0 0 20px 0;
     line-height: 1.1;
+    transform: translateX(-25px) translateY(-1px);
   }
   
   .cf-hero-description {
     font-size: 1.6rem;
     line-height: 1.6;
-    margin: 120px 0 0 41px;
+    margin: 0;
     opacity: 0.9;
     text-align: justify;
-}
+    transform: translateX(41px) translateY(120px);
+  }
   
   /* Facilities Section */
   .cf-facilities-section {
-    position: relative;
-    height: 330px;
-    background-image: url('../assets/bmce2.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    margin-top: -1px;
+    background-color: #f8f9fa;
+    padding: 60px 5% 40px 5%;
+    margin-top: 0;
   }
   
   .cf-facilities-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.6);
-    display: flex;
-    align-items: center;
-    padding: 0 5%;
+    /* Remove overlay styling since we're not using background image overlay */
   }
   
   .cf-facilities-content {
     width: 100%;
-    color: white;
+    max-width: 1200px;
+    margin: 0 auto;
   }
   
   .cf-facilities-description {
@@ -2676,23 +2669,28 @@
     line-height: 1.6;
     margin: 0 0 40px 0;
     max-width: 600px;
-    opacity: 0.9;
+    color: #333;
+    text-align: center;
+    margin: 0 auto 40px auto;
   }
   
   .cf-facilities-grid {
     display: flex;
     gap: 30px;
     flex-wrap: wrap;
-    margin-bottom: 70px;
-}
+    justify-content: center;
+    margin-bottom: 0;
+  }
   
   .cf-facility-card {
     flex: 1;
-    min-width: 250px;
+    min-width: 280px;
+    max-width: 350px;
     padding: 30px 25px;
     border-radius: 15px;
     color: white;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   }
   
   .cf-facility-card:hover {
@@ -2738,49 +2736,135 @@
   }
   
   /* Responsive Design */
-  @media (max-width: 768px) {
-    .cf-hero-title {
-      font-size: 2.5rem;
+  @media (max-width: 1024px) {
+    .cf-hero-subtitle {
+      transform: translateX(-120px) translateY(-60px);
+      font-size: 2.8rem;
     }
     
+    .cf-hero-title {
+      transform: translateX(-20px) translateY(-1px);
+      font-size: 3rem;
+    }
+    
+    .cf-hero-description {
+      transform: translateX(30px) translateY(80px);
+      font-size: 1.4rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
     .cf-hero-section {
-      height: 400px;
+      height: 500px;
       border-radius: 0 30px 0 0;
     }
     
+    .cf-hero-content {
+      max-width: 100%;
+    }
+    
+    .cf-hero-subtitle {
+      font-size: 2.2rem;
+      transform: translateX(-60px) translateY(-40px);
+    }
+    
+    .cf-hero-title {
+      font-size: 2.5rem;
+      transform: translateX(-15px) translateY(-1px);
+    }
+    
+    .cf-hero-description {
+      font-size: 1.2rem;
+      transform: translateX(20px) translateY(60px);
+      max-width: 90%;
+    }
+    
     .cf-facilities-section {
-      height: auto;
-      min-height: 300px;
+      padding: 40px 20px 30px 20px;
     }
     
     .cf-facilities-grid {
       flex-direction: column;
       gap: 20px;
+      align-items: center;
     }
     
     .cf-facility-card {
       min-width: auto;
+      max-width: 100%;
+      width: 100%;
       padding: 25px 20px;
     }
     
-    .cf-hero-overlay,
-    .cf-facilities-overlay {
+    .cf-hero-overlay {
       padding: 0 20px;
     }
   }
   
-  @media (max-width: 480px) {
-    .cf-hero-title {
-      font-size: 2rem;
+  @media (max-width: 600px) {
+    .cf-hero-section {
+      height: 450px;
+      border-radius: 0 20px 0 0;
     }
     
     .cf-hero-subtitle {
-      font-size: 1rem;
+      font-size: 1.8rem;
+      transform: translateX(-30px) translateY(-30px);
     }
     
-    .cf-hero-description,
-    .cf-facilities-description {
+    .cf-hero-title {
+      font-size: 2.2rem;
+      transform: translateX(-10px) translateY(-1px);
+    }
+    
+    .cf-hero-description {
+      font-size: 1.1rem;
+      transform: translateX(10px) translateY(40px);
+      max-width: 95%;
+    }
+    
+    .cf-facility-card h3 {
+      font-size: 1.3rem;
+    }
+    
+    .cf-facility-card li {
+      font-size: 0.95rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .cf-hero-section {
+      height: 400px;
+      border-radius: 0 15px 0 0;
+    }
+    
+    .cf-hero-subtitle {
+      font-size: 1.5rem;
+      transform: translateX(-20px) translateY(-20px);
+    }
+    
+    .cf-hero-title {
+      font-size: 2rem;
+      transform: translateX(-5px) translateY(-1px);
+    }
+    
+    .cf-hero-description {
       font-size: 1rem;
+      transform: translateX(5px) translateY(30px);
+      max-width: 100%;
+    }
+    
+    .cf-facilities-section {
+      padding: 20px 15px;
+    }
+    
+    .cf-facilities-grid {
+      gap: 15px;
+    }
+    
+    .cf-facility-card {
+      padding: 20px 15px;
+      width: 200px;
     }
     
     .cf-facility-card h3 {
@@ -2789,6 +2873,10 @@
     
     .cf-facility-card li {
       font-size: 0.9rem;
+    }
+    
+    .cf-hero-overlay {
+      padding: 0 15px;
     }
   }
   /* Testimonials.css */
