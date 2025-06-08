@@ -1,19 +1,19 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Sidebar/Sidebar";
+import Footer from "./components/Footer/Footer.jsx";
 import Header from "./components/Header/Header";
 import Home from "./pages/Home/Home";
 import AIDepartmentPage from "./pages/Departments/ai.jsx";
 import EceDepartmentPage from "./pages/Departments/ece.jsx";
 import EeeDepartmentPage from "./pages/Departments/eee.jsx";
-import CollegeAdministrationPage from './pages/Administration/Administration';
+import CollegeAdministrationPage from "./pages/Administration/Administration";
 import Cse from "./pages/Departments/cse.jsx";
 import CivilDepartmentPage from "./pages/Departments/civil.jsx";
 import MechDepartmentPage from "./pages/Departments/mech.jsx";
 import PlacementPage from "./pages/Placements/cgpu.jsx";
-import CollegeGallery from "./pages/Gallery/gallery.jsx"
-import About from "./pages/About/about.jsx"
-
+import CollegeGallery from "./pages/Gallery/gallery.jsx";
+import About from "./pages/About/about.jsx";
 
 const App = () => {
   return (
@@ -22,7 +22,6 @@ const App = () => {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-
 
         <Route path="placements/cgpu" element={<PlacementPage />} />
         <Route path="department/csedept" element={<Cse />} />
@@ -33,11 +32,11 @@ const App = () => {
         <Route path="department/ecedept" element={<EceDepartmentPage />} />
         <Route path="department/eeedept" element={<EeeDepartmentPage />} />
 
-        <Route path="gallery" element={<CollegeGallery/>}/>
-        
-         <Route path="about" element={<About/>}/>
+        <Route path="gallery" element={<CollegeGallery />} />
 
+        <Route path="about" element={<About />} />
       </Routes>
+      <Footer />
     </Router>
   );
 };
