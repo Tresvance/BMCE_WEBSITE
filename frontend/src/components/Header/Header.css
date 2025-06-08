@@ -1,11 +1,11 @@
 .main-header {
   background: linear-gradient(to right, #49c2f1, #1276cc);
+  position: fixed;
   color: white;
   font-family: Arial, sans-serif;
   width: 100%;
   box-sizing: border-box;
   transition: all 0.3s ease;
-  position: relative;
   top: 0;
   z-index: 1000;
   border-bottom-left-radius: 30px;
@@ -14,12 +14,32 @@
 
 .main-header.scrolled {
   padding: 5px 0;
-  background: linear-gradient(to right, #1276cc, #49c2f1);
+  background: white;
   border-bottom-left-radius: 16px;
   border-bottom-right-radius: 16px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
-
+.main-header.scrolled .neon-drawing {
+  color: #00294d;         
+  background: none !important;   
+  -webkit-text-stroke: 0 !important; 
+  text-stroke: 0 !important;
+  text-shadow: none !important;     
+  filter: none !important;             
+  -webkit-background-clip: unset !important;
+  background-clip: unset !important;
+}
+.main-header.scrolled .title-section p {
+  color: #00294d;
+}
+.main-header.scrolled .top-bar, 
+.main-header.scrolled .contact-info span {
+  color: #044F71; /* darker grey for readability on white */
+}
+.main-header.scrolled .apply-btn {
+  background-color: #003366;
+  color: white;
+}
 .top-bar {
   padding: 6px 20px;
   display: flex;
