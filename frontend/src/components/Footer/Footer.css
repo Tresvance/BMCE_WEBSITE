@@ -1,4 +1,4 @@
-.footer-container {
+.fr-footer-container {
   background: linear-gradient(135deg, #49c2f1 0%, #1276cc 100%);
   color: white;
   padding: 0;
@@ -8,7 +8,7 @@
   max-height: 400px;
 }
 
-.footer-container::before {
+.fr-footer-container::before {
   content: "";
   position: absolute;
   top: 0;
@@ -23,7 +23,7 @@
   z-index: 1;
 }
 
-.footer-content {
+.fr-footer-content {
   position: relative;
   z-index: 2;
   max-width: 1300px;
@@ -34,29 +34,27 @@
   gap: 40px;
 }
 
-.footer-section {
+.fr-footer-section {
   display: flex;
   flex-direction: column;
 }
 
-/* Left Section - Logo and Address */
-.logo-section {
+.fr-logo-section {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
 
-.college-logo {
+.fr-college-logo {
   width: 400px;
   height: 80px;
   border-radius: 12px;
-  /* object-fit: cover; */
   margin-bottom: 20px;
   border: 3px solid rgba(255, 255, 255, 0.3);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
-.college-name {
+.fr-college-name {
   font-size: 24px;
   font-weight: 700;
   margin-bottom: 15px;
@@ -64,30 +62,29 @@
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-.college-address {
+.fr-college-address {
   line-height: 1.6;
 }
 
-.college-address p {
+.fr-college-address p {
   margin: 0 0 5px 0;
   font-size: 14px;
   opacity: 0.9;
 }
 
-.contact-info {
+.fr-contact-info {
   margin-top: 15px !important;
   display: flex;
   flex-direction: column;
   gap: 5px;
 }
 
-.contact-info span {
+.fr-contact-info span {
   font-size: 13px;
   opacity: 0.8;
 }
 
-/* Middle Section - Navigation */
-.section-title {
+.fr-section-title {
   font-size: 20px;
   font-weight: 600;
   margin-bottom: 25px;
@@ -95,19 +92,19 @@
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-.nav-links {
+.fr-nav-links {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
 }
 
-.nav-column {
+.fr-nav-column {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
 
-.footer-link {
+.fr-footer-link {
   color: rgba(255, 255, 255, 0.9);
   text-decoration: none;
   font-size: 14px;
@@ -116,21 +113,20 @@
   border-bottom: 1px solid transparent;
 }
 
-.footer-link:hover {
+.fr-footer-link:hover {
   color: white;
   border-bottom: 1px solid rgba(255, 255, 255, 0.5);
   transform: translateX(5px);
 }
 
-/* Right Section - Social Media and Quote */
-.social-media {
+.fr-social-media {
   display: flex;
   gap: 15px;
   margin-bottom: 25px;
   flex-wrap: wrap;
 }
 
-.social-link {
+.fr-social-link {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -145,13 +141,13 @@
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-.social-link:hover {
+.fr-social-link:hover {
   background: rgba(255, 255, 255, 0.3);
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-.college-quote {
+.fr-college-quote {
   background: rgba(255, 255, 255, 0.1);
   padding: 20px;
   border-radius: 12px;
@@ -159,7 +155,7 @@
   backdrop-filter: blur(10px);
 }
 
-.college-quote p {
+.fr-college-quote p {
   font-style: italic;
   line-height: 1.6;
   margin: 0;
@@ -167,8 +163,7 @@
   opacity: 0.95;
 }
 
-/* Footer Bottom - Copyright */
-.footer-bottom {
+.fr-footer-bottom {
   position: relative;
   z-index: 2;
   background: rgba(0, 0, 0, 0.2);
@@ -176,7 +171,7 @@
   padding: 20px 0;
 }
 
-.copyright-content {
+.fr-copyright-content {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
@@ -187,77 +182,77 @@
   gap: 10px;
 }
 
-.copyright-content p {
+.fr-copyright-content p {
   margin: 0;
   font-size: 13px;
   opacity: 0.8;
 }
 
-.tresvance-link {
+.fr-tresvance-link {
   color: #ffd700;
   text-decoration: none;
   font-weight: 600;
   transition: all 0.3s ease;
 }
 
-.tresvance-link:hover {
+.fr-tresvance-link:hover {
   color: #fff;
   text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .footer-content {
+  .fr-footer-content {
     grid-template-columns: 1fr;
     gap: 40px;
     padding: 40px 20px 30px;
   }
 
-  .logo-section {
+  .fr-logo-section {
     align-items: center;
     text-align: center;
   }
 
-  .nav-links {
+  .fr-nav-links {
     grid-template-columns: 1fr;
     gap: 10px;
   }
 
-  .social-media {
+  .fr-social-media {
     justify-content: center;
   }
 
-  .copyright-content {
+  .fr-copyright-content {
     flex-direction: column;
     text-align: center;
     gap: 15px;
   }
 
-  .college-name {
+  .fr-college-name {
     font-size: 20px;
   }
 
-  .section-title {
+  .fr-section-title {
     font-size: 18px;
     text-align: center;
   }
 }
 
 @media (max-width: 480px) {
-  .footer-content {
+  .fr-footer-content {
     padding: 30px 15px 20px;
   }
 
-  .college-logo {
+  .fr-college-logo {
     width: 330px;
     height: 70px;
   }
 
-  .college-name {
+  .fr-college-name {
     font-size: 18px;
   }
 
-  .social-link {
+  .fr-social-link {
     width: 40px;
     height: 40px;
   }
