@@ -4,6 +4,7 @@ import Navbar from "./components/Sidebar/Sidebar";
 import Footer from "./components/Footer/Footer.jsx";
 import Header from "./components/Header/Header";
 import Home from "./pages/Home/Home";
+
 import AIDepartmentPage from "./pages/Departments/ai.jsx";
 import EceDepartmentPage from "./pages/Departments/ece.jsx";
 import EeeDepartmentPage from "./pages/Departments/eee.jsx";
@@ -15,6 +16,7 @@ import PlacementPage from "./pages/Placements/cgpu.jsx";
 import CollegeGallery from "./pages/Gallery/gallery.jsx";
 import About from "./pages/About/about.jsx";
 
+
 const App = () => {
   return (
     <Router>
@@ -22,6 +24,7 @@ const App = () => {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
+
 
         <Route path="placements/cgpu" element={<PlacementPage />} />
         <Route path="department/csedept" element={<Cse />} />
