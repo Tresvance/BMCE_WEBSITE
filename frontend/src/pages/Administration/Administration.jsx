@@ -20,31 +20,31 @@ const CollegeAdministrationPage = () => {
     {
       name: "His Holiness Mar Thomas Mathews",
       position: "MANAGING TRUSTEE & PATRON",
-      image: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=300&h=300&fit=crop&crop=face",
+      image: "https://res.cloudinary.com/dupfhhrzi/image/upload/v1749401698/Baselius_Marthoma_Mathews_III_2_ouusoe.png",
       email: "patron@college.edu",
       phone: "+91-9876543210",
-      bio: "His Holiness stands for education with spiritual enlightenment, adhering to the principles of academic integrity, thereby transforming students into technically competent professionals, for a bright and promising future of the society and nation."
+      bio: "BMCE stands for education with spiritual enlightenment, adhering to the principles of academic integrity, thereby transforming students into technically competent professionals, for a bright and promising future of the society and nation."
     },
     {
-      name: "Most Rev. Dr. Joseph Kallarangatt",
+      name: "H.G. Yakob Mar Elias Metropolitan",
       position: "METROPOLITAN & MANAGER",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face",
+      image: "https://res.cloudinary.com/dupfhhrzi/image/upload/v1749402363/mar-eliyas-photo_qpiaud.jpg",
       email: "manager@college.edu",
       phone: "+91-9876543211",
-      bio: "Imparting Education along moral values, ethics and concern for the fellow beings has been the focus of our institution. We believe in raising a generation of students with enthusiasm and passion who serve as responsible leaders focused on identifying human and environmental problems and finding solutions for them."
+      bio: "Imparting Education along moral values, ethics and concern for the fellow beings has been the focus. We believe in raising a generation of students with enthusiasm and passion who serve as responsible leaders who are focused on identifying human and environmental problems and finding solutions for them."
     },
     {
       name: "Rev. Fr. Thomas Varghese",
       position: "DIRECTOR",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face",
+      image: "https://res.cloudinary.com/dupfhhrzi/image/upload/v1749402739/thomasvarghese_myn0vo.jpg",
       email: "director@college.edu",
       phone: "+91-9876543212",
-      bio: "Noble as our thoughts- our institution has one of the finest and most efficient administration network in place. We realize the importance of an effective administration in education and our students' results is proof of the pudding. The college has grown by leaps and bounds thanks to the efforts of many individuals and the students."
+      bio: " Our institution has one of the finest and most efficient administration network in place. We realize the importance of an effective administration in education and our students' results is proof of the pudding. The college has grown by leaps and bounds thanks to the efforts of many individuals and the students."
     },
     {
       name: "Prof. Dr. L. Padma Suresh",
       position: "PRINCIPAL",
-      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=300&h=300&fit=crop&crop=face",
+      image: "https://res.cloudinary.com/dupfhhrzi/image/upload/v1749402825/padma_isu0od.jpg",
       email: "principal@college.edu",
       phone: "+91-9876543213",
       bio: "The college is truly blessed to be under the guidance of Prof. Dr. L. Padma Suresh, M.E, Ph.D (EEE), Ph.D (CSE), MISTE, with his vast experience and knowledge, he is certainly one of our most prized possessions. The College is sure to go places under his able and effective administration."
@@ -52,14 +52,19 @@ const CollegeAdministrationPage = () => {
   ];
 
   const governingBody = [
-    { name: "His Holiness Mar Thomas Mathews", position: "Chairman & Patron" },
-    { name: "Most Rev. Dr. Joseph Kallarangatt", position: "Metropolitan" },
+    { name: "His Holiness Mar Thomas Mathews III", position: "Chairman & Patron" },
+    { name: "H .G. Yakob Mar Elias Metropolitan", position: "Manager" },
+    { name: " H. G. Dr. Joseph Mar Dionysius Metropolitan", position: "Executive Member" },
+    { name: "H G Zacharias Mar Aprem Metropolitan", position: "Executive Member" },
+    { name: " Very Rev. C. Daniel  Ramban", position: "Executive Member" },
     { name: "Rev. Fr. Thomas Varghese", position: "Director" },
+    { name: "Dr. George Varghese Koppara", position: "Executive Member" },
+    { name: "Prof D. K John ", position: "Executive Member" },
+    { name: "Er. Binu M Issac", position: "Executive Member" },
+    { name: "Adv. Philip Mathew", position: "Executive Member" },
     { name: "Prof. Dr. L. Padma Suresh", position: "Principal" },
-    { name: "Dr. Sarah Wilson", position: "Vice Principal (Academic)" },
-    { name: "Dr. Michael Johnson", position: "Vice Principal (Administration)" },
-    { name: "Prof. Mary Thomas", position: "Controller of Examinations" },
-    { name: "Dr. James Rodriguez", position: "Dean of Student Affairs" }
+    { name: "Prof. Oomman Samuel", position: "Ex.Officio" },
+    { name: "Prof. Dennise Mathew", position: "Vice Principal" }
   ];
 
   const objectives = [
@@ -89,7 +94,7 @@ const CollegeAdministrationPage = () => {
         { id: 'iqac-vision', label: 'Vision' },
         { id: 'iqac-functions', label: 'FUNCTIONS & BENEFITS' },
         { id: 'iqac-policies', label: 'QUALITY POLICIES' },
-        { id: 'iqac-aqar', label: 'AQAR REPORT' },
+        { id: 'iqac-report', label: 'AQAR REPORT' },
         { id: 'iqac-members', label: 'IQAC Members' }
       ]
     },
@@ -120,7 +125,7 @@ const CollegeAdministrationPage = () => {
     switch (activeTab) {
       case 'our-team':
         return (
-          <div className="content-section animate-fade-in">
+          <div className="adcontent-section animate-fade-in">
             <div className="section-header">
               <div className="header-badge">
                 <Users size={20} />
@@ -170,7 +175,7 @@ const CollegeAdministrationPage = () => {
 
       case 'governing-body':
         return (
-          <div className="content-section animate-fade-in">
+          <div className="adcontent-section animate-fade-in">
             <div className="section-header">
               <div className="header-badge">
                 <Shield size={20} />
@@ -197,17 +202,51 @@ const CollegeAdministrationPage = () => {
             </div>
           </div>
         );
+        case 'directors-message':
+      
+          return (
+          <div className="adcontent-section animate-fade-in">
+            <div className="section-header">
+              
+              <h2>Directors Message</h2>
+               </div>
+               <p className="about-text">Greetings. Many thanks for your interest in Baselios Mathews II College of Engineering.
+                 </p>
+           <p>
+                  It is our deepest desire to serve the society by moulding the technocrats and business leaders of tomorrow.
+                 </p>
+                 <p>To this end, we have endeavoured to create a world-class educational institution that is far-reaching in every way. Be it amenities or faculty, curriculum or career guidance and placement activities, we seek to offer the very paramount to our students.</p>
+                 <p>Education that is thorough, determined and meets the necessities of today's job market; education that chastisements and indoctrinates values; education that is in tune with the changing dynamics of today's competitive world - that is the kind of education that BMCE offers.</p>
+                <p>Please feel free to take a shufti round around our campus. Marinade in the spirit of learning that BMCE guzzles. Then, take your career dreams to the next level with Baselios Mathews II College of Engineering.</p>
+                <p>Your future begins at BMCE. Welcome.</p></div>
+        );
+          
+
+        case'principals-message':
+            
+        return (
+          <div className="adcontent-section animate-fade-in">
+            <div className="section-header">
+              
+              <h2>Principals Message</h2>
+               </div>
+          <p>Let you empower yourself with the Wings of Knowledge and Power of Innovation and with this Empowerment imbibe an attitude akin to a positive and proactive thinking, an eagerness to serve and excel in your chosen domain of activity throughout your lifetime. Students should always think and review; discover the cause and effect of every happening, and they should not surrender or become a slave to youthful fancies and indulgences.</p>
+          <p>The special emphasis on the academic activities concentrates on helping the students to gain an excellent theoretical knowledge base and in the development of skills to implement them. We are constantly reviewing our set up to update and improve while making sure that students gain thinking skills, analytical frameworks, entrepreneurial skills, interpersonal and communication skills.</p>
+          <p>The aim of the Management and Faculty who are committed to continually improve and deliver competitive quality technical education to the utmost satisfaction of students, their parents and the potential employers. The evolution of the institute over the past decade has witnessed strong blend of state-of-the-art infrastructure and intricately intertwined human resource committed to provide professional education with thrust on creativity and innovation.</p>
+          </div>
+        );
+
 
       case 'iqac-objectives':
         return (
-          <div className="content-section animate-fade-in">
+          <div className="adcontent-section animate-fade-in">
             <div className="section-header">
               <div className="header-badge">
                 <Target size={20} />
                 <span>Quality Assurance</span>
               </div>
               <h2>IQAC Objectives</h2>
-              <p>Our comprehensive framework for maintaining and enhancing educational quality standards</p>
+             
             </div>
             <div className="objectives-container">
               {objectives.map((objective, index) => (
@@ -227,7 +266,7 @@ const CollegeAdministrationPage = () => {
 
       case 'iqac-vision':
         return (
-          <div className="content-section animate-fade-in">
+          <div className="adcontent-section animate-fade-in">
             <div className="section-header">
               <div className="header-badge">
                 <Heart size={20} />
@@ -266,10 +305,66 @@ const CollegeAdministrationPage = () => {
             </div>
           </div>
         );
+         case 'iqac-functions':
+        return (
+          <div className="adcontent-section animate-fade-in">
+            <div className="section-header">
+              <div className="header-badge">
+                <Heart size={20} />
+                <span>Our Direction</span>
+              </div>
+              <h2>Functions and Benefits</h2>
+             
+            </div>
+            <div className="vision-mission-container">
+              <div className="vision-card">
+
+                <div className="card-content">
+                  <p>Functions expected of the <b>Internal Quality Assurance Cell (IQAC)</b> :
+
+<li>Establishing benchmarks for academic, administrative, and research activities to ensure consistent quality enhancement.</li>
+<li>Encouraging the adoption of innovative teaching methods, including ICT tools, experiential learning, and outcome-based education (OBE).</li>
+<li>Conducting workshops, seminars etc for skill enhancement and capacity building.</li>
+Establishing a robust system to collect and analyze feedback from students, faculty, alumni, and other stakeholders to identify areas for improvement.
+Encouraging faculty and students to participate in research, patenting, and industry collaboration to foster innovation and technology development.
+Conducting internal audits to ensure adherence to quality standards in academic delivery, infrastructure, and administration.
+Recording and disseminating innovative and effective practices across departments to institutionalize excellence.
+Preparing the institution for NAAC, NBA, or other accreditation bodies by ensuring compliance with their quality criteria.
+Implementing programs to enhance students’ technical, professional, and interpersonal skills for better employability and career growth.
+Engaging stakeholders (students, parents, alumni, employers, and industry partners) in the quality assurance process.
+Advocating for eco-friendly campus initiatives and sustainable practices in engineering education.
+Preparing and submitting the AQAR to NAAC or other relevant bodies to showcase progress and quality improvement initiatives.
+ 
+
+Preparation and submission of the Annual Quality Assurance Report (AQAR) as per the guidelines and parameters of NAAC offers several benefits to engineering colleges. By preparing and submitting the AQAR, engineering colleges not only comply with NAAC requirements but also build a foundation for long-term quality enhancement, stakeholder satisfaction, and institutional excellence. These benefits can be categorized as follows:
+
+Helps in tracking the institution's progress in implementing quality initiatives and addressing areas for improvement.
+Provides a systematic framework for documenting academic and administrative processes, ensuring consistency in quality assurance practices.
+Ensures the institution meets the accreditation requirements, making it ready for assessment and reaccreditation processes.
+Enhances the credibility and reputation of the institution by demonstrating adherence to NAAC's quality standards.
+The AQAR promotes transparency in institutional processes, boosting the confidence of stakeholders such as students, parents, employers, and funding agencies.
+Demonstrates accountability in utilizing resources and achieving the stated objectives of the institution.
+Helps attract funding and support from government and non-government organizations based on quality performance.
+The AQAR serves as a key input for long-term strategic planning and policy formulation.
+Highlights areas for faculty improvement and training, leading to enhanced teaching effectiveness.
+Improves the quality of education, resulting in better academic outcomes and employability for students.
+Facilitates internal comparisons of performance across departments and activities to maintain high standards.
+Encourages the adoption and documentation of innovative practices that can be replicated across institutions.
+Monitors advancements in research, patents, and collaborations with industries and academic bodies.
+Helps identify areas for fostering innovation and improving research output.
+Drives a culture of continuous quality improvement across academic, administrative, and extracurricular domains.
+Aligns the institution’s goals with sustainable development practices.
+                   </p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        );
 
       default:
         return (
-          <div className="content-section animate-fade-in">
+          <div className="adcontent-section animate-fade-in">
             <div className="section-header">
               <div className="header-badge">
                 <BookOpen size={20} />
@@ -573,7 +668,7 @@ const CollegeAdministrationPage = () => {
         }
 
         /* Main Container */
-        .main-container {
+        .admain-container {
           max-width: 1400px;
           margin: 0 auto;
           padding: 4rem 2rem 2rem;
@@ -595,7 +690,7 @@ const CollegeAdministrationPage = () => {
           animation: fadeIn 0.8s ease-out;
         }
 
-        .content-section {
+        .adcontent-section {
           padding: 3rem;
         }
 
@@ -1296,7 +1391,7 @@ const CollegeAdministrationPage = () => {
             font-size: 1.5rem;
           }
 
-          .main-container {
+          .admain-container {
             margin-right: 300px; /* Adjust to match sidebar width */
 
             padding: 2rem 1rem;
@@ -1323,7 +1418,7 @@ const CollegeAdministrationPage = () => {
             height: 1px;
           }
 
-          .content-section {
+          .adcontent-section {
             padding: 2rem 1.5rem;
           }
 
@@ -1421,7 +1516,7 @@ const CollegeAdministrationPage = () => {
       </div>
 
       {/* Main Content Area */}
-      <div className="main-container">
+      <div className="admain-container">
         <div className="content-layout">
           {/* Primary Content */}
           <main className="main-content">
