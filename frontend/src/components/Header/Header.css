@@ -1,4 +1,4 @@
-.main-header {
+.head-main-header {
   background: linear-gradient(to right, #49c2f1, #1276cc);
   position: fixed;
   color: white;
@@ -12,14 +12,15 @@
   border-bottom-right-radius: 30px;
 }
 
-.main-header.scrolled {
+.head-main-header.head-scrolled {
   padding: 5px 0;
   background: white;
   border-bottom-left-radius: 16px;
   border-bottom-right-radius: 16px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
-.main-header.scrolled .neon-drawing {
+
+.head-main-header.head-scrolled .head-neon-drawing {
   color: #00294d;         
   background: none !important;   
   -webkit-text-stroke: 0 !important; 
@@ -29,62 +30,69 @@
   -webkit-background-clip: unset !important;
   background-clip: unset !important;
 }
-.main-header.scrolled .title-section p {
+
+.head-main-header.head-scrolled .head-title-section p {
   color: #00294d;
 }
-.main-header.scrolled .top-bar, 
-.main-header.scrolled .contact-info span {
-  color: #044F71; /* darker grey for readability on white */
+
+.head-main-header.head-scrolled .head-top-bar, 
+.head-main-header.head-scrolled .head-contact-info span {
+  color: #044F71;
 }
-.main-header.scrolled .apply-btn {
+
+.head-main-header.head-scrolled .head-apply-btn {
   background-color: #003366;
   color: white;
 }
-.top-bar {
+
+.head-top-bar {
   padding: 6px 20px;
   display: flex;
-  justify-content: flex-start;
+  justify-content: flex-end;
   font-size: 13px;
+  margin-bottom: 10px;
 }
 
-.contact-info {
+.head-contact-info {
   display: flex;
-  gap: 20px;
+  gap: 54px;
+  margin-top: -50px;
+  margin-right: 62px;
 }
 
-.info-item {
+.head-info-item {
   display: flex;
   align-items: center;
   gap: 6px;
 }
 
-.header-content {
+.head-header-content {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 30px 30px 40px 30px; /* Increased bottom padding */
+  padding: 30px 30px 40px 30px;
   flex-wrap: wrap;
-  margin-right: 70px;
-  min-height: 60px; /* Increased minimum height */
-  position: relative; /* Added for absolute positioning */
+  min-height: 60px;
+  position: relative;
 }
 
-.logo-section {
+.head-logo-section {
   display: flex;
   justify-content: flex-start;
   align-items: center;
 }
 
-.college-logo {
+.head-college-logo {
   height: 100px;
   transition: all 0.3s ease;
+  margin-left: -24px;
 }
 
-.main-header.scrolled .college-logo {
+.head-main-header.head-scrolled .head-college-logo {
   height: 55px;
 }
 
-.title-section {
+.head-title-section {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -95,13 +103,13 @@
 }
 
 /* NEON LIGHT DRAWING EFFECT */
-.neon-drawing {
+.head-neon-drawing {
   font-family: 'Merriweather', serif;
-  font-size: 32px;
+  font-size: 32px; 
   font-weight: 400;
   text-align: left;
   margin: -4px;
-  margin-left: 0px;
+  margin-left: -8px;
   letter-spacing: 0.5px;
   white-space: nowrap;
   position: relative;
@@ -128,14 +136,14 @@
   text-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
 }
 
-.neon-drawing.animate {
+.head-neon-drawing.head-animate {
   color: transparent;
   -webkit-text-stroke: 1px rgba(255, 255, 255, 0.6);
   text-stroke: 1px rgba(255, 255, 255, 0.6);
-  animation: neonTrace 4s ease-in-out forwards;
+  animation: head-neonTrace 4s ease-in-out forwards;
 }
 
-@keyframes neonTrace {
+@keyframes head-neonTrace {
   0% { 
     background: conic-gradient(from 0deg, 
       transparent 0%, 
@@ -185,16 +193,17 @@
   }
 }
 
-.title-section p {
+.head-title-section p {
   font-family: 'Arial', sans-serif;
   font-size: 16px;
   color: #f0f0f0;
   text-align: center;
   margin: 0;
-  animation: fadeInUp 1s ease-out 4s both;
+  margin-left: -9px;
+  animation: head-fadeInUp 1s ease-out 4s both;
 }
 
-@keyframes fadeInUp {
+@keyframes head-fadeInUp {
   0% {
     opacity: 0;
     transform: translateY(20px);
@@ -205,56 +214,59 @@
   }
 }
 
-.right-section {
+.head-right-section {
   display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 30px;
-  flex-wrap: wrap;
-  margin-left: auto;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
 }
 
-.accreditations {
+.head-accreditations {
   display: flex;
-  gap: 20px;
+  gap: 118px;
   align-items: center;
   position: absolute;
-  left: 75%;
+  left: 68%;
   transform: translateX(-50%);
+  margin-top: 131px;
+  /* align-items: center; */
+  margin-left: -302px;
 }
 
-.accreditations img {
-  height: 56px;
+.head-accreditations img {
+  height: 58px;
   transition: transform 0.3s ease;
 }
 
-.accreditations img:hover {
+.head-accreditations img:hover {
   transform: scale(1.45);
 }
 
-/* Apply section - now only contains the button */
-.apply-section {
+/* Apply section with button, line, and founder image */
+.head-apply-section {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 12px;
-  position: relative;
-  margin-top: 8px;
-  margin-right: 10px;
+  gap: 18px;
+  margin-right: 97px;
+  margin-bottom: 40px;
+  margin-top: -9px;
 }
 
-/* New absolute positioned image container in top-right corner */
-.apply-image-container {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  z-index: 10;
-  margin-top: -30px;
-  margin-right: -70px;
+/* Vertical line */
+.head-vertical-line {
+  width: 2px;
+  height: 80px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.3), rgba(255,255,255,0.8), rgba(255,255,255,0.3));
+  border-radius: 1px;
 }
 
-/* Card container for image - elegant and standard design */
-.apply-card {
+/* Founder image container */
+.head-founder-image-container {
+  display: flex;
+  align-items: center;
+}
+
+.head-apply-card {
   background: #ffffff;
   border: 1px solid #e5e7eb;
   border-radius: 8px;
@@ -268,9 +280,8 @@
   padding: 0;
 }
 
-/* Updated apply image styles - smaller to fit inline layout */
-.apply-image {
-  height: 76px;
+.head-apply-image {
+  height: 80px; /* Reduced from 76px */
   width: auto;
   transition: all 0.2s ease;
   border-radius: 7px;
@@ -279,11 +290,11 @@
   position: relative;
 }
 
-.apply-image:hover {
+.head-apply-image:hover {
   transform: scale(1.02);
 }
 
-.apply-btn {
+.head-apply-btn {
   background: linear-gradient(45deg, #ffe259, #ffa751, #ff6a88);
   color: white;
   border: none;
@@ -297,10 +308,11 @@
   position: relative;
   overflow: hidden;
   white-space: nowrap;
-  height: 42px;
+  height: 48px;
+  width: 124px;
 }
 
-.apply-btn::before {
+.head-apply-btn::before {
   content: '';
   position: absolute;
   top: 0;
@@ -314,71 +326,84 @@
   transition: left 0.3s ease;
 }
 
-.apply-btn:hover {
+.head-apply-btn:hover {
   transform: translateY(-1px);
   background: linear-gradient(45deg, #ff6a88, #ffa751, #ffe259);
   box-shadow: 0 4px 8px rgba(255, 165, 0, 0.4);
 }
 
-.apply-btn:hover::before {
+.head-apply-btn:hover::before {
   left: 100%;
 }
-/* Responsive adjustments for Header */
 
+.head-logo-title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Responsive adjustments for Header */
 @media (max-width: 1024px) {
-  .header-content {
+  .head-header-content {
     flex-wrap: nowrap;
     padding: 10px;
     gap: 20px;
     justify-content: center;
     height: 10px;
   }
-  .top-bar {
+  
+  .head-top-bar {
     font-size: 12px;
   }
-  .logo-section {
+  
+  .head-logo-section {
     justify-content: center;
     width: 100%;
   }
 
-  .title-section {
+  .head-title-section {
     align-items: center;
     text-align: center;
     padding-left: 0;
     margin-left: 0;
   }
 
-  .title-section p {
+  .head-title-section p {
     text-align: center;
     font-size: 11px;
   }
-  .neon-drawing {
+  
+  .head-neon-drawing {
     font-size: 14.5px;
   }
-  .college-logo {
+  
+  .head-college-logo {
     height: 70px;
     margin-left: 20px;
   }
-  .right-section {
+  
+  .head-right-section {
     justify-content: center;
     width: 100%;
     margin-left: 0;
   }
 
-  .accreditations {
+  .head-accreditations {
     position: static;
     transform: none;
     justify-content: center;
     flex-wrap: nowrap;
-    gap: 10px;
+    gap: 8px; /* Reduced */
     margin-top: 10px;
     margin-bottom: 10px;
     margin-left: 30px;
   }
-  .accreditations img {
-    height: 20px;
+  
+  .head-accreditations img {
+    height: 18px; /* Reduced */
   }
-  .apply-btn {
+  
+  .head-apply-btn {
     height: 30px;
     margin-left: 25px;
     display: flex;
@@ -386,30 +411,23 @@
     align-items: center;
     margin-top: -20px;
   }
-  .apply-image { 
-    height: 50px; 
+  
+  .head-apply-image { 
+    height: 40px; /* Reduced */
   }
-  .apply-card {
-    margin-top: -40px;
-    margin-right: -120px;
-  }
-  .apply-image-container {
-    position: absolute;
-    margin: 0;
-    margin-top: 10px;
+  
+  .head-vertical-line {
+    height: 35px;
   }
 }
-.logo-title-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
+
 @media (max-width: 768px) {
-  .top-bar {
+  .head-top-bar {
     font-size: 7px;
     margin-left: -15px;
   }
-  .header-content {
+  
+  .head-header-content {
     height: 60px;
     min-height: 60px;
     display: flex;
@@ -417,18 +435,22 @@
     justify-content: center;
     position: relative;
   }
-  .title-section h1 {
+  
+  .head-title-section h1 {
     font-size: 9.5px;
   }
-  .title-section {
+  
+  .head-title-section {
     text-align: center;
     gap: 5px;
     margin-left: 0;
   }
-  .main-header {
+  
+  .head-main-header {
     border-radius: 5px;
   }
-  .logo-title-wrapper {
+  
+  .head-logo-title-wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -440,17 +462,18 @@
     white-space: nowrap;
     margin-left: -5px;
   }
-  .college-logo {
+  
+  .head-college-logo {
     height: 30px;
     margin-left: 0;
     flex-shrink: 0;
   }
 
-  .title-section p {
+  .head-title-section p {
     font-size: 9px;
   }
 
-  .apply-btn {
+  .head-apply-btn {
     width: 70%;
     max-width: 150px;
     font-size: 10px;
@@ -458,22 +481,26 @@
     text-align: center;
     height: 20px;
   }
-  .apply-section {
+  
+  .head-apply-section {
     margin-right: -230px;
     margin-top: 40px;
   }
-  .accreditations img {
-    height: 20px;
+  
+  .head-accreditations img {
+    height: 15px; /* Reduced */
   }
-  .accreditations {
+  
+  .head-accreditations {
     margin-left: 5px;
     margin-top: 30px;
   }
-  .apply-image {
-    height: 30px;
+  
+  .head-apply-image {
+    height: 25px; /* Reduced */
   }
-  .apply-card {
-    margin-left: 10px;
-    margin-bottom: 60px;
+  
+  .head-vertical-line {
+    height: 25px;
   }
 }
