@@ -375,6 +375,7 @@
   .programs-elegant-container {
     position: relative;
   }
+  
   .programs-carousel-wrapper {
     position: relative;
     height: 220px;
@@ -410,30 +411,16 @@
     margin-top: -17px;
   }
   .program-elegant-mba {
-    background: linear-gradient(135deg, 
-      #6ba3d6 0%, 
-      #4a8bc2 25%,
-      #3d7ab8 50%,
-      #2f69a3 75%,
-      #1f5582 100%);
+    background:   linear-gradient(to right, #49c2f1, #1276cc);
   }
   .program-elegant-btech {
-    background: linear-gradient(135deg, 
-      #8fa4d3 0%, 
-      #7694c9 25%,
-      #5d84bf 50%,
-      #4474b5 75%,
-      #2b64ab 100%);
+    background:   linear-gradient(to right, #49c2f1, #1276cc);
   }
   .program-elegant-card::before {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, 
-      rgba(255, 255, 255, 0.15) 0%, 
-      rgba(255, 255, 255, 0.05) 30%, 
-      rgba(255, 255, 255, 0.1) 70%,
-      rgba(255, 255, 255, 0.2) 100%);
+   background:   linear-gradient(to right, #49c2f1, #1276cc);
     z-index: 1;
   }
   .program-elegant-card > * {
