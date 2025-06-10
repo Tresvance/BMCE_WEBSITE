@@ -214,7 +214,6 @@ const recruiters = [
       </div>
     </div>
   </section>
-);
 
     </div>
   );
