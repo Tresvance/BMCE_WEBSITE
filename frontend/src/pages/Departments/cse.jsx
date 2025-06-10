@@ -360,9 +360,7 @@ This lab is specially followed by Students who are interested in understanding S
         {/* Sidebar */}
         <div className="rightbar">
           <div className="navigation-card">
-            {/* <div className="navigation-header">
-              <h3 className="navigation-title">Quick Navigation</h3>
-            </div> */}
+        
             <div className="navigation-list">
               {navigationItems.map((item, index) => (
                 <button
@@ -375,13 +373,11 @@ This lab is specially followed by Students who are interested in understanding S
               ))}
             </div>
           </div>
-
-
         </div>
       </div>
 
-      {/* Footer spacing */}
-      <div className="footer-spacing"></div>
+ 
+
     </div>
   );
 }
