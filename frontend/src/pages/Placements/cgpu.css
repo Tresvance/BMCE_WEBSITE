@@ -8,63 +8,84 @@
         .container {
           max-width: 1200px;
           margin: 0 auto;
-          padding: 0 2rem;
+ 
+          padding: 7rem;
         }
 
-        /* Hero Section */
-        .hero-section {
+  /* Hero Section */
+.career-hero {
   position: relative;
-  height: 50vh;
+  width: 100%;
+  height: 80vh;
+  max-height: 800px;
   overflow: hidden;
+    margin-top: 80px; /* Adjust based on header height */
+
 }
 
-.hero-image {
+.career-hero__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.career-hero__overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  z-index: -1; /* Send image behind overlay and content */
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+.career-hero__content {
+  text-align: center;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.career-hero__title {
+  color: white;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.career-hero__highlight {
+
+  display: inline-block;
+  position: relative;
+}
+
+.career-hero__highlight::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: currentColor;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .career-hero {
+    height: 60vh;
+  }
   
+  .career-hero__title {
+    font-size: 2rem;
+  }
+}
 
-        .hero-overlay {
-          position: relative;
-          width: 100%;
-          height: 100%;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          padding: 0 4rem;
-        }
-
-        .hero-content {
-          flex: 1;
-          color: #0b79da;
-          z-index: 2;
-        }
-
-        .hero-title {
-          font-size: 4rem;
-          font-weight: 900;
-          line-height: 1.1;
-          margin-bottom: 1rem;
-          text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-        }
-
-    
-
-
-
-        .hero-decoration {
-          position: absolute;
-          right: -100px;
-          top: 50%;
-          transform: translateY(-50%);
-          opacity: 0.1;
-        }
 
         .number-bg {
           font-size: 20rem;
@@ -246,38 +267,110 @@
         }
 
         /* Recruiters Section */
-        .recruiters-section {
-          padding: 6rem 0;
-          background: white;
-        }
+ /* ===== Recruiters Section ===== */
+.recruiters {
+  padding: 4rem 0;
+  background: #f9f9ff;
+}
 
-        .recruiters-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-          gap: 1.5rem;
-          margin-top: 3rem;
-        }
+.recruiters__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
 
-        .recruiter-card {
-          background: #f8fafc;
-          padding: 2rem 1.5rem;
-          border-radius: 15px;
-          text-align: center;
-          transition: all 0.3s ease;
-          border: 2px solid transparent;
-        }
+.recruiters__title {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  color: #2a2a2a;
+  margin-bottom: 2.5rem;
+  text-align: center;
+  position: relative;
+}
 
-        .recruiter-card:hover {
-          border-color: #667eea;
-          transform: translateY(-3px);
-          box-shadow: 0 10px 25px rgba(102, 126, 234, 0.1);
-        }
+.recruiters__title::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #6e45e2, #88d3ce);
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
+}
 
-        .recruiter-name {
-          font-size: 1.2rem;
-          font-weight: 600;
-          color: #2d3748;
-        }
+/* Recruiters Grid */
+.recruiters__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1.5rem;
+  place-items: center;
+}
+
+/* Recruiter Card */
+.recruiter-card {
+  width: 100%;
+  height: 120px;
+  background: white;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.recruiter-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.recruiter-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #6e45e2, #88d3ce);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.recruiter-card:hover::before {
+  opacity: 1;
+}
+
+.recruiter-card__logo {
+  max-width: 80%;
+  max-height: 60px;
+  object-fit: contain; /* Prevents distortion */
+  filter: grayscale(100%); /* Optional: B&W effect */
+  opacity: 0.8;
+  transition: all 0.3s ease;
+}
+.recruiter-card:hover .recruiter-card__logo {
+  filter: grayscale(0%); /* Color on hover */
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .recruiters__grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 1rem;
+  }
+
+  .recruiter-card {
+    height: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .recruiters__grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  }
+}
 
         /* Responsive Design */
         @media (max-width: 768px) {
