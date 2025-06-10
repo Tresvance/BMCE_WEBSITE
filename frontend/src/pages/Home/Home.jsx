@@ -20,7 +20,7 @@ import scheider from '../../assets/scheider.png';
 import sutherland from '../../assets/sutherland.jpg';
 import talrop from '../../assets/talrop.webp';
 import techmagi from '../../assets/techmagi.webp';
-import industrialParkImg from '../../assets/n-1.jpg';
+import industrialParkImg from '../../assets/park1.jpg';
 import conferenceImg from '../../assets/ns-1.jpg';
 import industrialVisitImg from '../../assets/ns-2.jpg';
 import cseImage from '../../assets/cse.jpg';
@@ -251,12 +251,12 @@ const HomePage = () => {
                   >
                     <div className="stat-content">
                       <div className="stat-icon-container">
-                        <IconComponent className="stat-icon" />
+                        <IconComponent className="stat-icons" />
                       </div>
                       <div className="stat-value">
                         {stat.value}
                       </div>
-                      <div className="stat-label">
+                      <div className="stat-name">
                         {stat.label}
                       </div>
                     </div>
