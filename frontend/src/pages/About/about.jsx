@@ -8,7 +8,6 @@ import founter from "../../assets/img_about/founter.jpg";
 import management1 from "../../assets/img_about/management1.png";
 import management2 from "../..//assets/img_about/management2.png";
 import management3 from "../../assets/img_about/management3.png";
-
 import { FaQuestionCircle, FaCertificate, FaChalkboardTeacher } from "react-icons/fa";
 import { GiGraduateCap } from "react-icons/gi";
 
