@@ -80,18 +80,21 @@ const PlacementPage = () => {
   return (
     <div className="placement-page">
       {/* Hero Section */}
-        <section className="hero-section">
-        <img src="../placements/placement.png" alt="Hero" className="hero-image" />
-        <div className="hero-overlay">
-            <div className="hero-content">
-            <h1 className="hero-title">
+     <section className="career-hero">
+          <img 
+            src="../placements/placement.png" 
+            alt="Career Development and Placement" 
+            className="career-hero__image" 
+          />
+          <div className="career-hero__overlay">
+            <div className="career-hero__content">
+              <h1 className="career-hero__title">
                 CAREER DEVELOPMENT & PLACEMENT
                 <br />
-                <span className="highlight">CELL</span>
-            </h1>
-            
+                <span className="career-hero__highlight">CELL</span>
+              </h1>
             </div>
-        </div>
+          </div>
         </section>
 
 
@@ -184,7 +187,7 @@ const PlacementPage = () => {
       {/* Services Section */}
 
       {/* Recruiters Section */}
-      <section className="recruiters-section">
+     <section className="recruiters-section">
         <div className="container">
           <h2 className="section-title center">Top Recruiters</h2>
           <div className="recruiters-grid">
@@ -193,7 +196,7 @@ const PlacementPage = () => {
                 <div className="recruiter-name">{recruiter}</div>
               </div>
             ))}
-          </div>
+          </div> 
         </div>
       </section>
 

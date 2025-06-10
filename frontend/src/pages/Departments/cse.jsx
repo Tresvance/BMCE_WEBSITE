@@ -330,15 +330,13 @@ This lab is specially followed by Students who are interested in understanding S
       {/* Banner Section */}
       <div className="banner-section">
 
-        <div className="banner-overlay"></div>
-        <div className="banner-gradient"></div>
-
         <div className="banner-content">
           <div>
             <h1 className="banner-title">
               Department of Computer Science<br />
 
             </h1>
+            
 
           </div>
         </div>
