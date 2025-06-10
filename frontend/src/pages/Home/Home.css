@@ -326,7 +326,7 @@
     justify-content: center;
     margin-bottom: 0.3rem;
   }
-  .stat-icon {
+  .stat-icons {
     width: 22px;
     height: 22px;
     color: white;
@@ -339,10 +339,10 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
-  .stat-label {
+  .stat-name {
     font-size: 0.75rem;
     font-weight: 600;
-    color: #64748b;
+    color: #1276cc;
     text-transform: uppercase;
     letter-spacing: 0.05em;
   }

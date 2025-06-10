@@ -251,12 +251,12 @@ const HomePage = () => {
                   >
                     <div className="stat-content">
                       <div className="stat-icon-container">
-                        <IconComponent className="stat-icon" />
+                        <IconComponent className="stat-icons" />
                       </div>
                       <div className="stat-value">
                         {stat.value}
                       </div>
-                      <div className="stat-label">
+                      <div className="stat-name">
                         {stat.label}
                       </div>
                     </div>
