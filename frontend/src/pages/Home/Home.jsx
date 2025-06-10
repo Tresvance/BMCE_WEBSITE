@@ -143,28 +143,42 @@ const HomePage = () => {
       id: 2,
       title: "Artificial Intelligence",
       image: aiImage, 
-      hodName: "Dennis Mathew",
+      hodName: "Ms. Deepthy S",
       hodTitle: "Head Of Department"
     },
     {
       id: 3,
       title: "Mechanical Engineering",
       image: mechImage,
-      hodName: "Dennis Mathew", 
+      hodName: "Mr. Abraham Sam Thomas", 
       hodTitle: "Head Of Department"
     },
     {
       id: 4,
       title: "Electrical Engineering",
       image: eeImage,
-      hodName: "Sarah Johnson",
+      hodName: "Mr. Vishu V",
       hodTitle: "Head Of Department"
     },
     {
       id: 5,
       title: "Civil Engineering",
       image: civilImage,
-      hodName: "Michael Chen",
+      hodName: "Mrs. Rajalakshmi P",
+      hodTitle: "Head Of Department"
+    },
+    {
+      id: 6,
+      title: "Electronics and Communication Engineering",
+      image: civilImage,
+      hodName: "Mr. Nidhin.T.G",
+      hodTitle: "Head Of Department"
+    },
+    {
+      id:7 ,
+      title: "Master of Business Administration",
+      image: civilImage,
+      hodName: "Mr. Roy Samuel",
       hodTitle: "Head Of Department"
     }
   ];
