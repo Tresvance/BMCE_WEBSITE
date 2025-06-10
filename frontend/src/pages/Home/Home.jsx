@@ -176,7 +176,7 @@ const HomePage = () => {
     },
     {
       id:7 ,
-      title: "Master of Business Administration",
+      title: "MBA",
       image: civilImage,
       hodName: "Mr. Roy Samuel",
       hodTitle: "Head Of Department"
