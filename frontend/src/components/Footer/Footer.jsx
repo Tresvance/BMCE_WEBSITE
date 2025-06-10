@@ -5,23 +5,21 @@ import "./Footer.css";
 
 const Footer = () => {
   return (
-    <footer className="footer-container">
-      <div className="footer-content">
+    <footer className="fr-footer-container">
+      <div className="fr-footer-content">
         {/* Left Section - Logo and Address */}
-        <div className="footer-section">
-          <div className="logo-section">
+        <div className="fr-footer-section">
+          <div className="fr-logo-section">
             <img
               src={footerImage}
               alt="College Logo"
-              className="college-logo"
+              className="fr-college-logo"
             />
-            <div className="college-info">
-              {/* <h3 className="college-name">BMCE SASTHAMCOTTA</h3> */}
-              <div className="college-address">
-                {/* <p>Sasthamcotta</p> */}
+            <div className="fr-college-info">
+              <div className="fr-college-address">
                 <p>Sasthamcotta || Kollam || Kerala</p>
                 <p>India</p>
-                <p className="contact-info">
+                <p className="fr-contact-info">
                   <span>Phone: (0476) 2835579</span>
                   <span>Email: bm2coe@gmail.com</span>
                 </p>
@@ -31,34 +29,34 @@ const Footer = () => {
         </div>
 
         {/* Middle Section - Quick Navigation */}
-        <div className="footer-section">
-          <h4 className="section-title">Quick Links</h4>
-          <div className="nav-links">
-            <div className="nav-column">
-              <a href="/about" className="footer-link">
+        <div className="fr-footer-section">
+          <h4 className="fr-section-title">Quick Links</h4>
+          <div className="fr-nav-links">
+            <div className="fr-nav-column">
+              <a href="/about" className="fr-footer-link">
                 About Us
               </a>
-              <a href="/academics" className="footer-link">
+              <a href="/academics" className="fr-footer-link">
                 Academics
               </a>
-              <a href="/admissions" className="footer-link">
+              <a href="/admissions" className="fr-footer-link">
                 Admissions
               </a>
-              <a href="/research" className="footer-link">
+              <a href="/research" className="fr-footer-link">
                 Research
               </a>
             </div>
-            <div className="nav-column">
-              <a href="/campus-life" className="footer-link">
+            <div className="fr-nav-column">
+              <a href="/campus-life" className="fr-footer-link">
                 Campus Life
               </a>
-              <a href="/athletics" className="footer-link">
+              <a href="/athletics" className="fr-footer-link">
                 Athletics
               </a>
-              <a href="/library" className="footer-link">
+              <a href="/library" className="fr-footer-link">
                 Library
               </a>
-              <a href="/contact" className="footer-link">
+              <a href="/contact" className="fr-footer-link">
                 Contact Us
               </a>
             </div>
@@ -66,14 +64,14 @@ const Footer = () => {
         </div>
 
         {/* Right Section - Social Media and Quote */}
-        <div className="footer-section">
-          <h4 className="section-title">Connect With Us</h4>
-          <div className="social-media">
+        <div className="fr-footer-section">
+          <h4 className="fr-section-title">Connect With Us</h4>
+          <div className="fr-social-media">
             <a
               href="https://facebook.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="social-link"
+              className="fr-social-link"
             >
               <Facebook size={24} />
             </a>
@@ -81,7 +79,7 @@ const Footer = () => {
               href="https://twitter.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="social-link"
+              className="fr-social-link"
             >
               <Twitter size={24} />
             </a>
@@ -89,7 +87,7 @@ const Footer = () => {
               href="https://instagram.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="social-link"
+              className="fr-social-link"
             >
               <Instagram size={24} />
             </a>
@@ -97,7 +95,7 @@ const Footer = () => {
               href="https://linkedin.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="social-link"
+              className="fr-social-link"
             >
               <Linkedin size={24} />
             </a>
@@ -105,12 +103,12 @@ const Footer = () => {
               href="https://youtube.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="social-link"
+              className="fr-social-link"
             >
               <Youtube size={24} />
             </a>
           </div>
-          <div className="college-quote">
+          <div className="fr-college-quote">
             <p>
               "Empowering minds, shaping futures, building tomorrow's leaders
               through excellence in education and innovation."
@@ -120,16 +118,16 @@ const Footer = () => {
       </div>
 
       {/* Copyright Section */}
-      <div className="footer-bottom">
-        <div className="copyright-content">
+      <div className="fr-footer-bottom">
+        <div className="fr-copyright-content">
           <p>&copy; 2025 BMCE SASTHAMCOTTA. All rights reserved.</p>
           <p>
             Powered by{" "}
             <a
-              href="https://www.tresvance.com"
+              href="https://tresvance.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="tresvance-link"
+              className="fr-tresvance-link"
             >
               TRESVANCE
             </a>
