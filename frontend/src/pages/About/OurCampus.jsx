@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import logo from "../../assets/finalelogo.png";
 import trustImage from "../../assets/eapen.jpg";
-import libraryImage from "../../assets/Library2.jpg";
+import libraryImage from "../../assets/Library2.JPG";
 import secondImage from "../../assets/Library1.jpg";
 import chapelImage from "../../assets/chapel.jpg";
 import meditationImage from "../../assets/meditation.jpg";
