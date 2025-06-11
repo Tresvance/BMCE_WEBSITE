@@ -1,6 +1,5 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Navbar from "./components/Sidebar/Sidebar";
 import Footer from "./components/Footer/Footer.jsx";
 import Header from "./components/Header/Header";
 import Home from "./pages/Home/Home";
@@ -15,17 +14,16 @@ import MechDepartmentPage from "./pages/Departments/mech.jsx";
 import PlacementPage from "./pages/Placements/cgpu.jsx";
 import CollegeGallery from "./pages/Gallery/gallery.jsx";
 import About from "./pages/About/about.jsx";
-import ContactPage from "./pages/Contact/contact.jsx"
-
+import ContactPage from "./pages/Contact/contact.jsx";
+import Sidebar from "./components/Sidebar/Sidebar.jsx";
 
 const App = () => {
   return (
     <Router>
       <Header />
-      <Navbar />
+      <Sidebar />
       <Routes>
         <Route path="/" element={<Home />} />
-
 
         <Route path="placements/cgpu" element={<PlacementPage />} />
         <Route path="department/csedept" element={<Cse />} />
@@ -39,7 +37,7 @@ const App = () => {
         <Route path="gallery" element={<CollegeGallery />} />
 
         <Route path="about" element={<About />} />
-        
+
         <Route path="contact" element={<ContactPage />} />
       </Routes>
       <Footer />

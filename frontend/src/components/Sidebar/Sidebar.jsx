@@ -20,7 +20,7 @@ import "./Sidebar.css";
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSubmenu, setActiveSubmenu] = useState(null);
-
+  const [activeSubSubmenu, setActiveSubSubmenu] = useState(null);
   const menuItems = [
     {
       id: "home",
@@ -49,7 +49,32 @@ const Sidebar = () => {
       id: "courses",
       title: "Courses & Departments",
       icon: Layers,
-      submenu: ["Btech(4 Year)", "Diploma(3 Year)", "MBA (2 Year)"],
+      submenu: [
+        {
+        title: "B.Tech (4 Year)",
+        subsubmenu: [
+          "Computer Science and Engineering" ,
+          "Civil Engineering",
+          "Electronics and Electrical Engineering",
+          "Electronics and Communication Engineering", 
+          "Mechanical Engineering", 
+        ],
+        
+      },
+      {
+        title: "Diploma (3 Year)",
+        subsubmenu: ["Civil Engineering",
+          "Mechanical Engineering",],
+      },
+      {
+        title: "MBA (2 Year)",
+        subsubmenu: [
+          "Finance",
+          "Marketing",
+          "Human Resource",
+        ],
+      },
+    ],
     },
     {
       id: "activities",
@@ -101,7 +126,11 @@ const Sidebar = () => {
 
   const handleMenuClick = (itemId) => {
     setActiveSubmenu(activeSubmenu === itemId ? null : itemId);
+    setActiveSubSubmenu(null);
   };
+  const handleSubmenuClick = (subItemTitle) => {
+  setActiveSubSubmenu(activeSubmenu === "courses" && activeSubSubmenu === subItemTitle ? null : subItemTitle);
+};
 
   return (
     <>
@@ -135,50 +164,81 @@ const Sidebar = () => {
         </div>
 
         <nav className="sidebar-nav">
-          {menuItems.map((item, index) => {
-            const IconComponent = item.icon;
-            const isActive = activeSubmenu === item.id;
+        {menuItems.map((item, index) => {
+          const IconComponent = item.icon;
+          const isActive = activeSubmenu === item.id;
 
-            return (
-              <div key={item.id} className="menu-item-container">
-                <div
-                  className={`menu-item ${isActive ? "active" : ""}`}
-                  onClick={() => handleMenuClick(item.id)}
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
-                  <div className="menu-item-content">
-                    <IconComponent size={24} className="menu-icon" />
-                    <span className="menu-text">{item.title}</span>
-                  </div>
-                  {item.submenu && (
-                    <ChevronRight
-                      size={20}
-                      className={`chevron ${isActive ? "chevron-rotated" : ""}`}
-                    />
-                  )}
+          return (
+            <div key={item.id} className="menu-item-container">
+              <div
+                className={`menu-item ${isActive ? "active" : ""}`}
+                onClick={() => handleMenuClick(item.id)}
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <div className="menu-item-content">
+                  <IconComponent size={24} className="menu-icon" />
+                  <span className="menu-text">{item.title}</span>
                 </div>
-
-                {/* Separator Line */}
-                <div className="separator-line" />
-
-                {/* Submenu */}
-                {isActive && item.submenu && (
-                  <div className="submenu">
-                    {item.submenu.map((subItem, subIndex) => (
-                      <div
-                        key={subItem}
-                        className="submenu-item"
-                        style={{ animationDelay: `${subIndex * 0.05}s` }}
-                      >
-                        {subItem}
-                      </div>
-                    ))}
-                  </div>
+                {item.submenu && (
+                  <ChevronRight
+                    size={20}
+                    className={`chevron ${isActive ? "chevron-rotated" : ""}`}
+                  />
                 )}
               </div>
-            );
-          })}
-        </nav>
+
+              <div className="separator-line" />
+
+              {/* Submenu */}
+              {isActive && item.submenu && (
+                <div className="submenu">
+                  {item.id === "courses"
+                    ? item.submenu.map((subItem, subIndex) => (
+                        <div key={subItem.title}>
+                          <div
+                            className="submenu-item"
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              handleSubmenuClick(subItem.title);
+                            }}
+                            style={{ animationDelay: `${subIndex * 0.05}s` }}
+                          >
+                            {subItem.title}
+                            {subItem.subsubmenu && (
+                              <ChevronRight
+                                size={16}
+                                className={`chevron ${activeSubSubmenu === subItem.title ? "chevron-rotated" : ""}`}
+                                style={{ marginLeft: 8 }}
+                              />
+                            )}
+                          </div>
+                          {/* Sub-Submenu */}
+                          {activeSubSubmenu === subItem.title && subItem.subsubmenu && (
+                            <div className="subsubmenu">
+                              {subItem.subsubmenu.map((subSub, subSubIdx) => (
+                                <div key={subSub} className="subsubmenu-item" style={{ animationDelay: `${subSubIdx * 0.03}s` }}>
+                                  {subSub}
+                                </div>
+                              ))}
+                            </div>
+                          )}
+                        </div>
+                      ))
+                    : item.submenu.map((subItem, subIndex) => (
+                        <div
+                          key={subItem}
+                          className="submenu-item"
+                          style={{ animationDelay: `${subIndex * 0.05}s` }}
+                        >
+                          {subItem}
+                        </div>
+                      ))}
+                </div>
+              )}
+            </div>
+          );
+        })}
+      </nav>
       </div>
     </>
   );
