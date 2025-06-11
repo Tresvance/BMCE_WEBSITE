@@ -696,7 +696,7 @@ const HomePage = () => {
     </div>
     {/*Placement section*/}
     <section className="placement-section">
-      <div className="container">
+      <div className="homecontainer">
         <h2 className="placement-title">Our Placement Partners</h2>
         <p className="placement-subtitle">
           Leading companies trust our graduates for their excellence and innovation
