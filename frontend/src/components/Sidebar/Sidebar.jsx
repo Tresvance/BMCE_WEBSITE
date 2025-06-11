@@ -23,79 +23,73 @@ const Sidebar = () => {
   const [activeSubSubmenu, setActiveSubSubmenu] = useState(null);
   const menuItems = [
     {
-      id: "home",
+      id: "sbar-home",
       title: "Home",
       icon: Home,
     },
     {
-      id: "about",
+      id: "sbar-about",
       title: "About Us",
       icon: Users,
       submenu: ["ABOUT BMCE", "OUR CAMPUS", "Accreditation"],
     },
     {
-      id: "administration",
+      id: "sbar-administration",
       title: "Administration",
       icon: Shield,
       submenu: ["Principal", "Director's Message", "Our Team"],
     },
     {
-      id: "academics",
+      id: "sbar-academics",
       title: "Academics",
       icon: BookOpen,
       submenu: ["Student Assesment", "Faculty Assesment"],
     },
     {
-      id: "courses",
+      id: "sbar-courses",
       title: "Courses & Departments",
       icon: Layers,
       submenu: [
         {
-        title: "B.Tech (4 Year)",
-        subsubmenu: [
-          "Computer Science and Engineering" ,
-          "Civil Engineering",
-          "Electronics and Electrical Engineering",
-          "Electronics and Communication Engineering", 
-          "Mechanical Engineering", 
-        ],
-        
-      },
-      {
-        title: "Diploma (3 Year)",
-        subsubmenu: ["Civil Engineering",
-          "Mechanical Engineering",],
-      },
-      {
-        title: "MBA (2 Year)",
-        subsubmenu: [
-          "Finance",
-          "Marketing",
-          "Human Resource",
-        ],
-      },
-    ],
+          title: "B.Tech (4 Year)",
+          subsubmenu: [
+            "Computer Science and Engineering",
+            "Civil Engineering",
+            "Electronics and Electrical Engineering",
+            "Electronics and Communication Engineering",
+            "Mechanical Engineering",
+          ],
+        },
+        {
+          title: "Diploma (3 Year)",
+          subsubmenu: ["Civil Engineering", "Mechanical Engineering"],
+        },
+        {
+          title: "MBA (2 Year)",
+          subsubmenu: ["Finance", "Marketing", "Human Resource"],
+        },
+      ],
     },
     {
-      id: "activities",
+      id: "sbar-activities",
       title: "Activities",
       icon: Activity,
       submenu: ["Sports", "IEDC", "IEEE", "Student Council", "NSS"],
     },
     {
-      id: "placement",
+      id: "sbar-placement",
       title: "Placement",
       icon: Briefcase,
       submenu: ["Placement Cell", "CGPU", "Placement Details"],
     },
     {
-      id: "research",
+      id: "sbar-research",
       title: "Research",
       icon: Search,
       submenu: ["Research at a Glance", "Publications"],
     },
     {
-      id: "facilities",
+      id: "sbar-facilities",
       title: "Facilities",
       icon: Building,
       submenu: [
@@ -108,12 +102,12 @@ const Sidebar = () => {
       ],
     },
     {
-      id: "gallery",
+      id: "sbar-gallery",
       title: "Gallery",
       icon: Image,
     },
     {
-      id: "contact",
+      id: "sbar-contact",
       title: "Contact",
       icon: Phone,
     },
@@ -129,33 +123,32 @@ const Sidebar = () => {
     setActiveSubSubmenu(null);
   };
   const handleSubmenuClick = (subItemTitle) => {
-  setActiveSubSubmenu(activeSubmenu === "courses" && activeSubSubmenu === subItemTitle ? null : subItemTitle);
-};
+    setActiveSubSubmenu(
+      activeSubmenu === "sbar-courses" && activeSubSubmenu === subItemTitle
+        ? null
+        : subItemTitle
+    );
+  };
 
   return (
     <>
-      {
-        <div className="gradient-strip">
-          <div
-            className="hamburger-menu"
-            onClick={toggleSidebar}
-            aria-label="Toggle menu"
-          >
-            <span className="hamburger-line"></span>
-            <span className="hamburger-line"></span>
-            <span className="hamburger-line"></span>
-          </div>
-        </div>
-      }
-
+      <div
+        className="sbar-hamburger-menu"
+        onClick={toggleSidebar}
+        aria-label="Toggle menu"
+      >
+        <span className="sbar-hamburger-line"></span>
+        <span className="sbar-hamburger-line"></span>
+        <span className="sbar-hamburger-line"></span>
+      </div>
       {/* Sidebar */}
-      <div className={`sidebar ${isOpen ? "sidebar-open" : ""}`}>
-        <div className="sidebar-header">
-          <h2 className="sidebar-title">
+      <div className={`sbar-sidebar ${isOpen ? "sbar-sidebar-open" : ""}`}>
+        <div className="sbar-sidebar-header">
+          <h2 className="sbar-sidebar-title">
             BASELIOUS MATHEWS II COLLEGE OF ENGINEERING
           </h2>
           <button
-            className="close-btn"
+            className="sbar-close-btn"
             onClick={toggleSidebar}
             aria-label="Close menu"
           >
@@ -163,82 +156,91 @@ const Sidebar = () => {
           </button>
         </div>
 
-        <nav className="sidebar-nav">
-        {menuItems.map((item, index) => {
-          const IconComponent = item.icon;
-          const isActive = activeSubmenu === item.id;
+        <nav className="sbar-sidebar-nav">
+          {menuItems.map((item, index) => {
+            const IconComponent = item.icon;
+            const isActive = activeSubmenu === item.id;
 
-          return (
-            <div key={item.id} className="menu-item-container">
-              <div
-                className={`menu-item ${isActive ? "active" : ""}`}
-                onClick={() => handleMenuClick(item.id)}
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="menu-item-content">
-                  <IconComponent size={24} className="menu-icon" />
-                  <span className="menu-text">{item.title}</span>
+            return (
+              <div key={item.id} className="sbar-menu-item-container">
+                <div
+                  className={`sbar-menu-item ${isActive ? "sbar-active" : ""}`}
+                  onClick={() => handleMenuClick(item.id)}
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  <div className="sbar-menu-item-content">
+                    <IconComponent size={24} className="sbar-menu-icon" />
+                    <span className="sbar-menu-text">{item.title}</span>
+                  </div>
+                  {item.submenu && (
+                    <ChevronRight
+                      size={20}
+                      className={`sbar-chevron ${isActive ? "sbar-chevron-rotated" : ""}`}
+                    />
+                  )}
                 </div>
-                {item.submenu && (
-                  <ChevronRight
-                    size={20}
-                    className={`chevron ${isActive ? "chevron-rotated" : ""}`}
-                  />
-                )}
-              </div>
 
-              <div className="separator-line" />
+                <div className="sbar-separator-line" />
 
-              {/* Submenu */}
-              {isActive && item.submenu && (
-                <div className="submenu">
-                  {item.id === "courses"
-                    ? item.submenu.map((subItem, subIndex) => (
-                        <div key={subItem.title}>
+                {/* Submenu */}
+                {isActive && item.submenu && (
+                  <div className="sbar-submenu">
+                    {item.id === "sbar-courses"
+                      ? item.submenu.map((subItem, subIndex) => (
+                          <div key={subItem.title}>
+                            <div
+                              className="sbar-submenu-item"
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                handleSubmenuClick(subItem.title);
+                              }}
+                              style={{ animationDelay: `${subIndex * 0.05}s` }}
+                            >
+                              {subItem.title}
+                              {subItem.subsubmenu && (
+                                <ChevronRight
+                                  size={16}
+                                  className={`sbar-chevron ${activeSubSubmenu === subItem.title ? "sbar-chevron-rotated" : ""}`}
+                                  style={{ marginLeft: 8 }}
+                                />
+                              )}
+                            </div>
+                            {/* Sub-Submenu */}
+                            {activeSubSubmenu === subItem.title &&
+                              subItem.subsubmenu && (
+                                <div className="sbar-subsubmenu">
+                                  {subItem.subsubmenu.map(
+                                    (subSub, subSubIdx) => (
+                                      <div
+                                        key={subSub}
+                                        className="sbar-subsubmenu-item"
+                                        style={{
+                                          animationDelay: `${subSubIdx * 0.03}s`,
+                                        }}
+                                      >
+                                        {subSub}
+                                      </div>
+                                    )
+                                  )}
+                                </div>
+                              )}
+                          </div>
+                        ))
+                      : item.submenu.map((subItem, subIndex) => (
                           <div
-                            className="submenu-item"
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              handleSubmenuClick(subItem.title);
-                            }}
+                            key={subItem}
+                            className="sbar-submenu-item"
                             style={{ animationDelay: `${subIndex * 0.05}s` }}
                           >
-                            {subItem.title}
-                            {subItem.subsubmenu && (
-                              <ChevronRight
-                                size={16}
-                                className={`chevron ${activeSubSubmenu === subItem.title ? "chevron-rotated" : ""}`}
-                                style={{ marginLeft: 8 }}
-                              />
-                            )}
+                            {subItem}
                           </div>
-                          {/* Sub-Submenu */}
-                          {activeSubSubmenu === subItem.title && subItem.subsubmenu && (
-                            <div className="subsubmenu">
-                              {subItem.subsubmenu.map((subSub, subSubIdx) => (
-                                <div key={subSub} className="subsubmenu-item" style={{ animationDelay: `${subSubIdx * 0.03}s` }}>
-                                  {subSub}
-                                </div>
-                              ))}
-                            </div>
-                          )}
-                        </div>
-                      ))
-                    : item.submenu.map((subItem, subIndex) => (
-                        <div
-                          key={subItem}
-                          className="submenu-item"
-                          style={{ animationDelay: `${subIndex * 0.05}s` }}
-                        >
-                          {subItem}
-                        </div>
-                      ))}
-                </div>
-              )}
-            </div>
-          );
-        })}
-      </nav>
+                        ))}
+                  </div>
+                )}
+              </div>
+            );
+          })}
+        </nav>
       </div>
     </>
   );
