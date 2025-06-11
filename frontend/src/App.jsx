@@ -14,8 +14,18 @@ import MechDepartmentPage from "./pages/Departments/mech.jsx";
 import PlacementPage from "./pages/Placements/cgpu.jsx";
 import CollegeGallery from "./pages/Gallery/gallery.jsx";
 import About from "./pages/About/about.jsx";
+
 import ContactPage from "./pages/Contact/contact.jsx";
 import Sidebar from "./components/Sidebar/Sidebar.jsx";
+
+import ContactPage from "./pages/Contact/contact.jsx";
+import OurCampus from "./pages/About/OurCampus";
+import Accrediation from "./pages/About/Accreditation";
+import Disclosure from "./pages/About/Disclosure";
+import IEDC from "./pages/Activities/IEDC";
+import NSS from "./pages/Activities/NSS";
+
+3;
 
 const App = () => {
   return (
@@ -39,6 +49,11 @@ const App = () => {
         <Route path="about" element={<About />} />
 
         <Route path="contact" element={<ContactPage />} />
+        <Route path="/our-campus" element={<OurCampus />} />
+        <Route path="/accreditation" element={<Accrediation />} />
+        <Route path="/disclosure" element={<Disclosure />} />
+        <Route path="/iedc" element={<IEDC />} />
+        <Route path="/nss" element={<NSS />} />
       </Routes>
       <Footer />
     </Router>

@@ -124,7 +124,7 @@ const Footer = () => {
           <p>
             Powered by{" "}
             <a
-              href="https://www.tresvance.com"
+              href="https://tresvance.com"
               target="_blank"
               rel="noopener noreferrer"
               className="fr-tresvance-link"

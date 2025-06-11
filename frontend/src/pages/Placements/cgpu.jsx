@@ -26,10 +26,20 @@ const PlacementPage = () => {
     }
   ];
 
-  const recruiters = [
-    "TCS", "Infosys", "Wipro", "Accenture", "IBM", "Microsoft", 
-    "Google", "Amazon", "Cognizant", "HCL", "Tech Mahindra", "Capgemini"
-  ];
+const recruiters = [
+  { name: "TCS", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Tata_Consultancy_Services_Logo.svg/1200px-Tata_Consultancy_Services_Logo.svg.png" },
+  { name: "Infosys", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Infosys_logo.svg/1200px-Infosys_logo.svg.png" },
+  { name: "Wipro", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Wipro_logo_2020.svg/1200px-Wipro_logo_2020.svg.png" },
+  { name: "Accenture", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Accenture.svg/1200px-Accenture.svg.png" },
+  { name: "IBM", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/IBM_logo.svg/1200px-IBM_logo.svg.png" },
+  { name: "Microsoft", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/1200px-Microsoft_logo.svg.png" },
+  { name: "Google", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png" },
+  { name: "Amazon", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/1200px-Amazon_logo.svg.png" },
+  { name: "Cognizant", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Cognizant_logo_2022.svg/1200px-Cognizant_logo_2022.svg.png" },
+  { name: "HCL", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/HCL_Technologies_logo.svg/1200px-HCL_Technologies_logo.svg.png" },
+  { name: "Tech Mahindra", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Tech_Mahindra_Logo.svg/1200px-Tech_Mahindra_Logo.svg.png" },
+  { name: "Capgemini", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Capgemini_Logo.svg/1200px-Capgemini_Logo.svg.png" }
+];
 
   const services = [
     {
@@ -80,18 +90,21 @@ const PlacementPage = () => {
   return (
     <div className="placement-page">
       {/* Hero Section */}
-        <section className="hero-section">
-        <img src="../placements/placement.png" alt="Hero" className="hero-image" />
-        <div className="hero-overlay">
-            <div className="hero-content">
-            <h1 className="hero-title">
+     <section className="career-hero">
+          <img 
+            src="../placements/placement.png" 
+            alt="Career Development and Placement" 
+            className="career-hero__image" 
+          />
+          <div className="career-hero__overlay">
+            <div className="career-hero__content">
+              <h1 className="career-hero__title">
                 CAREER DEVELOPMENT & PLACEMENT
                 <br />
-                <span className="highlight">CELL</span>
-            </h1>
-            
+                <span className="career-hero__highlight">CELL</span>
+              </h1>
             </div>
-        </div>
+          </div>
         </section>
 
 
@@ -184,18 +197,23 @@ const PlacementPage = () => {
       {/* Services Section */}
 
       {/* Recruiters Section */}
-      <section className="recruiters-section">
-        <div className="container">
-          <h2 className="section-title center">Top Recruiters</h2>
-          <div className="recruiters-grid">
-            {recruiters.map((recruiter, index) => (
-              <div key={index} className="recruiter-card">
-                <div className="recruiter-name">{recruiter}</div>
-              </div>
-            ))}
+ <section className="recruiters">
+    <div className="recruiters__container container">
+      <h2 className="recruiters__title">Top Recruiters</h2>
+      <div className="recruiters__grid">
+        {recruiters.map((recruiter, index) => (
+          <div key={index} className="recruiter-card">
+            <img 
+              src={recruiter.logo} 
+              alt={recruiter.name} 
+              className="recruiter-card__logo"
+              loading="lazy" // Optimized loading
+            />
           </div>
-        </div>
-      </section>
+        ))}
+      </div>
+    </div>
+  </section>
 
     </div>
   );

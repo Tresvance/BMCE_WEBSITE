@@ -83,9 +83,9 @@ const ContactPage = () => {
                 <Phone size={24} />
               </div>
               <h3>Call Us</h3>
-              <p>+1 (555) 123-4567</p>
-              <p>+1 (555) 123-4568</p>
-              <span className="card-label">Mon-Fri 8AM-6PM</span>
+              <p>(+91) 0476-2835579</p>
+              <p> (+91) 8281801579</p>
+              <span className="card-label">Mon-Fri 9AM-5PM</span>
             </div>
             
             <div className="contact-card">
@@ -93,8 +93,8 @@ const ContactPage = () => {
                 <Mail size={24} />
               </div>
               <h3>Email Us</h3>
-              <p>info@college.edu</p>
-              <p>admissions@college.edu</p>
+              <p> bm2coe@gmail.com</p>
+              <p> principal@bmce.ac.in</p>
               <span className="card-label">24/7 Support</span>
             </div>
             
@@ -103,8 +103,9 @@ const ContactPage = () => {
                 <MapPin size={24} />
               </div>
               <h3>Visit Us</h3>
-              <p>123 Education Street</p>
-              <p>Academic City, AC 12345</p>
+              <p>Lake View, Muthupilakadu,</p>
+              <p>Sasthamcotta, Kollam,
+              Kerala, India - 690 520,</p>
               <span className="card-label">Campus Tours Available</span>
             </div>
             
@@ -113,7 +114,7 @@ const ContactPage = () => {
                 <Clock size={24} />
               </div>
               <h3>Office Hours</h3>
-              <p>Monday - Friday: 8AM - 6PM</p>
+              <p>Monday - Friday: 9AM - 5PM</p>
               <p>Saturday: 9AM - 2PM</p>
               <span className="card-label">Closed Sundays</span>
             </div>
@@ -248,29 +249,29 @@ const ContactPage = () => {
             <div className="departments-grid">
               <div className="department-card">
                 <h4>Admissions Office</h4>
-                <p><Phone size={16} /> +1 (555) 123-4570</p>
-                <p><Mail size={16} /> admissions@college.edu</p>
-                <span className="department-hours">Mon-Fri: 8AM-5PM</span>
+                <p><Phone size={16} /> (+91) 8281801579 </p>
+                <p><Mail size={16} /> bm2coe@gmail.com</p>
+                <span className="department-hours">Mon-Fri: 9AM-5PM</span>
               </div>
               
               <div className="department-card">
                 <h4>Student Services</h4>
-                <p><Phone size={16} /> +1 (555) 123-4571</p>
-                <p><Mail size={16} /> students@college.edu</p>
+                <p><Phone size={16} /> (+91) 8281801579</p>
+                <p><Mail size={16} /> bm2coe@gmail.com</p>
                 <span className="department-hours">Mon-Fri: 9AM-6PM</span>
               </div>
               
               <div className="department-card">
                 <h4>Financial Aid</h4>
-                <p><Phone size={16} /> +1 (555) 123-4572</p>
-                <p><Mail size={16} /> finaid@college.edu</p>
+                <p><Phone size={16} />(+91) 8281801579</p>
+                <p><Mail size={16} /> bm2coe@gmail.com</p>
                 <span className="department-hours">Mon-Fri: 8AM-4PM</span>
               </div>
               
               <div className="department-card">
                 <h4>Career Services</h4>
-                <p><Phone size={16} /> +1 (555) 123-4573</p>
-                <p><Mail size={16} /> careers@college.edu</p>
+                <p><Phone size={16} />(+91) 8281801579</p>
+                <p><Mail size={16} /> bm2coe@gmail.com</p>
                 <span className="department-hours">Mon-Fri: 9AM-5PM</span>
               </div>
             </div>

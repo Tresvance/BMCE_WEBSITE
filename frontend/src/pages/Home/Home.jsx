@@ -20,7 +20,7 @@ import scheider from '../../assets/scheider.png';
 import sutherland from '../../assets/sutherland.jpg';
 import talrop from '../../assets/talrop.webp';
 import techmagi from '../../assets/techmagi.webp';
-import industrialParkImg from '../../assets/n-1.jpg';
+import industrialParkImg from '../../assets/park1.jpg';
 import conferenceImg from '../../assets/ns-1.jpg';
 import industrialVisitImg from '../../assets/ns-2.jpg';
 import cseImage from '../../assets/cse.jpg';
@@ -143,28 +143,42 @@ const HomePage = () => {
       id: 2,
       title: "Artificial Intelligence",
       image: aiImage, 
-      hodName: "Dennis Mathew",
+      hodName: "Ms. Deepthy S",
       hodTitle: "Head Of Department"
     },
     {
       id: 3,
       title: "Mechanical Engineering",
       image: mechImage,
-      hodName: "Dennis Mathew", 
+      hodName: "Mr. Abraham Sam Thomas", 
       hodTitle: "Head Of Department"
     },
     {
       id: 4,
       title: "Electrical Engineering",
       image: eeImage,
-      hodName: "Sarah Johnson",
+      hodName: "Mr. Vishu V",
       hodTitle: "Head Of Department"
     },
     {
       id: 5,
       title: "Civil Engineering",
       image: civilImage,
-      hodName: "Michael Chen",
+      hodName: "Mrs. Rajalakshmi P",
+      hodTitle: "Head Of Department"
+    },
+    {
+      id: 6,
+      title: "Electronics and Communication Engineering",
+      image: civilImage,
+      hodName: "Mr. Nidhin.T.G",
+      hodTitle: "Head Of Department"
+    },
+    {
+      id:7 ,
+      title: "MBA",
+      image: civilImage,
+      hodName: "Mr. Roy Samuel",
       hodTitle: "Head Of Department"
     }
   ];
@@ -251,12 +265,12 @@ const HomePage = () => {
                   >
                     <div className="stat-content">
                       <div className="stat-icon-container">
-                        <IconComponent className="stat-icon" />
+                        <IconComponent className="stat-icons" />
                       </div>
                       <div className="stat-value">
                         {stat.value}
                       </div>
-                      <div className="stat-label">
+                      <div className="stat-name">
                         {stat.label}
                       </div>
                     </div>
