@@ -59,27 +59,27 @@ const ContactPage = () => {
   return (
     <div className="contact-page">
       {/* Hero Section */}
-      <div className="hero-section">
-        <div className="hero-content">
-          <h1 className="hero-title">Contact Us</h1>
-          <p className="hero-subtitle">
+      <div className="contacthero-section">
+        <div className="contacthero-content">
+          <h1 className="contacthero-title">Contact Us</h1>
+          <p className="contacthero-subtitle">
             We're here to help and answer any questions you might have. 
             We look forward to hearing from you.
           </p>
         </div>
-        <div className="hero-decoration">
+        <div className="contacthero-decoration">
           <div className="decoration-circle circle-1"></div>
           <div className="decoration-circle circle-2"></div>
           <div className="decoration-circle circle-3"></div>
         </div>
       </div>
 
-      <div className="container">
+      <div className="contact-container">
         {/* Quick Contact Cards */}
         <div className="quick-contact-section">
           <div className="quick-contact-grid">
             <div className="contact-card">
-              <div className="card-icon">
+              <div className="contactcard-icon">
                 <Phone size={24} />
               </div>
               <h3>Call Us</h3>
@@ -89,7 +89,7 @@ const ContactPage = () => {
             </div>
             
             <div className="contact-card">
-              <div className="card-icon">
+              <div className="contactcard-icon">
                 <Mail size={24} />
               </div>
               <h3>Email Us</h3>
@@ -99,7 +99,7 @@ const ContactPage = () => {
             </div>
             
             <div className="contact-card">
-              <div className="card-icon">
+              <div className="contactcard-icon">
                 <MapPin size={24} />
               </div>
               <h3>Visit Us</h3>
@@ -110,7 +110,7 @@ const ContactPage = () => {
             </div>
             
             <div className="contact-card">
-              <div className="card-icon">
+              <div className="contactcard-icon">
                 <Clock size={24} />
               </div>
               <h3>Office Hours</h3>
@@ -122,10 +122,10 @@ const ContactPage = () => {
         </div>
 
         {/* Main Content */}
-        <div className="main-content">
+        <div className="contactmain-content">
           {/* Contact Form */}
-          <div className="form-section">
-            <div className="section-header">
+          <div className="contactform-section">
+            <div className="contactsection-header">
               <h2>Get In Touch</h2>
               <p>Fill out the form below and we'll get back to you as soon as possible.</p>
             </div>
