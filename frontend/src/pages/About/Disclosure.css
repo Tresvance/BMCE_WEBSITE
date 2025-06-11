@@ -1,0 +1,79 @@
+.disclosure-wrapper {
+  background-color: #f0f4ff;
+  min-height: 100vh;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.disclosure-bar {
+  background: linear-gradient(135deg, #49C2F1, #1276CC); /* 🌈 Gradient applied */
+  color: white;
+  padding: 20px 30px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 700px;
+  width: 100%;
+  margin-bottom: 40px;
+  margin-left: 400px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+
+.disclosure-title {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.view-button {
+  background-color: #0f1b20;
+  color: #ebe1e1;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.view-button:hover {
+  background-color: #ffffff;
+  color: #0f1b20;
+}
+
+
+.disclosure-background {
+  position: relative;
+  background-image: url('../../assets/bmce 2.jpg'); /* No space */
+  background-size: cover;
+  background-position: center;
+  height: 400px;
+  margin-bottom: 3rem;
+  border-radius: 0px;
+  overflow: hidden;
+  margin-top: 100px;
+}
+
+
+.disclore-background::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6); /* increased opacity */
+  z-index: 0;
+}
+
+
+.disclosure-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 50px 20px;
+  flex-wrap: wrap;
+}
+
