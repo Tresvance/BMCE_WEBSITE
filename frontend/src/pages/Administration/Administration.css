@@ -665,6 +665,246 @@
           background: #4a5568;
         }
 
+
+.administration-message {
+  background: linear-gradient(135deg, #49C2F1 0%, #1276CC 100%);
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.administration-message::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.05"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.05"/><circle cx="50" cy="10" r="1" fill="white" opacity="0.03"/><circle cx="10" cy="60" r="1" fill="white" opacity="0.04"/><circle cx="90" cy="40" r="1" fill="white" opacity="0.03"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+  pointer-events: none;
+}
+
+.administration-message .administration-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.administration-message .administrationcontent-wrapper {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 60px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.administration-message .administrationheader-section {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.administration-message .section-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 15px;
+  position: relative;
+  display: inline-block;
+}
+
+.administration-message .title-underline {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #49C2F1, #1276CC);
+  margin: 0 auto;
+  border-radius: 2px;
+  position: relative;
+}
+
+.administration-message .title-underline::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 8px;
+  background: linear-gradient(90deg, #49C2F1, #1276CC);
+  border-radius: 4px;
+  opacity: 0.6;
+}
+
+.administration-message .administrationmessage-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.administration-message .administration-image {
+  flex-shrink: 0;
+  position: relative;
+}
+
+.administration-message .administration-photo {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 6px solid #fff;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.administration-message .administration-photo:hover {
+  transform: scale(1.05);
+}
+
+.administration-message .administrationimage-overlay {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  border: 2px solid #49C2F1;
+  border-radius: 50%;
+  opacity: 0.3;
+  animation: directors-pulse 3s infinite;
+}
+
+@keyframes directors-pulse {
+  0%, 100% { transform: scale(1); opacity: 0.3; }
+  50% { transform: scale(1.05); opacity: 0.1; }
+}
+
+.administration-message .message-text {
+  flex: 1;
+  position: relative;
+}
+
+.administration-message .quote-mark {
+  font-size: 4rem;
+  color: #49C2F1;
+  font-family: Georgia, serif;
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  opacity: 0.3;
+}
+
+.administration-message .message-paragraph {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 25px;
+  text-align: justify;
+  position: relative;
+  padding-left: 20px;
+}
+
+.administration-message .message-paragraph:first-of-type {
+  margin-top: 20px;
+}
+
+.administration-message .administrationsignature-section {
+  margin-top: 40px;
+  padding-top: 30px;
+  border-top: 2px solid #eee;
+}
+
+.administration-message .administrationsignature-line {
+  width: 200px;
+  height: 2px;
+  background: linear-gradient(90deg, #49C2F1, transparent);
+  margin-bottom: 20px;
+}
+
+.administration-message .administrationdirector-details {
+  color: #2c3e50;
+}
+
+.administration-message .administrationdirector-name {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #49C2F1;
+}
+
+.administration-message .director-title {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.administration-message .college-name {
+  font-size: 0.9rem;
+  color: #777;
+  font-style: italic;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .administration-message .administrationcontent-wrapper {
+    padding: 40px 30px;
+  }
+  
+  .administration-message .section-title {
+    font-size: 2.2rem;
+  }
+  
+  .administration-message .administrationmessage-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .administration-message .administration-photo {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .administration-message .message-text {
+    margin-top: 30px;
+  }
+  
+  .administration-message .message-paragraph {
+    text-align: left;
+    padding-left: 0;
+  }
+  
+  .administration-message .quote-mark {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .administration-message {
+    padding: 60px 0;
+  }
+  
+  .administration-message .administrationcontent-wrapper {
+    padding: 30px 20px;
+  }
+  
+  .administration-message .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .administration-message .message-paragraph {
+    font-size: 1rem;
+  }
+}
+
+
         /* Responsive Design */
         @media (max-width: 1200px) {
           .level {
