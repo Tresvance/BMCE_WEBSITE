@@ -133,7 +133,7 @@ export default function CSDepartmentPage() {
 
                     </blockquote>
                     <div className="hod-contact">
-                      <strong>Contact:</strong> dennisemathew@gmail.com | 9451744441
+                      {/* <strong>Contact:</strong> dennisemathew@gmail.com | 9451744441 */}
                     </div>
                   </div>
                 </div>
