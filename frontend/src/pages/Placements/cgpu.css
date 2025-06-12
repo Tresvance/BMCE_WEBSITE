@@ -1,11 +1,11 @@
 
-        .placement-page {
+        .cgpuplacement-page {
           font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
           line-height: 1.6;
           color: #333;
         }
 
-        .container {
+        .cgpucontainer {
           max-width: 1200px;
           margin: 0 auto;
  
@@ -13,7 +13,7 @@
         }
 
   /* Hero Section */
-.career-hero {
+.cgpucareer-hero {
   position: relative;
   width: 100%;
   height: 80vh;
@@ -23,14 +23,14 @@
 
 }
 
-.career-hero__image {
+.cgpucareer-hero__image {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
 }
 
-.career-hero__overlay {
+.cgpucareer-hero__overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -42,14 +42,14 @@
   justify-content: center;
 }
 
-.career-hero__content {
+.cgpucareer-hero__content {
   text-align: center;
   padding: 2rem;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-.career-hero__title {
+.cgpucareer-hero__title {
   color: white;
   font-size: clamp(2rem, 5vw, 3.5rem);
   font-weight: 700;
@@ -59,13 +59,13 @@
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-.career-hero__highlight {
+.cgpucareer-hero__highlight {
 
   display: inline-block;
   position: relative;
 }
 
-.career-hero__highlight::after {
+.cgpucareer-hero__highlight::after {
   content: '';
   position: absolute;
   bottom: -5px;
@@ -77,11 +77,11 @@
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-  .career-hero {
+  .cgpucareer-hero {
     height: 60vh;
   }
   
-  .career-hero__title {
+  .cgpucareer-hero__title {
     font-size: 2rem;
   }
 }
@@ -141,19 +141,19 @@
         }
 
         /* About Section */
-        .about-section {
+        .cgpuabout-section {
           padding: 6rem 0;
           background: white;
         }
 
-        .section-content {
+        .cgpusection-content {
           display: grid;
           grid-template-columns: 2fr 1fr;
           gap: 4rem;
           align-items: start;
         }
 
-        .section-title {
+        .cgpusection-title {
           font-size: 2.5rem;
           font-weight: 800;
           color: #2d3748;
@@ -161,11 +161,11 @@
           position: relative;
         }
 
-        .section-title.center {
+        .cgpusection-title.center {
           text-align: center;
         }
 
-        .section-title::after {
+        .cgpusection-title::after {
           content: '';
           position: absolute;
           bottom: -10px;
@@ -176,31 +176,31 @@
           border-radius: 2px;
         }
 
-        .section-title.center::after {
+        .cgpusection-title.center::after {
           left: 50%;
           transform: translateX(-50%);
         }
 
-        .content-text p {
+        .cgpucontent-text p {
           margin-bottom: 1.5rem;
           font-size: 1.1rem;
           line-height: 1.8;
           color: #4a5568;
         }
 
-        .highlight-stats {
+        .cgpuhighlight-stats {
           background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
           border-radius: 20px;
           padding: 2rem;
           color: white;
         }
 
-        .highlight-stat {
+        .cgpuhighlight-stat {
           text-align: center;
           margin-bottom: 2rem;
         }
 
-        .highlight-stat:last-child {
+        .cgpuhighlight-stat:last-child {
           margin-bottom: 0;
         }
 
@@ -273,7 +273,7 @@
   background: #f9f9ff;
 }
 
-.recruiters__container {
+.recruiters__cgpucontainer {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1.5rem;
@@ -384,7 +384,7 @@
             font-size: 2.5rem;
           }
 
-          .section-content {
+          .cgpusection-content {
             grid-template-columns: 1fr;
             gap: 2rem;
           }
@@ -398,7 +398,7 @@
             grid-template-columns: repeat(2, 1fr);
           }
 
-          .container {
+          .cgpucontainer {
             padding: 0 1rem;
           }
 
@@ -417,12 +417,12 @@
           overflow: hidden;
         }
 
-        .highlights-container {
+        .highlights-cgpucontainer {
           max-width: 100%;
           margin: 0 auto;
         }
 
-        .section-title {
+        .cgpusection-title {
           text-align: center;
           font-size: 3rem;
           font-weight: 900;
@@ -432,7 +432,7 @@
           position: relative;
         }
 
-        .section-title::after {
+        .cgpusection-title::after {
           content: '';
           position: absolute;
           bottom: -15px;
@@ -444,15 +444,15 @@
           border-radius: 2px;
         }
 
-        .scroll-container {
+        .scroll-cgpucontainer {
           width: 100%;
           overflow: hidden;
           margin-bottom: 2rem;
           position: relative;
         }
 
-        .scroll-container::before,
-        .scroll-container::after {
+        .scroll-cgpucontainer::before,
+        .scroll-cgpucontainer::after {
           content: '';
           position: absolute;
           top: 0;
@@ -462,12 +462,12 @@
           pointer-events: none;
         }
 
-        .scroll-container::before {
+        .scroll-cgpucontainer::before {
           left: 0;
           background: linear-gradient(to right, rgba(245,247,250,1), rgba(245,247,250,0));
         }
 
-        .scroll-container::after {
+        .scroll-cgpucontainer::after {
           right: 0;
           background: linear-gradient(to left, rgba(245,247,250,1), rgba(245,247,250,0));
         }
@@ -507,7 +507,7 @@
           }
         }
 
-        .image-card {
+        .cgpuimage-card {
           flex-shrink: 0;
           width: 200px;
           height: 300px;
@@ -519,24 +519,24 @@
      
         }
 
-        .image-card:hover {
+        .cgpuimage-card:hover {
           transform: translateY(-5px) scale(1.02);
           box-shadow: 0 20px 40px rgba(0,0,0,0.2);
         }
 
-        .image-card img {
+        .cgpuimage-card img {
           width: 100%;
           height: 100%;
           object-fit: cover;
           transition: transform 0.3s ease;
         }
 
-        .image-card:hover img {
+        .cgpuimage-card:hover img {
           transform: scale(1.1);
         }
 
    
-        .image-card:hover .image-overlay {
+        .cgpuimage-card:hover .cgpuimage-overlay {
           opacity: 1;
         }
 
@@ -555,12 +555,12 @@
 
         /* Responsive Design */
         @media (max-width: 768px) {
-          .section-title {
+          .cgpusection-title {
             font-size: 2rem;
             margin-bottom: 2rem;
           }
 
-          .image-card {
+          .cgpuimage-card {
             width: 250px;
             height: 170px;
           }
@@ -569,19 +569,19 @@
             gap: 1rem;
           }
 
-          .scroll-container::before,
-          .scroll-container::after {
+          .scroll-cgpucontainer::before,
+          .scroll-cgpucontainer::after {
             width: 50px;
           }
         }
 
         @media (max-width: 480px) {
-          .image-card {
+          .cgpuimage-card {
             width: 200px;
             height: 140px;
           }
 
-          .section-title {
+          .cgpusection-title {
             font-size: 1.5rem;
           }
         }
