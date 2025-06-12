@@ -159,7 +159,7 @@
     min-height: 100vh;
     background: #E9F7FF;
     font-family: Arial, sans-serif;
-    padding-top: 195px;
+    padding-top: 233px;
   }
   .home-header-spacing {
     margin-top: -1rem;
@@ -366,12 +366,11 @@
           font-weight: 700;
           margin-bottom: 0.5rem;
           letter-spacing: -0.5px;
-          background: linear-gradient(45deg, #000000, #0f2027, #203a43, #2c5364);
-          background-clip: text;
+          background: linear-gradient(45deg, #000000, #b87333);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           color: transparent;
-        }
+      }
         .home-programs-elegant-container {
           position: relative;
         }
@@ -697,10 +696,13 @@
     font-size: 2.2rem;
     font-weight: bold;
     margin-bottom: 1.5rem;
-    color: #1f2937;
     line-height: 1.2;
     text-align: center;
-  }
+    background: linear-gradient(45deg, #000000, #b87333);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
   
   .home-welcome-description {
     font-size: 1rem;
