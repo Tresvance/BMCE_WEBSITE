@@ -346,25 +346,62 @@ const CollegeAdministrationPage = () => {
       </div>
     </div>
   );
+
+
     case 'directors-message':
       
           return (
-          <div className="adcontent-section animate-fade-in">
-            <div className="adsection-header">
-              
-              <h2>Directors Message</h2>
-               </div>
-               <p className="about-text">Greetings. Many thanks for your interest in Baselios Mathews II College of Engineering.
-                 </p>
-           <p>
-                  It is our deepest desire to serve the society by moulding the technocrats and business leaders of tomorrow.
-                 </p>
-                 <p>To this end, we have endeavoured to create a world-class educational institution that is far-reaching in every way. Be it amenities or faculty, curriculum or career guidance and placement activities, we seek to offer the very paramount to our students.</p>
-                 <p>Education that is thorough, determined and meets the necessities of today's job market; education that chastisements and indoctrinates values; education that is in tune with the changing dynamics of today's competitive world - that is the kind of education that BMCE offers.</p>
-                <p>Please feel free to take a shufti round around our campus. Marinade in the spirit of learning that BMCE guzzles. Then, take your career dreams to the next level with Baselios Mathews II College of Engineering.</p>
-                <p>Your future begins at BMCE. Welcome.</p></div>
-        );
-           case'principals-message':
+            <section className="administration-message">
+              <div className="administration-container">
+                <div className="administrationcontent-wrapper">
+                  <div className="administrationheader-section">
+                    <h2 className="section-title">Director's Message</h2>
+                    <div className="title-underline"></div>
+                  </div>
+                  
+                  <div className="administrationmessage-content">
+                    <div className="administration-image">
+                      <img 
+                        src="/administration/director.jpg" 
+                        alt="Director" 
+                        className="administration-photo"
+                      />
+                      <div className="administrationimage-overlay"></div>
+                    </div>
+                    
+                    <div className="message-text">
+                      <div className="quote-mark">"</div>
+                      <p className="message-paragraph">
+                        Welcome to our esteemed institution, where excellence in education meets innovation and tradition. 
+                        As we continue our journey of academic excellence, we remain committed to nurturing young minds 
+                        and preparing them for the challenges of tomorrow.
+                      </p>
+                      <p className="message-paragraph">
+                        Our college stands as a beacon of knowledge, fostering an environment where students can explore, 
+                        learn, and grow into responsible global citizens. We believe in holistic development that encompasses 
+                        not just academic prowess but also character building and leadership skills.
+                      </p>
+                      <p className="message-paragraph">
+                        Together, we shall continue to reach new heights of achievement and make our mark in the world 
+                        of higher education. I invite you to be part of this extraordinary journey.
+                      </p>
+                      
+                      <div className="administrationsignature-section">
+                        <div className="administrationsignature-line"></div>
+                        <div className="administrationdirector-details">
+                          <h4 className="administrationdirector-name">Rev. Fr. Thomas Varghese</h4>
+                          <p className="director-title">Director</p>
+                          <p className="college-name">Baselios Mathews II College of Engineering</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          );
+
+      case'principals-message':
             
         return (
           <div className="adcontent-section animate-fade-in">
