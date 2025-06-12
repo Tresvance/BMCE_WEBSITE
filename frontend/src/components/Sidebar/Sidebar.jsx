@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Menu,
   X,
@@ -22,6 +22,7 @@ const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSubmenu, setActiveSubmenu] = useState(null);
   const [activeSubSubmenu, setActiveSubSubmenu] = useState(null);
+  const [scrolled, setScrolled] = useState(false);
   const navigate = useNavigate();
 
   // Add path properties for navigation
@@ -204,10 +205,19 @@ const Sidebar = () => {
     }
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 10);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <>
+      {/* Hamburger Menu */}
       <div
-        className="sbar-hamburger-menu"
+        className={`sbar-hamburger-menu${scrolled ? " sbar-hamburger-scrolled" : ""}`}
         onClick={toggleSidebar}
         aria-label="Toggle menu"
       >

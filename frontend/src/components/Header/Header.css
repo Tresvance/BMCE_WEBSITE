@@ -507,7 +507,6 @@
     transition: transform 0.3s ease;
   }
 }
-/* Surface Pro 7 specific fixes (1368x912 typical resolution) */
 @media (min-width: 1200px) and (max-width: 1400px) and (min-height: 800px) and (max-height: 1000px) {
   .head-main-header {
     position: fixed;
