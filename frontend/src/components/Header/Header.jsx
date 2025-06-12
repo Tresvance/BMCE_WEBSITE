@@ -6,6 +6,7 @@ import bmcAccredation2 from "../../assets/nbalogo.png";
 import bmcAccredation3 from "../../assets/stqc_logo.png";
 import applyImage from "../../assets/founder.png";
 import { useEffect, useState } from "react";
+import Sidebar from "../Sidebar/Sidebar"; // Import the Sidebar component
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -55,44 +56,55 @@ export default function Header() {
       </div>
 
       <div className="head-header-content">
-        <div className="head-logo-title-wrapper">
-          <div className="head-logo-section">
-            <img
-              src={collegeLogo}
-              alt="College Logo"
-              className="head-college-logo"
-            />
+        {/* Sidebar and Vertical Line Section */}
+        <div className="head-left-section">
+          <div className="head-sidebar-container">
+            <Sidebar />
           </div>
-
-          <div className="head-title-section">
-            <h1
-              className={`head-neon-drawing${animationStarted ? " head-animate" : ""}`}
-            >
-              {collegeName}
-            </h1>
-            <p>Approved by AICTE | Affiliated to KTU</p>
-          </div>
+          <div className="head-left-vertical-line"></div>
         </div>
 
-        <div className="head-right-section">
-          <div className="head-apply-section">
-            <button className="head-apply-btn">Apply Now</button>
-            <div className="head-vertical-line"></div>
-            <div className="head-founder-image-container">
-              <div className="head-apply-card">
-                <img
-                  src={applyImage}
-                  alt="Founder Image"
-                  className="head-apply-image"
-                />
-              </div>
+        {/* Main Content Section */}
+        <div className="head-main-content">
+          <div className="head-logo-title-wrapper">
+            <div className="head-logo-section">
+              <img
+                src={collegeLogo}
+                alt="College Logo"
+                className="head-college-logo"
+              />
+            </div>
+
+            <div className="head-title-section">
+              <h1
+                className={`head-neon-drawing${animationStarted ? " head-animate" : ""}`}
+              >
+                {collegeName}
+              </h1>
+              <p>Approved by AICTE | Affiliated to KTU</p>
             </div>
           </div>
 
-          <div className="head-accreditations">
-            <img src={bmcAccredation1} alt="accredation1" />
-            <img src={bmcAccredation2} alt="accredation2" />
-            <img src={bmcAccredation3} alt="accredation3" />
+          <div className="head-right-section">
+            <div className="head-apply-section">
+              <button className="head-apply-btn">Apply Now</button>
+              <div className="head-vertical-line"></div>
+              <div className="head-founder-image-container">
+                <div className="head-apply-card">
+                  <img
+                    src={applyImage}
+                    alt="Founder Image"
+                    className="head-apply-image"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div className="head-accreditations">
+              <img src={bmcAccredation1} alt="accredation1" />
+              <img src={bmcAccredation2} alt="accredation2" />
+              <img src={bmcAccredation3} alt="accredation3" />
+            </div>
           </div>
         </div>
       </div>
