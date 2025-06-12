@@ -1,4 +1,4 @@
-.main-header {
+.head-main-header {
   background: linear-gradient(to right, #49c2f1, #1276cc);
   position: fixed;
   color: white;
@@ -12,14 +12,15 @@
   border-bottom-right-radius: 30px;
 }
 
-.main-header.scrolled {
+.head-main-header.head-scrolled {
   padding: 5px 0;
   background: white;
   border-bottom-left-radius: 16px;
   border-bottom-right-radius: 16px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
-.main-header.scrolled .neon-drawing {
+
+.head-main-header.head-scrolled .head-neon-drawing {
   color: #00294d;         
   background: none !important;   
   -webkit-text-stroke: 0 !important; 
@@ -29,79 +30,94 @@
   -webkit-background-clip: unset !important;
   background-clip: unset !important;
 }
-.main-header.scrolled .title-section p {
+
+.head-main-header.head-scrolled .head-title-section p {
   color: #00294d;
 }
-.main-header.scrolled .top-bar, 
-.main-header.scrolled .contact-info span {
-  color: #044F71; /* darker grey for readability on white */
+
+.head-main-header.head-scrolled .head-top-bar, 
+.head-main-header.head-scrolled .head-contact-info span {
+  color: #044F71;
 }
-.main-header.scrolled .apply-btn {
+
+.head-main-header.head-scrolled .head-apply-btn {
   background-color: #003366;
   color: white;
 }
-.top-bar {
-  padding: 6px 20px;
-  display: flex;
-  justify-content: flex-start;
-  font-size: 13px;
-}
 
-.contact-info {
-  display: flex;
-  gap: 20px;
-}
-
-.info-item {
+.head-top-bar {
   display: flex;
   align-items: center;
-  gap: 6px;
+  justify-content: flex-start;
+  gap: 16px; /* moderate spacing */
+  padding: 5px 20px;
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  font-size: 13px;
+  margin-bottom: 0;
+  background: transparent;
+  z-index: 1001;
 }
 
-.header-content {
+.head-contact-info {
+  display: flex;
+  gap: 18px;
+  flex-wrap: nowrap;
+}
+
+.head-info-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  white-space: nowrap;
+}
+
+.head-header-content {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 30px 30px 40px 30px; /* Increased bottom padding */
+  padding: 30px 30px 40px 30px;
   flex-wrap: wrap;
-  margin-right: 70px;
-  min-height: 60px; /* Increased minimum height */
-  position: relative; /* Added for absolute positioning */
+  min-height: 60px;
+  position: relative;
 }
 
-.logo-section {
+.head-logo-section {
   display: flex;
   justify-content: flex-start;
   align-items: center;
 }
 
-.college-logo {
+.head-college-logo {
   height: 100px;
   transition: all 0.3s ease;
+  margin-left: -24px;
 }
 
-.main-header.scrolled .college-logo {
+.head-main-header.head-scrolled .head-college-logo {
   height: 55px;
 }
 
-.title-section {
+.head-title-section {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   text-align: left;
   transition: all 0.3s ease;
   padding-left: 20px;
-  margin-left: 0px;
+  margin-left: 20px;
 }
 
 /* NEON LIGHT DRAWING EFFECT */
-.neon-drawing {
+.head-neon-drawing {
   font-family: 'Merriweather', serif;
-  font-size: 32px;
+  font-size: 32px; 
   font-weight: 400;
   text-align: left;
   margin: -4px;
-  margin-left: 0px;
+  margin-left: -8px;
   letter-spacing: 0.5px;
   white-space: nowrap;
   position: relative;
@@ -128,14 +144,14 @@
   text-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
 }
 
-.neon-drawing.animate {
+.head-neon-drawing.head-animate {
   color: transparent;
   -webkit-text-stroke: 1px rgba(255, 255, 255, 0.6);
   text-stroke: 1px rgba(255, 255, 255, 0.6);
-  animation: neonTrace 4s ease-in-out forwards;
+  animation: head-neonTrace 4s ease-in-out forwards;
 }
 
-@keyframes neonTrace {
+@keyframes head-neonTrace {
   0% { 
     background: conic-gradient(from 0deg, 
       transparent 0%, 
@@ -185,16 +201,17 @@
   }
 }
 
-.title-section p {
+.head-title-section p {
   font-family: 'Arial', sans-serif;
   font-size: 16px;
   color: #f0f0f0;
   text-align: center;
   margin: 0;
-  animation: fadeInUp 1s ease-out 4s both;
+  margin-left: -9px;
+  animation: head-fadeInUp 1s ease-out 4s both;
 }
 
-@keyframes fadeInUp {
+@keyframes head-fadeInUp {
   0% {
     opacity: 0;
     transform: translateY(20px);
@@ -205,56 +222,56 @@
   }
 }
 
-.right-section {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 30px;
-  flex-wrap: wrap;
-  margin-left: auto;
-}
-
-.accreditations {
-  display: flex;
-  gap: 20px;
-  align-items: center;
-  position: absolute;
-  left: 75%;
-  transform: translateX(-50%);
-}
-
-.accreditations img {
-  height: 56px;
-  transition: transform 0.3s ease;
-}
-
-.accreditations img:hover {
-  transform: scale(1.45);
-}
-
-/* Apply section - now only contains the button */
-.apply-section {
+.head-right-section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 12px;
-  position: relative;
-  margin-top: 8px;
-  margin-right: 10px;
+  gap: 15px;
+  margin-top: -14px;
 }
 
-/* New absolute positioned image container in top-right corner */
-.apply-image-container {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  z-index: 10;
-  margin-top: -30px;
-  margin-right: -70px;
+.head-accreditations {
+  display: flex;
+  gap: 48px;
+  align-items: center;
+  justify-content: center;
+  margin-right: 30px;
 }
 
-/* Card container for image - elegant and standard design */
-.apply-card {
+.head-accreditations img {
+  height: 58px;
+  transition: transform 0.3s ease;
+}
+
+.head-accreditations img:hover {
+  transform: scale(1.45);
+}
+
+/* Apply section with button, line, and founder image */
+.head-apply-section {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  justify-content: center;
+  margin-right: 26px;
+}
+
+/* Vertical line */
+.head-vertical-line {
+  width: 2px;
+  height: 80px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.3), rgba(255,255,255,0.8), rgba(255,255,255,0.3));
+  border-radius: 1px;
+}
+
+/* Founder image container */
+.head-founder-image-container {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.head-apply-card {
   background: #ffffff;
   border: 1px solid #e5e7eb;
   border-radius: 8px;
@@ -268,22 +285,22 @@
   padding: 0;
 }
 
-/* Updated apply image styles - smaller to fit inline layout */
-.apply-image {
-  height: 76px;
+.head-apply-image {
+  height: 65px; /* Reduced from 76px */
   width: auto;
   transition: all 0.2s ease;
   border-radius: 7px;
   display: block;
   margin: 0;
+  margin-top: 5px;
   position: relative;
 }
 
-.apply-image:hover {
+.head-apply-image:hover {
   transform: scale(1.02);
 }
 
-.apply-btn {
+.head-apply-btn {
   background: linear-gradient(45deg, #ffe259, #ffa751, #ff6a88);
   color: white;
   border: none;
@@ -297,10 +314,11 @@
   position: relative;
   overflow: hidden;
   white-space: nowrap;
-  height: 42px;
+  height: 48px;
+  width: 124px;
 }
 
-.apply-btn::before {
+.head-apply-btn::before {
   content: '';
   position: absolute;
   top: 0;
@@ -314,166 +332,394 @@
   transition: left 0.3s ease;
 }
 
-.apply-btn:hover {
+.head-apply-btn:hover {
   transform: translateY(-1px);
   background: linear-gradient(45deg, #ff6a88, #ffa751, #ffe259);
   box-shadow: 0 4px 8px rgba(255, 165, 0, 0.4);
 }
 
-.apply-btn:hover::before {
+.head-apply-btn:hover::before {
   left: 100%;
 }
-/* Responsive adjustments for Header */
 
-@media (max-width: 1024px) {
-  .header-content {
-    flex-wrap: nowrap;
-    padding: 10px;
-    gap: 20px;
-    justify-content: center;
-    height: 10px;
-  }
-  .top-bar {
-    font-size: 12px;
-  }
-  .logo-section {
-    justify-content: center;
-    width: 100%;
-  }
-
-  .title-section {
-    align-items: center;
-    text-align: center;
-    padding-left: 0;
-    margin-left: 0;
-  }
-
-  .title-section p {
-    text-align: center;
-    font-size: 11px;
-  }
-  .neon-drawing {
-    font-size: 14.5px;
-  }
-  .college-logo {
-    height: 70px;
-    margin-left: 20px;
-  }
-  .right-section {
-    justify-content: center;
-    width: 100%;
-    margin-left: 0;
-  }
-
-  .accreditations {
-    position: static;
-    transform: none;
-    justify-content: center;
-    flex-wrap: nowrap;
-    gap: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: 30px;
-  }
-  .accreditations img {
-    height: 20px;
-  }
-  .apply-btn {
-    height: 30px;
-    margin-left: 25px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: -20px;
-  }
-  .apply-image { 
-    height: 50px; 
-  }
-  .apply-card {
-    margin-top: -40px;
-    margin-right: -120px;
-  }
-  .apply-image-container {
-    position: absolute;
-    margin: 0;
-    margin-top: 10px;
-  }
-}
-.logo-title-wrapper {
+.head-logo-title-wrapper {
   display: flex;
   align-items: center;
   gap: 10px;
 }
-@media (max-width: 768px) {
-  .top-bar {
-    font-size: 7px;
-    margin-left: -15px;
+
+/* TABLET RESPONSIVE DESIGN  */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .head-main-header {
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    left: 0;
+    margin-left: 0; 
   }
-  .header-content {
-    height: 60px;
-    min-height: 60px;
+  
+  .head-main-header.head-scrolled {
+    border-bottom-left-radius: 14px;
+    border-bottom-right-radius: 14px;
+  }
+  
+  .head-top-bar {
+    padding: 4px 18px;
+    gap: 14px;
+    font-size: 12px;
+  }
+  
+  .head-contact-info {
+    gap: 16px;
+  }
+  
+  .head-header-content {
+    padding: 25px 25px 35px 25px;
+    min-height: 50px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  
+  .head-logo-title-wrapper {
     display: flex;
     align-items: center;
-    justify-content: center;
+    gap: 9px;
+    width: 100%;
+  }
+  
+  .head-college-logo {
+    height: 85px;
+    margin-left: -20px;
+  }
+  
+  .head-main-header.head-scrolled .head-college-logo {
+    height: 48px;
+  }
+  
+  .head-title-section {
+    padding-left: 18px;
+    margin-left: 18px;
+  }
+  
+
+  .head-neon-drawing {
+    letter-spacing: 0.4px;
+    margin-left: -7px;
+  }
+  
+
+  @media (min-width: 769px) and (max-width: 850px) {
+    .head-neon-drawing {
+      font-size: 22px;
+    }
+  }
+  
+  @media (min-width: 851px) and (max-width: 950px) {
+    .head-neon-drawing {
+      font-size: 26px;
+    }
+  }
+  
+  @media (min-width: 951px) and (max-width: 1024px) {
+    .head-neon-drawing {
+      font-size: 28px;
+    }
+  }
+  
+  .head-title-section p {
+    font-size: 14px;
+    margin-left: -8px;
+  }
+  
+
+  .head-right-section {
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+    justify-content: space-between; 
+    gap: 0;
+    margin-top: 0;
+    margin-left: 0;
+    width: 100%; 
+  }
+  
+  
+  .head-accreditations {
+    gap: 40px;
+    margin-right: 0;
+    justify-content: flex-start;
+    order: 1; 
+  }
+  
+  .head-accreditations img {
+    height: 50px;
+  }
+  
+  .head-accreditations img:hover {
+    transform: scale(1.35);
+  }
+  
+  .head-apply-section {
+    gap: 16px;
+    margin-right: 0;
+    justify-content: flex-end; 
+    order: 2;
+  }
+  
+  .head-vertical-line {
+    height: 70px;
+  }
+  
+  .head-founder-image-container {
+    margin-top: 8px;
+  }
+  
+  .head-apply-image {
+    height: 56px;
+    margin-top: 4px;
+  }
+  
+  .head-apply-btn {
+    padding: 9px 18px;
+    font-size: 13px;
+    height: 42px;
+    width: 112px;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  body {
+    padding-top: 160px; 
+  }
+}
+/* Surface Pro 7 specific fixes (1368x912 typical resolution) */
+@media (min-width: 1200px) and (max-width: 1400px) and (min-height: 800px) and (max-height: 1000px) {
+  .head-main-header {
+    position: fixed;
+    left: 0;
+    right: 0;
+    margin: 0;
+    transform: none;
+  }
+  
+  .head-header-content {
+    max-width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+}
+/* MOBILE RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .head-main-header {
+    width: 100vw;
+    max-width: 100vw;
+    height: 150px;
+    margin: 0;
+    overflow-x: hidden;
+    box-sizing: border-box;
+  }
+  
+  .head-top-bar {
+    font-size: 8px;
+    padding: 4px 15px;
+    gap: 15px;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+  
+  .head-header-content {
+    flex-direction: column;
+    padding: 15px 10px;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
     position: relative;
   }
-  .title-section h1 {
-    font-size: 9.5px;
+ 
+  .head-logo-title-wrapper {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    margin: 0;
+    padding: 0;
   }
-  .title-section {
-    text-align: center;
-    gap: 5px;
+ 
+  .head-logo-section {
+    justify-content: flex-start;
+    flex-shrink: 0;
+  }
+  
+  .head-neon-drawing {
+    font-size: 0px;
+  }
+  
+  .head-college-logo {
+    height: 40px;
     margin-left: 0;
+    margin-right: 10px;
   }
-  .main-header {
-    border-radius: 5px;
+  
+  .head-title-section {
+    flex: 1;
+    align-items: flex-start;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    margin-left: -10px;
   }
-  .logo-title-wrapper {
+  
+  .head-title-section h1 {
+    font-size: 10px;
+    margin: 0;
+  }
+  
+  .head-title-section p {
+    font-size: 11px;
+    margin: 0;
+  }
+  
+  .head-contact-info {
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  
+  .head-right-section {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+    margin-top: 15px;
+  }
+ 
+  .head-accreditations {
+    display: flex;
+    gap: 8px;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0;
+    order: 1; 
+  }
+  
+  .head-accreditations img {
+    height: 23px;
+    width: auto;
+    flex-shrink: 0;
+    margin-top: 7px;
+  }
+  
+  .head-apply-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+    flex-shrink: 0;
+    order: 2; 
+  }
+  
+  .head-apply-btn {
+    height: 28px;
+    width: 60px;
+    margin: 0;
+    font-size: 11px;
+    flex-shrink: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 5px;
-    position: absolute;
-    left: 60%;
-    top: 5px;
-    transform: translateX(-50%);
-    white-space: nowrap;
-    margin-left: -5px;
   }
-  .college-logo {
-    height: 30px;
-    margin-left: 0;
+  
+  .head-apply-card {
+    height: 50px;
+    width: 40px;
+    margin: 0;
     flex-shrink: 0;
   }
-
-  .title-section p {
+  
+  .head-apply-image {
+    height: 52px;
+    width: 40px;
+    object-fit: cover;
+    border-radius: 7px;
+  }
+  
+  .head-vertical-line {
+    display: none;
+  }
+  
+  .head-founder-image-container {
+    display: flex;
+    align-items: center;
+    margin: 0;
+  }
+}
+ 
+@media (max-width: 480px) {
+  .head-top-bar {
     font-size: 9px;
+    padding: 5px 15px;
+    gap: 12px;
   }
-
-  .apply-btn {
-    width: 70%;
-    max-width: 150px;
+  
+  .head-header-content {
+    padding: 15px 15px;
+  }
+  
+  .head-apply-section {
+    order: 2; 
+  }
+  
+  .head-apply-btn {
+    width: 85px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .head-apply-card {
+    height: 50px;
+    width: 40px;
+  }
+  
+  .head-apply-image {
+    height: 52px;
+    width: 40px;
+  }
+}
+ 
+@media (min-width: 481px) and (max-width: 768px) {
+  .head-top-bar {
     font-size: 10px;
-    padding: 8px 12px;
-    text-align: center;
-    height: 20px;
+    padding: 6px 20px;
+    gap: 15px;
   }
-  .apply-section {
-    margin-right: -230px;
-    margin-top: 40px;
+  
+  .head-header-content {
+    padding: 20px 20px;
   }
-  .accreditations img {
-    height: 20px;
+  
+  .head-apply-section {
+    order: 2; 
   }
-  .accreditations {
-    margin-left: 5px;
-    margin-top: 30px;
+  
+  .head-apply-btn {
+    width: 90px;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
-  .apply-image {
-    height: 30px;
+  
+  .head-apply-card {
+    height: 40px;
+    width: 40px;
   }
-  .apply-card {
-    margin-left: 10px;
-    margin-bottom: 60px;
+  
+  .head-apply-image {
+    height: 40px;
+    width: 40px;
   }
 }
