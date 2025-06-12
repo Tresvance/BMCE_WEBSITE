@@ -15,35 +15,52 @@ import {
   Image,
   Phone,
 } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import "./Sidebar.css";
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSubmenu, setActiveSubmenu] = useState(null);
   const [activeSubSubmenu, setActiveSubSubmenu] = useState(null);
+  const navigate = useNavigate();
+
+  // Add path properties for navigation
   const menuItems = [
     {
       id: "sbar-home",
       title: "Home",
       icon: Home,
+      path: "/",
     },
     {
       id: "sbar-about",
       title: "About Us",
       icon: Users,
-      submenu: ["ABOUT BMCE", "OUR CAMPUS", "Accreditation"],
+      submenu: [
+        { title: "ABOUT BMCE", path: "/about" },
+        { title: "OUR CAMPUS", path: "/our-campus" },
+        { title: "Accreditation", path: "/accreditation" },
+      ],
     },
     {
       id: "sbar-administration",
       title: "Administration",
+      path: "/administration",
       icon: Shield,
-      submenu: ["Principal", "Director's Message", "Our Team"],
+      submenu: [
+        { title: "Principal", path: "/administration/principal" },
+        { title: "Director's Message", path: "/administration/director" },
+        { title: "Our Team", path: "/administration/team" },
+      ],
     },
     {
       id: "sbar-academics",
       title: "Academics",
       icon: BookOpen,
-      submenu: ["Student Assesment", "Faculty Assesment"],
+      submenu: [
+        { title: "Student Assesment", path: "/academics/student-assesment" },
+        { title: "Faculty Assesment", path: "/academics/faculty-assesment" },
+      ],
     },
     {
       id: "sbar-courses",
@@ -53,20 +70,39 @@ const Sidebar = () => {
         {
           title: "B.Tech (4 Year)",
           subsubmenu: [
-            "Computer Science and Engineering",
-            "Civil Engineering",
-            "Electronics and Electrical Engineering",
-            "Electronics and Communication Engineering",
-            "Mechanical Engineering",
+            {
+              title: "Computer Science and Engineering",
+              path: "/department/csedept",
+            },
+            { title: "Civil Engineering", path: "/department/civildept" },
+            {
+              title: "Electronics and Electrical Engineering",
+              path: "/department/eeedept",
+            },
+            {
+              title: "Electronics and Communication Engineering",
+              path: "/department/ecedept",
+            },
+            { title: "Mechanical Engineering", path: "/department/mechdept" },
           ],
         },
         {
           title: "Diploma (3 Year)",
-          subsubmenu: ["Civil Engineering", "Mechanical Engineering"],
+          subsubmenu: [
+            { title: "Civil Engineering", path: "/departments/diploma-civil" },
+            {
+              title: "Mechanical Engineering",
+              path: "/departments/diploma-mech",
+            },
+          ],
         },
         {
           title: "MBA (2 Year)",
-          subsubmenu: ["Finance", "Marketing", "Human Resource"],
+          subsubmenu: [
+            { title: "Finance", path: "/departments/mba-finance" },
+            { title: "Marketing", path: "/departments/mba-marketing" },
+            { title: "Human Resource", path: "/departments/mba-hr" },
+          ],
         },
       ],
     },
@@ -74,60 +110,98 @@ const Sidebar = () => {
       id: "sbar-activities",
       title: "Activities",
       icon: Activity,
-      submenu: ["Sports", "IEDC", "IEEE", "Student Council", "NSS"],
+      submenu: [
+        { title: "Sports", path: "/activities/sports" },
+        { title: "IEDC", path: "/iedc" },
+        { title: "IEEE", path: "/activities/ieee" },
+        { title: "Student Council", path: "/activities/student-council" },
+        { title: "NSS", path: "/nss" },
+      ],
     },
     {
       id: "sbar-placement",
       title: "Placement",
       icon: Briefcase,
-      submenu: ["Placement Cell", "CGPU", "Placement Details"],
+      submenu: [
+        { title: "Placement Cell", path: "/placement/cell" },
+        { title: "CGPU", path: "/placements/cgpu" },
+        { title: "Placement Details", path: "/placement/details" },
+      ],
     },
     {
       id: "sbar-research",
       title: "Research",
       icon: Search,
-      submenu: ["Research at a Glance", "Publications"],
+      submenu: [
+        { title: "Research at a Glance", path: "/research/glance" },
+        { title: "Publications", path: "/research/publications" },
+      ],
     },
     {
       id: "sbar-facilities",
       title: "Facilities",
       icon: Building,
       submenu: [
-        "Library",
-        "Laboratories",
-        "Hostels",
-        "Cafeteria",
-        "Transportation",
-        "Medical Center",
+        { title: "Library", path: "/facilities/library" },
+        { title: "Laboratories", path: "/facilities/laboratories" },
+        { title: "Hostels", path: "/facilities/hostels" },
+        { title: "Cafeteria", path: "/facilities/cafeteria" },
+        { title: "Transportation", path: "/facilities/transportation" },
+        { title: "Medical Center", path: "/facilities/medical-center" },
       ],
     },
     {
       id: "sbar-gallery",
       title: "Gallery",
       icon: Image,
+      path: "/gallery",
     },
     {
       id: "sbar-contact",
       title: "Contact",
       icon: Phone,
+      path: "/contact",
     },
   ];
 
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
     setActiveSubmenu(null);
-  };
-
-  const handleMenuClick = (itemId) => {
-    setActiveSubmenu(activeSubmenu === itemId ? null : itemId);
     setActiveSubSubmenu(null);
   };
-  const handleSubmenuClick = (subItemTitle) => {
-    setActiveSubSubmenu(
-      activeSubmenu === "sbar-courses" && activeSubSubmenu === subItemTitle
-        ? null
-        : subItemTitle
-    );
+
+  const handleMenuClick = (item) => {
+    if (item.submenu) {
+      setActiveSubmenu(activeSubmenu === item.id ? null : item.id);
+      setActiveSubSubmenu(null);
+    } else if (item.path) {
+      setIsOpen(false);
+      setActiveSubmenu(null);
+      setActiveSubSubmenu(null);
+      navigate(item.path);
+    }
+  };
+
+  const handleSubmenuClick = (subItem) => {
+    if (subItem.subsubmenu) {
+      setActiveSubSubmenu(
+        activeSubSubmenu === subItem.title ? null : subItem.title
+      );
+    } else if (subItem.path) {
+      setIsOpen(false);
+      setActiveSubmenu(null);
+      setActiveSubSubmenu(null);
+      navigate(subItem.path);
+    }
+  };
+
+  const handleSubSubmenuClick = (subSubItem) => {
+    if (subSubItem.path) {
+      setIsOpen(false);
+      setActiveSubmenu(null);
+      setActiveSubSubmenu(null);
+      navigate(subSubItem.path);
+    }
   };
 
   return (
@@ -165,7 +239,7 @@ const Sidebar = () => {
               <div key={item.id} className="sbar-menu-item-container">
                 <div
                   className={`sbar-menu-item ${isActive ? "sbar-active" : ""}`}
-                  onClick={() => handleMenuClick(item.id)}
+                  onClick={() => handleMenuClick(item)}
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   <div className="sbar-menu-item-content">
@@ -192,7 +266,7 @@ const Sidebar = () => {
                               className="sbar-submenu-item"
                               onClick={(e) => {
                                 e.stopPropagation();
-                                handleSubmenuClick(subItem.title);
+                                handleSubmenuClick(subItem);
                               }}
                               style={{ animationDelay: `${subIndex * 0.05}s` }}
                             >
@@ -212,13 +286,17 @@ const Sidebar = () => {
                                   {subItem.subsubmenu.map(
                                     (subSub, subSubIdx) => (
                                       <div
-                                        key={subSub}
+                                        key={subSub.title}
                                         className="sbar-subsubmenu-item"
                                         style={{
                                           animationDelay: `${subSubIdx * 0.03}s`,
                                         }}
+                                        onClick={(e) => {
+                                          e.stopPropagation();
+                                          handleSubSubmenuClick(subSub);
+                                        }}
                                       >
-                                        {subSub}
+                                        {subSub.title}
                                       </div>
                                     )
                                   )}
@@ -228,11 +306,15 @@ const Sidebar = () => {
                         ))
                       : item.submenu.map((subItem, subIndex) => (
                           <div
-                            key={subItem}
+                            key={subItem.title}
                             className="sbar-submenu-item"
                             style={{ animationDelay: `${subIndex * 0.05}s` }}
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              handleSubmenuClick(subItem);
+                            }}
                           >
-                            {subItem}
+                            {subItem.title}
                           </div>
                         ))}
                   </div>
