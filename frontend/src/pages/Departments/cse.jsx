@@ -331,7 +331,7 @@ This lab is specially followed by Students who are interested in understanding S
         <div className="banner-section">
           <div className="banner-image">
             <img
-              src="https://res.cloudinary.com/dnqzz8qlz/image/upload/v1749750835/cld-sample-2.jpg"
+              src="https://res.cloudinary.com/dslecvcak/image/upload/v1749756773/bmce1_wgwrqk.jpg"
               alt="Banner"
             />
             <div className="banner-overlay"></div>
