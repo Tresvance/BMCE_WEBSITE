@@ -88,20 +88,20 @@ const recruiters = [
 
 
   return (
-    <div className="placement-page">
+    <div className="cgpuplacement-page">
       {/* Hero Section */}
-     <section className="career-hero">
+     <section className="cgpucareer-hero">
           <img 
             src="../placements/placement.png" 
             alt="Career Development and Placement" 
-            className="career-hero__image" 
+            className="cgpucareer-hero__image" 
           />
-          <div className="career-hero__overlay">
-            <div className="career-hero__content">
-              <h1 className="career-hero__title">
+          <div className="cgpucareer-hero__overlay">
+            <div className="cgpucareer-hero__content">
+              <h1 className="cgpucareer-hero__title">
                 CAREER DEVELOPMENT & PLACEMENT
                 <br />
-                <span className="career-hero__highlight">CELL</span>
+                <span className="cgpucareer-hero__highlight">CELL</span>
               </h1>
             </div>
           </div>
@@ -111,12 +111,12 @@ const recruiters = [
       {/* Stats Section */}
      
       {/* About Section */}
-      <section className="about-section">
-        <div className="container">
-          <div className="section-content">
-            <div className="content-left">
-              <h2 className="section-title">ABOUT OUR PLACEMENT CELL</h2>
-              <div className="content-text">
+      <section className="cgpuabout-section">
+        <div className="cgpucontainer">
+          <div className="cgpusection-content">
+            <div className="cgpucontent-left">
+              <h2 className="cgpusection-title">ABOUT OUR PLACEMENT CELL</h2>
+              <div className="cgpucontent-text">
                 <p>
                   The Career Development and Placement Cell at University Name is 
                   dedicated to providing comprehensive career guidance, industry 
@@ -140,10 +140,10 @@ const recruiters = [
                 </p>
               </div>
             </div>
-            <div className="content-right">
-              <div className="highlight-stats">
+            <div className="cgpucontent-right">
+              <div className="cgpuhighlight-stats">
                 {stats.map((stat, index) => (
-                  <div key={index} className="highlight-stat">
+                  <div key={index} className="cgpuhighlight-stat">
                     <div className="highlight-number">{stat.number}</div>
                     <div className="highlight-label">{stat.label}</div>
                   </div>
@@ -155,15 +155,15 @@ const recruiters = [
       </section>
 
     <section className="placement-gallery-section">
-    <h2 className="section-title">Placement Highlights</h2>
+    <h2 className="cgpusection-title">Placement Highlights</h2>
 
   {/* Top Row - Scrolling Left */}
-  <div className="scroll-container">
+  <div className="scroll-cgpucontainer">
     <div className="scroll-track scroll-left">
       {[...topRowImages, ...topRowImages].map((image, index) => (
-        <div key={`top-${index}`} className="image-card">
+        <div key={`top-${index}`} className="cgpuimage-card">
           <img src={image} alt={`Placement highlight ${index + 1}`} />
-          <div className="image-overlay">
+          <div className="cgpuimage-overlay">
             <div className="overlay-content">
               <span className="image-label">Campus Drive</span>
             </div>
@@ -174,12 +174,12 @@ const recruiters = [
   </div>
 
   {/* Bottom Row - Scrolling Right */}
-  <div className="scroll-container">
+  <div className="scroll-cgpucontainer">
     <div className="scroll-track scroll-right">
       {[...bottomRowImages, ...bottomRowImages].map((image, index) => (
-        <div key={`bottom-${index}`} className="image-card">
+        <div key={`bottom-${index}`} className="cgpuimage-card">
           <img src={image} alt={`Placement highlight ${index + 9}`} />
-          <div className="image-overlay">
+          <div className="cgpuimage-overlay">
             <div className="overlay-content">
               <span className="image-label">Interview Session</span>
             </div>
@@ -198,7 +198,7 @@ const recruiters = [
 
       {/* Recruiters Section */}
  <section className="recruiters">
-    <div className="recruiters__container container">
+    <div className="recruiters__cgpucontainer cgpucontainer">
       <h2 className="recruiters__title">Top Recruiters</h2>
       <div className="recruiters__grid">
         {recruiters.map((recruiter, index) => (
