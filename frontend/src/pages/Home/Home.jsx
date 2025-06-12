@@ -143,28 +143,42 @@ const HomePage = () => {
       id: 2,
       title: "Artificial Intelligence",
       image: aiImage, 
-      hodName: "Dennis Mathew",
+      hodName: "Ms. Deepthy S",
       hodTitle: "Head Of Department"
     },
     {
       id: 3,
       title: "Mechanical Engineering",
       image: mechImage,
-      hodName: "Dennis Mathew", 
+      hodName: "Mr. Abraham Sam Thomas", 
       hodTitle: "Head Of Department"
     },
     {
       id: 4,
       title: "Electrical Engineering",
       image: eeImage,
-      hodName: "Sarah Johnson",
+      hodName: "Mr. Vishu V",
       hodTitle: "Head Of Department"
     },
     {
       id: 5,
       title: "Civil Engineering",
       image: civilImage,
-      hodName: "Michael Chen",
+      hodName: "Mrs. Rajalakshmi P",
+      hodTitle: "Head Of Department"
+    },
+    {
+      id: 6,
+      title: "Electronics and Communication Engineering",
+      image: civilImage,
+      hodName: "Mr. Nidhin.T.G",
+      hodTitle: "Head Of Department"
+    },
+    {
+      id:7 ,
+      title: "MBA",
+      image: civilImage,
+      hodName: "Mr. Roy Samuel",
       hodTitle: "Head Of Department"
     }
   ];
@@ -234,267 +248,267 @@ const HomePage = () => {
     );
   };
   return (
-    <div className="homepage">
-      <div className="header-grid">
-        <div className="left-section">
-          <div className="stats-section">
-            <div className="stats-grid">
-              {stats.map((stat, index) => {
-                const IconComponent = stat.icon;
-                return (
-                  <div 
-                    key={index} 
-                    className={`stat-card ${statsVisible ? 'visible' : ''}`}
-                    style={{ 
-                      transitionDelay: `${index * 150}ms`
-                    }}
-                  >
-                    <div className="stat-content">
-                      <div className="stat-icon-container">
-                        <IconComponent className="stat-icons" />
-                      </div>
-                      <div className="stat-value">
-                        {stat.value}
-                      </div>
-                      <div className="stat-name">
-                        {stat.label}
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-
-          {/* Programs Carousel Section - Simplified */}
-          <div className="programs-elegant-section">
-            <div className="programs-header">
-              <h2 className="programs-elegant-title">Our Programs</h2>
-              <div className="programs-title-underline"></div>
-            </div>
-            
-            <div className="programs-elegant-container">
-              <div className="programs-carousel-wrapper">
-                {programs.map((program, index) => (
-                  <div
-                    key={index}
-                    className={`program-elegant-slide ${currentProgram === index ? 'active' : ''}`}
-                    style={{
-                      transform: `translateX(${(index - currentProgram) * 100}%)`
-                    }}
-                  >
-                    <div className={`program-elegant-card program-elegant-${program.color}`}>
-                      <div className="program-elegant-content">
-                        <h3 className="program-elegant-title">
-                          {program.title}
-                        </h3>
-                        <div className="program-duration-badge">
-                          <Clock className="duration-icon" />
-                          {program.duration}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Right Side - Main Carousel */}
-        <div className="carousel-container">
-          {carouselImages.map((image, index) => (
-            <div
-              key={index}
-              className="carousel-slide"
-              style={{
-                transform: `translateX(${(index - currentSlide) * 100}%)`
+    <div className="home-homepage">
+      <div className="home-header-grid">
+  <div className="home-left-section">
+    <div className="home-stats-section">
+      <div className="home-stats-grid">
+        {stats.map((stat, index) => {
+          const IconComponent = stat.icon;
+          return (
+            <div 
+              key={index} 
+              className={`home-stat-card ${statsVisible ? 'home-visible' : ''}`}
+              style={{ 
+                transitionDelay: `${index * 150}ms`
               }}
             >
-              <img
-                src={image.src}
-                alt={image.alt}
-                className="carousel-image"
-              />
-              <div className="carousel-overlay"></div>
-            </div>
-          ))}
-          {/* Carousel Controls */}
-          <button 
-            onClick={prevSlide} 
-            className="carousel-control prev"
-          >
-            <ChevronLeft />
-          </button>
-          <button 
-            onClick={nextSlide}
-            className="carousel-control next"
-          >
-            <ChevronRight />
-          </button>
-          {/* Carousel Indicators */}
-          <div className="carousel-indicators">
-            {carouselImages.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentSlide(index)}
-                className={`carousel-indicator ${index === currentSlide ? 'active' : ''}`}
-              />
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Welcome Section */}
-      <div className="welcome-and-events">
-        <div className="welcome-section">
-          <div className="welcome-container">
-            <div className="welcome-card">
-              <h1 className="welcome-title">
-                Welcome to <span className="gradient-text">BMCE</span>
-              </h1>
-              <p className="welcome-description">
-                Baselios Mathews II College of Engineering (BMCE) is named after its founder, the late H H Moran Mar Baselios Marthoma Mathews II, the sixth Catholicon of the East and the Malankara Metropolitan of Malankara Orthodox Church. He was also the first Chairman of the institution. This renowned college is managed by Dr. C T Eapen Trust under Malankara Orthodox Syrian Church.
-              </p>
-              <p className="welcome-description">
-                The institution started functioning in 2002 with the monumental objective of promoting academic excellence and competence in students, especially in the fast-growing global domain of Engineering and Technology.
-              </p>
-              <p className="welcome-description">
-                Located in the picturesquely beautiful Muthupilakadu in Sasthamcotta in the Kollam district of Kerala, the college stands out for its magnificent buildings and ultra-modern infrastructure; a fascinating blend of architectural excellence and functional values.
-              </p>
-              <p className="welcome-description">
-                Affiliated to the University of Kerala and later to APJ Abdul Kalam Technological University, this self-financed institute currently provides 6 AICTE-approved UG courses.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Events Section */}
-        <div id="content-section" className="events-section">
-          <div className="events-container">
-            <h2 className="section-title">Upcoming Events</h2>
-            <div className="section-underline"></div>
-
-            {/* Scrollable Events List */}
-            <div className="scrolling-events-list">
-              <div className="scrolling-events">
-                {upcomingEvents.map((event, index) => (
-                  <div key={index} className="event-card">
-                    <div className="event-content">
-                      <div className="event-date">
-                        <div className="event-date-number">{event.date}</div>
-                        <div className="event-date-month">{event.month}</div>
-                      </div>
-                      <div className="event-details">
-                        <h3 className="event-title">{event.title}</h3>
-                        <div className="event-info">
-                          <div className="event-info-item">
-                            <Clock className="event-icon" />
-                            <span>{event.time}</span>
-                          </div>
-                          <div className="event-info-item">
-                            <MapPin className="event-icon" />
-                            <span>{event.location}</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                ))}
+              <div className="home-stat-content">
+                <div className="home-stat-icon-container">
+                  <IconComponent className="home-stat-icon" />
+                </div>
+                <div className="home-stat-value">
+                  {stat.value}
+                </div>
+                <div className="home-stat-label">
+                  {stat.label}
+                </div>
               </div>
             </div>
-          </div>
+          );
+        })}
+      </div>
+    </div>
+
+    {/* Programs Carousel Section - Simplified */}
+    <div className="home-programs-elegant-section">
+      <div className="home-programs-header">
+        <h2 className="home-programs-elegant-title">Our Programs</h2>
+        <div className="home-programs-title-underline"></div>
+      </div>
+      
+      <div className="home-programs-elegant-container">
+        <div className="home-programs-carousel-wrapper">
+          {programs.map((program, index) => (
+            <div
+              key={index}
+              className={`home-program-elegant-slide ${currentProgram === index ? 'home-active' : ''}`}
+              style={{
+                transform: `translateX(${(index - currentProgram) * 100}%)`
+              }}
+            >
+              <div className={`home-program-elegant-card home-program-elegant-${program.color}`}>
+                <div className="home-program-elegant-content">
+                  <h3 className="home-program-elegant-title">
+                    {program.title}
+                  </h3>
+                  <div className="home-program-duration-badge">
+                    <Clock className="home-duration-icon" />
+                    {program.duration}
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
+    </div>
+  </div>
+
+  {/* Right Side - Main Carousel */}
+  <div className="home-carousel-container">
+    {carouselImages.map((image, index) => (
+      <div
+        key={index}
+        className="home-carousel-slide"
+        style={{
+          transform: `translateX(${(index - currentSlide) * 100}%)`
+        }}
+      >
+        <img
+          src={image.src}
+          alt={image.alt}
+          className="home-carousel-image"
+        />
+        <div className="home-carousel-overlay"></div>
+      </div>
+    ))}
+    {/* Carousel Controls */}
+    <button 
+      onClick={prevSlide} 
+      className="home-carousel-control home-prev"
+    >
+      <ChevronLeft />
+    </button>
+    <button 
+      onClick={nextSlide}
+      className="home-carousel-control home-next"
+    >
+      <ChevronRight />
+    </button>
+    {/* Carousel Indicators */}
+    <div className="home-carousel-indicators">
+      {carouselImages.map((_, index) => (
+        <button
+          key={index}
+          onClick={() => setCurrentSlide(index)}
+          className={`home-carousel-indicator ${index === currentSlide ? 'home-active' : ''}`}
+        />
+      ))}
+    </div>
+  </div>
+</div>
+
+      {/* Welcome Section */}
+<div className="home-welcome-and-events">
+  <div className="home-welcome-section">
+    <div className="home-welcome-container">
+      <div className="home-welcome-card">
+        <h1 className="home-welcome-title">
+          Welcome to <span className="home-gradient-text">BMCE</span>
+        </h1>
+        <p className="home-welcome-description">
+          Baselios Mathews II College of Engineering (BMCE) is named after its founder, the late H H Moran Mar Baselios Marthoma Mathews II, the sixth Catholicon of the East and the Malankara Metropolitan of Malankara Orthodox Church. He was also the first Chairman of the institution. This renowned college is managed by Dr. C T Eapen Trust under Malankara Orthodox Syrian Church.
+        </p>
+        <p className="home-welcome-description">
+          The institution started functioning in 2002 with the monumental objective of promoting academic excellence and competence in students, especially in the fast-growing global domain of Engineering and Technology.
+        </p>
+        <p className="home-welcome-description">
+          Located in the picturesquely beautiful Muthupilakadu in Sasthamcotta in the Kollam district of Kerala, the college stands out for its magnificent buildings and ultra-modern infrastructure; a fascinating blend of architectural excellence and functional values.
+        </p>
+        <p className="home-welcome-description">
+          Affiliated to the University of Kerala and later to APJ Abdul Kalam Technological University, this self-financed institute currently provides 6 AICTE-approved UG courses.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  {/* Events Section */}
+  <div id="content-section" className="home-events-section">
+    <div className="home-events-container">
+      <h2 className="home-section-title">Upcoming Events</h2>
+      <div className="home-section-underline"></div>
+
+      {/* Scrollable Events List */}
+      <div className="home-scrolling-events-list">
+        <div className="home-scrolling-events">
+          {upcomingEvents.map((event, index) => (
+            <div key={index} className="home-event-card">
+              <div className="home-event-content">
+                <div className="home-event-date">
+                  <div className="home-event-date-number">{event.date}</div>
+                  <div className="home-event-date-month">{event.month}</div>
+                </div>
+                <div className="home-event-details">
+                  <h3 className="home-event-title">{event.title}</h3>
+                  <div className="home-event-info">
+                    <div className="home-event-info-item">
+                      <Clock className="home-event-icon" />
+                      <span>{event.time}</span>
+                    </div>
+                    <div className="home-event-info-item">
+                      <MapPin className="home-event-icon" />
+                      <span>{event.location}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
       {/* Academic Programs Cards Section */}
-      <div className="academic-programs-wrapper">
-  <div className="academic-programs-container">
+<div className="home-academic-programs-wrapper">
+  <div className="home-academic-programs-container">
     {/* Section Header 
-    <div className="programs-header">
-      <div className="header-decoration">
-        <div className="floating-elements">
-          <div className="float-element element-1"></div>
-          <div className="float-element element-2"></div>
-          <div className="float-element element-3"></div>
+    <div className="home-programs-header">
+      <div className="home-header-decoration">
+        <div className="home-floating-elements">
+          <div className="home-float-element home-element-1"></div>
+          <div className="home-float-element home-element-2"></div>
+          <div className="home-float-element home-element-3"></div>
         </div>
       </div>
     </div>*/}
 
     {/* Programs Grid */}
-    <div className="programs-grid">
+    <div className="home-programs-grid">
       {/* B.Tech Program - Left Aligned */}
-      <div className="program-row row-left">
-        <div className="program-card btech-program">
-          <div className="card-glow"></div>
-          <div className="card-header">
-            <div className="program-icon">
+      <div className="home-program-row home-row-left">
+        <div className="home-program-card home-btech-program">
+          <div className="home-card-glow"></div>
+          <div className="home-card-header">
+            <div className="home-program-icon">
               <BookOpen size={24} />
             </div>
-            <div className="program-meta">
-              <h3 className="program-title">Bachelor of Technology</h3>
-              <div className="program-badge approved-badge">
+            <div className="home-program-meta">
+              <h3 className="home-program-title">Bachelor of Technology</h3>
+              <div className="home-program-badge home-approved-badge">
                 <Star size={14} />
                 AICTE Approved
               </div>
             </div>
           </div>
 
-          <div className="specializations-container">
-            <div className="specializations-grid">
-              <span className="spec-chip">Computer Science</span>
-              <span className="spec-chip">Civil Engineering</span>
-              <span className="spec-chip">Electronics</span>
-              <span className="spec-chip">Mechanical</span>
+          <div className="home-specializations-container">
+            <div className="home-specializations-grid">
+              <span className="home-spec-chip">Computer Science</span>
+              <span className="home-spec-chip">Civil Engineering</span>
+              <span className="home-spec-chip">Electronics</span>
+              <span className="home-spec-chip">Mechanical</span>
             </div>
           </div>
 
-          <div className="program-details">
-            <div className="detail-item">
+          <div className="home-program-details">
+            <div className="home-detail-item">
               <Clock size={16} />
               <span>4 Years Duration</span>
             </div>
-            <div className="detail-item">
+            <div className="home-detail-item">
               <Users size={16} />
               <span>120 Seats Available</span>
             </div>
           </div>
 
-          <div className="program-features">
-            <div className="feature-list">
-              <div className="feature-item">
-                <div className="feature-marker"></div>
+          <div className="home-program-features">
+            <div className="home-feature-list">
+              <div className="home-feature-item">
+                <div className="home-feature-marker"></div>
                 Industry-Ready Curriculum
               </div>
-              <div className="feature-item">
-                <div className="feature-marker"></div>
+              <div className="home-feature-item">
+                <div className="home-feature-marker"></div>
                 State-of-Art Laboratories
               </div>
-              <div className="feature-item">
-                <div className="feature-marker"></div>
+              <div className="home-feature-item">
+                <div className="home-feature-marker"></div>
                 100% Placement Assistance
               </div>
             </div>
           </div>
 
-          <div className="card-footer">
-            <button className="enroll-button">
+          <div className="home-card-footer">
+            <button className="home-enroll-button">
               <span>Explore Program</span>
               <ArrowRight size={16} />
             </button>
           </div>
         </div>
 
-        <div className="program-visual">
-          <div className="visual-content">
-            <div className="stats-card">
-              <div className="stat-item">
-                <div className="stat-number">500+</div>
-                <div className="stat-label">Graduates</div>
+        <div className="home-program-visual">
+          <div className="home-visual-content">
+            <div className="home-stats-card">
+              <div className="home-stat-item">
+                <div className="home-stat-number">500+</div>
+                <div className="home-stat-label">Graduates</div>
               </div>
-              <div className="stat-item">
-                <div className="stat-number">95%</div>
-                <div className="stat-label">Placement Rate</div>
+              <div className="home-stat-item">
+                <div className="home-stat-number">95%</div>
+                <div className="home-stat-label">Placement Rate</div>
               </div>
             </div>
           </div>
@@ -502,66 +516,66 @@ const HomePage = () => {
       </div>
 
       {/* MBA Program - Right Aligned */}
-      <div className="program-row row-right">
-        <div className="program-visual">
-          <div className="visual-content mba-visual">
-            <div className="achievement-badge">
+      <div className="home-program-row home-row-right">
+        <div className="home-program-visual">
+          <div className="home-visual-content home-mba-visual">
+            <div className="home-achievement-badge">
               <Award size={20} />
               <span>Top Ranked</span>
             </div>
-            <div className="floating-icons">
-              <div className="icon-float icon-1"></div>
-              <div className="icon-float icon-2"></div>
-              <div className="icon-float icon-3"></div>
+            <div className="home-floating-icons">
+              <div className="home-icon-float home-icon-1"></div>
+              <div className="home-icon-float home-icon-2"></div>
+              <div className="home-icon-float home-icon-3"></div>
             </div>
           </div>
         </div>
 
-        <div className="program-card mba-program">
-          <div className="card-glow"></div>
-          <div className="card-header">
-            <div className="program-icon">
+        <div className="home-program-card home-mba-program">
+          <div className="home-card-glow"></div>
+          <div className="home-card-header">
+            <div className="home-program-icon">
               <Users size={24} />
             </div>
-            <div className="program-meta">
-              <h3 className="program-title">Master of Business Administration</h3>
-              <div className="program-badge limited-badge">
+            <div className="home-program-meta">
+              <h3 className="home-program-title">Master of Business Administration</h3>
+              <div className="home-program-badge home-limited-badge">
                 <Star size={14} />
                 Limited Intake
               </div>
             </div>
           </div>
 
-          <div className="program-details">
-            <div className="detail-item">
+          <div className="home-program-details">
+            <div className="home-detail-item">
               <Clock size={16} />
               <span>2 Years Duration</span>
             </div>
-            <div className="detail-item">
+            <div className="home-detail-item">
               <Users size={16} />
               <span>60 Seats Only</span>
             </div>
           </div>
 
-          <div className="program-features">
-            <div className="feature-list">
-              <div className="feature-item">
-                <div className="feature-marker"></div>
+          <div className="home-program-features">
+            <div className="home-feature-list">
+              <div className="home-feature-item">
+                <div className="home-feature-marker"></div>
                 International Faculty
               </div>
-              <div className="feature-item">
-                <div className="feature-marker"></div>
+              <div className="home-feature-item">
+                <div className="home-feature-marker"></div>
                 Industry Partnerships
               </div>
-              <div className="feature-item">
-                <div className="feature-marker"></div>
+              <div className="home-feature-item">
+                <div className="home-feature-marker"></div>
                 Global Exposure Programs
               </div>
             </div>
           </div>
 
-          <div className="card-footer">
-            <button className="enroll-button">
+          <div className="home-card-footer">
+            <button className="home-enroll-button">
               <span>Explore Program</span>
               <ArrowRight size={16} />
             </button>
@@ -570,72 +584,72 @@ const HomePage = () => {
       </div>
 
       {/* Polytechnic Program - Left Aligned */}
-      <div className="program-row row-left">
-        <div className="program-card polytechnic-program">
-          <div className="card-glow"></div>
-          <div className="card-header">
-            <div className="program-icon">
+      <div className="home-program-row home-row-left">
+        <div className="home-program-card home-polytechnic-program">
+          <div className="home-card-glow"></div>
+          <div className="home-card-header">
+            <div className="home-program-icon">
               <Award size={24} />
             </div>
-            <div className="program-meta">
-              <h3 className="program-title">Polytechnic Diploma</h3>
-              <div className="program-badge success-badge">
+            <div className="home-program-meta">
+              <h3 className="home-program-title">Polytechnic Diploma</h3>
+              <div className="home-program-badge home-success-badge">
                 <Star size={14} />
                 100% Placement
               </div>
             </div>
           </div>
 
-          <div className="specializations-container">
-            <div className="specializations-grid">
-              <span className="spec-chip">Mechanical</span>
-              <span className="spec-chip">Electrical</span>
-              <span className="spec-chip">Civil</span>
+          <div className="home-specializations-container">
+            <div className="home-specializations-grid">
+              <span className="home-spec-chip">Mechanical</span>
+              <span className="home-spec-chip">Electrical</span>
+              <span className="home-spec-chip">Civil</span>
             </div>
           </div>
 
-          <div className="program-details">
-            <div className="detail-item">
+          <div className="home-program-details">
+            <div className="home-detail-item">
               <Clock size={16} />
               <span>3 Years Duration</span>
             </div>
-            <div className="detail-item">
+            <div className="home-detail-item">
               <Users size={16} />
               <span>180 Seats Available</span>
             </div>
           </div>
 
-          <div className="program-features">
-            <div className="feature-list">
-              <div className="feature-item">
-                <div className="feature-marker"></div>
+          <div className="home-program-features">
+            <div className="home-feature-list">
+              <div className="home-feature-item">
+                <div className="home-feature-marker"></div>
                 Hands-on Training
               </div>
-              <div className="feature-item">
-                <div className="feature-marker"></div>
+              <div className="home-feature-item">
+                <div className="home-feature-marker"></div>
                 Industry Workshops
               </div>
-              <div className="feature-item">
-                <div className="feature-marker"></div>
+              <div className="home-feature-item">
+                <div className="home-feature-marker"></div>
                 Skill Development Focus
               </div>
             </div>
           </div>
 
-          <div className="card-footer">
-            <button className="enroll-button">
+          <div className="home-card-footer">
+            <button className="home-enroll-button">
               <span>Explore Program</span>
               <ArrowRight size={16} />
             </button>
           </div>
         </div>
 
-        <div className="program-visual">
-          <div className="visual-content polytechnic-visual">
-            <div className="skill-indicators">
-              <div className="skill-ring">
-                <div className="skill-progress" style={{'--progress': '90%'}}></div>
-                <span className="skill-text">Practical Skills</span>
+        <div className="home-program-visual">
+          <div className="home-visual-content home-polytechnic-visual">
+            <div className="home-skill-indicators">
+              <div className="home-skill-ring">
+                <div className="home-skill-progress" style={{'--progress': '90%'}}></div>
+                <span className="home-skill-text">Practical Skills</span>
               </div>
             </div>
           </div>
@@ -644,155 +658,155 @@ const HomePage = () => {
     </div>
   </div>
 </div>
-    {/*Principal Content*/}
-    <div className="principal-background">
-      <div className="college-welcome-container">
-        <div className="welcome-section">
-          <div className="welcome-content">
-            <h2 className="pwelcome-title">Welcome from the College Principal</h2>
-            <p className="welcome-text">
-              Welcome to BMCE, where we strive to shape dedicated and inspiring educators. 
-              At BMCE, we focus on academic excellence, character building, and innovative 
-              teaching practices. Our committed faculty and supportive learning environment 
-              help students grow into confident and responsible professionals. We warmly 
-              invite you to be a part of our vibrant academic community.
-            </p>
-          </div>
-          <div className="principal-image">
+ {/* Principal Content */}
+<div className="home-principal-background">
+  <div className="home-college-welcome-container">
+    <div className="home-welcome-section">
+      <div className="home-welcome-content">
+        <h2 className="home-pwelcome-title">Welcome from the College Principal</h2>
+        <p className="home-welcome-text">
+          Welcome to BMCE, where we strive to shape dedicated and inspiring educators. 
+          At BMCE, we focus on academic excellence, character building, and innovative 
+          teaching practices. Our committed faculty and supportive learning environment 
+          help students grow into confident and responsible professionals. We warmly 
+          invite you to be a part of our vibrant academic community.
+        </p>
+      </div>
+      <div className="home-principal-image">
+        <img 
+          src={princi} 
+          alt="College Principal" 
+          className="home-principal-photo"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+     {/* navbuttons */}
+<div className="home-principal-buttons">
+  {navigationItems.map((item) => (
+    <button 
+      key={item.id}
+      className="home-principal-btn"
+      onClick={() => handleNavigation(item.id)}
+    >
+      {item.label}
+    </button>
+  ))}
+</div>
+    {/*Placement section*/}
+    <section className="home-placement-section">
+  <div className="home-container">
+    <h2 className="home-placement-title">Our Placement Partners</h2>
+    <p className="home-placement-subtitle">
+      Leading companies trust our graduates for their excellence and innovation
+    </p>
+    
+    <div className="home-pcarousel-container">
+      <div className="home-carousel-track">
+        {/* First set of logos */}
+        {companyLogos.map((company) => (
+          <div key={`first-${company.id}`} className="home-company-card">
             <img 
-              src={princi} 
-              alt="College Principal" 
-              className="principal-photo"
+              src={company.src} 
+              alt={company.alt}
+              className="home-company-logo"
             />
           </div>
-        </div>
-      </div>
-    </div>
-     {/*navbuttons*/}
-     <div className="principal-buttons">
-      {navigationItems.map((item) => (
-        <button 
-          key={item.id}
-          className="principal-btn"
-          onClick={() => handleNavigation(item.id)}
-        >
-          {item.label}
-        </button>
-      ))}
-    </div>
-    {/*Placement section*/}
-    <section className="placement-section">
-      <div className="container">
-        <h2 className="placement-title">Our Placement Partners</h2>
-        <p className="placement-subtitle">
-          Leading companies trust our graduates for their excellence and innovation
-        </p>
-        
-        <div className="pcarousel-container">
-          <div className="carousel-track">
-            {/* First set of logos */}
-            {companyLogos.map((company) => (
-              <div key={`first-${company.id}`} className="company-card">
-                <img 
-                  src={company.src} 
-                  alt={company.alt}
-                  className="company-logo"
-                />
-              </div>
-            ))}
-            {/* Duplicate set for seamless loop */}
-            {companyLogos.map((company) => (
-              <div key={`second-${company.id}`} className="company-card">
-                <img 
-                  src={company.src} 
-                  alt={company.alt}
-                  className="company-logo"
-                />
-              </div>
-            ))}
+        ))}
+        {/* Duplicate set for seamless loop */}
+        {companyLogos.map((company) => (
+          <div key={`second-${company.id}`} className="home-company-card">
+            <img 
+              src={company.src} 
+              alt={company.alt}
+              className="home-company-logo"
+            />
           </div>
-        </div>
+        ))}
       </div>
-    </section>
+    </div>
+  </div>
+</section>
     {/*Happenings*/}
-    <div className="happenings-container">
-      <h2 className="happenings-title">Happenings at BMCE</h2>
-      <div className="cards-container">
-        {cards.map((card) => (
-          <div key={card.id} className="card">
-            <div className="card-image">
-              <img src={card.image} alt={card.title} />
-            </div>
-            <div className="card-overlay">
-              <h3 className="card-title">{card.title}</h3>
-            </div>
-          </div>
-        ))}
+    <div className="home-happenings-container">
+  <h2 className="home-happenings-title">Happenings at BMCE</h2>
+  <div className="home-cards-container">
+    {cards.map((card) => (
+      <div key={card.id} className="home-card">
+        <div className="home-card-image">
+          <img src={card.image} alt={card.title} />
+        </div>
+        <div className="home-card-overlay">
+          <h3 className="home-card-title">{card.title}</h3>
+        </div>
       </div>
-    </div>
+    ))}
+  </div>
+</div>
     {/*Our Courses*/}
-    <div className="dcarousel-container">
-      <div className="dheader-section">
-        <h1 className="dmain-title">Our Courses</h1>
-        <h2 className="dsub-heading">Access Our Learning Resources Next</h2>
-      </div>
-      
-      <div className="dcarousel-wrapper">
-        <button className="dcarousel-btn dprev-btn" onClick={dPrevSlide}>
-          <ChevronLeft size={24} />
-        </button>
-        
-        <div className="dcarousel-track">
-          <div 
-            className="dcarousel-content"
-            style={{ transform: `translateX(-${currentIndex * 33.333}%)` }}
-          >
-            {courses.map((course) => (
-              <div key={course.id} className="dcourse-card">
-                <div className="dcard-image">
-                  <img src={course.image} alt={course.title} />
-                </div>
-                <div className="dcard-content">
-                  <h3 className="dcourse-title">{course.title}</h3>
-                  <div className="dhod-info">
-                    <div className="dhod-avatar"></div>
-                    <div className="dhod-details">
-                      <p className="dhod-name">{course.hodName}</p>
-                      <p className="dhod-title">{course.hodTitle}</p>
-                    </div>
-                  </div>
+    <div className="home-dcarousel-container">
+  <div className="home-dheader-section">
+    <h1 className="home-dmain-title">Our Courses</h1>
+    <h2 className="home-dsub-heading">Access Our Learning Resources Next</h2>
+  </div>
+  
+  <div className="home-dcarousel-wrapper">
+    <button className="home-dcarousel-btn home-prev-btn" onClick={dPrevSlide}>
+      <ChevronLeft size={24} />
+    </button>
+    
+    <div className="home-dcarousel-track">
+      <div 
+        className="home-dcarousel-content"
+        style={{ transform: `translateX(-${currentIndex * 33.333}%)` }}
+      >
+        {courses.map((course) => (
+          <div key={course.id} className="home-dcourse-card">
+            <div className="home-dcard-image">
+              <img src={course.image} alt={course.title} />
+            </div>
+            <div className="home-dcard-content">
+              <h3 className="home-dcourse-title">{course.title}</h3>
+              <div className="home-dhod-info">
+                <div className="home-dhod-avatar"></div>
+                <div className="home-dhod-details">
+                  <p className="home-dhod-name">{course.hodName}</p>
+                  <p className="home-dhod-title">{course.hodTitle}</p>
                 </div>
               </div>
-            ))}
+            </div>
           </div>
-        </div>
-        
-        <button className="dcarousel-btn dnext-btn" onClick={dNextSlide}>
-          <ChevronRight size={24} />
-        </button>
-      </div>
-      
-      <div className="dcarousel-indicators">
-        {Array.from({ length: Math.max(1, courses.length - 2) }).map((_, index) => (
-          <button
-            key={index}
-            className={`dindicator ${index === currentIndex ? 'dactive' : ''}`}
-            onClick={() => setCurrentIndex(index)}
-          />
         ))}
       </div>
     </div>
-    {/*Entrepreneurialship Cell */}
-    <section className="eentrepreneurial-cell">
-  <div className="econtainer">
-    <h2 className="esection-title">Entrepreneurial Cell</h2>
     
-    <div className="econtent-wrapper">
-      <div className="eleft-image">
+    <button className="home-dcarousel-btn home-dnext-btn" onClick={dNextSlide}>
+      <ChevronRight size={24} />
+    </button>
+  </div>
+  
+  <div className="home-dcarousel-indicators">
+    {Array.from({ length: Math.max(1, courses.length - 2) }).map((_, index) => (
+      <button
+        key={index}
+        className={`home-indicator ${index === currentIndex ? 'home-active' : ''}`}
+        onClick={() => setCurrentIndex(index)}
+      />
+    ))}
+  </div>
+</div>
+    {/*Entrepreneurialship Cell */}
+    <section className="home-eentrepreneurial-cell">
+  <div className="home-econtainer">
+    <h2 className="home-esection-title">Entrepreneurial Cell</h2>
+    
+    <div className="home-econtent-wrapper">
+      <div className="home-eleft-image">
         <img src={brainBulbImage} alt="Brain with lightbulb representing innovation" />
       </div>
 
-      <div className="econtent">
+      <div className="home-econtent">
         <p>
           The Innovation and Entrepreneurship Development Cell (IEDC) is
           dedicated to fostering creativity and entrepreneurial thinking among
@@ -805,87 +819,87 @@ const HomePage = () => {
         </p>
       </div>
 
-      <div className="eright-image">
+      <div className="home-eright-image">
         <img src={teamMeetingImage} alt="Team meeting with lightbulb concept" />
       </div>
     </div>
   </div>
 </section>
     {/*Campus Life */}
-    <div className="cf-campus-facilities">
-      {/* Hero Section */}
-      <div className="cf-hero-section">
-        <div className="cf-hero-overlay">
-          <div className="cf-hero-content">
-            <h2 className="cf-hero-subtitle">Infrastructure</h2>
-            <h1 className="cf-hero-title">Campus Facilities</h1>
-            <p className="cf-hero-description">
-              Living on campus also fosters a strong sense of community, allowing students to collaborate, 
-              share ideas, and build lifelong friendships in a vibrant academic environment.
-            </p>
-          </div>
-        </div>
+<div className="home-cf-campus-facilities">
+  {/* Hero Section */}
+  <div className="home-cf-hero-section">
+    <div className="home-cf-hero-overlay">
+      <div className="home-cf-hero-content">
+        <h2 className="home-cf-hero-subtitle">Infrastructure</h2>
+        <h1 className="home-cf-hero-title">Campus Facilities</h1>
+        <p className="home-cf-hero-description">
+          Living on campus also fosters a strong sense of community, allowing students to collaborate, 
+          share ideas, and build lifelong friendships in a vibrant academic environment.
+        </p>
       </div>
+    </div>
+  </div>
 
-      {/* Facilities Grid Section */}
-      <div className="cf-facilities-section">
-        <div className="cf-facilities-overlay">
-          <div className="cf-facilities-content">
-            <div className="cf-facilities-grid">
-              <div className="cf-facility-card cf-campus-facilities-card">
-                <h3>Campus Facilities</h3>
-                <ul>
-                  <li>Student Societies & Club Infrastructure</li>
-                  <li>Auditorium / Seminar Hall</li>
-                </ul>
-              </div>
-              
-              <div className="cf-facility-card cf-academic-facilities-card">
-                <h3>Academic Facilities</h3>
-                <ul>
-                  <li>Classrooms</li>
-                  <li>Laboratories</li>
-                  <li>Library</li>
-                </ul>
-              </div>
-              
-              <div className="cf-facility-card cf-sports-health-card">
-                <h3>Sports & Health Facilities</h3>
-                <ul>
-                  <li>Sports</li>
-                  <li>Counseling</li>
-                  <li>Medical Room</li>
-                </ul>
-              </div>
-            </div>
+  {/* Facilities Grid Section */}
+  <div className="home-cf-facilities-section">
+    <div className="home-cf-facilities-overlay">
+      <div className="home-cf-facilities-content">
+        <div className="home-cf-facilities-grid">
+          <div className="home-cf-facility-card home-cf-campus-facilities-card">
+            <h3>Campus Facilities</h3>
+            <ul>
+              <li>Student Societies & Club Infrastructure</li>
+              <li>Auditorium / Seminar Hall</li>
+            </ul>
+          </div>
+          
+          <div className="home-cf-facility-card home-cf-academic-facilities-card">
+            <h3>Academic Facilities</h3>
+            <ul>
+              <li>Classrooms</li>
+              <li>Laboratories</li>
+              <li>Library</li>
+            </ul>
+          </div>
+          
+          <div className="home-cf-facility-card home-cf-sports-health-card">
+            <h3>Sports & Health Facilities</h3>
+            <ul>
+              <li>Sports</li>
+              <li>Counseling</li>
+              <li>Medical Room</li>
+            </ul>
           </div>
         </div>
       </div>
     </div>
+  </div>
+</div>
     {/*What people say */}
-    <section className="testimonials-section">
-      <div className="testimonials-container">
-        <h2 className="testimonials-heading">WHAT PEOPLE SAY</h2>
-        
-        <div className="testimonials-grid">
-          {testimonials.map((testimonial) => (
-            <div key={testimonial.id} className="testimonial-card">
-              <div className="quote-icon">"</div>
-              <p className="testimonial-text">{testimonial.quote}</p>
-              <div className="closing-quote">"</div>
-              
-              <div className="testimonial-author">
-                <div className="author-avatar"></div>
-                <div className="author-info">
-                  <h4 className="author-name">{testimonial.name}</h4>
-                  <p className="author-title">{testimonial.title}</p>
-                </div>
-              </div>
+    <section className="home-testimonials-section">
+  <div className="home-testimonials-container">
+    <h2 className="home-testimonials-heading">WHAT PEOPLE SAY</h2>
+    
+    <div className="home-testimonials-grid">
+      {testimonials.map((testimonial) => (
+        <div key={testimonial.id} className="home-testimonial-card">
+          <div className="home-quote-icon">"</div>
+          <p className="home-testimonial-text">{testimonial.quote}</p>
+          <div className="home-closing-quote">"</div>
+          
+          <div className="home-testimonial-author">
+            <div className="home-author-avatar"></div>
+            <div className="home-author-info">
+              <h4 className="home-author-name">{testimonial.name}</h4>
+              <p className="home-author-title">{testimonial.title}</p>
             </div>
-          ))}
+          </div>
         </div>
-      </div>
-    </section>
+      ))}
+    </div>
+  </div>
+</section>
   </div>
   );
 };

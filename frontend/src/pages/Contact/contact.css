@@ -13,7 +13,7 @@
         }
 
         /* Hero Section */
-        .hero-section {
+        .contacthero-section {
             position: relative;
             background: linear-gradient(135deg, #49C2F1  0%, #1276CC 100%);
             padding: 190px 0 60px;
@@ -23,7 +23,7 @@
             overflow: hidden;
         }
 
-        .hero-content {
+        .contacthero-content {
             position: relative;
             z-index: 2;
             max-width: 800px;
@@ -31,7 +31,7 @@
             padding: 0 20px;
         }
 
-        .hero-title {
+        .contacthero-title {
             font-size: 3.5rem;
             font-weight: 700;
             margin-bottom: 20px;
@@ -42,7 +42,7 @@
             text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
 
-        .hero-subtitle {
+        .contacthero-subtitle {
             font-size: 1.2rem;
             opacity: 0.9;
             max-width: 600px;
@@ -50,7 +50,7 @@
             line-height: 1.8;
         }
 
-        .hero-decoration {
+        .contacthero-decoration {
             position: absolute;
             top: 0;
             left: 0;
@@ -97,7 +97,7 @@
         }
 
         /* Container */
-        .container {
+        .contact-container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
@@ -151,7 +151,7 @@
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
         }
 
-        .card-icon {
+        .contactcard-icon {
             display: inline-flex;
             align-items: center;
             justify-content: center;
@@ -165,7 +165,7 @@
             font-size: 24px;
         }
 
-        .contact-card:hover .card-icon {
+        .contact-card:hover .contactcard-icon {
             transform: scale(1.1) rotate(5deg);
         }
 
@@ -194,7 +194,7 @@
         }
 
         /* Main Content */
-        .main-content {
+        .contactmain-content {
             display: grid;
             grid-template-columns: 2fr 1fr;
             gap: 60px;
@@ -202,19 +202,19 @@
         }
 
         /* Section Headers */
-        .section-header {
+        .contactsection-header {
             margin-bottom: 40px;
             text-align: center;
         }
 
-        .section-header h2 {
+        .contactsection-header h2 {
             font-size: 2.5rem;
             color: white;
             margin-bottom: 15px;
             font-weight: 700;
         }
 
-        .section-header p {
+        .contactsection-header p {
             font-size: 1.1rem;
             color: rgba(255, 255, 255, 0.9);
             max-width: 600px;
@@ -222,7 +222,7 @@
         }
 
         /* Form Section */
-        .form-section {
+        .contactform-section {
             background: white;
             padding: 40px;
             border-radius: 20px;
@@ -232,7 +232,7 @@
             animation: fadeInUp 0.6s ease-out;
         }
 
-        .form-section::before {
+        .contactform-section::before {
             content: '';
             position: absolute;
             top: 0;
@@ -242,11 +242,11 @@
             background: linear-gradient(90deg, #49C2F1, #1276CC);
         }
 
-        .form-section .section-header h2 {
+        .contactform-section .contactsection-header h2 {
             color: #333;
         }
 
-        .form-section .section-header p {
+        .contactform-section .contactsection-header p {
             color: #666;
         }
 
@@ -378,11 +378,11 @@
             background: linear-gradient(90deg, #49C2F1, #1276CC);
         }
 
-        .departments-section .section-header h2 {
+        .departments-section .contactsection-header h2 {
             color: #333;
         }
 
-        .departments-section .section-header p {
+        .departments-section .contactsection-header p {
             color: #666;
         }
 
@@ -454,11 +454,11 @@
             background: linear-gradient(90deg, #49C2F1, #1276CC);
         }
 
-        .faq-section .section-header h2 {
+        .faq-section .contactsection-header h2 {
             color: #333;
         }
 
-        .faq-section .section-header p {
+        .faq-section .contactsection-header p {
             color: #666;
         }
 
@@ -521,30 +521,30 @@
 
         /* Responsive Design */
         @media (max-width: 1024px) {
-            .main-content {
+            .contactmain-content {
                 grid-template-columns: 1fr;
                 gap: 40px;
             }
             
-            .hero-title {
+            .contacthero-title {
                 font-size: 2.8rem;
             }
             
-            .section-header h2 {
+            .contactsection-header h2 {
                 font-size: 2rem;
             }
         }
 
         @media (max-width: 768px) {
-            .hero-section {
+            .contacthero-section {
                 padding: 60px 0 40px;
             }
             
-            .hero-title {
+            .contacthero-title {
                 font-size: 2.2rem;
             }
             
-            .hero-subtitle {
+            .contacthero-subtitle {
                 font-size: 1rem;
             }
             
@@ -557,7 +557,7 @@
                 padding: 25px 15px;
             }
             
-            .form-section,
+            .contactform-section,
             .departments-section,
             .faq-section {
                 padding: 30px 20px;
@@ -568,7 +568,7 @@
                 gap: 0;
             }
             
-            .section-header h2 {
+            .contactsection-header h2 {
                 font-size: 1.8rem;
             }
             
@@ -579,11 +579,11 @@
         }
 
         @media (max-width: 480px) {
-            .container {
+            .contact-container {
                 padding: 0 15px;
             }
             
-            .hero-title {
+            .contacthero-title {
                 font-size: 1.8rem;
             }
             
@@ -591,7 +591,7 @@
                 grid-template-columns: 1fr;
             }
             
-            .form-section,
+            .contactform-section,
             .departments-section,
             .faq-section {
                 padding: 25px 15px;
@@ -601,16 +601,16 @@
                 padding: 20px 15px;
             }
             
-            .card-icon {
+            .contactcard-icon {
                 width: 50px;
                 height: 50px;
             }
             
-            .section-header h2 {
+            .contactsection-header h2 {
                 font-size: 1.5rem;
             }
             
-            .section-header p {
+            .contactsection-header p {
                 font-size: 1rem;
             }
         }

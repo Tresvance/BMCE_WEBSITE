@@ -59,62 +59,63 @@ const ContactPage = () => {
   return (
     <div className="contact-page">
       {/* Hero Section */}
-      <div className="hero-section">
-        <div className="hero-content">
-          <h1 className="hero-title">Contact Us</h1>
-          <p className="hero-subtitle">
+      <div className="contacthero-section">
+        <div className="contacthero-content">
+          <h1 className="contacthero-title">Contact Us</h1>
+          <p className="contacthero-subtitle">
             We're here to help and answer any questions you might have. 
             We look forward to hearing from you.
             gooojh
           </p>
         </div>
-        <div className="hero-decoration">
+        <div className="contacthero-decoration">
           <div className="decoration-circle circle-1"></div>
           <div className="decoration-circle circle-2"></div>
           <div className="decoration-circle circle-3"></div>
         </div>
       </div>
 
-      <div className="container">
+      <div className="contact-container">
         {/* Quick Contact Cards */}
         <div className="quick-contact-section">
           <div className="quick-contact-grid">
             <div className="contact-card">
-              <div className="card-icon">
+              <div className="contactcard-icon">
                 <Phone size={24} />
               </div>
               <h3>Call Us</h3>
-              <p>+1 (555) 123-4567</p>
-              <p>+1 (555) 123-4568</p>
-              <span className="card-label">Mon-Fri 8AM-6PM</span>
+              <p>(+91) 0476-2835579</p>
+              <p> (+91) 8281801579</p>
+              <span className="card-label">Mon-Fri 9AM-5PM</span>
             </div>
             
             <div className="contact-card">
-              <div className="card-icon">
+              <div className="contactcard-icon">
                 <Mail size={24} />
               </div>
               <h3>Email Us</h3>
-              <p>info@college.edu</p>
-              <p>admissions@college.edu</p>
+              <p> bm2coe@gmail.com</p>
+              <p> principal@bmce.ac.in</p>
               <span className="card-label">24/7 Support</span>
             </div>
             
             <div className="contact-card">
-              <div className="card-icon">
+              <div className="contactcard-icon">
                 <MapPin size={24} />
               </div>
               <h3>Visit Us</h3>
-              <p>123 Education Street</p>
-              <p>Academic City, AC 12345</p>
+              <p>Lake View, Muthupilakadu,</p>
+              <p>Sasthamcotta, Kollam,
+              Kerala, India - 690 520,</p>
               <span className="card-label">Campus Tours Available</span>
             </div>
             
             <div className="contact-card">
-              <div className="card-icon">
+              <div className="contactcard-icon">
                 <Clock size={24} />
               </div>
               <h3>Office Hours</h3>
-              <p>Monday - Friday: 8AM - 6PM</p>
+              <p>Monday - Friday: 9AM - 5PM</p>
               <p>Saturday: 9AM - 2PM</p>
               <span className="card-label">Closed Sundays</span>
             </div>
@@ -122,10 +123,10 @@ const ContactPage = () => {
         </div>
 
         {/* Main Content */}
-        <div className="main-content">
+        <div className="contactmain-content">
           {/* Contact Form */}
-          <div className="form-section">
-            <div className="section-header">
+          <div className="contactform-section">
+            <div className="contactsection-header">
               <h2>Get In Touch</h2>
               <p>Fill out the form below and we'll get back to you as soon as possible.</p>
             </div>
@@ -249,29 +250,29 @@ const ContactPage = () => {
             <div className="departments-grid">
               <div className="department-card">
                 <h4>Admissions Office</h4>
-                <p><Phone size={16} /> +1 (555) 123-4570</p>
-                <p><Mail size={16} /> admissions@college.edu</p>
-                <span className="department-hours">Mon-Fri: 8AM-5PM</span>
+                <p><Phone size={16} /> (+91) 8281801579 </p>
+                <p><Mail size={16} /> bm2coe@gmail.com</p>
+                <span className="department-hours">Mon-Fri: 9AM-5PM</span>
               </div>
               
               <div className="department-card">
                 <h4>Student Services</h4>
-                <p><Phone size={16} /> +1 (555) 123-4571</p>
-                <p><Mail size={16} /> students@college.edu</p>
+                <p><Phone size={16} /> (+91) 8281801579</p>
+                <p><Mail size={16} /> bm2coe@gmail.com</p>
                 <span className="department-hours">Mon-Fri: 9AM-6PM</span>
               </div>
               
               <div className="department-card">
                 <h4>Financial Aid</h4>
-                <p><Phone size={16} /> +1 (555) 123-4572</p>
-                <p><Mail size={16} /> finaid@college.edu</p>
+                <p><Phone size={16} />(+91) 8281801579</p>
+                <p><Mail size={16} /> bm2coe@gmail.com</p>
                 <span className="department-hours">Mon-Fri: 8AM-4PM</span>
               </div>
               
               <div className="department-card">
                 <h4>Career Services</h4>
-                <p><Phone size={16} /> +1 (555) 123-4573</p>
-                <p><Mail size={16} /> careers@college.edu</p>
+                <p><Phone size={16} />(+91) 8281801579</p>
+                <p><Mail size={16} /> bm2coe@gmail.com</p>
                 <span className="department-hours">Mon-Fri: 9AM-5PM</span>
               </div>
             </div>

@@ -11,7 +11,7 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [animationStarted, setAnimationStarted] = useState(false);
   
-  const collegeName = "Baselious Mathews II College of Engineering";
+  const collegeName = "BASELIOUS MATHEWS II COLLEGE OF ENGINEERING";
   
   useEffect(() => {
     const handleScroll = () => {
@@ -29,52 +29,50 @@ export default function Header() {
   }, []);
   
   return (
-    <header className={`main-header ${scrolled ? 'scrolled' : ''}`}>
-      <div className="top-bar">
-        <div className="contact-info">
-          <div className="info-item">
+    <header className={`head-main-header ${scrolled ? 'head-scrolled' : ''}`}>
+      {/* Top bar moved to leftmost side */}
+      <div className="head-top-bar">
+        <div className="head-contact-info">
+          <div className="head-info-item">
             <MapPin size={14} />
             <span>Sasthamcotta, Kollam</span>
           </div>
-          <div className="info-item">
+          <div className="head-info-item">
             <Phone size={14} />
             <span>+91-XXXXXXXXXX</span>
           </div>
         </div>
       </div>
       
-      <div className="header-content">
-        {/* Image moved to absolute position in top-right corner */}
-        <div className="apply-image-container">
-          <div className="apply-card">
-            <img src={applyImage} alt="Apply Image" className="apply-image" />
+      <div className="head-header-content">
+        <div className="head-logo-title-wrapper">
+          <div className="head-logo-section">
+            <img src={collegeLogo} alt="College Logo" className="head-college-logo" />
+          </div>
+          
+          <div className="head-title-section">
+            <h1 className={`head-neon-drawing ${animationStarted ? 'head-animate' : ''}`}>
+              {collegeName}
+            </h1>
+            <p>Approved by AICTE | Affiliated to KTU</p>
           </div>
         </div>
         
-        <div className="logo-title-wrapper">
-  <div className="logo-section">
-    <img src={collegeLogo} alt="College Logo" className="college-logo" />
-  </div>
-
-  <div className="title-section">
-    <h1 className={`neon-drawing ${animationStarted ? 'animate' : ''}`}>
-      {collegeName}
-    </h1>
-    <p>Approved by AICTE | Affiliated to KTU</p>
-  </div>
-</div>
-
-        
-        <div className="accreditations">
-          <img src={bmcAccredation1} alt="accredation1" />
-          <img src={bmcAccredation2} alt="accredation2" />
-          <img src={bmcAccredation3} alt="accredation3" />
-        </div>
-        
-        <div className="right-section">
-          <div className="apply-section">
-            {/* Only the button remains here */}
-            <button className="apply-btn">Apply Now</button>
+        <div className="head-right-section">
+          <div className="head-apply-section">
+            <button className="head-apply-btn">Apply Now</button>
+            <div className="head-vertical-line"></div>
+            <div className="head-founder-image-container">
+              <div className="head-apply-card">
+                <img src={applyImage} alt="Founder Image" className="head-apply-image" />
+              </div>
+            </div>
+          </div>
+          
+          <div className="head-accreditations">
+            <img src={bmcAccredation1} alt="accredation1" />
+            <img src={bmcAccredation2} alt="accredation2" />
+            <img src={bmcAccredation3} alt="accredation3" />
           </div>
         </div>
       </div>

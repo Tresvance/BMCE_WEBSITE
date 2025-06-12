@@ -1,13 +1,14 @@
 .gallery-container {
   min-height: 100vh;
-  /* background: linear-gradient(135deg, #49C2F1 0%, #1276CC 100%); */
+  
   padding: 7rem;
 }
 
 .gallery-header {
   text-align: center;
-  color: white;
+  color:  #1276CC;
   margin-bottom: 3rem;
+  margin-top: 120px;
 }
 
 .gallery-header h1 {
