@@ -1,4 +1,4 @@
-import { MapPin, Phone } from "lucide-react";
+import { MapPin, Phone, Mail } from "lucide-react";
 import "./Header.css";
 import collegeLogo from "../../assets/BMCElogo.png";
 import bmcAccredation1 from "../../assets/bnaaclogo.png";
@@ -50,7 +50,11 @@ export default function Header() {
           </div>
           <div className="head-info-item">
             <Phone size={14} />
-            <span>+91-XXXXXXXXXX</span>
+            <span>04762835579</span>
+          </div>
+          <div className="head-info-item">
+            <Mail size={14} />
+            <span>bm2coe@gmail.com</span>
           </div>
         </div>
       </div>
