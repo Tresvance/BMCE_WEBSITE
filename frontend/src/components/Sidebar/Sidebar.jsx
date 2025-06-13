@@ -59,7 +59,7 @@ const Sidebar = () => {
       title: "Academics",
       icon: BookOpen,
       submenu: [
-        { title: "Student Assesment", path: "/academics/student-assesment" },
+        { title: "Student Assesment", path: "/underwork" },
         { title: "Faculty Assesment", path: "/academics/faculty-assesment" },
       ],
     },

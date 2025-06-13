@@ -20,6 +20,7 @@ import Accrediation from "./pages/About/Accreditation";
 import Disclosure from "./pages/About/Disclosure";
 import IEDC from "./pages/Activities/IEDC";
 import NSS from "./pages/Activities/NSS";
+import UnderConstruction from "./pages/underwork.jsx";
 
 const App = () => {
   return (
@@ -48,6 +49,9 @@ const App = () => {
         <Route path="/disclosure" element={<Disclosure />} />
         <Route path="/iedc" element={<IEDC />} />
         <Route path="/nss" element={<NSS />} />
+        <Route path="underwork" element={<UnderConstruction />} />
+
+
       </Routes>
       <Footer />
     </Router>
