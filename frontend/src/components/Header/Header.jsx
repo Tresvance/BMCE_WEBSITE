@@ -50,7 +50,7 @@ export default function Header() {
           </div>
           <div className="head-info-item">
             <Phone size={14} />
-            <span>04762835579</span>
+            <span>0476-2835579</span>
           </div>
           <div className="head-info-item">
             <Mail size={14} />
@@ -85,7 +85,9 @@ export default function Header() {
               >
                 {collegeName}
               </h1>
-              <p>Approved by AICTE | Affiliated to KTU</p>
+              <p>NAAC(B+) Accredited College with NBA Accredied Programs (CSE,ME)</p>
+              <h3 className="head-college-code">College Code : BMC   
+                 <span className="head-college-admission">Admission Contact : 8281801579</span> </h3>
             </div>
           </div>
 

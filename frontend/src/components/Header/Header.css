@@ -41,7 +41,13 @@
   border-bottom-left-radius: 30px;
   border-bottom-right-radius: 30px;
 }
-
+.head-college-code {
+  margin-left: -9px;
+  margin-bottom: -36px;
+}
+.head-college-admission {
+  margin-left: 45px;
+}
 .head-main-header.head-scrolled {
   padding: 0px 0;
   background: white;
