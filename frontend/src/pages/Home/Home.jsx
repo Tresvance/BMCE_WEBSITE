@@ -30,6 +30,11 @@ import eeImage from '../../assets/electrical.jpg';
 import civilImage from '../../assets/civil.jpg';
 import brainBulbImage from '../../assets/entrepreneurialhum.png';
 import teamMeetingImage from '../../assets/entrepreneurialbulb.png';
+import eeeimg from '../../assets/eeeimg.jpg';
+import eceimg from '../../assets/eceimg.jpg';
+import mbaimg from '../../assets/mba.jpg'
+
+
 
 const HomePage = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -137,49 +142,57 @@ const HomePage = () => {
       title: "Computer Science & Engineering",
       image: cseImage,
       hodName: "Dennis Mathew",
-      hodTitle: "Head Of Department"
+      hodTitle: "Head Of Department",
+      hodImage: "/btech/cse/hodcse.jpg"  // <-- Add path here
+
     },
     {
       id: 2,
       title: "Artificial Intelligence",
       image: aiImage, 
       hodName: "Ms. Deepthy S",
-      hodTitle: "Head Of Department"
+      hodTitle: "Head Of Department",
+      hodImage: "/btech/hodai.jpg"  
     },
     {
       id: 3,
       title: "Mechanical Engineering",
       image: mechImage,
       hodName: "Mr. Abraham Sam Thomas", 
-      hodTitle: "Head Of Department"
+      hodTitle: "Head Of Department",
+      hodImage: "/btech/hodmech.jpg"
     },
     {
       id: 4,
       title: "Electrical Engineering",
-      image: eeImage,
+      image: eeeimg,
       hodName: "Mr. Vishu V",
-      hodTitle: "Head Of Department"
+      hodTitle: "Head Of Department",
+          hodImage: "/btech/hodeee.jpg"
     },
     {
       id: 5,
       title: "Civil Engineering",
       image: civilImage,
       hodName: "Mrs. Rajalakshmi P",
-      hodTitle: "Head Of Department"
+      hodTitle: "Head Of Department",
+          hodImage: "/btech/hodcivil.jpg"
     },
     {
       id: 6,
       title: "Electronics and Communication Engineering",
-      image: civilImage,
+      image: eceimg,
       hodName: "Mr. Nidhin.T.G",
-      hodTitle: "Head Of Department"
+      hodTitle: "Head Of Department",
+          hodImage: "/btech/hodece.jpg"
     },
     {
       id:7 ,
       title: "MBA",
-      image: civilImage,
+      image: mbaimg,
       hodName: "Mr. Roy Samuel",
-      hodTitle: "Head Of Department"
+      hodTitle: "Head Of Department",
+      hodImage: ""
     }
   ];
   useEffect(() => {
@@ -769,7 +782,10 @@ const HomePage = () => {
             <div className="home-dcard-content">
               <h3 className="home-dcourse-title">{course.title}</h3>
               <div className="home-dhod-info">
-                <div className="home-dhod-avatar"></div>
+                <div className="home-dhod-avatar">
+  <img src={course.hodImage} alt={course.hodName} />
+</div>
+
                 <div className="home-dhod-details">
                   <p className="home-dhod-name">{course.hodName}</p>
                   <p className="home-dhod-title">{course.hodTitle}</p>
