@@ -113,14 +113,13 @@ With Growth of Economy and Infrastructure development in the country, a tremendo
                   <div className="hod-image-container">
                     <div className="hod-image">
                       <img
-                        src="/btech/cse/hodcse.jpg"
-                        alt="Dr. Dennise Mathew"
+                        src="/btech/hodcivil.jpg"
+                        alt="Mrs. Rajalakshmi P"
                       />
                     </div>
                     <div className="hod-details">
-                      <h3 className="hod-name">Dennise Mathew</h3>
+                      <h3 className="hod-name">Mrs. Rajalakshmi P</h3>
                       <p className="hod-title">Head of Department</p>
-                      <p className="hod-phone">945174441</p>
                     </div>
                   </div>
                   <div className="hod-message-content">
@@ -139,7 +138,7 @@ With Growth of Economy and Infrastructure development in the country, a tremendo
 
                     </blockquote>
                     <div className="hod-contact">
-                      <strong>Contact:</strong> dennisemathew@gmail.com | 9451744441
+                      {/* <strong>Contact:</strong> dennisemathew@gmail.com | 9451744441 */}
                     </div>
                   </div>
                 </div>

@@ -58,7 +58,7 @@ const Gallery: React.FC = () => {
         className="gallery-header"
       >
         <h1>College Photo & Video Gallery</h1>
-        <p>Capturing Moments, Creating Memories</p>
+    
       </motion.header>
 
       <motion.div

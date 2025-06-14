@@ -100,14 +100,14 @@ export default function EeeDepartmentPage() {
                   <div className="hod-image-container">
                     <div className="hod-image">
                       <img
-                        src="/btech/cse/hodcse.jpg"
-                        alt="Dr. Dennise Mathew"
+                        src="/btech/hodeee.jpg"
+                        alt="Mr. Vishu V"
                       />
                     </div>
                     <div className="hod-details">
-                      <h3 className="hod-name">Dennise Mathew</h3>
+                      <h3 className="hod-name">Mr. Vishu V</h3>
                       <p className="hod-title">Head of Department</p>
-                      <p className="hod-phone">945174441</p>
+        
                     </div>
                   </div>
                   <div className="hod-message-content">
@@ -126,7 +126,7 @@ export default function EeeDepartmentPage() {
 
                     </blockquote>
                     <div className="hod-contact">
-                      <strong>Contact:</strong> dennisemathew@gmail.com | 9451744441
+                      {/* <strong>Contact:</strong> dennisemathew@gmail.com | 9451744441 */}
                     </div>
                   </div>
                 </div>
