@@ -345,26 +345,8 @@ This lab is specially followed by Students who are interested in understanding S
                 Innovation, Excellence & Empowerment
               </p>
             </div>
-        <div className="banner-section">
-          <div className="banner-image">
-            <img
-              src="https://res.cloudinary.com/dnqzz8qlz/image/upload/v1749750835/cld-sample-2.jpg"
-              alt="Banner"
-            />
-            <div className="banner-overlay"></div>
-          </div>
-          <div className="banner-content">
-            <div>
-              <h1 className="banner-title">
-                Department of Computer Science Engineering
-              </h1>
-              <p className="banner-subtitle">
-                Innovation, Excellence & Empowerment
-              </p>
-            </div>
           </div>
         </div>
-
 
 
       <div className="main-container">
